@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #5801B7;
+  --secondary: #F6EDFF;
+  --webgray: #5F5F5F;
+  --webgray2:#F5F5F5;
+  --webgray3:#F3F3F3;
+  --webBlue:#200E32;
+  --webtext:#393939;
+  --lightgrey:#D9D9D9;
+  --platiniumcolor:#E7E7E7;
+  --webBorder: #DCDCDC;
+  --BlackBox: #1D1D1D;
+  --bordercolor:#9E9E9E;
+  --bordercolor2:#D4D4D4;
+  --webtext2:#1B1B1B;
+  --bgform:#FCFAFF;
+  --headerBorder: #e5e7eb;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* .primary{
+  color: #5801B7 !important;
 }
+.secondary{
+  color: #F6EDFF;
+}
+.webgray{
+  color: #5F5F5F;
+}
+.webgray2{
+  color: #F5F5F5;
+}
+.webgray3{
+  color: #F3F3F3;
+}
+.webBlue{
+  color: #200E32;
+}
+.webtext{
+  color: #393939;
+}
+.lightgrey{
+  color: #D9D9D9;
+}
+.platiniumcolor{
+  color: #E7E7E7;
+}
+.webBorder{
+  color: #DCDCDC;
+}
+.BlackBox{
+  color: #1D1D1D;
+}
+.bordercolor{
+  color: #9E9E9E;
+}
+.bordercolor2{
+  color: #D4D4D4;
+}
+.webtext2{
+  color: #1B1B1B;
+}
+.bgform{
+  color: #FCFAFF;
+} */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}

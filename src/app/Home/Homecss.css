@@ -1,0 +1,240 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family:lato;
+    //margin-top:100px;
+}
+
+/* Inventory Management Homepage css */
+
+
+.inventory{
+    margin-top:6.25rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.inventoryimg{
+    height:25.438rem;
+    width:41.375rem;
+}
+.inventory_heading{
+    font-size:2rem;
+    font-weight:700;
+    line-height:2.813rem;
+    color:#393939;
+}
+
+.inventory_para{
+    font-size:1.125rem;
+    font-weight:500;
+    line-height:1.496rem;
+    color:#393939;
+}
+.inventory_span{
+
+    font-size:1.125rem;
+    font-weight:700;
+    line-height:1.809rem;
+    color:#5801B7;
+}
+
+
+/*Digital Khata Homepage css starts */
+
+.digitalkhatahomepage{
+    
+    background-color:#F6EDFF;
+    height:30.75rem;
+    width:95%;
+    margin-left:2.5%;
+    margin-right:2.5%;
+    margin-top:3.75rem;
+    border-radius:1.563rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.digitalkhatahomepagecontent{
+    margin-left:3.5rem;
+}
+
+.digitalkhatahomepageimg{
+     height:27.281rem;
+     width:39.25rem;
+ }
+ .digitalkhatahomepagepara1{
+    font-size:1.025rem;
+    font-weight:500;
+    line-height:1.64rem;
+    color:#393939;
+
+ }
+ .digitalkhatahomepagepara2{
+    font-size:1.125rem;
+    font-weight:500;
+    line-height:1.496rem;
+    color:#393939;
+    padding-top:0.625rem;
+
+ }
+.digitalkhatahomepageheading{
+    font-size:2rem;
+    font-weight:500;
+    line-height:1.886rem;
+    color:#393939;
+    padding-top:0.313rem;
+}
+.digitalkhatahomepagespan{
+    font-size:1.125rem;
+    font-weight:700;
+    line-height:3.125rem;
+    color:#5801B7;
+    cursor:pointer;
+   
+}
+
+
+/* ONDC Homepage css starts  */
+
+.ONDChome{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    margin-top:3.75rem;
+}
+.ONDCheading{
+    font-size:2rem;
+    font-weight:700;
+    line-height:1.886rem;
+    color:#393939;
+
+}
+.ONDCpara{
+    font-size:1.125rem;
+    font-weight:500;
+    line-height:1.496rem;
+    padding-top:0.938rem;
+    color:#393939;
+    
+}
+.ONDCspan{
+    font-size:1.125rem;
+    font-weight:700;
+    line-height:3.125rem;
+    color:#5801B7;
+    cursor:pointer;
+
+}
+.ondcimgmain{
+    height:24.773rem;
+    width:24.773rem;
+    border-radius:50%;
+    background-color:#F3F3F3;
+}
+.ondcimg{
+    padding-top:6.25rem;
+    padding-right:1.125rem;
+}
+
+
+
+/* *********** Online Store Homepage CSS Starts ************/
+.onlinestorehomepage{
+    
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 3.125rem;
+}
+
+
+.onlinestorehomepageimgcontent{
+    height:26.188rem;
+    width:29.188rem;
+   
+    background-color:#F3F3F3;
+    
+}
+.onlinestoreimg{
+    width:28.875rem;
+    height:29.188rem;
+
+}
+.ondchomepagecontent{
+    margin-left:-2.375rem;
+}
+.onlinestorehomepageheading{
+    font-size:2rem;
+    font-weight:700;
+    line-height:1.886rem;
+   
+    color:#393939;
+
+}
+.onlinestorehomepagepara{
+    font-size:1.125rem;
+    font-weight:500;
+    line-height:1.496rem;
+    padding-top:1.063rem;
+   
+    color:#393939;
+
+}
+.onlinestorehomepagespan{
+
+    font-size:1.125rem;
+    font-weight:700;
+    line-height:3.75rem;
+    color:#5801B7;
+    cursor:pointer;
+    padding-top:3.75rem;
+
+}
+
+
+/**********  Whatsapp Homepage CSS Starts   **********/
+
+.whatsapphomepage{
+    height:20.813rem;
+    width:55.875rem;
+    background-color:#F6EDFF;
+    border-radius:0.625rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8.125rem;
+}
+
+.whatsapphomepageimg{
+
+}
+.Whatsapphomepageheading{
+    font-size:2rem;
+    font-weight:700;
+    line-height:1.886rem;
+    color:#393939;
+
+}
+.Whatsapphomepagepara{
+    font-size:1.125rem;
+    font-weight:500;
+    line-height:1.496rem;
+    padding-top:1.063rem;
+    color:#393939;
+
+}
+.Whatsapphomepagespan{
+    font-size:1.125rem;
+    font-weight:700;
+    line-height:3.75rem;
+    color:#5801B7;
+    cursor:pointer;
+    padding-top:3.75rem;
+
+}
+
+
+
+
