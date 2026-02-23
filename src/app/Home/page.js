@@ -1,6 +1,6 @@
 
 import HeroSection from "./Section/HeroSection";
-import HomeVideo from "./Section/Video";
+import HomeSlider from "./Section/HomeSlider";
 import HomeTitle from "./Section/HomeTitle";
 import PosBilling from "./Section/PosBilling";
 import QuickBilling from "./Section/QuickBilling";
@@ -14,7 +14,7 @@ import Certification from "./Section/Certification";
 import Download from "./Section/Download";
 import TestimonialSlider from "./Section/TestimonialSlider";
 
-
+import RetailBusinessCard from "./Section/RetailBusinessCard";
 
 
 
@@ -22,9 +22,10 @@ function HomePage() {
   return (
         <div className="m-auto">
           <HeroSection />
-          <HomeVideo />
-           <HomeTitle/>
+          <HomeSlider />
+           {/* <HomeTitle/> */}
            <PosBilling/>
+           <RetailBusinessCard />
            <QuickBilling/>
            <InventoryManagement/>
            <DigitalKhata/>

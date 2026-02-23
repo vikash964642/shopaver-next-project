@@ -1,4 +1,4 @@
-*{
+/* *{
     margin:0;
     padding:0;
     box-sizing: border-box;
@@ -62,11 +62,10 @@
 
 }
 .video-container{
-    /* margin-top:160px; */
+  
     transition: width 0.5s ease;
     background:#CCCCCC;
-    /* padding:0px 55px; */
-    
+ 
 }
  .video-container > video{
    border-radius:10px;
@@ -75,7 +74,7 @@
    
 } 
 .div-3{
-    /* height:661px; */
+
     width:100%;
     display:flex;
     justify-content:space-between;
@@ -123,13 +122,11 @@
 .div-5{
     border-radius:50%;
     background-color:#F5E8FD;
-    /* position:relative; */
     top:80px;
     padding-left:50px;
     padding-top:12px;
 }
 .div-6{
-    /* position: relative; */
     top: 180px;
     left:-80px;
    
@@ -170,4 +167,7 @@
 
 
 }
+ */
 
+
+ 
