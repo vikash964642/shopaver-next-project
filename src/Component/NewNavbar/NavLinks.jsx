@@ -86,7 +86,7 @@ const NavLinks = ({ handleClick }) => {
             {/* Submenu */}
             {link.submenu && activeLink === link.name && (
               <div className="lg:absolute top-20.5 md:block">
-                <div className="bg-white pr-2 pb-4 gap-7 lg:border border-(--headerBorder) lg:rounded lg-drop-shadow-md overflow-scroll">
+                <div className="bg-white pr-2 pb-4 gap-7 lg:border border-(--headerBorder) lg:rounded lg-drop-shadow-md overflow-auto">
                   {link.sublinks.map((mysublinks, subIndex) => (
                     <div
                       key={subIndex}

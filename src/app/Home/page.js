@@ -15,8 +15,8 @@ import Download from "./Section/Download";
 import TestimonialSlider from "./Section/TestimonialSlider";
 
 import RetailBusinessCard from "./Section/RetailBusinessCard";
-
-
+import SecuirityReliability from "./Section/SecuirityReliability";
+import CommonRetail from './Section/CommonRetail'
 
 function HomePage() {
   return (
@@ -26,6 +26,8 @@ function HomePage() {
            {/* <HomeTitle/> */}
            <PosBilling/>
            <RetailBusinessCard />
+           <SecuirityReliability />
+           <CommonRetail />
            <QuickBilling/>
            <InventoryManagement/>
            <DigitalKhata/>

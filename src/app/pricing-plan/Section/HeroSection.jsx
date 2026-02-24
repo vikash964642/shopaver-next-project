@@ -22,7 +22,7 @@ const HeroSection = () => {
 
   useEffect(() => {
     axios
-      .post("https://billingapi.shopaver.com/api/ReferralCode/GetShopaverSubcriptionPlan")
+      .post("https://billingapi.shopaver.com/api/ReferralCode/get_shopaver_active_subscription")
       .then((response) => {
         console.log(response.data);
         
