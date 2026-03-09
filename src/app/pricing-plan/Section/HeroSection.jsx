@@ -2,8 +2,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import PricingCard from "@/Component/Utils/PricingCard";
-import MultiplePricingCard from "@/Component/Utils/MultiplePricingCard";
+import PricingCard from "../../../Component/Utils/PricingCard";
+import MultiplePricingCard from "../../../Component/Utils/MultiplePricingCard";
 
 const HeroSection = () => {
   const [isYearly, setIsYearly] = useState(true);

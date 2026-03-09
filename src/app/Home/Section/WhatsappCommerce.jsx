@@ -9,10 +9,10 @@ const WhatsappCommerce = () => {
   return (
     <section className=" pt-20 lg:mt-[128px] ">
       <div className="max-w-screen-lg mx-auto items-center justify-around relative ">
-        <div className="lg:h-[335px] lg:w-[835px] row  bg-(--secondary) rounded-[25px] flex flex-col-reverse items-center lg:flex-row-reverse md:pl-[45px] mx-[24px] md:mx-[0px]">
+        <div className="lg:h-[335px] lg:w-[835px] row  bg-secondary rounded-[25px] flex flex-col-reverse items-center lg:flex-row-reverse md:pl-[45px] mx-[24px] md:mx-[0px]">
           <div className="flex p-5  md:rounded-3xl ">
             <div className="lg:w-[66%] mt-[45px] lg:mt-[0px]">
-              <h3 className="text-[22px] md:text-[32px] font-bold text-(--primary) ">
+              <h3 className="text-[22px] md:text-[32px] font-bold text-primary ">
                 Whatsapp Commerce
               </h3>
               <h3 className="text-[20px] md:text-[22px] leading-[22px] md:leading-[36.4px] pt-[2px] max-[400px]:text-[15px] flex flex-wrap: wrap">
@@ -39,7 +39,7 @@ const WhatsappCommerce = () => {
                 <Link
                   href="/whatsapp-commerce"
                   onClick={ScrollTop}
-                  className="text-(--primary) cursor-pointer md:text-[15.6px] font-bold text-[14px] "
+                  className="text-primary cursor-pointer md:text-[15.6px] font-bold text-[14px] "
                 >
                   View More &gt;&gt;
                 </Link>

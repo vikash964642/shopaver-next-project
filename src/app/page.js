@@ -1,4 +1,4 @@
-import HomePage from "@/app/Home/page";
+import HomePage from "../app/Home/page";
 
 export const metadata = {
  

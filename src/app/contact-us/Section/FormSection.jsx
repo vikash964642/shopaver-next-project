@@ -61,11 +61,11 @@ function FormSection() {
         <div className="max-w-screen-lg mx-auto   ">
           <div className="flex flex-col lg:flex-row  mt-[145px] lg:border lg:rounded-[25px] lg:ml-[79px]">
             <div className=" rounded-l-[25px] lg:w-[371px] lg:h-[585px] lg:border-r flex md:justify-center">
-              <p className="text-(--webtext2) font-bold text-[24px] lg:text-[38px] lg:leading-[49px] leading-[31.44px] lg:pt-[170px] md:px-[0px] lg:px-[34px] px-[38px] lg:text-left text-center">
+              <p className="text-webtext2 font-bold text-[24px] lg:text-[38px] lg:leading-[49px] leading-[31.44px] lg:pt-[170px] md:px-[0px] lg:px-[34px] px-[38px] lg:text-left text-center">
                 You are taking a right step for your business.
               </p>
             </div>
-            <div className=" lg:w-[572px] lg:h-[585px] lg:rounded-tr-[25px] lg:rounded-br-[25px] lg:bg-(--bgform)">
+            <div className=" lg:w-[572px] lg:h-[585px] lg:rounded-tr-[25px] lg:rounded-br-[25px] lg:bg-bgform">
               <div className="lg:px-[100px] pt-[34px]">
                 <h3 className="lg:text-[34.25px] text-[32px] font-bold lg:font-medium leading-[44px] text-center lg:px-[0px] lg:text-left">
                   Schedule a free demo
@@ -85,7 +85,7 @@ function FormSection() {
                   <input
                     type="text"
                     className=" 
-               lg:border-[0.42px] lg:border-(--webtext)  bg-(--webgray2) lg:bg-white   placeholder-[#5F5F5F] md:w-[375.11px] lg:h-[39px] h-[50px] mt-5 rounded-lg "
+               lg:border-[0.42px] lg:border-webtext  bg-webgray2 lg:bg-white   placeholder-[#5F5F5F] md:w-[375.11px] lg:h-[39px] h-[50px] mt-5 rounded-lg "
                     style={{ paddingLeft: "18.33px" }}
                     placeholder="Your Name *"
                     name="name"
@@ -97,7 +97,7 @@ function FormSection() {
                   <input
                     type="text"
                     className=" 
-                  lg:border-[0.42px] lg:border-(--webtext) bg-(--webgray2) lg:bg-white   placeholder-[#5F5F5F] md:w-[375.11px] lg:h-[39px] h-[50px] mt-5 rounded-lg "
+                  lg:border-[0.42px] lg:border-webtext bg-webgray2 lg:bg-white   placeholder-[#5F5F5F] md:w-[375.11px] lg:h-[39px] h-[50px] mt-5 rounded-lg "
                     style={{ paddingLeft: "18.33px" }}
                     placeholder="Company Name*"
                     name="company_name"
@@ -108,7 +108,7 @@ function FormSection() {
                   <input
                     type="tel"
                     className=" 
-               lg:border-[0.42px] lg:border-(--webtext) bg-(--webgray2) lg:bg-white placeholder-[#5F5F5F] md:w-[375.11px] lg:h-[39px] h-[50px] mt-5 rounded-lg "
+               lg:border-[0.42px] lg:border-webtext bg-webgray2 lg:bg-white placeholder-[#5F5F5F] md:w-[375.11px] lg:h-[39px] h-[50px] mt-5 rounded-lg "
                     style={{ paddingLeft: "18.33px" }}
                     placeholder="Contact Number*"
                     name="contact_number"
@@ -122,7 +122,7 @@ function FormSection() {
                   <input
                     type="email"
                     className=" 
-               lg:border-[0.42px] lg:border-(--webtext) bg-(--webgray2) lg:bg-white   placeholder-[#5F5F5F] md:w-[375.11px] lg:h-[39px] h-[50px] mt-5 rounded-lg "
+               lg:border-[0.42px] lg:border-webtext bg-webgray2 lg:bg-white   placeholder-[#5F5F5F] md:w-[375.11px] lg:h-[39px] h-[50px] mt-5 rounded-lg "
                     style={{ paddingLeft: "18.33px" }}
                     placeholder="Business Email Address*"
                     name="business_email_address"
@@ -133,7 +133,7 @@ function FormSection() {
                   <input
                     type="text"
                     className=" 
-               lg:border-[0.42px] lg:border-(--webtext) bg-(--webgray2) lg:bg-white   placeholder-[#5F5F5F] md:w-[375.11px] lg:h-[70px] h-[100px] mt-5 rounded-lg pb-[52px] lg:pb-[24px]"
+               lg:border-[0.42px] lg:border-webtext bg-webgray2 lg:bg-white   placeholder-[#5F5F5F] md:w-[375.11px] lg:h-[70px] h-[100px] mt-5 rounded-lg pb-[52px] lg:pb-[24px]"
                     style={{ paddingLeft: "18.33px" }}
                     placeholder="Your Message"
                     name="message"
@@ -142,7 +142,7 @@ function FormSection() {
                   />
 
                   <div className="flex  justify-center">
-                    <button className="w-[201px] h-[55px] bg-(--primary) text-white rounded-[36px] lg:mt-[23px] mt-[60px]  font-bold text-[20px] leading-[25px] cursor-pointer">
+                    <button className="w-[201px] h-[55px] bg-primary text-white rounded-[36px] lg:mt-[23px] mt-[60px]  font-bold text-[20px] leading-[25px] cursor-pointer">
                       Submit
                     </button>
                   </div>
@@ -151,7 +151,7 @@ function FormSection() {
             </div>
           </div>
           <div className="max-w-screen-lg lg:mx-auto lg:mt-[100px] mt-[100px] mb-[50px] mx-[30px]">
-            <h3 className="lg:text-[52px] text-[26px] font-bold lg:leading-[62px] leading-[24px] text-(--primary)">
+            <h3 className="lg:text-[52px] text-[26px] font-bold lg:leading-[62px] leading-[24px] text-primary">
               Let’s Connect
             </h3>
             <p className="lg:text-[20px] text-[14px] font-medium lg:leading-[26px] leading-[22px] pt-[26px] lg:pr-[82px] ">

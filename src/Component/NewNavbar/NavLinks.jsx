@@ -63,7 +63,7 @@ const NavLinks = ({ handleClick }) => {
       {links.map((link, index) => (
         <div key={index}>
           <div
-            className="px-3 border-t border-(--headerBorder) text-left md:cursor-pointer group"
+            className="px-3 border-t border-headerBorder text-left md:cursor-pointer group"
             onMouseEnter={() => handleLinkMouseEnter(link.name)}
             onMouseLeave={handleLinkMouseLeave}
             onClick={() => handleLinkClick(link.name)}
@@ -73,7 +73,7 @@ const NavLinks = ({ handleClick }) => {
              href={link.submenu ? "#" : (link.link ?? "#")}
               onClick={(e) => handleBlogLinkClick(e, link)}
             >
-              <p className="pt-[25px] pb-[21px] flex justify-between items-center group hover:text-(--primary)">
+              <p className="pt-[25px] pb-[21px] flex justify-between items-center group hover:text-primary">
                 {link.name}
                 <span className="text-xl md:mt-1 md:ml-2  md:block">
                   <ion-icon
@@ -86,7 +86,7 @@ const NavLinks = ({ handleClick }) => {
             {/* Submenu */}
             {link.submenu && activeLink === link.name && (
               <div className="lg:absolute top-20.5 md:block">
-                <div className="bg-white pr-2 pb-4 gap-7 lg:border border-(--headerBorder) lg:rounded lg-drop-shadow-md overflow-auto">
+                <div className="bg-white pr-2 pb-4 gap-7 lg:border border-headerBorder lg:rounded lg-drop-shadow-md overflow-auto">
                   {link.sublinks.map((mysublinks, subIndex) => (
                     <div
                       key={subIndex}
@@ -98,7 +98,7 @@ const NavLinks = ({ handleClick }) => {
                         href={mysublinks.link}
                         onClick={(e) => handleBlogLinkClick(e, mysublinks)}
                       >
-                        <div className="flex hover:bg-(--secondary) items-center h-7 w-64 rounded my-3">
+                        <div className="flex hover:bg-secondary items-center h-7 w-64 rounded my-3">
                           <div className="flex items-center justify-center w-7 mr-3">
                             <Image
                               src={`/icons/${mysublinks.img}.svg`}
@@ -110,7 +110,7 @@ const NavLinks = ({ handleClick }) => {
                           <p
                             className={`text-[17px] font-medium ${
                               hoveredSublinkIndex === subIndex
-                                ? "text-(--primary)"
+                                ? "text-primary"
                                 : "text-black"
                             }`}
                             onClick={ScrollTop}

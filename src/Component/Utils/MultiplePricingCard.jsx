@@ -21,7 +21,7 @@ const MultiplePricingCard = (props) => {
         className={`
             ${
               planTier === "premium"
-                ? "border-(--primary) bg-purple-50"
+                ? "border-primary bg-purple-50"
                 : "border-[#dddddd] bg-white"
             }
        m-2 border p-6 text-center shadow-sm lg:max-h-full
@@ -36,7 +36,7 @@ const MultiplePricingCard = (props) => {
         <div>
           <h3
             className={`text-[24px]  ${
-              planTier === "premium" ? "text-(--primary)" : "text-[#222222]"
+              planTier === "premium" ? "text-primary" : "text-[#222222]"
             } text-left font-semibold my-[18px]`}
           >
             {planTier === "premium"
@@ -48,20 +48,20 @@ const MultiplePricingCard = (props) => {
           <div className="flex">
             <h2
               className={`text-3xl ${
-                planTier === "premium" ? "text-(--primary)" : "text-[#393939]"
+                planTier === "premium" ? "text-primary" : "text-[#393939]"
               } font-bold mb-1 text-left`}
             >
               ₹ {proPlan.amount}
             </h2>
             <p
               className={`ml-[10px] text-sm ${
-                planTier === "premium" ? "text-(--primary)" : "text-[#393939]"
+                planTier === "premium" ? "text-primary" : "text-[#393939]"
               } mb-4 flex flex-col justify-start items-start font-bold h-[1]`}
             >
               per{" "}
               <span
                 className={`${
-                  planTier === "premium" ? "text-(--primary)" : "text-[#393939]"
+                  planTier === "premium" ? "text-primary" : "text-[#393939]"
                 }`}
               >
                 / {isYearly ? "Year" : "Month"}
@@ -72,8 +72,8 @@ const MultiplePricingCard = (props) => {
           <button
             className={`w-full cursor-pointer border ${
               planTier === "premium"
-                ? "text-white hover:bg-white hover:text-(--primary) bg-(--primary)"
-                : "text-(--primary) hover:bg-purple-50 bg-white"
+                ? "text-white hover:bg-white hover:text-primary bg-primary"
+                : "text-primary hover:bg-purple-50 bg-white"
             } border-purple-700 text-purple-700 font-semibold rounded-full px-4 py-2 mb-6  transition`}
           >
           Start Free Trial

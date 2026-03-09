@@ -2,7 +2,7 @@
 
 const Solution = () => {
   return (
-    <section className="bg-(--primary) text-white my-28">
+    <section className="bg-primary text-white my-28">
       <div className=" max-w-screen-lg mx-auto ">
         <div className="flex justify-center items-center pt-[60px] pb-10">
           <h3 className="text-4xl md:text-5xl font-semibold	text-white ">Solution</h3>

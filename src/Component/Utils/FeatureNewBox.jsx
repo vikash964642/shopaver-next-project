@@ -17,7 +17,7 @@ const FeatureNewBox = ({ img, head, para, showButton, alt }) => {
           <h3 className="text-[17.45px] md:text-[20px] lg:[22.37px] font-bold ">{head}</h3>
           <p className="text-[15px] md:text-[14px] font-medium pt-[20px] lg:pt-[15px] ">{para}</p>
           {showButton && (
-            <button className="text-(--primary) text-base cursor-pointer font-bold pt-[31px]" onClick={() => alert('Button Clicked!')}>
+            <button className="text-primary text-base cursor-pointer font-bold pt-[31px]" onClick={() => alert('Button Clicked!')}>
               Learn More
             </button>
           )}

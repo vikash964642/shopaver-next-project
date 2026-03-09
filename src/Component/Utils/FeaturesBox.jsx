@@ -13,8 +13,8 @@ const FeaturesBox = (props) => {
 
   return (
     <div className=" w-[284px] mx-[20px] flex flex-col py-4">
-      <div className="flex flex-col items-center text-center md:h-[284px] lg:w-[284px] border-(--webBorder) justify-center border rounded-[28px] shadow-sm ">
-        <div className="py-9 h-[94px] w-[94px] rounded-full bg-(--secondary) flex justify-center items-center mt-[23px] ">
+      <div className="flex flex-col items-center text-center md:h-[284px] lg:w-[284px] border-webBorder justify-center border rounded-[28px] shadow-sm ">
+        <div className="py-9 h-[94px] w-[94px] rounded-full bg-secondary flex justify-center items-center mt-[23px] ">
           <Link href={link} onClick={ScrollTop}>
             <Image src={`/icons/${img}`} alt={alt} height={50} width={50} />
           </Link>

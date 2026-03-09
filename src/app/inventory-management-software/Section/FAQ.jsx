@@ -90,7 +90,7 @@ function FaqSection() {
               <div className="py-5 text-center">
                 <button
                   onClick={() => setShowAllQuestions(false)}
-                  className="text-(--primary) hover:text-neutral-900 font-medium text-center cursor-pointer"
+                  className="text-primary hover:text-neutral-900 font-medium text-center cursor-pointer"
                 >
                   View Less
                 </button>
@@ -132,7 +132,7 @@ function FaqSection() {
               <div className="pt-[70px] text-center">
                 <button
                   onClick={() => setShowAllQuestions(true)}
-                  className="text-(--primary) hover:text-neutral-900 font-bold text-center cursor-pointer"
+                  className="text-primary hover:text-neutral-900 font-bold text-center cursor-pointer"
                 >
                   View All Questions
                 </button>

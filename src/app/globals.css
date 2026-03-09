@@ -1,7 +1,10 @@
-@import "tailwindcss";
+/* @import "tailwindcss"; */
 
-:root {
-  --primary: #5801B7;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* :root {
+  primary: #5801B7;
   --secondary: #F6EDFF;
   --webgray: #5F5F5F;
   --webgray2:#F5F5F5;
@@ -17,7 +20,7 @@
   --webtext2:#1B1B1B;
   --bgform:#FCFAFF;
   --headerBorder: #e5e7eb;
-}
+} */
 
 
 @keyframes fadeInUp {
@@ -34,6 +37,11 @@
 .animate-fadeInUp {
   animation: fadeInUp 0.4s ease-out forwards;
 }
+ 
+/* Business Solution Card Swiper height equal */
+.swiper-slide {
+     height: auto !important;
+    }
 
 /* .primary{
   color: #5801B7 !important;

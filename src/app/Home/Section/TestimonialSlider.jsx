@@ -93,7 +93,7 @@ const TestimonialSlider = () => {
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
               <div
-                className={`card overflow-hidden ${"bg-(--secondary)"} rounded-3xl hidden md:flex`}
+                className={`card overflow-hidden ${"bg-secondary"} rounded-3xl hidden md:flex`}
               >
                 <div className="card__collection clear-fix ">
                   <div className="cards cards--three w-[313px] h-[465.86px] lg:h-[449.45px] lg:w-[324.96px] ">
@@ -123,7 +123,7 @@ const TestimonialSlider = () => {
                   </div>
                 </div>
               </div>
-              <div className="bg-(--secondary) p-3 rounded-[21.96px]  h-[403px] mx-[25px] md:hidden">
+              <div className="bg-secondary p-3 rounded-[21.96px]  h-[403px] mx-[25px] md:hidden">
                 <div className="pl-[10px] pr-[20px] lg:pl-[0px] lg:pr-[0px]">
                   <div className="w-[88px] h-[88px]  p-[8px] ">
                     <Image
@@ -131,7 +131,7 @@ const TestimonialSlider = () => {
                       width={88}
                       height={88}
                       alt="merchant review on shopaver app"
-                      className="rounded-full border-2 border-(--primary)"
+                      className="rounded-full border-2 border-primary"
                     />
                   </div>
                   <h5 className="leading-[25px] text-[24px] font-bold">

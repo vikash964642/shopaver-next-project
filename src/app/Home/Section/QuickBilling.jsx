@@ -23,7 +23,7 @@ function QuickBilling() {
         </div>
 
         <div className="div-6 lg:min-w-[50%] max-md:mt-[74px] max-md:top-0 max-md:left-0 max-md:px-12">
-          <h3 className="md:text-(--primary) lg:text-[32px] text-[22px] font-bold">
+          <h3 className="md:text-primary lg:text-[32px] text-[22px] font-bold">
             Quick Billing Software
           </h3>
 
@@ -52,7 +52,7 @@ function QuickBilling() {
               <Link
                 href="/quick-billing-software"
                 onClick={ScrollTop}
-                className="text-(--primary) cursor-pointer font-bold md:text-[15.6px] text-sm pt-[15px]"
+                className="text-primary cursor-pointer font-bold md:text-[15.6px] text-sm pt-[15px]"
               >
                 View More &gt;&gt;
               </Link>
@@ -64,7 +64,7 @@ function QuickBilling() {
           <Link
             href="/quick-billing-software"
             onClick={ScrollTop}
-            className="text-(--primary) cursor-pointer font-bold md:text-[15.6px] text-sm flex md:justify-start justify-end pt-[15px]"
+            className="text-primary cursor-pointer font-bold md:text-[15.6px] text-sm flex md:justify-start justify-end pt-[15px]"
           >
             View More &gt;&gt;
           </Link>

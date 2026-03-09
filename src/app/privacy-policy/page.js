@@ -19,7 +19,7 @@ function PrivacyPolicy() {
             <h2 className='font-bold lg:text-[25px] text-[20px]'>ACCOUNT INFORMATION OF MERCHANTS </h2>
             <p className='mt-[15px] lg:mt-[10px] text-[14px] lg:text-[16px]'>When you create an account to access the full range of services offered on Shopaver, we collect and store Personal Information such as your name, email address, and mobile number. Additionally, we may gather and retain Sensitive Personal Data or Information, including financial details like bank account information and KYC documents as required by RBI regulations, and any other applicable information you choose to save in your Shopaver account.  </p>
             <p className='mt-[15px] lg:mt-[10px] text-[14px] lg:text-[16px]'> We use your email address to send you updates, news, and newsletters if you opt to subscribe during signup or afterward. We may also contact you on behalf of merchants. If you prefer not to receive non-essential communications from us, please use the unsubscribe link provided at the bottom of such emails.  </p>
-        <p className='mt-[15px] lg:mt-[10px] text-[14px] lg:text-[16px]'>Your mobile number is used to send transaction alerts and SMS notifications based on your preferences. If you wish to discontinue receiving such SMS messages, please contact us at <span> <a href="mailto:support@shopaver.com" className='text-[14px]  lg:text-[16px] text-(--primary)'>support@shopaver.com</a></span></p>
+        <p className='mt-[15px] lg:mt-[10px] text-[14px] lg:text-[16px]'>Your mobile number is used to send transaction alerts and SMS notifications based on your preferences. If you wish to discontinue receiving such SMS messages, please contact us at <span> <a href="mailto:support@shopaver.com" className='text-[14px]  lg:text-[16px] text-primary'>support@shopaver.com</a></span></p>
        <p className='mt-[15px] lg:mt-[10px] text-[14px] lg:text-[16px]'>Shopaver guarantees that your Personal Information will not be publicly disclosed or sold to any third party. </p>
         </div>
         <div className='mt-[20px] '>
@@ -81,7 +81,7 @@ function PrivacyPolicy() {
                     </div>
                     <div  className='mt-[20px] '>
                         <h2 className='font-bold lg:text-[25px] text-[20px]'>Questions/Grievance Redressal </h2>
-                        <p className='mt-[15px] lg:mt-[10px] text-[14px] lg:text-[16px]'>In the event you have any grievance relating to the processing of Information provided by you, you may <span> <a href="mailto:support@shopaver.com" className='text-[14px]  lg:text-[16px] text-(--primary)'>support@shopaver.com</a></span> contact our Grievance Officer at or write to us at the following address: </p>
+                        <p className='mt-[15px] lg:mt-[10px] text-[14px] lg:text-[16px]'>In the event you have any grievance relating to the processing of Information provided by you, you may <span> <a href="mailto:support@shopaver.com" className='text-[14px]  lg:text-[16px] text-primary'>support@shopaver.com</a></span> contact our Grievance Officer at or write to us at the following address: </p>
                     </div>
                     <div className='mt-[20px] '>
                         <h2 className='font-bold lg:text-[25px] text-[20px]'>Address: </h2>

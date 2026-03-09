@@ -6,13 +6,13 @@ import Image from "next/image";
 
 function UpgradeBusiness() {
   return (
-    <section className="bg-(--secondary)">
+    <section className="bg-secondary">
       <div className="max-w-screen-lg mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center pt-[48px] lg:pt-[67px]">
         <div className="p-5">
           <p className="text-[16px] lg:text-[24px] mb-6 text-[#525252] font-bold lg:font-medium leading-[27px] lg:hidden flex text-center px-[50px]">
             Start your journey with Shopaver POS Billing today
           </p>
-          <h3 className="text-(--primary) text-[24px] lg:text-[40px] font-bold leading-[33px] lg:leading-[52px] mb-2 text-center lg:text-left px-[40px] lg:px-[0px]">
+          <h3 className="text-primary text-[24px] lg:text-[40px] font-bold leading-[33px] lg:leading-[52px] mb-2 text-center lg:text-left px-[40px] lg:px-[0px]">
             Upgrade Your Business To The Next Level
           </h3>
           <p className="text-[16px] lg:text-[24px] mb-6 text-[#525252] font-bold lg:font-medium leading-[33px] hidden lg:flex">
@@ -25,10 +25,10 @@ function UpgradeBusiness() {
               maxLength={10}
               pattern="[0-9]*"
               placeholder="Enter Mobile Number"
-              className="px-4  rounded-[64.48px]  text-[18px] leading-[21px] w-[288px] lg:w-[370px] h-[45px] lg:h-14 placeholder:text-(--primary) font-medium"
+              className="px-4  rounded-[64.48px]  text-[18px] leading-[21px] w-[288px] lg:w-[370px] h-[45px] lg:h-14 placeholder:text-primary font-medium"
             />
             <Link href="https://app.shopaver.com/Sign-up" target="_blank">
-              <button className="bg-(--primary)  text-white cursor-pointer px-4 w-[288px] lg:w-auto  rounded-[64.48px] text-[18px] lg:absolute right-[40px] h-[45px] lg:h-[56px]">
+              <button className="bg-primary  text-white cursor-pointer px-4 w-[288px] lg:w-auto  rounded-[64.48px] text-[18px] lg:absolute right-[40px] h-[45px] lg:h-[56px]">
                 Get 14 day free trial
               </button>
             </Link>

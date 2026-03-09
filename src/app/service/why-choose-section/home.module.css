@@ -1,0 +1,55 @@
+.slider {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 40px;
+  position: relative;
+}
+
+.slideTrack {
+  /* display: flex;
+  gap:20px;
+  width: calc(250px * 12);
+  animation: scroll 20s linear infinite; */
+  display: flex;
+  gap: 20px;
+  width: max-content; /* 🔥 important */
+  animation: scroll 20s linear infinite;
+}
+
+.slide {
+  /* width: 250px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.gradient1 {
+  position: absolute;
+  height: 50px;
+  width: 100px;
+  opacity: 0.4;
+  left: 0px;
+  background: linear-gradient(270deg, #fff 14.02%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* Pos Billing */
+
+/* Hide scrollbar for Chrome, Safari and Edge */
+.hideScrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hideScrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

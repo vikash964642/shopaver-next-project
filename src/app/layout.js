@@ -1,8 +1,8 @@
 import { Lato } from "next/font/google";
 import "./globals.css";
-import Header from "@/Component/NewNavbar/Navbar";
-import FinalFooter from "@/Component/Footer/FinalFooter";
-import ScrollToTopButton from "@/Component/GoToTop";
+import Header from "../Component/NewNavbar/Navbar";
+import FinalFooter from "../Component/Footer/FinalFooter";
+import ScrollToTopButton from "../Component/GoToTop";
 import Script from "next/script";
 
 const latoFont = Lato({

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Button = (props) => {
 const {text , width} = props ;
   return (
-    <button className={`w-[142px] h-[44px] cursor-pointer bg-purple-950 text-white px-[16px] py-2 rounded-[4px] md:bg-white md:border-2 md:border-(--primary) md:text-(--primary) hidden lg:block ${width} hover:bg-(--primary) hover:text-white`}>
+    <button className={`w-[142px] h-[44px] cursor-pointer md:bg-white px-[16px] py-2 rounded-[4px]  md:border-2 md:border-[#5801B7] md:text-primary hidden lg:block ${width} hover:bg-primary hover:text-white`}>
      {text}
     </button>
   );

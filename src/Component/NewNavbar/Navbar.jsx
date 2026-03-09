@@ -4,7 +4,7 @@ import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Button from "@/Component/Utils/Buttons";
+import Button from "../../Component/Utils/Buttons";
 import NavLinks from "./NavLinks";
 
 const Navbar = () => {
@@ -46,12 +46,12 @@ const Navbar = () => {
 
   const isActive = (path) =>
     pathname === path
-      ? "pt-[30px] pb-[28px] px-3 inline-block text-(--primary)"
-      : "pt-[30px] pb-[28px] px-3 inline-block hover:text-(--primary)";
+      ? "pt-[30px] pb-[28px] px-3 inline-block text-primary"
+      : "pt-[30px] pb-[28px] px-3 inline-block hover:text-primary";
 
   return (
     <nav className="bg-white sticky top-0 z-50">
-      <div className="flex items-center font-medium justify-between lg:border-b border-(--headerBorder) pb-2 lg:pb-0">
+      <div className="flex items-center font-medium justify-between lg:border-b border-headerBorder pb-2 lg:pb-0">
         {/* Left: Logo */}
         <div className="flex justify-between z-50 pt-8 lg:w-auto w-full pl-9 lg:ml-[45px] lg:pt-0 bg-white">
           <Image
@@ -68,7 +68,7 @@ const Navbar = () => {
             {" "}
             {!open && <Button text="Menu" />}
             <div
-              className="text-3xl lg:hidden text-(--primary)"
+              className="text-3xl lg:hidden text-primary"
               onClick={() => setOpen(!open)}
             >
               <ion-icon name={open ? "close" : "menu"}></ion-icon>
@@ -81,8 +81,8 @@ const Navbar = () => {
           <ul className="lg:flex hidden lg:text-[13px] xl:text-[17.5px] items-center gap-5 font-[lato]">
             <li>
               <Link
-                href="/about-us"
-                className={isActive("/about-us")}
+                href="/about"
+                className={isActive("/about")}
                 onClick={handleClick}
               >
                 About Us
@@ -104,7 +104,7 @@ const Navbar = () => {
           </ul>
 
           {/* Desktop Buttons */}
-          <div className="items-center border-(--headerBorder)  border-l-2 pl-5 mr-7 gap-4 lg:flex hidden">
+          <div className="items-center border-headerBorder  border-l-2 pl-5 mr-7 gap-4 lg:flex hidden">
             <a
               href="https://app.shopaver.com/Sign-up"
               target="_blank"
@@ -113,7 +113,7 @@ const Navbar = () => {
             >
               <Button
                 text="Start For Free"
-                className="hover:bg-(--primary) hover:text-white cursor-pointer"
+                className=""
               />
             </a>
           </div>
@@ -144,7 +144,7 @@ const Navbar = () => {
             </Link>
           </li>
 
-          <li className="border-t border-(--headerBorder) py-[19px]">
+          <li className="border-t border-headerBorder py-[19px]">
             <Link
               href="/pricing-plan"
               className="pt-[25px] pb-[21px] px-3"
@@ -159,7 +159,7 @@ const Navbar = () => {
           {/* Bottom Buttons */}
           <div className="flex justify-center  mt-[15px] fixed bottom-0 w-[90%] bg-white z-99 h-[100px]">
             <div className="flex flex-wrap justify-center gap-[18px]">
-              <div className="bg-(--primary) border-2 rounded-[30px] text-white w-[169px] text-[20px] h-[50px] flex justify-center pt-2 cursor-pointer">
+              <div className="bg-primary border-2 rounded-[30px] text-white w-[169px] text-[20px] h-[50px] flex justify-center pt-2 cursor-pointer">
                 <Link href="https://app.shopaver.com/Sign-up">
                   Start For Free
                 </Link>
@@ -167,7 +167,7 @@ const Navbar = () => {
 
               <Link
                 href="https://app.shopaver.com/log-in"
-                className="border-(--primary) border-2 rounded-[30px] cursor-pointer text-(--primary) w-[168px] text-[20px] h-[50px] pt-2 text-center"
+                className="border-primary border-2 rounded-[30px] cursor-pointer text-primary w-[168px] text-[20px] h-[50px] pt-2 text-center"
               >
                 Login
               </Link>

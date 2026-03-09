@@ -16,7 +16,7 @@ const BlackBox = (props) => {
       </div>
       <div className=" mx-[30px] gap-[12px] md:gap-[42px] lg:mx-[0px] lg:gap-[0px] mt-[40px] lg:mt-[81px] pb-[101px] flex lg:justify-between  flex-wrap max-[400px]:justify-center">
       <div className="w-[145px] lg:w-[180px] h-[256px] bg-[#242424] m-[10px] md:m-0 flex flex-col justify-start items-start rounded-[8.21px] pt-[15px]">
-          <div className="h-[117px] w-[117px] rounded-full bg-(--secondary) flex justify-center items-center ml-[13px] lg:ml-[30px]">
+          <div className="h-[117px] w-[117px] rounded-full bg-secondary flex justify-center items-center ml-[13px] lg:ml-[30px]">
           <Image src={`/icons/${img[0]}`} height={116} width={116} alt={alt[0]} className=" " />
           </div>
           <p className="text-white text-[14px] lg:text-[18px] font-semibold leading-[24px] pt-[22px] ml-[20px] mr-[10px]">
@@ -24,7 +24,7 @@ const BlackBox = (props) => {
           </p>
         </div>
         <div className="w-[145px] lg:w-[180px] h-[256px] bg-[#242424] m-[10px] md:m-0 flex flex-col justify-start items-start rounded-[8.21px] pt-[15px]">
-          <div className="h-[117px] w-[117px] rounded-full bg-(--secondary) flex justify-center items-center ml-[13px] lg:ml-[30px]">
+          <div className="h-[117px] w-[117px] rounded-full bg-secondary flex justify-center items-center ml-[13px] lg:ml-[30px]">
           <Image src={`/icons/${img[1]}`} height={116} width={116} alt={alt[1]} className=" " />
           </div>
           <p className="text-white text-[14px]  lg:text-[18px] font-semibold leading-[24px] pt-[22px] ml-[20px] mr-[10px]">
@@ -32,7 +32,7 @@ const BlackBox = (props) => {
           </p>
         </div>
         <div className="w-[145px] lg:w-[180px] h-[256px] bg-[#242424] m-[10px] md:m-0 flex flex-col justify-start items-start rounded-[8.21px] pt-[15px]">
-          <div className="h-[117px] w-[117px] rounded-full bg-(--secondary) flex justify-center items-center ml-[13px] lg:ml-[30px]">
+          <div className="h-[117px] w-[117px] rounded-full bg-secondary flex justify-center items-center ml-[13px] lg:ml-[30px]">
           <Image src={`/icons/${img[2]}`} height={116} width={116} alt={alt[2]} className=" " />
           </div>
           <p className="text-white text-[14px]   lg:text-[18px] font-semibold leading-[24px] pt-[22px] ml-[20px] mr-[10px]">
@@ -40,7 +40,7 @@ const BlackBox = (props) => {
           </p>
         </div>
         <div className="w-[145px] lg:w-[180px] h-[256px] bg-[#242424] m-[10px] md:m-0 flex flex-col justify-start items-start rounded-[8.21px] pt-[15px]">
-          <div className="h-[117px] w-[117px] rounded-full bg-(--secondary) flex justify-center items-center ml-[13px] lg:ml-[30px]">
+          <div className="h-[117px] w-[117px] rounded-full bg-secondary flex justify-center items-center ml-[13px] lg:ml-[30px]">
           <Image src={`/icons/${img[3]}`} height={116} width={116} alt={alt[3]} className=" " />
           </div>
           <p className="text-white text-[14px]   lg:text-[18px] font-semibold leading-[24px] pt-[22px] ml-[20px] mr-[10px]">
@@ -48,7 +48,7 @@ const BlackBox = (props) => {
           </p>
         </div>
         <div className="w-[145px] lg:w-[180px] h-[256px] bg-[#242424] m-[10px] md:m-0 flex flex-col justify-start items-start rounded-[8.21px] pt-[15px]">
-          <div className="h-[117px] w-[117px] rounded-full bg-(--secondary) flex justify-center items-center ml-[13px] lg:ml-[30px]">
+          <div className="h-[117px] w-[117px] rounded-full bg-secondary flex justify-center items-center ml-[13px] lg:ml-[30px]">
           <Image src={`/icons/${img[4]}`} height={116} width={116} alt={alt[4]} className=" " />
           </div>
           <p className="text-white text-[14px]   lg:text-[18px] font-semibold leading-[24px] pt-[22px] ml-[20px] mr-[10px]">

@@ -2,7 +2,7 @@ import HeroSection from "./Section/HeroSection";
 import ControllBusiness from "./Section/ControllBusiness";
 import ImportantNotes from "./Section/ImportantNotes";
 import UpgradeBusiness from "./Section/UpgradeBusiness";
-import Form from '@/Component/Utils/Form';
+import Form from '../../Component/Utils/Form';
 import Faq from './Section/FAQ';
 
 export const metadata = {
