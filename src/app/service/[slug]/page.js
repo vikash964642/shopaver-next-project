@@ -234,6 +234,10 @@ import SuccessGuarantee from "../Success-Guanrantee/SuccessGuarantee";
 import BusinessSolutionSlider from "../business-solution/BusinessSolutionSlider";
 import RetailBusinessSlider from "../retail-business/RetailBusinessSlider";
 import FAQ from "../faq/FAQ";
+import Form from "../form/Form";
+import HomeCardSlider from "../card-slider/HomeCardSlider";
+import SubscriptionPlan from "../subscription-plan/SubscriptionPlan";
+import FreeTrialBanner from "../free-trial-banner/FreeTrialBanner";
 
 // ✅ API Function
 async function getLandingPage(slug) {
@@ -304,7 +308,7 @@ export default async function ServicePage({ params }) {
 
       {/* 🔵 Merchant Section */}
       <RetailBusinessCard onePlatform={data.merchantSection} />
-
+<HomeCardSlider />
       <SecuirityReliability />
 
       {/* 🔵 All In One Slider */}
@@ -315,9 +319,11 @@ export default async function ServicePage({ params }) {
       <CommonProblem />
 
       <RetailBusinessSlider />
-
+<SubscriptionPlan />
       <SuccessGuarantee />
       <FAQ faqData={faqData}/>
+      <FreeTrialBanner />
+      <Form slug={slug}/>
 
     </div>
   );

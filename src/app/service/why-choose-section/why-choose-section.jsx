@@ -34,7 +34,7 @@ function WhyChooseSection({ data = [] }) {
   };
     const filteredData = [...data]
   return (
-    <section className="pt-15 lg:pt-[78px] px-[20px] xl:px-0 max-w-5xl mx-auto">
+    <section className="pt-[60px] lg:pt-[78px] px-[20px] xl:px-0 max-w-5xl mx-auto">
       <h2 className="text-[#5801B7] text-center lg:text-[30px] text-[22px] font-semibold">
         Why Choose Shopaver Retail POS Software?
       </h2>
@@ -59,20 +59,6 @@ function WhyChooseSection({ data = [] }) {
           </div>
         ))}
       </div>
-      {/* <div className="block lg:hidden mt-[38px]">
-      <div className="flex overflow-x-auto gap-[22px] pb-2 cursor-grab hide-scrollbar mt-[68px]"  style={{ scrollSnapType: "x mandatory" }}>
-         {cards.map((item) => (
-          <div
-            key={item.id}
-            className="bg-[#FFF] shrink-0 w-[200px] px-2.5 pt-2.5 pb-[15px] shadow-[0_0_4px_0_rgba(0,0,0,0.20)]"
-          >
-            <Image src={item.image} alt={item.title} width={264} height={264}></Image>
-            <p className="pt-3 max-w-[210px] text-[#0A0A0A] text-[18px] font-medium font-[Poppins] leading-[normal]">{item.title}</p>
-            <p className="pt-[5px] text-[#525252] text-[12px] font-normal font-[Poppins]">{item.description}</p>
-          </div>
-        ))}
-      </div>
-  </div> */}
       <div className="block lg:hidden mt-[38px]">
         <div
           className={`flex md:justify-center overflow-x-auto gap-[11px] pt-1 pl-0.5 pr-0.5 pb-2 cursor-grab ${styles.hideScrollbar}`}

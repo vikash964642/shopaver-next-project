@@ -4,6 +4,7 @@ import Header from "../Component/NewNavbar/Navbar";
 import FinalFooter from "../Component/Footer/FinalFooter";
 import ScrollToTopButton from "../Component/GoToTop";
 import Script from "next/script";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const latoFont = Lato({
   subsets: ["latin"],

@@ -28,11 +28,11 @@ function FAQ({faqData}) {
 Asked Questions</h2>
 <p className="pt-[22px] text-[#FFF] text-[14px] lg:text-[20px] leading-normal text-center lg:text-left">Have any questions? We are here to assist you.</p>
 </div>
-<div>
+<div className="mt-[36px] lg:mt-0">
     {faqData.map((data,index)=>(
 <div key={index}
  onClick={() => toggleFAQ(index)}
-          className="rounded-[15px] border border-white/50 
+          className="rounded-[7.27px] lg:rounded-[15px] border border-white/50 
 bg-gradient-to-r from-[#FFF]/30 to-[#5801B7]/60 
 shadow-[0_0_4px_rgba(0,0,0,0.25)] 
 backdrop-blur-[15px] w-full lg:max-w-[675px] py-[7.5px] px-[9.5px]  lg:lg:py-[15px] lg:px-[19px] mt-[10px] lg:mt-[20px] flex justify-center flex-col cursor-pointer"

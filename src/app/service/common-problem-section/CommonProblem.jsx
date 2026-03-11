@@ -8,7 +8,7 @@ function CommonProblem() {
         <h2 className="text-[#5801B7] text-center text-[26px] lg:text-[30px] font-semibold">
           Common Problems you Can&apos;t Ignore
         </h2>
-        <div className="hidden md:block mt-12.5">
+        <div className="hidden md:block mt-[50px]">
             <div className="flex justify-center items-center gap-5"> 
                <div className="flex items-center gap-5 lg:gap-6">
                 <p className="text-[#5801B7] md:text-[16px] lg:text-[18px] font-medium text-right leading-normal md:w-40 lg:w-[190px]">Long queues during peak hours</p> 
