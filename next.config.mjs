@@ -10,6 +10,9 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    domains: ["media-shopaver-uat.s3.amazonaws.com"],
+  },
   reactCompiler: true,
 
   async rewrites() {

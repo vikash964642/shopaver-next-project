@@ -39,6 +39,8 @@
 import Link from "next/link";
 import Image from "next/image";
 function HeroSection({ data }) {
+ const BASE_IMAGE_URL = "https://media-shopaver-uat.s3.amazonaws.com";
+
   return (
     <section className="max-w-5xl mx-auto">
       <div className="herosection mt-[50px] max-[350px]:px-[15px] px-[30px] xl:px-0 flex justify-between flex-col lg:flex-row ">
@@ -70,13 +72,24 @@ function HeroSection({ data }) {
         </div>
 
         <div className="flex justify-center mt-[50px] lg:mt-0">
-          <Image
+          {/* <Image
              src={data.image || "/landingPage/SuccessGuaranteeImg2.webp"}
             className="h-[287px] w-[248.3px] sm:h-[452px] sm:w-[391px]"
             height={452}
             width={391}
             alt="Hero Section Image"
-          ></Image>
+          ></Image> */}
+        <Image
+  src={
+    data.image
+      ? `${BASE_IMAGE_URL}${data.image}`
+      : "/landingPage/SuccessGuaranteeImg2.webp"
+  }
+  className="h-[287px] w-[248.3px] sm:h-[452px] sm:w-[391px]"
+  height={452}
+  width={391}
+  alt="Hero Section Image"
+/>
         </div>
       </div>
     </section>

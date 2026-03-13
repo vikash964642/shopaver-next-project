@@ -76,6 +76,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 function RetailBusinessCard({ onePlatform = [] }) {
+   
   const [showAll, setShowAll] = useState(false);
 
   const filteredData = onePlatform.filter(
@@ -121,7 +122,8 @@ function RetailBusinessCard({ onePlatform = [] }) {
 
 /* Card Component */
 function Card({ item }) {
-  const baseImageUrl = process.env.NEXT_PUBLIC_BASE_IMAGE_URL;
+  const BASE_IMAGE_URL = "https://media-shopaver-uat.s3.amazonaws.com";
+  
   return (
     <div className=" flex items-center  h-full gap-[14.5px] lg:gap-[35px] bg-white rounded-[25.47px] border border-[#EBD9FF] p-4">
       <div className="flex flex-col w-[50%]">
@@ -141,7 +143,12 @@ function Card({ item }) {
   <div className="w-[50%]">
       
         <Image
-          src={ "/landingPage/RetailBusinessCardImg5.webp"}
+          // src={ "/landingPage/RetailBusinessCardImg5.webp"}
+          src={
+                          item.image
+                            ? `${BASE_IMAGE_URL}${item.image}`
+                            : "/landingPage/BusinessSolutionSliderImg6.webp"
+                        }
           alt={item.heading}
           width={218}
           height={227}
