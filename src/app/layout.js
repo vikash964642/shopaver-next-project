@@ -5,7 +5,8 @@ import FinalFooter from "../Component/Footer/FinalFooter";
 import ScrollToTopButton from "../Component/GoToTop";
 import Script from "next/script";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-
+import SlugHeader from "../app/service/Header/Header"
+import DynamicHeader from "../Component/DynamicHeader";
 const latoFont = Lato({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -18,6 +19,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+    
   return (
     <html lang="en">
       <head />
@@ -35,7 +37,8 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
         />
 
-        <Header />
+        {/* <Header /> */}
+          <DynamicHeader />
         {children}
         <FinalFooter />
         <ScrollToTopButton />

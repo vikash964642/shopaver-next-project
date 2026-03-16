@@ -439,7 +439,7 @@ export default function CustomSlider(){
       </div>
 
       {/* Arrows */}
-   //       <div className="flex justify-center gap-[12.75px] mt-[10px] lg:mt-[40px]">
+          <div className="flex justify-center gap-[12.75px] mt-[10px] lg:mt-[40px]">
 
         <div
            onClick={prev}

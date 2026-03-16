@@ -429,7 +429,13 @@ pointer-events:none;
 
 .sliderItem{
   position:absolute;
-  transition:all .8s cubic-bezier(.32,.72,.38,.99);
+  /* transition:all .8s cubic-bezier(.32,.72,.38,.99); */
+   transition:
+    left .8s cubic-bezier(.32,.72,.38,.99),
+    transform .8s cubic-bezier(.32,.72,.38,.99),
+    opacity .5s ease;
+
+  will-change: left, transform, opacity;
   border-radius:20px;
   overflow:hidden;
 }
@@ -629,6 +635,9 @@ opacity:-1;
 }
 
 @media(max-width:600px){
+ .sliderTrack{
+   height:360px;
+  }
   .centerItem{
   width:212px;
   height:281px;
