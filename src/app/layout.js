@@ -7,6 +7,7 @@ import Script from "next/script";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import SlugHeader from "../app/service/Header/Header"
 import DynamicHeader from "../Component/DynamicHeader";
+import DynamicFooter from "../Component/DynamicFooter"
 const latoFont = Lato({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -40,7 +41,7 @@ export default function RootLayout({ children }) {
         {/* <Header /> */}
           <DynamicHeader />
         {children}
-        <FinalFooter />
+     <DynamicFooter />
         <ScrollToTopButton />
       </body>
     </html>

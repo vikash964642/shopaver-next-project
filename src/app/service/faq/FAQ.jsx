@@ -12,7 +12,7 @@ import { useState } from "react";
 //       "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged",
 //   },
 // ];
-function FAQ({faqData}) {
+function FAQ({faqData=[]}) {
   console.log("faq data",faqData);
     const [openIndex, setOpenIndex] = useState(null);
 
@@ -29,7 +29,7 @@ Asked Questions</h2>
 <p className="pt-[22px] text-[#FFF] text-[14px] lg:text-[20px] leading-normal text-center lg:text-left">Have any questions? We are here to assist you.</p>
 </div>
 <div className="mt-[36px] lg:mt-0">
-    {faqData.map((data,index)=>(
+    {faqData && faqData.map((data,index)=>(
 <div key={index}
  onClick={() => toggleFAQ(index)}
           className="rounded-[7.27px] lg:rounded-[15px] border border-white/50 
