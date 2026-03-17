@@ -1,17 +1,18 @@
-import { Lato } from "next/font/google";
+
 import "./globals.css";
-import Header from "../Component/NewNavbar/Navbar";
-import FinalFooter from "../Component/Footer/FinalFooter";
 import ScrollToTopButton from "../Component/GoToTop";
 import Script from "next/script";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import SlugHeader from "../app/service/Header/Header"
 import DynamicHeader from "../Component/DynamicHeader";
 import DynamicFooter from "../Component/DynamicFooter"
+import { Lato, Poppins } from "next/font/google";
+// Define fonts
 const latoFont = Lato({
   subsets: ["latin"],
   weight: ["400", "700"],
 });
+
+
 
 export const metadata = {
   icons: {
@@ -19,8 +20,8 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
-    
+export default function RootLayout({ children,params }) {
+
   return (
     <html lang="en">
       <head />

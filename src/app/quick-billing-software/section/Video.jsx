@@ -1,5 +1,5 @@
 
-import VideoBox from '@/component/Utils/VideoBox'
+import VideoBox from '../../../Component/Utils/VideoBox'
 
 function Video() {
   return (

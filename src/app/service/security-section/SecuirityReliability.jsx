@@ -57,7 +57,7 @@ function SecuirityReliability() {
                   width={50}
                   height={44}
                 ></Image>
-                <p className="pt-1.5 w-[100px] sm:w-[120px] lg:w-[130px] text-[#2E2E2E] text-[11.5px] sm:text-[14px] lg:text-[16px] font-medium leading-normal font-[Poppins]">
+                <p className="pt-1.5 w-[100px] sm:w-[120px] lg:w-[130px] text-[#2E2E2E] text-[11.5px] sm:text-[14px] lg:text-[16px] font-medium leading-normal ">
                   {card.title}
                 </p>
               </div>

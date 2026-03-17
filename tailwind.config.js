@@ -24,6 +24,10 @@ module.exports = {
   bgform:"#FCFAFF",
   headerBorder: "#e5e7eb",
     },
+     fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+        lato: ['Lato', 'sans-serif'],
+      },
   },
 },
   plugins: [],

@@ -14,9 +14,8 @@ function Form({slug}) {
   const [touched, setTouched] = useState({
   name: false,
   contact: false,
-  company: false,
   businessEmail: false,
-  message: false,
+
 });
 
  const validateField = (name, value) => {
@@ -34,9 +33,7 @@ function Form({slug}) {
       }
     }
 
-    if (name === "company" && !value.trim()) {
-      error = "Company name is required";
-    }
+ 
 
     if (name === "businessEmail") {
       if (!value) {
@@ -46,9 +43,7 @@ function Form({slug}) {
       }
     }
 
-    if (name === "message" && !value.trim()) {
-      error = "Message is required";
-    }
+  
 
     return error;
   };
@@ -131,9 +126,8 @@ function Form({slug}) {
       setTouched({
         name: false,
         contact: false,
-        company: false,
         businessEmail: false,
-        message: false,
+     
       });
 
       setErrors({});
@@ -193,9 +187,7 @@ function Form({slug}) {
               onChange={handleChange}
               onBlur={handleBlur}
             />
-            {touched.company && errors.company && (
-                <p className="text-[red] text-[12px] font-semibold mt-1">{errors.company}</p>
-              )}
+           
             </div>
 
             <div className="w-full">
@@ -222,9 +214,6 @@ function Form({slug}) {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-         {touched.message && errors.message && (
-              <p className="text-[red] text-[12px] font-semibold mt-1">{errors.message}</p>
-            )}
 
           <div className="flex justify-center mt-[35px]">
             <button className="w-[154px] h-[40px] lg:w-[225px] lg:h-[61px] rounded-[30px] bg-[#5801B7] text-[#FFF] text-[18px] font-medium lg:text-[23.5px] lg:font-semibold">

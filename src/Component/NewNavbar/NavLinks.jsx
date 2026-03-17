@@ -16,9 +16,11 @@ const NavLinks = ({ handleClick }) => {
   const [activeLink, setActiveLink] = useState(null);
   const [hoveredSublinkIndex, setHoveredSublinkIndex] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   // Handle SSR → window is undefined initially
   useEffect(() => {
+    setIsMounted(true);
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
@@ -27,7 +29,7 @@ const NavLinks = ({ handleClick }) => {
     window.addEventListener("resize", checkMobile);
     return () => window.removeEventListener("resize", checkMobile);
   }, []);
-
+if (!isMounted) return null;
   const handleLinkMouseEnter = (linkName) => {
     if (!isMobile) setActiveLink(linkName);
   };
@@ -55,6 +57,7 @@ const NavLinks = ({ handleClick }) => {
     if (link.external === true) {
       e.preventDefault();
       window.open(link.link, "_blank");
+     
     }
   };
 

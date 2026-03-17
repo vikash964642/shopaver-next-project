@@ -5,8 +5,8 @@ const VideoBox = (props) =>{
 
 
   return (
-    <div className=" md:pt-28 pt-20">
-        <video autoPlay loop muted className="outline-none">
+    <div className=" md:pt-28 pt-20 ">
+        <video autoPlay loop muted className="outline-none w-full">
             <source src={`/video/${video}`} type="video/mp4" />
           </video>
         </div>

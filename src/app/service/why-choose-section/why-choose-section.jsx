@@ -50,10 +50,10 @@ function WhyChooseSection({ data = [] }) {
               width={264}
               height={264}
             ></Image>
-            <p className="pt-3 max-w-[210px] text-[#0A0A0A] text-[18px] font-medium font-[Poppins] leading-[normal]">
+            <p className="pt-3 max-w-[210px] text-[#0A0A0A] text-[18px] font-medium  leading-[normal]">
               {item.heading}
             </p>
-            <p className="pt-[5px] text-[#525252] text-[12px] font-normal font-[Poppins]">
+            <p className="pt-[5px] text-[#525252] text-[12px] font-normal ">
               {item.description}
             </p>
           </div>
@@ -75,10 +75,10 @@ function WhyChooseSection({ data = [] }) {
                 width={264}
                 height={264}
               />
-              <p className="pt-[11.5] max-w-[150px] text-[#0A0A0A] text-[15px] sm:text-[16.5px] font-medium font-[Poppins]">
+              <p className="pt-[11.5] max-w-[150px] text-[#0A0A0A] text-[15px] sm:text-[16.5px] font-medium ">
                 {item.heading}
               </p>
-              <p className="pt-1 text-[#525252] text-[11px] sm:text-[12px] font-normal font-[Poppins]">
+              <p className="pt-1 text-[#525252] text-[11px] sm:text-[12px] font-normal ">
                 {item.description}
               </p>
             </div>

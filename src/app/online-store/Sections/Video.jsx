@@ -1,6 +1,6 @@
 // import React from 'react'
 // import Posvideo from "../../../../assets/video/Shopaver video homepage 2.mp4";
-import VideoBox from "@/component/Utils/VideoBox";
+import VideoBox from "../../../Component/Utils/VideoBox";
 
 
 

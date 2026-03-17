@@ -3,6 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+
 const Services = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHoveredLeft, setIsHoveredLeft] = useState(false);
@@ -60,7 +61,7 @@ const Services = () => {
     },
   ];
 
-  const slidesPerPage = window.innerWidth >= 768 ? 2 : 1; // 768px is the breakpoint for laptop/tablet view
+  const slidesPerPage = window.innerWidth >= 768 ? 2 : 1; 
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => {

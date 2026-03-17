@@ -8,18 +8,34 @@ const Services = () => {
   const [slidesPerPage, setSlidesPerPage] = useState(1);
   const [isHoveredLeft, setIsHoveredLeft] = useState(false);
   const [isHoveredRight, setIsHoveredRight] = useState(false);
+ const [isMounted, setIsMounted] = useState(false); // ✅ SSR fix
 
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setSlidesPerPage(window.innerWidth >= 768 ? 2 : 1);
+  //   };
 
-  useEffect(() => {
-    const handleResize = () => {
-      setSlidesPerPage(window.innerWidth >= 768 ? 2 : 1);
+  //   handleResize();
+  //   window.addEventListener("resize", handleResize);
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
+ useEffect(() => {
+    setIsMounted(true);
+
+    const updateSlidesPerPage = () => {
+      if (typeof window !== "undefined") {
+        setSlidesPerPage(window.innerWidth >= 768 ? 2 : 1);
+      }
     };
 
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    updateSlidesPerPage();
+    window.addEventListener("resize", updateSlidesPerPage);
+
+    return () => window.removeEventListener("resize", updateSlidesPerPage);
   }, []);
 
+  // ❗ Prevent SSR crash
+  if (!isMounted) return null;
   const slides = [
     
     {

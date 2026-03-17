@@ -78,7 +78,7 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="flex justify-between items-center mr-8">
-          <ul className="lg:flex hidden lg:text-[13px] xl:text-[17.5px] items-center gap-5 font-[lato]">
+          <ul className="lg:flex hidden lg:text-[13px] xl:text-[17.5px] items-center gap-5">
             <li>
               <Link
                 href="/about"

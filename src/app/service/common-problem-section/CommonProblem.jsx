@@ -36,13 +36,13 @@ function CommonProblem() {
          <div className="max-[375px]:w-full w-40 flex flex-col">
             <Image alt="Image" src={"/landingPage/CommonRetailImg1.webp"}  width={160} height={160}></Image>
             <div className="flex-1 w-full mt-[-3px] px-2.5 pt-3 pb-[23px] bg-[#FFF] border-l-[0.713px] border-r-[0.713px] border-b-[0.713px] border-[#E3CAFF] rounded-b-[10.908px]">
-           <p className="text-[#5801B7] text-[15px] font-medium font-[Poppins]">Long queues during peak hours</p>
+           <p className="text-[#5801B7] text-[15px] font-medium ">Long queues during peak hours</p>
             </div>
          </div>
            <div className="max-[375px]:w-full w-40 flex flex-col">
             <Image alt="Image" src={"/landingPage/CommonRetailImg2.webp"} className="w-[160] h-[160]" width={160} height={160}></Image>
             <div className="flex-1 w-full mt-[-3px] px-2.5 pt-3 pb-[23px] bg-[#FFF] border-l-[0.713px] border-r-[0.713px] border-b-[0.713px] border-[#E3CAFF] rounded-b-[10.908px]">
-           <p className="text-[#5801B7] text-[15px] font-medium font-[Poppins]">Manual stock errors and lost sales</p>
+           <p className="text-[#5801B7] text-[15px] font-medium ">Manual stock errors and lost sales</p>
             </div>
          </div>
         </div>
@@ -50,13 +50,13 @@ function CommonProblem() {
          <div className="max-[375px]:w-full w-40 flex flex-col ">
             <Image alt="Image" src={"/landingPage/CommonRetailImg3.webp"}  width={160} height={160}></Image>
             <div className="flex-1 w-full mt-[-3px] px-2.5 pt-3 pb-[23px] bg-[#FFF] border-l-[0.713px] border-r-[0.713px] border-b-[0.713px] border-[#E3CAFF] rounded-b-[10.908px]">
-           <p className="text-[#5801B7] text-[15px] font-medium font-[Poppins]">No real-time visibility into business performance</p>
+           <p className="text-[#5801B7] text-[15px] font-medium ">No real-time visibility into business performance</p>
             </div>
          </div>
            <div className="max-[375px]:w-full w-40  flex flex-col">
             <Image alt="Image" src={"/landingPage/CommonRetailImg4.webp"}  width={160} height={160}></Image>
             <div className="flex-1 w-full mt-[-3px] px-2.5 pt-3 pb-[23px] bg-[#FFF] border-l-[0.713px] border-r-[0.713px] border-b-[0.713px] border-[#E3CAFF] rounded-b-[10.908px]">
-           <p className="text-[#5801B7] text-[15px] font-medium font-[Poppins]">Multiple tools for inventory, billing and more</p>
+           <p className="text-[#5801B7] text-[15px] font-medium ">Multiple tools for inventory, billing and more</p>
             </div>
          </div>
         </div>

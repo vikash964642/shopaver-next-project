@@ -553,7 +553,26 @@ pointer-events:none;
   pointer-events:none;
 }
 
+.HomeCardSliderGradient{
+background: linear-gradient(180deg, rgba(0,0,0,0) 0%, #000 100%);
 
+  opacity: 1;
+
+  filter: blur(40px);
+  position: absolute;
+  inset:85% 0% 0% 0%;
+  z-index: 1;
+}
+.SubscriptionPlanGradient{
+
+background: linear-gradient(180deg, rgba(246, 237, 255, 0.00) 15.74%, #F6EDFF 81.77%);
+  opacity: 1;
+
+  filter: blur(40px);
+  position: absolute;
+  inset:20% 0% 0% 0%;
+  z-index: 1;
+}
 @media(max-width:1200px){
   .sliderWrapper{
     max-width:900px;

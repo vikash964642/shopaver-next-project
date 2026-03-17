@@ -1,4 +1,4 @@
-import BlackBox from "@/component/Utils/BlackBox";
+import BlackBox from "../../../Component/Utils/BlackBox";
 function BlackBoxsection() {
   return (
     <section className="bg-BlackBox">

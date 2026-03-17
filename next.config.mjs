@@ -13,7 +13,7 @@ const nextConfig = {
   images: {
     domains: ["media-shopaver-uat.s3.amazonaws.com"],
   },
-  reactCompiler: true,
+  // reactCompiler: true,
 
   async rewrites() {
     return [

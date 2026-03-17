@@ -1,6 +1,6 @@
 "use client";
 
-import FeatureNewBox from "@/Component/Utils/FeatureNewBox";
+import FeatureNewBox from "../../../Component/Utils/FeatureNewBox";
 import Link from "next/link";
 
 function InventoryFeatures() {

@@ -13,10 +13,7 @@ function SubscriptionPlan() {
        View Plans 
     </div>
    </div>
-    <div className="absolute inset-0 z-10
-bg-[linear-gradient(180deg,rgba(246,237,255,0)_0%,rgba(246,237,255,0.05)_50%,rgba(246,237,255,0.4)_100%)]
-backdrop-blur-[1px]">
-</div>
+    <div className="SubscriptionPlanGradient"></div>
 <div className='flex justify-center'>
     <h3 className='sm:w-[560px] text-[20px] sm:text-[24px] lg:text-[30px] text-[#5801B7] font-semibold text-center'>Smart pricing for smarter billing-powered by AI, built to scale with your business</h3>
 </div>

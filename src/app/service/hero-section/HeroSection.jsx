@@ -40,7 +40,6 @@ import Link from "next/link";
 import Image from "next/image";
 function HeroSection({ data }) {
  const BASE_IMAGE_URL = "https://media-shopaver-uat.s3.amazonaws.com";
-
   return (
     <section className="max-w-5xl mx-auto">
       <div className="herosection mt-[50px] max-[350px]:px-[15px] px-[30px] xl:px-0 flex justify-between flex-col lg:flex-row ">
@@ -48,11 +47,11 @@ function HeroSection({ data }) {
           <h2 className="leading-[normal] text-[#393939] text-[26px] sm:text-[30px] lg:text-[33.782px] font-semibold text-center lg:text-left">
             {data.heading}{" "}
             <span className="text-[#5801B7] hidden lg:inline">
-              Retail Store
+             {data.keyword}
             </span>
           </h2>
           <h2 className="text-[#5801B7] text-[26px] sm:text-[30px] font-semibold text-center block lg:hidden">
-            Retail Store
+              {data.keyword}
           </h2>
           <p className="text-[#5F5F5F] sm:px-[60px] lg:px-0 text-[12px] sm:text-[14px] lg:text-[15px] font-normal pt-[22px] lg:pt-[24.16px] font-[Poppins] text-center lg:text-left">
            {data.description}
