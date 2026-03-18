@@ -35,7 +35,7 @@ function FormSection() {
       if (response.ok) {
         const data = await response.json();
         console.log("Success:", data);
-        window.location.href = "/thankyou";
+        window.location.href = "/thank-you";
         // alert('Form submitted successfully!');
         // Reset form fields to initial state
         setFormData({

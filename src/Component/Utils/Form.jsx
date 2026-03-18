@@ -43,7 +43,7 @@ const FormHome = (props) => {
         const data = await response.json();
         console.log('Success:', data);
         sessionStorage.setItem('formSubmitted', 'true');
-        window.location.href = '/thankyou';
+        window.location.href = '/thank-you';
 
         setFormData({
           from: '',
