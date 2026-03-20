@@ -106,10 +106,10 @@ const Carousel = () => {
           )}
         </div>
         <div className="flex justify-center pt-[69px]">
-          <div className="pr-2 cursor-pointer hover:bg-(--primary)">
+          <div className="pr-2 cursor-pointer hover:bg-primary">
             <img src={arrowleft} alt="Previous" onClick={handlePrev} />
           </div>
-          <div className="cursor-pointer hover:bg-(--primary)">
+          <div className="cursor-pointer hover:bg-primary">
             <img src={arrowright} alt="Next" onClick={handleNext} />
           </div>
         </div>

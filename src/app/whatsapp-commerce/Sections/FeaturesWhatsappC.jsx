@@ -1,4 +1,4 @@
-import FeatureNewBox from "@/component/Utils/FeatureNewBox";
+import FeatureNewBox from "../../../Component/Utils/FeatureNewBox";
 
 function FeaturesWhatsappC() {
   return (

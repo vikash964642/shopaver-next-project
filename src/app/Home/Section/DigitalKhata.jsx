@@ -13,7 +13,7 @@ const DigitalKhata = () => {
   };
   return (
     <section className="max-w-screen-lg mx-auto pt-[128px] md:pt-[120px] px-6 lg:px-4">
-      <div className=" container mx-auto flex   justify-around bg-(--secondary) rounded-3xl flex-col lg:flex-row">
+      <div className=" container mx-auto flex   justify-around bg-secondary rounded-3xl flex-col lg:flex-row">
         <div className="lg:flex-1">
           <Link href="/bahi-khata-software" onClick={ScrollTop}>
             <Image
@@ -29,7 +29,7 @@ const DigitalKhata = () => {
           <p className="text-base font-medium md:text-[15px] text-[14px">
             Track & manage your udhar with digital khata
           </p>
-          <h3 className="md:text-(--primary) md:text-[32px] text-[22px] md:leading-[30.18px] leading-[27.74px] font-bold md:mt-[8px] mt-[10.57px] ">
+          <h3 className="md:text-primary md:text-[32px] text-[22px] md:leading-[30.18px] leading-[27.74px] font-bold md:mt-[8px] mt-[10.57px] ">
             Bahi Khata Software
           </h3>
           <p className="font-medium md:text-[16px] md:leading-[21.28px] text-sm mt-[10px] md:mt-[10px] mr-[40px] lg:mr-[0px] md:w-[408px] max-[400px]:mr-[5px]">
@@ -47,11 +47,11 @@ const DigitalKhata = () => {
             debit records securely, anytime, anywhere.
           </p>
 
-          <div className=" text-(--primary) font-bold md:text-[15.6px] text-sm flex lg:justify-start justify-end  lg:mt-[10px]">
+          <div className=" text-primary font-bold md:text-[15.6px] text-sm flex lg:justify-start justify-end  lg:mt-[10px]">
             <Link
               href="/bahi-khata-software"
               onClick={ScrollTop}
-              className="text-(--primary) lg:pr-5 md:text-[15.6px] font-bold text-[14px] max-md:pb-7 pt-[20px] lg:pt-0  mr-[45px] lg:mr-[0px]"
+              className="text-primary lg:pr-5 md:text-[15.6px] font-bold text-[14px] max-md:pb-7 pt-[20px] lg:pt-0  mr-[45px] lg:mr-[0px]"
             >
               View More &gt;&gt;
             </Link>

@@ -3,7 +3,7 @@ import BlackBox from "./Section/BlackBox"
 import Features from "./Section/Features"
 import Herosection from "./Section/Herosection"
 import Videosection from "./Section/Videosection"
-import Form from "@/Component/Utils/Form"
+import Form from "../../Component/Utils/Form";
 import FAQ from "./Section/FAQ"
 import Services from "./Section/Services";
 import PosbillingTitle from "./Section/PosbillingTitle"

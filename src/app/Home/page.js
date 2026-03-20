@@ -1,6 +1,5 @@
 
 import HeroSection from "./Section/HeroSection";
-import HomeVideo from "./Section/Video";
 import HomeTitle from "./Section/HomeTitle";
 import PosBilling from "./Section/PosBilling";
 import QuickBilling from "./Section/QuickBilling";
@@ -15,14 +14,10 @@ import Download from "./Section/Download";
 import TestimonialSlider from "./Section/TestimonialSlider";
 
 
-
-
-
 function HomePage() {
   return (
         <div className="m-auto">
           <HeroSection />
-          <HomeVideo />
            <HomeTitle/>
            <PosBilling/>
            <QuickBilling/>

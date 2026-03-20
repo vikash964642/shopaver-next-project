@@ -2,8 +2,8 @@
 "use client";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import PricingCard from "@/Component/Utils/PricingCard";
-import MultiplePricingCard from "@/Component/Utils/MultiplePricingCard";
+import PricingCard from "../../../Component/Utils/PricingCard";
+import MultiplePricingCard from "../../../Component/Utils/MultiplePricingCard";
 
 const HeroSection = () => {
   const [isYearly, setIsYearly] = useState(true);
@@ -22,7 +22,7 @@ const HeroSection = () => {
 
   useEffect(() => {
     axios
-      .post("https://billingapi.shopaver.com/api/ReferralCode/GetShopaverSubcriptionPlan")
+      .post("https://billingapi.shopaver.com/api/ReferralCode/get_shopaver_active_subscription")
       .then((response) => {
         console.log(response.data);
         

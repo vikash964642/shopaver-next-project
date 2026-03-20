@@ -1,7 +1,7 @@
 import Image from "next/image"
 function Support() {
   return (
-    <section className=" bg-(--secondary) my-[110px] h-full w-[354px] md:w-auto rounded-[40px] lg:rounded-none mx-auto lg:mx-0">
+    <section className=" bg-secondary my-[110px] h-full w-[354px] md:w-auto rounded-[40px] lg:rounded-none mx-auto lg:mx-0">
        <div className='max-w-screen-lg mx-auto'>
          <div className='flex justify-around flex-col lg:flex-row lg:pt-[58px] pt-[36px] '>
            <div className='lg:h-64 h-56  lg:w-[222px]  flex flex-col justify-center items-center'>

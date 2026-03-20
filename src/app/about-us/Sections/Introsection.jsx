@@ -3,7 +3,7 @@ import "./Style.css";
 
 const Introsection = () => {
   return (
-    <section className=" bg-(--secondary) h-[259px] md:h-[183px] my-[100px]">
+    <section className=" bg-secondary h-[259px] md:h-[183px] my-[100px]">
      <div className="max-w-screen-lg mx-auto h-full">
        <div className=" mx-auto text-center  bg-white md:p-6 max-[360px]:pt-0 h-full w-10/12 py-5 px-[23px] ">
          <p className="max-[375px]:text-[12px] text-[15px] sm:text-[17px] font-normal leading-[20px] md:leading-[23px]">

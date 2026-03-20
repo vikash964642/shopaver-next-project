@@ -4,7 +4,7 @@ import HeroSection from "./Sections/HeroSection"
 import Introsection from "./Sections/Introsection"
 import MissionVision from "./Sections/MissionVision"
 import Features from "./Sections/Features"
-import Form from '@/component/Utils/Form';
+import Form from '../../Component/Utils/Form';
 
 export const metadata = {
   title: " India's Most Trusted Business Super App",

@@ -1,5 +1,5 @@
 
-import HerosectionBox from '@/component/Utils/HerosectionBox';
+import HerosectionBox from '../../../Component/Utils/HerosectionBox';
 // import { Link } from 'react-router-dom';
 import Link from 'next/link';
 

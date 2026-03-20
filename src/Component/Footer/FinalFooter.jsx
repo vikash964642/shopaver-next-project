@@ -16,7 +16,7 @@ function FinalFooter() {
 
   return (
     <>
-      <div className="bg-(--secondary) lg:mt-[120px]">
+      <div className="bg-secondary lg:mt-[120px]">
         <div className="flex lg:justify-between  px-8 flex-col lg:flex-row lg:pt-[50px] pt-[30px] max-[600px]:pr-[32px] max-[1124px]:pr-[15px] min-[1125px]:mr-[16px] min-[1125px]:ml-[35px] ">
           <div className="">
             <Image
@@ -33,10 +33,10 @@ function FinalFooter() {
               management—empowering retail & e-commerce operations.
             </p>
             <div className="hidden lg:block mt-[40px]">
-              <p className="text-[22px] md:font-semibold text-(--webtext)">
+              <p className="text-[22px] md:font-semibold text-webtext">
                 Address
               </p>
-              <p className="font-semibold text-[15px] leading-[25px] text-(--webtext)">
+              <p className="font-semibold text-[15px] leading-[25px] text-webtext">
                 H-31, 5th Floor,
                 <br />
                 Sector - 63, Noida
@@ -95,7 +95,7 @@ function FinalFooter() {
           {/*mobile section */}
           <div className="flex justify-between max-[360px]:w-[275px]  max-[425px]:w-[300px]  max-[550px]:w-[340px] max-[1023px]:w-[415px] min-[1024px]:w-[35%]  min-[1125px]:w-[31%]  mt-[24px] lg:mt-[0px]">
             <div className="lg:ml-[12px]">
-              <p className="text-[22px] md:font-bold font-semibold text-(--webtext) max-[360px]:text-[18px] min-[1024px]:text-[19px]  min-[1124px]:text-[22px]">
+              <p className="text-[22px] md:font-bold font-semibold text-webtext max-[360px]:text-[18px] min-[1024px]:text-[19px]  min-[1124px]:text-[22px]">
                 Features
               </p>
               <ul className="font-normal text-[13px] md:text-[15px] leading-[25px] md:leading-[35px] pt-[10px]">
@@ -137,7 +137,7 @@ function FinalFooter() {
               </ul>
             </div>
             <div className=" max-[1123px]:mr-[15px]   max-[1124px]:mr-[15px]">
-              <p className="text-[22px] md:font-bold font-semibold text-(--webtext) max-[360px]:text-[18px]  min-[1024px]:text-[19px]  min-[1124px]:text-[22px]">
+              <p className="text-[22px] md:font-bold font-semibold text-webtext max-[360px]:text-[18px]  min-[1024px]:text-[19px]  min-[1124px]:text-[22px]">
                 Shopaver
               </p>
               <ul className="font-normal text-[13px] md:text-[15px] leading-[25px] md:leading-[35px] pt-[10px]">
@@ -183,7 +183,7 @@ function FinalFooter() {
           </div>
           <div>
             <div className="flex justify-between mt-[30px] lg:mt-[0px]  max-[360px]:w-[257px] max-[400px]:w-[310px] max-[425px]:w-[345px]  max-[550px]:w-[385px]  max-[1023px]:w-[460px]">
-              <p className="text-[22px] md:font-bold font-semibold text-(--webtext) max-[360px]:text-[18px]  min-[1024px]:text-[19px]  min-[1124px]:text-[22px]">
+              <p className="text-[22px] md:font-bold font-semibold text-webtext max-[360px]:text-[18px]  min-[1024px]:text-[19px]  min-[1124px]:text-[22px]">
                 Contact Info
               </p>
               <div className="flex items-center gap-[8px] lg:hidden max-[360px]:gap-[5px]">
@@ -252,7 +252,7 @@ function FinalFooter() {
             </p>
             <a
               href="mailto:support@shopaver.com"
-              className="font-normal text-[13px] leading-[19.5px] md:text-[16px] md:leading-[24px] text-(--primary)"
+              className="font-normal text-[13px] leading-[19.5px] md:text-[16px] md:leading-[24px] text-primary"
             >
               support@shopaver.com
             </a>
@@ -264,14 +264,14 @@ function FinalFooter() {
               <p className="font-medium text-[13px] leading-[19.5px] md:text-[16px] md:leading-[24px] min-[1023px]:font-medium min-[1150px]:font-semibold">
                 Support :{" "}
               </p>
-              <a href="tel:+91 9311660676" className="text-(--primary)">
+              <a href="tel:+91 9311660676" className="text-primary">
                 +91 9311660676
               </a>
             </div>
           </div>
           <div className="lg:flex hidden max-[1124px]:gap-[20px] min-[1125px]:gap-[80px]">
-            {/* <div className="h-5 border-l mt-3 border-(--webgray)"></div> */}
-            <p className="font-bold text-[13.28px] bg-(--primary) text-white w-[118px] h-[36px] rounded-[3.79px] pt-[8px] text-center">
+            {/* <div className="h-5 border-l mt-3 border-webgray"></div> */}
+            <p className="font-bold text-[13.28px] bg-primary text-white w-[118px] h-[36px] rounded-[3.79px] pt-[8px] text-center">
               <a
                 href="https://play.google.com/store/apps/details?id=com.shopaver"
                 target="_blank"
@@ -284,10 +284,10 @@ function FinalFooter() {
         </div>
 
         <div className="lg:hidden pl-[32px] mt-[30px]">
-          <p className="text-[22px] md:font-semibold font-semibold text-(--webtext) max-[360px]:text-[18px]">
+          <p className="text-[22px] md:font-semibold font-semibold text-webtext max-[360px]:text-[18px]">
             Address
           </p>
-          <p className="text-[13px] md:text-[16px] font-normal md:font-medium text-(--webtext) ">
+          <p className="text-[13px] md:text-[16px] font-normal md:font-medium text-webtext ">
             H-31, 5th Floor, <br />
             Sector - 63, Noida
             <br />
@@ -299,11 +299,11 @@ function FinalFooter() {
             <p className="font-semibold text-[14.3px] leading-[28.51px] ">
               Download the
             </p>
-            <p className="text-[19.63px] font-bold leading-[28.51px] text-(--primary) max-[360px]:leading-[20px]">
+            <p className="text-[19.63px] font-bold leading-[28.51px] text-primary max-[360px]:leading-[20px]">
               Shopaver App
             </p>
           </div>
-          <div className="flex w-[198.17px] h-[79px] border border-(--bordercolor) rounded-[12.96px] items-center justify-around max-[360px]:mt-[25px]">
+          <div className="flex w-[198.17px] h-[79px] border border-bordercolor rounded-[12.96px] items-center justify-around max-[360px]:mt-[25px]">
             <Image src={"/img/QRFooter.webp"} width={189} height={79} alt="QR-Img"></Image>
 
             <div className="flex flex-col items-center">
@@ -318,7 +318,7 @@ function FinalFooter() {
         </div>
 
         {/* <div className=" flex justify-center pb-[30px] lg:pb-[20px] mt-[17px]">
-            <NavLink to="https://shopaver.com/" className='text-(--primary) font-normal'>www.shopaver.com</NavLink>
+            <NavLink to="https://shopaver.com/" className='text-primary font-normal'>www.shopaver.com</NavLink>
           </div> */}
         <div className="hidden lg:flex justify-center items-center pb-[18px] pt-[40px]">
           <p className="font-semibold text-[16px]">

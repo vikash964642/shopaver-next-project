@@ -7,7 +7,7 @@ const HeroSection = () => {
   return (
     <>
       <div className="max-w-screen-lg mx-auto Herosection">
-        <p className="flex justify-center items-center text-2xl md:text-[36px]  leading-8  font-bold pt-[66px] md:pt-[110px] text-(--primary)">
+        <p className="flex justify-center items-center text-2xl md:text-[36px]  leading-8  font-bold pt-[66px] md:pt-[110px] text-primary">
           About Us
         </p>
         <h1 className="flex justify-center items-center lg:leading-[62px] leading-[38px] lg:text-[52px] text-[26px] bold lg:py-[42px] py-[30px] px-[47px] text-center font-bold">
@@ -25,7 +25,7 @@ const HeroSection = () => {
       <div className="flex justify-center items-center pt-[55px]">
         <Link
           href="https://app.shopaver.com/Sign-up"
-          className="flex justify-center lg:w-[197px] lg:h-[58px] w-[164px] h-[48px] bg-(--primary)  border text-white font-bold  rounded-[43px] lg:text-[21px] text-[16px] text-center items-center"
+          className="flex justify-center lg:w-[197px] lg:h-[58px] w-[164px] h-[48px] bg-primary  border text-white font-bold  rounded-[43px] lg:text-[21px] text-[16px] text-center items-center"
         >
           Register Now
         </Link>
@@ -36,7 +36,7 @@ const HeroSection = () => {
           alt="Inventoy Managment"
           height={504}
           width={891}
-          className="border-2 border-(--primary) md:rounded-[82px]  "
+          className="border-2 border-primary md:rounded-[82px]  "
         />
       </div>
     </>

@@ -2,14 +2,14 @@ import Image from "next/image";
 
 const Download = () => {
   return (
-    <section className="bg-(--secondary) mx-[20px] lg:mx-[0px] rounded-[10px] mt-[100px]">
+    <section className="bg-secondary mx-[20px] lg:mx-[0px] rounded-[10px] mt-[100px]">
       <div className=" lg:h-[484px] flex lg:justify-center lg:gap-[50px] lg:flex-row flex-col max-w-screen-lg mx-auto ">
         <div className="lg:mt-[0px] mt-[20px]">
           <div className="lg:mt-[50px] flex flex-col items-center lg:items-start">
-            <p className="lg:font-normal lg:text-[33.09px] text-(--webtext) font-normal text-[24px]">
+            <p className="lg:font-normal lg:text-[33.09px] text-webtext font-normal text-[24px]">
               Download the
             </p>
-            <p className="lg:font-bold lg:text-[58.52px] text-(--primary) font-bold text-[36px]">
+            <p className="lg:font-bold lg:text-[58.52px] text-primary font-bold text-[36px]">
               Shopaver App
             </p>
           </div>

@@ -1,4 +1,4 @@
-import BlackBox from "@/Component/Utils/BlackBox";
+import BlackBox from "../../../Component/Utils/BlackBox";
 
 function BlackBoxsection() {
   return (
