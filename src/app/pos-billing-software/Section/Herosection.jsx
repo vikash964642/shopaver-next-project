@@ -1,6 +1,6 @@
 // import { Link } from "react-router-dom";
 import Link from "next/link";
-import HerosectionBox from "@/Component/Utils/HerosectionBox";
+import HerosectionBox from "../../../Component/Utils/HerosectionBox";
 function Herosecion() {
   return (
    <>

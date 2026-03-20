@@ -1,13 +1,25 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+
 
 const Services = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHoveredLeft, setIsHoveredLeft] = useState(false);
   const [isHoveredRight, setIsHoveredRight] = useState(false);
+  const [slidesPerPage, setSlidesPerPage] = useState(1);
 
+  useEffect(() => {
+  const updateSlides = () => {
+    setSlidesPerPage(window.innerWidth >= 768 ? 2 : 1);
+  };
+
+  updateSlides(); // initial run
+  window.addEventListener("resize", updateSlides);
+
+  return () => window.removeEventListener("resize", updateSlides);
+}, []);
   const slides = [
     
    
@@ -60,7 +72,7 @@ const Services = () => {
     },
   ];
 
-  const slidesPerPage = window.innerWidth >= 768 ? 2 : 1; // 768px is the breakpoint for laptop/tablet view
+  // const slidesPerPage = window.innerWidth >= 768 ? 2 : 1; 
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => {

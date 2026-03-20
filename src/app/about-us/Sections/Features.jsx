@@ -1,5 +1,5 @@
 // import React from 'react'
-import FeaturesBox from "@/component/Utils/FeaturesBox";
+import FeaturesBox from "../../../Component/Utils/FeaturesBox";
 
 function Features() {
   return (

@@ -3,7 +3,7 @@ import BlackBox from './Sections/BlackBox';
 import FeaturesOnlineStore from './Sections/FeaturesOnlineStore';
 import HeroSectionOnlineStore from './Sections/HeroSectionOnlineStore'
 import OnlineStoreTitle from './Sections/OnlineStoreTitle';
-import Form from '@/component/Utils/Form';
+import Form from '../../Component/Utils/Form';
 import FAQ from './Sections/FAQ';
 import Services from './Sections/Services';
 

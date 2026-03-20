@@ -4,7 +4,7 @@ import WhatsappCTitle from './Sections/WhatsappCTitle';
 import FeaturesWhatsappC from './Sections/FeaturesWhatsappC';
 import Services from './Sections/Services';
 import BlackBox from './Sections/BlackBox';
-import Form from '@/component/Utils/Form';
+import Form from '../../Component/Utils/Form';
 import FaqSection from './Sections/FAQ';
 
 export const metadata = {

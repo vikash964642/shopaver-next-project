@@ -1,4 +1,4 @@
-import HerosectionBox from "@/component/Utils/HerosectionBox";
+import HerosectionBox from "../../../Component/Utils/HerosectionBox";
 import Link from "next/link";
 
 function HeroSectionOnlineStore() {

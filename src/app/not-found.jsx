@@ -13,7 +13,7 @@ const PageNotFound = () => {
       
       <Link href="/" className="font-bold text-[15px] mt-6 px-6 py-3 cursor-pointer">
              
-              <button className="w-[140px] h-[44px]  bg-purple-950 text-white px-[16px] py-2 rounded-[4px] md:bg-white md:border-2 md:border-(--primary) md:text-(--primary) hover:bg-(--primary) hover:text-white">Go To Home</button>
+              <button className="w-[140px] h-[44px]  bg-purple-950 text-white px-[16px] py-2 rounded-[4px] md:bg-white md:border-2 md:border-primary md:text-primary hover:bg-primary hover:text-white">Go To Home</button>
             </Link>
            
     </div>

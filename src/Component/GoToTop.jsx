@@ -44,7 +44,7 @@ const Wrapper = styled.section`
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  z-index: 1;
+  z-index: 99;
 
   @media (max-width: 768px) {
     right: 1rem;

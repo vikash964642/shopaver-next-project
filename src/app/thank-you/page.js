@@ -16,13 +16,13 @@ function ThankYou() {
       <p>Your form has been successfully submitted.<br />We will contact you soon.</p>
 
       
-      <Link to='/'><button className="button">Back To Home</button></Link>
+      <Link href='/'><button className="button">Back To Home</button></Link>
 
-      <Image src={"/img/Down.png"} alt="cloud-image" className="bottom-image" />
+      <Image src="/img/Down.png" alt="cloud-image" className="bottom-image" />
     </div>
 
     <div className="right">
-      <Image src={"/img/Thankyou.png"} alt="thankyou-image" className='h-[350px]' />
+      <Image src="/img/Thankyou.png" alt="thankyou-image" className='h-[350px]' />
     </div>
   </div>
   </div>

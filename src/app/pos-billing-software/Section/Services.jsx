@@ -1,6 +1,6 @@
 
 "use client";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 // import { Link } from "react-router-dom";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,7 +9,8 @@ const Services = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHoveredLeft, setIsHoveredLeft] = useState(false);
   const [isHoveredRight, setIsHoveredRight] = useState(false);
-
+   const [slidesPerPage, setSlidesPerPage] = useState(1);
+ const [isMounted, setIsMounted] = useState(false); // ✅ SSR fix
   const slides = [
     {
       title: "Quick Billing Software",
@@ -58,7 +59,24 @@ const Services = () => {
     },
   ];
 
-  const slidesPerPage = window.innerWidth >= 768 ? 2 : 1; // 768px is the breakpoint for laptop/tablet view
+  // const slidesPerPage = window.innerWidth >= 768 ? 2 : 1; // 768px is the breakpoint for laptop/tablet view
+   useEffect(() => {
+    setIsMounted(true);
+
+    const updateSlidesPerPage = () => {
+      if (typeof window !== "undefined") {
+        setSlidesPerPage(window.innerWidth >= 768 ? 2 : 1);
+      }
+    };
+
+    updateSlidesPerPage();
+    window.addEventListener("resize", updateSlidesPerPage);
+
+    return () => window.removeEventListener("resize", updateSlidesPerPage);
+  }, []);
+
+  // ❗ Prevent SSR crash
+  if (!isMounted) return null;
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => {

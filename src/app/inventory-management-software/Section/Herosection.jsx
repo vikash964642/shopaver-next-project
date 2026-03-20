@@ -1,5 +1,5 @@
 
-import HerosectionBox from '@/Component/Utils/HerosectionBox';
+import HerosectionBox from '../../../Component/Utils/HerosectionBox';
 import Link from 'next/link';
 
 function Herosection() {

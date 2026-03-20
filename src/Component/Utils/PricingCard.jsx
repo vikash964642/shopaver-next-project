@@ -7,23 +7,23 @@ const PricingCard = (props) => {
   return (
      <div className="bg-[#FBF8FF] border border-[#DDDDDD] rounded-[10px] mt-[62px] m-[10px]">
               <div className="flex flex-col justify-center items-center pt-[35px]">
-                <p className="text-center text-(--primary) font-bold text-[28px]">
+                <p className="text-center text-primary font-bold text-[28px]">
                   Basic
                 </p>
                 <div className="flex justify-center items-start text-center">
-                  <h2 className="text-(--primary) font-bold text-[40px] mb-1 text-center">
+                  <h2 className="text-primary font-bold text-[40px] mb-1 text-center">
                     ₹ {loading ? "..." : proPlan?.amount ?? "N/A"}
                   </h2>
-                  <p className=" text-(--primary)  flex flex-col font-bold text-[14px] mt-[10px]">
+                  <p className=" text-primary  flex flex-col font-bold text-[14px] mt-[10px]">
                     per{" "}
-                    <span className="ml-[20px] text-(--primary)">
+                    <span className="ml-[20px] text-primary">
                       / {proPlan?.frequency || "Year"}
                     </span>
                   </p>
                 </div>
                 <button
                   onClick={() => window.open(proPlan?.url, "_blank")}
-                  className=" w-[244px] h-[56px] border border-[#DDDDDD] cursor-pointer text-white bg-(--primary) font-semibold rounded-full  hover:bg-purple-50 hover:text-(--primary) hover:border-(--primary) transition"
+                  className=" w-[244px] h-[56px] border border-[#DDDDDD] cursor-pointer text-white bg-primary font-semibold rounded-full  hover:bg-purple-50 hover:text-primary hover:border-primary transition"
                 >
                   Start Free Trial
                 </button>
