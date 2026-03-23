@@ -114,10 +114,16 @@ export default async function ServicePage({ params }) {
     notFound();
   }
 
-const allSlugData = slugList.flatMap(
-  (item) => item.slugListData || []
+// const allSlugData = slugList.flatMap(
+//   (item) => item.slugListData || []
+// );
+// console.log("allSlugData",slugList);
+const allSlugData = slugList.flatMap((item) =>
+  (item.slugListData || []).map((innerItem) => ({
+    ...innerItem,
+    slug: item.slug?.trim(), // 👈 attach slug here
+  }))
 );
-
   return (
     <div>
       {/* 🔵 Hero Section */}
