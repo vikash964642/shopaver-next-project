@@ -22,7 +22,7 @@ import FreeTrialBanner from "../free-trial-banner/FreeTrialBanner";
 async function getLandingPage(slug) {
   try {
     const res = await fetch(
-      `https://shopaver-marketing.xoomsales.com/api/SupportMarketingDashBoard/GetLandingPageBySlug?slug=${slug}`,
+      `https://shopaverleadapi.shopaver.com/api/SupportMarketingDashBoard/GetLandingPageBySlug?slug=${slug}`,
       {
         method: "POST",
         next: { revalidate: 60 },
@@ -46,7 +46,7 @@ async function getLandingPage(slug) {
 async function getFaq(slug) {
   try {
     const res = await fetch(
-      `https://shopaver-marketing.xoomsales.com/api/SupportMarketingDashBoard/GetAllFAQbyslug?slug=${slug}`,
+      `https://shopaverleadapi.shopaver.com/api/SupportMarketingDashBoard/GetAllFAQbyslug?slug=${slug}`,
       {
         method: "POST",
         next: { revalidate: 60 },
@@ -70,7 +70,7 @@ async function getFaq(slug) {
 async function getSlugList() {
   try {
     const res = await fetch(
-      "https://shopaver-marketing.xoomsales.com/api/SupportMarketingDashBoard/GetSlugList",
+      "https://shopaverleadapi.shopaver.com/api/SupportMarketingDashBoard/GetSlugList",
       {
         method: "POST",
         headers: {
