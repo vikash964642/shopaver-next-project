@@ -14,7 +14,7 @@ export const links = [
  },
     { name: 'Resources', submenu: true, sublinks: [
         { name: 'Blog', link: "https://shopaver.com/Blogs/", img: "blog_icon"  },
-        { name: 'Youtube', link: "https://www.youtube.com/@Shopaver-b2v", img: "youtube_icon"  },
+        { name: 'Youtube', link: "https://www.youtube.com/@Shopaver_software", img: "youtube_icon"  },
         // { name: 'News', link: "/", img: "news_icon"  }
     ],
  },

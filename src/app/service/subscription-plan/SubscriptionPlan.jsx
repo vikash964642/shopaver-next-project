@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 function SubscriptionPlan() {
   return (
   <section className='max-w-5xl mx-auto px-[13px] xl:px-0 mt-[100px]'>
@@ -9,9 +10,9 @@ function SubscriptionPlan() {
 <p className='pt-[5px] text-[#5F5F5F] text-[14px] sm:text-[15px] lg:text-[16px] text-center'>Accelerate your retail business with flexible pricing that fits your budget. Choose from affordable monthly or yearly plans, perfectly designed for small shops, growing franchises, and large retail chains.</p>
 <div className='border border-[#F2E5FF] rounded-[12px] mt-[24px] py-[30px] px-[15px] lg:p-[40px] relative'>
    <div className='absolute z-20 bottom-[75px] flex justify-center w-[95%]'>
-     <div className='cursor-pointer px-[20px] py-[10px] bg-[#5801B7] text-[#FFF] text-[16px] font-semibold rounded-[11px] '>
+     <Link href={"/pricing-plan"} className='cursor-pointer px-[20px] py-[10px] bg-[#5801B7] text-[#FFF] text-[16px] font-semibold rounded-[11px] '>
        View Plans 
-    </div>
+    </Link>
    </div>
     <div className="SubscriptionPlanGradient"></div>
 <div className='flex justify-center'>
