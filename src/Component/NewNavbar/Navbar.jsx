@@ -81,8 +81,8 @@ const Navbar = () => {
           <ul className="lg:flex hidden lg:text-[13px] xl:text-[17.5px] items-center gap-5">
             <li>
               <Link
-                href="/about"
-                className={isActive("/about")}
+                href="/about-us"
+                className={isActive("/about-us")}
                 onClick={handleClick}
               >
                 About Us
