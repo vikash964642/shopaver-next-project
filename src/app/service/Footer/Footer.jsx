@@ -82,7 +82,7 @@ function Footer() {
                   </svg>
                 </a>
                 <a
-                  href="https://www.youtube.com/@Shopaver-b2v/"
+                  href="https://www.youtube.com/@Shopaver_software"
                   target="_blank"
                 >
                   <svg
@@ -283,7 +283,7 @@ function Footer() {
                   </svg>
                 </a>
                 <a
-                  href="https://www.youtube.com/@Shopaver-b2v/"
+                  href="https://www.youtube.com/@Shopaver_software"
                   target="_blank"
                 >
                   <svg

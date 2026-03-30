@@ -62,7 +62,7 @@ function FinalFooter() {
                   ></Image>
                 </a>
                 <a
-                  href="https://www.youtube.com/@Shopaver-b2v/"
+                  href="https://www.youtube.com/@Shopaver_software"
                   target="_blank"
                 >
                   <Image
@@ -212,7 +212,7 @@ function FinalFooter() {
                   ></Image>
                 </a>
                 <a
-                  href="https://www.youtube.com/@Shopaver-b2v/"
+                  href="https://www.youtube.com/@Shopaver_software"
                   target="_blank"
                 >
                   <Image
