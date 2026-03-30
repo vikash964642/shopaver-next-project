@@ -5,29 +5,7 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import styles from "./home.module.css";
-// const cards = [
-//   {
-//     id: 1,
-//     image: "/landingPage/PosHomeImg1.webp",
-//     title: "Lightning-Fast & Error-Free Billing",
-//     description:
-//       "Serve more customers in less time with an intuitive POS software. Scan items quickly, apply discounts, auto-calculate GST or custom taxes, print invoices, and accept payments via cash, card, and UPI.",
-//   },
-//   {
-//     id: 2,
-//     image: "/landingPage/PosHomeImg2.webp",
-//     title: "Multi-Outlet Retail Management",
-//     description:
-//       "Keep all outlets in sync with a centralized POS. Use uniform pricing, track stock and sales in real time, and manage all locations from a single web portal.",
-//   },
-//   {
-//     id: 3,
-//     image: "/landingPage/PosHomeImg3.webp",
-//     title: "Know Your Stock Levels",
-//     description:
-//       "Track inventory in real time with automated stock management. Get low-stock alerts, manage product variants, and handle barcode tracking for expiry-based products.",
-//   },
-// ];
+
 function WhyChooseSection({ data = [] }) {
   const ScrollTop = () => {
     window.scrollTo({ top: 0 });
@@ -45,7 +23,7 @@ function WhyChooseSection({ data = [] }) {
             className="bg-[#FFF] px-2.5 pt-2.5 pb-[15px] shadow-[0_0_4px_0_rgba(0,0,0,0.20)]"
           >
             <Image
-              src={item.image ||  "/landingPage/PosHomeImg1.webp"}
+            src={`/landingPage/PosHomeImg${index + 1}.webp`}
               alt={item.heading}
               width={264}
               height={264}
@@ -70,7 +48,7 @@ function WhyChooseSection({ data = [] }) {
               className="bg-[#FFF] shrink-0 w-[180px] sm:w-[200px] md:w-[220px] px-2.5 pt-2.5 pb-[15px] shadow-[0_0_4px_0_rgba(0,0,0,0.20)]"
             >
               <Image
-                src={item.image || "/landingPage/PosHomeImg2.webp"}
+               src={`/landingPage/PosHomeImg${index + 1}.webp`}
                 alt={item.heading}
                 width={264}
                 height={264}
