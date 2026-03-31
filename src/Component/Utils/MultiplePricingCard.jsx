@@ -111,7 +111,7 @@ const MultiplePricingCard = (props) => {
           width={33}
           height={33}
           alt="downangle"
-          className={`transition-transform duration-500 ${
+          className={`transition-transform duration-500 w-[15px] lg:w-[33px]  ${
               isExpanded ? "rotate-180" : ""
             }`}
         />

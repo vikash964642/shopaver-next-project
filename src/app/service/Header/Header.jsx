@@ -52,7 +52,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Nav */}
-          <div className="flex items-center space-x-6 relative">
+          <div className="flex items-center outline-none space-x-6 relative">
             {navLinks.map((link) =>
               link.children ? (
                 <div
@@ -104,18 +104,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Buttons */}
-          <div className="flex items-center space-x-3 ml-4">
-            {/* <Link href="" className="text-[20px] text-[#25D366]">
-          <i class="fa-brands fa-whatsapp"></i>
-          </Link> */}
-            <a
-              href="https://wa.me/919266743777?text=Hello"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[20px] text-[#25D366]"
-            >
-              <i className="fa-brands fa-whatsapp"></i>
-            </a>
+          <div className="flex items-center space-x-3 ml-4">     
             <Link
               href="/login"
               className="py-[4.58px] px-[15px] text-[#240029] text-[11.66px] rounded-[6.661px] bg-[rgba(41,0,41,0.05)] shadow-[inset_0_0_0_0.833px_rgba(41,0,41,0.11)] hover:bg-gray-100 transition"
