@@ -8,10 +8,13 @@ import FAQ from './section/FAQ';
 import Service from './section/Services.jsx';
 
 export const metadata = {
+   metadataBase: new URL("https://shopaver.com"),
   title: " Easy and Quick Billing Software for Retail Businesses.",
   description:
     "We offer easy & quick billing software for retail businesses. Enjoy free GST invoicing and get the best invoicing software designed for small businesses!",
-    url:"https://shopaver.com/quick-billing-software"
+       alternates: {
+    canonical: "/quick-billing-software", 
+  },
 };
 
 function QuickBilling() {

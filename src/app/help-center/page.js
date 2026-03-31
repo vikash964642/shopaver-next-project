@@ -5,10 +5,13 @@ import GetInTouch from './section/GetInTouch'
 import Fromsection from './section/FormSection'
 
 export const metadata = {
+   metadataBase: new URL("https://shopaver.com"),
   title: " Need Help? Visit the Shopaver Help Center",
   description:
-"Shopaver Help Center is here for you! Get support, find answers, and solve issues fast—all in one place for a seamless shopping experience."  ,
-  url:"https://shopaver.com/help-center"
+"Shopaver Help Center is here for you! Get support, find answers, and solve issues fast—all in one place for a seamless shopping experience.",
+     alternates: {
+    canonical: "/help-center", 
+  },
 };
 function HelpCenter() {
   return (
