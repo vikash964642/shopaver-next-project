@@ -1,5 +1,5 @@
 import "./globals.css";
-import ScrollToTopButton from "../Component/GoToTop";
+import DynamicBottomIcon from "../Component/DynamicBottomIcon";
 import Script from "next/script";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import DynamicHeader from "../Component/DynamicHeader";
@@ -67,7 +67,7 @@ export default function RootLayout({ children }) {
         <DynamicHeader />
         {children}
         <DynamicFooter />
-        <ScrollToTopButton />
+      <DynamicBottomIcon />
       </body>
     </html>
   );
