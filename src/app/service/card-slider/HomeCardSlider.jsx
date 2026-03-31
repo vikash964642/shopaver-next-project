@@ -4,12 +4,15 @@
 import { useState, useRef } from "react";
 
 const cards = [
-  { id: 1, img: "/landingPage/BusinessSolutionSliderImg1.webp", title:"—Card1, Mr. Choice Owner", description:"This POS software transformed our billing system." },
-  { id: 2, img: "/landingPage/BusinessSolutionSliderImg2.webp", title:"—Card2, Mr. Choice Owner", description:"Managing inventory is now super easy." },
-  { id: 3, img: "/landingPage/BusinessSolutionSliderImg3.webp", title:"—Card3, Mr. Choice Owner", description:"Great software for retail shop owners." },
-  { id: 4, img: "/landingPage/BusinessSolutionSliderImg4.webp", title:"—Card4, Mr. Choice Owner", description:"Very reliable and easy to use." },
-  { id: 5, img: "/landingPage/BusinessSolutionSliderImg5.webp", title:"—Card5, Mr. Choice Owner", description:"Perfect solution for small businesses." },
-  { id: 6, img: "/landingPage/BusinessSolutionSliderImg2.webp", title:"—Card6, Mr. Choice Owner", description:"Stock management is smooth now." },
+  { id: 1, img: "/img/merchant5.webp", title:"Ravi – Hindustan Medical Store, Ashtha", description:"Pehele billing aur stock manage karna mushkil tha. Phir maine Shopaver use kiya, ab billing pahle se fast ho gayi hai or stock easily track kar leta hun. Customers ko smooth service milti hai aur unka experience bhi better ho gaya hai. Shopaver ke saath, business simple aur easy ho gaya!" },
+  { id: 2, img: "/img/merchant1.webp", title:"Ashraf Ali – Ashraf Ali General Store, Pilibhit", description:"Pehle main sirf offline sale karta tha. Ab Shopaver ke through apna khud ka online store manage karta hoon. Ab main offline aur online dono store easily handle kar pa raha hoon, meri sales aur customers dono kaafi badh gaye hain, aur meri dukaan ab 24/7 open rahti hai!" },
+  { id: 3, img: "/img/merchant2.webp", title:"Yogesh Kumar – Kalka Shoe House, Faridabad", description:"Shopaver use karne ke baad mera kaam easy ho gaya hai. Pehle inventory aur customer records manage karna confusing tha, ab sab ek jagah manage ho jata hai. Main stock track asani se kar leta hoon, restock plan karta hoon, aur pura business phone se hi control kar leta  hoon." },
+   { id: 4, img: "/img/merchant3.webp", title:"Rahul Yadav – New Big Bazar, Niwari M.P", description:"Main Rahul Yadav, ek grocery shop ka owner hoon. Pehle inventory, sales aur customer data manage karna kaafi stressful tha. Phir maine Shopaver use kiya. Ab inventory track karna ho ya customers ko handle karna, sab easy aur smooth ho gaya hai. Ab mera business grow kar raha hai aur customers har visit pe khush aur satisfied feel karte hain!" },
+  { id: 5, img: "/img/merchant4.webp", title:"Raj Kumar – Raj Medical Store, Ashtha", description:"Humne apne store ke liye kaafi POS check kiye, lekin koi perfect nahi tha. Phir humne Shopaver use kiya. Ye mobile aur tablet pe bhi easily kaam karta hai aur kaafi helpful hai. Ab hum apne business ko easily manage kar pa rahe hain aur sab simple or easy ho gaya hai!" },
+   { id: 6, img: "/img/merchant3.webp", title:"Rahul Yadav – New Big Bazar, Niwari M.P", description:"Main Rahul Yadav, ek grocery shop ka owner hoon. Pehle inventory, sales aur customer data manage karna kaafi stressful tha. Phir maine Shopaver use kiya. Ab inventory track karna ho ya customers ko handle karna, sab easy aur smooth ho gaya hai. Ab mera business grow kar raha hai aur customers har visit pe khush aur satisfied feel karte hain!" },
+  
+  
+ 
 ];
 
 export default function CustomSlider(){

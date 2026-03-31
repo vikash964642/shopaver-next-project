@@ -104,14 +104,14 @@ const HeroSection = () => {
             >
               Yearly
             </button>
-            <button
+            {/* <button
               className={`px-4 py-1 text-sm font-medium cursor-pointer rounded-full transition-all ${
                 !isYearly ? "bg-[#5801B7] text-white" : "text-[#5801B7] hover:bg-white hover:shadow"
               }`}
               onClick={() => handleToggle("monthly")}
             >
               Monthly
-            </button>
+            </button> */}
           </div>
         </div>
 

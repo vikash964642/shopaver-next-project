@@ -140,7 +140,7 @@ useLayoutEffect(() => {
 
           {/* RIGHT IMAGE */}
           <div className="  relative ">
-          <Image src={'/landingPage/laptopImage.webp'} className="md:w-[450px] lg:w-[526.14px] aspect-[77/54]" width={526.14} height={369} />
+          <Image src={'/landingPage/laptopImage.webp'} className="md:w-[350px] lg:w-[526.14px] aspect-[77/54]" width={526.14} height={369} />
             {contentData.map((item, i) => (
               <Image
                 key={i}
@@ -148,7 +148,7 @@ useLayoutEffect(() => {
                 alt={item.heading}
                 width={381}
                 height={241}
-                className={`absolute transition-opacity duration-500 md:w-[318px] md:h-[202px] lg:w-[377px] lg:h-[240px] md:left-[67px] md:top-[14px] lg:left-[80px] lg:top-[16px]  ${
+                className={`absolute transition-opacity duration-500 md:w-[260px] md:h-[161px] lg:w-[385px] lg:h-[242px] md:left-[48px] md:top-[10px] lg:left-[76px] lg:top-[15px]  ${
                   i === activeIndex ? "opacity-100 z-10" : "opacity-0 z-0"
                 }`}
               />
