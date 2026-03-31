@@ -10,10 +10,13 @@ import PosbillingTitle from "./Section/PosbillingTitle"
 // import CustomHelmet from "../../Utils/Helmet"
 
 export const metadata = {
+   metadataBase: new URL("https://shopaver.com"),
   title: " Best POS Billing Software for Retail & Small Businesses.",
   description:
-    "India’s top cloud POS-billing-software for retail & restaurants. Manage billing, sales, inventory & customers. Fast, easy & reliable. Book a free demo!",
-    url:"https://shopaver.com/pos-billing-software"
+    "India’s top cloud POS-billing-software for retail & restaurants. Manage billing, sales, inventory & customers. Fast, easy & reliable. Get a free demo!",
+       alternates: {
+    canonical: "/pos-billing-software", 
+  },
 };
 
 function PosBilling() {

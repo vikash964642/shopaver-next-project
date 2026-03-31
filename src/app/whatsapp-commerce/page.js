@@ -8,10 +8,13 @@ import Form from '../../Component/Utils/Form';
 import FaqSection from './Sections/FAQ';
 
 export const metadata = {
+   metadataBase: new URL("https://shopaver.com"),
   title: " WhatsApp Commerce: Boost Sales and Connect with Customers",
   description:
     "Learn how to sell online with WhatsApp Commerce. Explore best practices for setting up your business account, creating catalogs, and engaging customers.",
-    url:"https://shopaver.com/whatsapp-commerce"
+       alternates: {
+    canonical: "/whatsapp-commerce", 
+  },
 };
 
 function WhatsappCommerce() {

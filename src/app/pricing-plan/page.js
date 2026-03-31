@@ -6,9 +6,12 @@ import Form from '../../Component/Utils/Form';
 import Faq from './Section/FAQ';
 
 export const metadata = {
-  title: ": All-in-One POS Solutions for Small, Medium & Large Businesses.",
-  description:
-    "",
+  metadataBase: new URL("https://shopaver.com"),
+  title: "Shopaver Pricing Plans – Best POS & Inventory Software",
+  description: "Explore Shopaver POS pricing plans. Manage billing, inventory & GST easily. बजट में powerful software – try free now",
+   alternates: {
+    canonical: "/pricing-plan", 
+  },
 };
 
 

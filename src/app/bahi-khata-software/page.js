@@ -9,10 +9,13 @@ import BlackBox from './Section/BlackBox';
 import Service from './Section/Services'
 
 export const metadata = {
-  title: " Best Digital Bahi Khata & Ledger App for Android for Retail Shop",
+   metadataBase: new URL("https://shopaver.com"),
+  title: "Best Digital Bahi Khata Software for Retail Shops",
   description:
-    "Digital bahi khata or ledger accounting software simplifies bookkeeping, tracks expense, saves time, and ensures easy and accurate financial records",
-    url:"https://shopaver.com/bahi-khata-software"
+    "Manual hisaab se pareshan? Customers aur paisa dono slip ho rahe hain! Shopaver Bahi Khata Software use karein—fast, accurate, aur tension free. Start now!",
+       alternates: {
+    canonical: "/bahi-khata-software", 
+  },
 };
 function Khatapage() {
   return (

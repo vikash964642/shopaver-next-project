@@ -8,10 +8,13 @@ import FAQ from './Sections/FAQ';
 import Services from './Sections/Services';
 
 export const metadata = {
+   metadataBase: new URL("https://shopaver.com"),
   title: " Create Online Store Easily and Start Selling Fast Today",
   description:
     "Create your online store fast with Shopaver. Sell products, manage orders & grow your business - all in one easy-to-use platform. Start your sale today!",
-    url:"https://shopaver.com/online-store"
+       alternates: {
+    canonical: "/online-store", 
+  },
 };
 function OnlineStore() {
   return (
