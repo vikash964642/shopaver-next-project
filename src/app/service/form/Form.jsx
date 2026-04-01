@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-
+import { toast } from "react-toastify";
 function Form({slug}) {
   const [formData, setFormData] = useState({
     name: "",
@@ -99,7 +99,7 @@ function Form({slug}) {
     if (Object.keys(newErrors).length !== 0) return;
 
     try {
-      const res = await fetch("https://shopaver-marketing.xoomsales.com/api/SupportMarketingDashBoard/InsertSchedule", {
+      const res = await fetch("https://shopaverleadapi.shopaver.com/api/SupportMarketingDashBoard/InsertSchedule", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -111,9 +111,9 @@ function Form({slug}) {
       });
 
       const data = await res.json();
-      console.log(data);
+      
 
-      alert("Form submitted successfully");
+      toast.success("Form submitted successfully");
 
       setFormData({
         name: "",
@@ -132,7 +132,7 @@ function Form({slug}) {
 
       setErrors({});
     } catch (error) {
-      console.log(error);
+       toast.error("Something went wrong. Please try again ❌");
     }
   };
   return (

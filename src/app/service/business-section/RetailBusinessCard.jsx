@@ -133,7 +133,7 @@ function Card({ item }) {
           alt={item.heading}
           width={218}
           height={227}
-          className="max-[375px]:h-auto max-[375px]:w-full w-[147px] h-[153px] lg:w-[218px] lg:h-[227px]"
+          className="rounded-[7.8px] lg:rounded-[11.6px] max-[375px]:h-auto max-[375px]:w-full w-[147px] h-[153px] lg:w-[218px] lg:h-[227px]"
         />
       </div>
     </div>

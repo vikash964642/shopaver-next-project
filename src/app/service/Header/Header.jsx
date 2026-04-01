@@ -31,7 +31,7 @@ export default function Header() {
     <>
       {/* ---------- Desktop Header ---------- */}
       <header className="hidden md:block bg-white sticky top-0 w-full z-50 pt-[15px]">
-        <div className="flex justify-between items-center  max-w-5xl mx-auto  h-[40.5px] px-4 sm:px-6 lg:px-[10px] border border-[#D2D2D2] rounded-[12px]">
+        <div className="flex justify-between items-center  max-w-5xl md:mx-[20px] xl:mx-auto  h-[40.5px] px-4 sm:px-6 lg:px-[10px] border border-[#D2D2D2] rounded-[12px]">
           <div className="flex items-center gap-[9.2px]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +61,7 @@ export default function Header() {
                   onMouseEnter={() => setDesktopDropdown(link.name)}
                   onMouseLeave={() => setDesktopDropdown(null)}
                 >
-                  <span className="flex items-center cursor-pointer text-[17.5px] text-[rgba(41,0,41,0.68)] hover:text-[#5801B7] transition">
+                  <span className="flex items-center cursor-pointer md:text-[15px] lg:text-[17.5px] text-[rgba(41,0,41,0.68)] hover:text-[#5801B7] transition">
                     {link.name}
                     <span
                       className={`ml-1 transition-transform duration-300 flex items-center ${
@@ -95,7 +95,7 @@ export default function Header() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-[17.5px] text-[rgba(41,0,41,0.68)] hover:text-[#5801B7] transition"
+                  className="md:text-[15px] lg:text-[17.5px] text-[rgba(41,0,41,0.68)] hover:text-[#5801B7] transition"
                 >
                   {link.name}
                 </Link>

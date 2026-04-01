@@ -84,9 +84,9 @@ function HeroSection({ data }) {
       ? `${BASE_IMAGE_URL}${data.image}`
       : "/landingPage/SuccessGuaranteeImg2.webp"
   }
-  className="h-[287px] w-[248.3px] sm:h-[452px] sm:w-[391px]"
+  className="h-[287px] w-[221.3px] sm:h-[390px] sm:w-[300px] lg:h-[452px] lg:w-[348px] rounded-[29px] lg:rounded-[46px]"
   height={452}
-  width={391}
+  width={348.4}
   alt="Hero Section Image"
 />
         </div>

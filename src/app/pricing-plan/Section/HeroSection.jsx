@@ -81,7 +81,7 @@ const HeroSection = () => {
           Shopaver Pricing Plans
         </h1>
         <p className="text-center text-gray-600 mt-2 px-[40px]">
-          Monthly | Yearly Subscriptions | 14-Days Free Trial | Cancel Anytime
+          Yearly Subscriptions | 14-Days Free Trial | Cancel Anytime
         </p>
 
         {error && (
@@ -95,7 +95,7 @@ const HeroSection = () => {
             SAVE UP TO 10%
           </span>
 
-          <div className="w-[170px] flex justify-between items-center border-[.88px] border-[#CBCBCB] rounded-full p-1">
+          <div className="w-[80px] flex justify-center items-center border-[.88px] border-[#CBCBCB] rounded-full p-1">
             <button
               className={`px-4 py-1 text-sm cursor-pointer font-medium rounded-full transition-all ${
                 isYearly ? "bg-[#5801B7] text-white" : "text-[#5801B7] hover:bg-white hover:shadow"
