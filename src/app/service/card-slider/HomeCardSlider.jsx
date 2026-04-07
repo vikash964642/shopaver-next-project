@@ -17,6 +17,10 @@ const cards = [
 
 export default function CustomSlider(){
 
+  const getShortText = (text, wordLimit = 20) => {
+  const words = text.split(" ");
+  return words.slice(0, wordLimit).join(" ");
+};
   const [index,setIndex] = useState(0)
   const [direction,setDirection] = useState("next")
 
@@ -72,11 +76,25 @@ export default function CustomSlider(){
           const pos = getPosition(i)
 
           return(
-            <div key={card.id} className={`sliderItem ${pos}`}>
+            <div key={card.id} className={`sliderItem ${pos} group`}>
               <img src={card.img} alt="" />
               <div className="HomeCardSliderGradient"></div>
               <div className="sliderContent absolute bottom-[30px] z-10 px-[15px]">
-                <p className="sliderDescription">{card.description}</p>
+                {/* <p className="sliderDescription">{card.description}</p> */}
+<p className="sliderDescription">
+
+  {/* Default (short text + read more) */}
+  <span className="group-hover:hidden transition-opacity duration-300">
+    {getShortText(card.description, 10)}...
+    <span className="ml-1 underline">Read more</span>
+  </span>
+
+  {/* On card hover → full text */}
+  <span className="hidden group-hover:inline transition-opacity duration-300">
+    {card.description}
+  </span>
+
+</p>
                 <p className="sliderHeader">{card.title}</p>
               </div>
             </div>
