@@ -106,13 +106,13 @@ export default function Header() {
           {/* Desktop Buttons */}
           <div className="flex items-center space-x-3 ml-4">     
             <Link
-              href="/login"
+              href="https://app.shopaver.com/login"
               className="py-[4.58px] px-[15px] text-[#240029] text-[11.66px] rounded-[6.661px] bg-[rgba(41,0,41,0.05)] shadow-[inset_0_0_0_0.833px_rgba(41,0,41,0.11)] hover:bg-gray-100 transition"
             >
               Log in
             </Link>
             <Link
-              href="/signup"
+              href="https://app.shopaver.com/Sign-up"
               className="px-[10px] py-[4.58px] rounded-[6.661px] bg-[#5801B7] shadow-[inset_0_0_0_0.833px_rgba(41,0,41,0.11)] text-[#FFF] text-center text-[11.658px] font-normal"
             >
               Sign up
@@ -146,13 +146,13 @@ export default function Header() {
         {/* Hamburger */}
         <div className="flex items-center gap-[9px]">
           <Link
-            href="/login"
+            href="https://app.shopaver.com/login"
             className="py-[4.58px] px-[15px] text-[#240029] text-[11.66px] rounded-[6.661px] bg-[rgba(41,0,41,0.05)] shadow-[inset_0_0_0_0.833px_rgba(41,0,41,0.11)] hover:bg-gray-100 transition"
           >
             Log in
           </Link>
           <Link
-            href="/signup"
+            href="https://app.shopaver.com/Sign-up"
             className="px-[10px] py-[4.58px] rounded-[6.661px] bg-[#5801B7] shadow-[inset_0_0_0_0.833px_rgba(41,0,41,0.11)] text-[#FFF] text-center text-[11.658px] font-normal"
           >
             Sign up

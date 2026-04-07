@@ -36,9 +36,10 @@
 // export default HeroSection;
 
 //Code By Dilshad
+"use client"
 import Link from "next/link";
 import Image from "next/image";
-function HeroSection({ data }) {
+function HeroSection({ data ,onEnquiryClick}) {
  const BASE_IMAGE_URL = "https://media-shopaver-uat.s3.amazonaws.com";
   return (
     <section className="max-w-5xl mx-auto">
@@ -57,16 +58,13 @@ function HeroSection({ data }) {
            {data.description}
           </p>
           <div className="flex items-center justify-center md:justify-center lg:justify-start gap-2 md:mt-[36.2px] mt-[26px]">
-            <Link href="https://app.shopaver.com/Sign-up">
-              <div className="rounded-[7px] sm:rounded-[11px] cursor-pointer h-[38px] w-[117px] sm:h-11  sm:w-[156px] bg-primary text-white flex justify-center items-center font-medium text-[12px] sm:text-[16px] font-[Poppins]">
+            <Link href="https://app.shopaver.com/Sign-up" className="rounded-[7px] sm:rounded-[11px] cursor-pointer h-[38px] w-[117px] sm:h-11  sm:w-[156px] bg-primary text-white flex justify-center items-center font-medium text-[12px] sm:text-[16px] font-[Poppins]">
                 Start Free Trial
-              </div>
             </Link>
-            <Link href="https://app.shopaver.com/Sign-up">
-              <div className="rounded-[7px] sm:rounded-[11px] cursor-pointer h-[38px] w-[117px] sm:h-11  sm:w-[156px] bg-primary text-white flex justify-center items-center font-medium text-[12px] sm:text-[16px] font-[Poppins]">
+              <button onClick={onEnquiryClick} className="rounded-[7px] sm:rounded-[11px] cursor-pointer h-[38px] w-[117px] sm:h-11  sm:w-[156px] bg-primary text-white flex justify-center items-center font-medium text-[12px] sm:text-[16px] font-[Poppins]">
                 Contact Sales
-              </div>
-            </Link>
+              </button>
+           
           </div>
         </div>
 
