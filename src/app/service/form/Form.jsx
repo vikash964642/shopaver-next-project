@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-
+import { toast } from "react-toastify";
 function Form({slug}) {
   const [formData, setFormData] = useState({
     name: "",
@@ -99,7 +99,7 @@ function Form({slug}) {
     if (Object.keys(newErrors).length !== 0) return;
 
     try {
-      const res = await fetch("https://shopaver-marketing.xoomsales.com/api/SupportMarketingDashBoard/InsertSchedule", {
+      const res = await fetch("https://shopaverleadapi.shopaver.com/api/SupportMarketingDashBoard/InsertSchedule", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -111,9 +111,9 @@ function Form({slug}) {
       });
 
       const data = await res.json();
-      console.log(data);
+      
 
-      alert("Form submitted successfully");
+      toast.success("Form submitted successfully");
 
       setFormData({
         name: "",
@@ -132,7 +132,7 @@ function Form({slug}) {
 
       setErrors({});
     } catch (error) {
-      console.log(error);
+       toast.error("Something went wrong. Please try again ❌");
     }
   };
   return (
@@ -151,7 +151,7 @@ function Form({slug}) {
           <div className="flex flex-col md:flex-row gap-[18px] lg:gap-[20px]">
            <div className="w-full">
              <input
-              className="w-full h-[45px] lg:h-[52.4px] rounded-[7.59px] lg:rounded-[10px] bg-[#FFF] text-[#C8C8C8] text-[12px] lg:text-[18px] px-[22px] outline-none"
+              className="w-full h-[45px] lg:h-[52.4px] rounded-[7.59px] lg:rounded-[10px] bg-[#FFF] text-[#373737] placeholder-[#C8C8C8] text-[12px] lg:text-[18px] px-[22px] outline-none"
               placeholder="Name"
               name="name"
               value={formData.name}
@@ -164,7 +164,7 @@ function Form({slug}) {
            </div>
            <div className="w-full">
              <input
-              className="w-full h-[45px] lg:h-[52.4px] rounded-[7.59px] lg:rounded-[10px] bg-[#FFF] text-[#C8C8C8] text-[12px] lg:text-[18px] px-[22px] outline-none"
+              className="w-full h-[45px] lg:h-[52.4px] rounded-[7.59px] lg:rounded-[10px] bg-[#FFF] text-[#373737] placeholder-[#C8C8C8] text-[12px] lg:text-[18px] px-[22px] outline-none"
               placeholder="Contact number"
               name="contact"
               value={formData.contact}
@@ -180,7 +180,7 @@ function Form({slug}) {
           <div className="flex flex-col md:flex-row gap-[18px] lg:gap-[20px] pt-[18px] lg:pt-[28px]">
             <div className="w-full">
                 <input
-              className="w-full h-[45px] lg:h-[52.4px] rounded-[7.59px] lg:rounded-[10px] bg-[#FFF] text-[#C8C8C8] text-[12px] lg:text-[18px] px-[22px] outline-none"
+              className="w-full h-[45px] lg:h-[52.4px] rounded-[7.59px] lg:rounded-[10px] bg-[#FFF] text-[#373737] placeholder-[#C8C8C8] text-[12px] lg:text-[18px] px-[22px] outline-none"
               placeholder="Company name"
               name="company"
               value={formData.company}
@@ -192,7 +192,7 @@ function Form({slug}) {
 
             <div className="w-full">
                 <input
-              className="w-full h-[45px] lg:h-[52.4px] rounded-[7.59px] lg:rounded-[10px] bg-[#FFF] text-[#C8C8C8] text-[12px] lg:text-[18px] px-[22px] outline-none"
+              className="w-full h-[45px] lg:h-[52.4px] rounded-[7.59px] lg:rounded-[10px] bg-[#FFF] text-[#373737] placeholder-[#C8C8C8] text-[12px] lg:text-[18px] px-[22px] outline-none"
               placeholder="Business email address"
               name="businessEmail"
               value={formData.businessEmail}
@@ -207,7 +207,7 @@ function Form({slug}) {
             </div>
           </div>
           <textarea
-            className="mt-[18px] lg:mt-[28px] w-full h-[90.5px] lg:h-[147px] rounded-[10px] bg-[#FFF] text-[#C8C8C8] text-[12px] lg:text-[18px] py-[18px] px-[22px] outline-none"
+            className="mt-[18px] lg:mt-[28px] w-full h-[90.5px] lg:h-[147px] rounded-[10px] bg-[#FFF] text-[#373737] placeholder-[#C8C8C8] text-[12px] lg:text-[18px] py-[18px] px-[22px] outline-none"
             placeholder="Your message"
             name="message"
             value={formData.message}

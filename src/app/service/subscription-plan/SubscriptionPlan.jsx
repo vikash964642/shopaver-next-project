@@ -23,13 +23,13 @@ function SubscriptionPlan() {
     <p className='px-[9px] py-[2px] bg-[#2D7A02] text-[#F7F5F2] text-[12px] font-medium'>SAVE UP TO 10%</p>
 </div>
 <div className='flex justify-center mt-[18px]'>
-    <div className='h-[43px] w-[197.6px] rounded-[26px] border border-[#CBCBCB] flex items-center gap-[20px] px-[7px]'>
+    <div className='h-[43px] w-[80px] rounded-[26px] border border-[#CBCBCB] flex justify-center items-center px-[7px]'>
         <div className='h-[33px] w-[83px] rounded-[20px] bg-[#5801B7] flex justify-center items-center text-[#F7F5F2] text-[16px] font-medium'>
             Yearly
         </div>
-        <div className='text-[#5801B7] text-[16px] font-medium'>
+        {/* <div className='text-[#5801B7] text-[16px] font-medium'>
             Monthly
-        </div>
+        </div> */}
     </div>
 </div>
 <div className='flex justify-center gap-[15px] mt-[30px]'>

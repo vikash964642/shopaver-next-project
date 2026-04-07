@@ -118,7 +118,6 @@ opacity:.6;
 
 .sliderItem{
   position:absolute;
-  /* transition:all .8s cubic-bezier(.32,.72,.38,.99); */
    transition:
     left .8s cubic-bezier(.32,.72,.38,.99),
     transform .8s cubic-bezier(.32,.72,.38,.99),
@@ -127,6 +126,21 @@ opacity:.6;
   will-change: left, transform, opacity;
   border-radius:20px;
   overflow:hidden;
+}
+/* Overlay layer */
+.sliderItem::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #5801B7;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+/* On hover show overlay */
+.sliderItem:hover::after {
+  opacity: 0.85; /* adjust as needed */
 }
 
 .sliderItem img{
@@ -247,9 +261,9 @@ background: linear-gradient(180deg, rgba(0,0,0,0) 0%, #000 100%);
 
   opacity: 1;
 
-  filter: blur(40px);
+  filter: blur(30px);
   position: absolute;
-  inset:85% 0% 0% 0%;
+  inset:70% 0% 0% 0%;
   z-index: 1;
 }
 .SubscriptionPlanGradient{

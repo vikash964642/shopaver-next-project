@@ -53,7 +53,7 @@ const Navbar = () => {
     <nav className="bg-white sticky top-0 z-50">
       <div className="flex items-center font-medium justify-between lg:border-b border-headerBorder pb-2 lg:pb-0">
         {/* Left: Logo */}
-        <div className="flex justify-between z-50 pt-8 lg:w-auto w-full pl-9 lg:ml-[45px] lg:pt-0 bg-white">
+        <div className="flex justify-between z-50 pt-8 lg:w-auto w-full pl-9 xl:ml-[45px] lg:pt-0 bg-white">
           <Image
             src={"/img/logo.webp"}
             width={156}
@@ -78,7 +78,7 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="flex justify-between items-center mr-8">
-          <ul className="lg:flex hidden lg:text-[13px] xl:text-[17.5px] items-center gap-5">
+          <ul className="lg:flex hidden lg:text-[13px] xl:text-[17.5px] items-center lg:gap-3 xl:gap-5">
             <li>
               <Link
                 href="/about-us"
@@ -104,12 +104,12 @@ const Navbar = () => {
           </ul>
 
           {/* Desktop Buttons */}
-          <div className="items-center border-headerBorder  border-l-2 pl-5 mr-7 gap-4 lg:flex hidden">
+          <div className="items-center border-headerBorder  border-l-2 pl-5 mr-3 xl:mr-7 lg:flex hidden">
             <a
               href="https://app.shopaver.com/Sign-up"
               target="_blank"
               rel="noopener noreferrer"
-              className="lg:block hidden font-bold text-[15px]"
+              className="lg:block hidden font-bold md:text-[13px] xl:text-[15px]"
             >
               <Button
                 text="Start For Free"
@@ -122,7 +122,7 @@ const Navbar = () => {
             href="https://app.shopaver.com/log-in"
             target="_blank"
             rel="noopener noreferrer"
-            className="lg:block hidden font-bold text-[15px] cursor-pointer"
+            className="lg:block hidden font-bold lg:text-[13px] xl:text-[15px] cursor-pointer"
           >
             <Button text="Login" />
           </a>

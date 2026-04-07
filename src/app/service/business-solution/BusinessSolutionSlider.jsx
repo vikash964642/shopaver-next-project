@@ -160,7 +160,7 @@ useLayoutEffect(() => {
                         alt={card.heading}
                         width={400}
                         height={400}
-                        className="object-contain"
+                        className="h-[400px] w-[400px] rounded-[47px]"
                       />
                     </div>
                   </div>
@@ -197,7 +197,7 @@ useLayoutEffect(() => {
                   alt={card.heading}
                   width={250}
                   height={250}
-                  className="w-full aspect-square object-cover rounded-md"
+                  className="w-full aspect-square rounded-[16px]"
                 />
 
                 <h3 className="pt-3 text-[18px] font-semibold text-[#5801B7]">
