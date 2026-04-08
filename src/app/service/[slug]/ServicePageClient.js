@@ -19,7 +19,7 @@ import FreeTrialBanner from "../free-trial-banner/FreeTrialBanner";
 
 export default function ServicePageClient({ data, faqData, allSlugData, slug }) {
   const formRef = useRef(null);
-
+console.log("data",data)
 const scrollToForm = () => {
   if (!formRef.current) return;
 

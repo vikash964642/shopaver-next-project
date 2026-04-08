@@ -6,9 +6,14 @@ async function getLandingPage(slug) {
   try {
     const res = await fetch(
       `https://shopaverleadapi.shopaver.com/api/SupportMarketingDashBoard/GetLandingPageBySlug?slug=${slug}`,
-      { method: "POST", 
-        next: { revalidate: 60 },
-           body: JSON.stringify({}),
+      { method: "POST",
+        headers: {
+    "Content-Type": "application/json",
+  }, 
+   body: JSON.stringify({}),
+        // next: { revalidate: 60 },
+        cache: "no-store",
+          
          
       }
     );
@@ -26,7 +31,14 @@ async function getFaq(slug) {
   try {
     const res = await fetch(
       `https://shopaverleadapi.shopaver.com/api/SupportMarketingDashBoard/GetAllFAQbyslug?slug=${slug}`,
-      { method: "POST", next: { revalidate: 60 } }
+      { method: "POST", 
+        // next: { revalidate: 60 } 
+         headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({}),
+    cache: "no-store", 
+      }
     );
     if (!res.ok) return [];
     const result = await res.json();
@@ -45,7 +57,8 @@ async function getSlugList() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ search: "", page: "1", pageSize: "100" }),
-        next: { revalidate: 60 },
+        // next: { revalidate: 60 },
+        cache: "no-store"
       }
     );
     if (!res.ok) return [];
