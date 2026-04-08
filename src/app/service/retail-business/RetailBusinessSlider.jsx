@@ -16,22 +16,22 @@ const contentData = [
   {
     heading: "Sales & Purchase Reports",
     paragraph: "Monitor revenue and profits in real time",
-    image: "/landingPage/RetailBusinessCardImg1.webp",
+    image: "/landingPage/RetailBusinessSliderImg1.png",
   },
   {
     heading: "Inventory & Stock Transfers",
     paragraph: "Track and move stock across locations",
-    image: "/landingPage/RetailBusinessCardImg2.webp",
+    image: "/landingPage/RetailBusinessSliderImg2.png",
   },
   {
     heading: "Vendor & Supplier Management",
     paragraph: "Simplify purchasing & supplier interactions",
-    image: "/landingPage/RetailBusinessCardImg3.webp",
+    image: "/landingPage/RetailBusinessSliderImg3.png",
   },
   {
     heading: "And Many More",
     paragraph: "All designed to simplify your retail operations",
-    image: "/landingPage/RetailBusinessCardImg4.webp",
+    image: "/landingPage/RetailBusinessSliderImg4.png",
   },
 ];
 
@@ -148,7 +148,7 @@ useLayoutEffect(() => {
                 alt={item.heading}
                 width={381}
                 height={241}
-                className={`absolute transition-opacity duration-500 md:w-[260px] md:h-[161px] lg:w-[385px] lg:h-[242px] md:left-[48px] md:top-[10px] lg:left-[76px] lg:top-[15px]  ${
+                className={`absolute transition-opacity duration-500 md:w-[258px] md:h-[161px] lg:w-[389px] lg:h-[243px] md:left-[48px] md:top-[10px] lg:left-[72px] lg:top-[15px]  ${
                   i === activeIndex ? "opacity-100 z-10" : "opacity-0 z-0"
                 }`}
               />
@@ -205,7 +205,7 @@ useLayoutEffect(() => {
             <img
               src={item.image}
               alt={item.heading}
-              className="w-[168px] h-[106px] top-[-13px] left-[3px] relative z-10 "
+              className="w-[168px] h-[108px] top-[-13px] left-[0px] relative z-10 "
             />
    </div>
          <div className="mt-[14.2px]">

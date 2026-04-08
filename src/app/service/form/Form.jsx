@@ -157,6 +157,7 @@ function Form({slug}) {
               value={formData.name}
               onChange={handleChange}
               onBlur={handleBlur}
+              maxLength={100}
             />
             {touched.name && errors.name && (
                 <p className="text-[red] text-[12px] font-semibold mt-1">{errors.name}</p>
@@ -186,6 +187,7 @@ function Form({slug}) {
               value={formData.company}
               onChange={handleChange}
               onBlur={handleBlur}
+              maxLength={100}
             />
            
             </div>
@@ -213,6 +215,7 @@ function Form({slug}) {
             value={formData.message}
             onChange={handleChange}
             onBlur={handleBlur}
+            maxLength={200}
           />
 
           <div className="flex justify-center mt-[35px]">
