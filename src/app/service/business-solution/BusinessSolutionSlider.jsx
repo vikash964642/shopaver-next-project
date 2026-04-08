@@ -17,7 +17,7 @@ function BusinessSolutionSlider({ data = [] }) {
   const BASE_IMAGE_URL = "https://media-shopaver-uat.s3.amazonaws.com";
 
   const filteredData = [...data];
-console.log("filer datas",filteredData)
+
   const [activeIndex, setActiveIndex] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);

@@ -22,7 +22,7 @@ function FormSection() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Submitting form with data:', formData); // Debugging log
+   
 
     try {
       const response = await fetch('https://shopaver.com/api/api/index.php', {
@@ -35,7 +35,7 @@ function FormSection() {
 
       if (response.ok) {
         const data = await response.json();
-        console.log('Success:', data);
+      
         alert('Form submitted successfully!');
         // Reset form fields to initial state
         setFormData({

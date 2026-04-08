@@ -24,7 +24,7 @@ const HeroSection = () => {
     axios
       .post("https://billingapi.shopaver.com/api/ReferralCode/get_shopaver_active_subscription")
       .then((response) => {
-        console.log(response.data);
+        
         
         if (response.data.success) {
           const allPlans = response.data.data;
