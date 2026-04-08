@@ -14,6 +14,7 @@ async function getLandingPage(slug) {
     );
     if (!res.ok) return null;
     const result = await res.json();
+    console.log("result",result);
     return result?.status === "success" ? result.data : null;
   } catch (err) {
     console.error("Landing API Error:", err);
@@ -64,8 +65,8 @@ export default async function ServicePage({ params }) {
     getFaq(slug),
     getSlugList(),
   ]);
+console.log('here')
 
-  if (!data) notFound();
 
   const allSlugData = slugList.flatMap((item) =>
     (item.slugListData || []).map((innerItem) => ({
