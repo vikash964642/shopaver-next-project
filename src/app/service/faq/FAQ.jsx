@@ -2,7 +2,6 @@
 import { useState } from "react";
 
 function FAQ({ faqData = [] }) {
-  console.log("faq data", faqData);
   const [openIndex, setOpenIndex] = useState(null);
   const faqs = faqData?.[0]?.faq || [];
   const toggleFAQ = (index) => {
