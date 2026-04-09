@@ -17,9 +17,9 @@ import HomeCardSlider from "../card-slider/HomeCardSlider";
 import SubscriptionPlan from "../subscription-plan/SubscriptionPlan";
 import FreeTrialBanner from "../free-trial-banner/FreeTrialBanner";
 
-export default function ServicePageClient({ data, faqData, allSlugData, slug }) {
+export default function ServicePageClient({ data, faqData, allSlugData, slug,slugList }) {
   const formRef = useRef(null);
-console.log("data",data)
+
 const scrollToForm = () => {
   if (!formRef.current) return;
 
@@ -34,6 +34,14 @@ const scrollToForm = () => {
   });
 
 };
+if (!data) {
+  return (
+    <div style={{ padding: "100px", textAlign: "center" }}>
+      <h2>Oops 😕</h2>
+      <p>Unable to load data. Please try again.</p>
+    </div>
+  );
+}
   return (
     <div>
       {data?.bannerSection && (
@@ -70,17 +78,3 @@ const scrollToForm = () => {
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

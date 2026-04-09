@@ -19,7 +19,6 @@ async function getLandingPage(slug) {
     );
     if (!res.ok) return null;
     const result = await res.json();
-    console.log("result",result);
     return result?.status === "success" ? result.data : null;
   } catch (err) {
     console.error("Landing API Error:", err);
@@ -72,15 +71,30 @@ async function getSlugList() {
 
 export default async function ServicePage({ params }) {
   const { slug } = params;
-
+  if (!slug || slug.trim() === "") {
+    notFound();
+  }
   const [data, faqData, slugList] = await Promise.all([
     getLandingPage(slug),
     getFaq(slug),
     getSlugList(),
   ]);
-console.log('here')
+
+const validSlugs = slugList
+  .map(item => item.slug?.trim())
+  .filter(Boolean);
 
 
+// ❗ ONLY check when slugList actually loaded
+const normalizedSlug = slug.trim().toLowerCase();
+
+const isValid = validSlugs.some(
+  (s) => s.toLowerCase() === normalizedSlug
+);
+
+if (validSlugs.length > 0 && !isValid) {
+  notFound();
+}
   const allSlugData = slugList.flatMap((item) =>
     (item.slugListData || []).map((innerItem) => ({
       ...innerItem,
@@ -94,6 +108,8 @@ console.log('here')
       faqData={faqData}
       allSlugData={allSlugData}
       slug={slug}
+      slugList={slugList}
+
     />
   );
 }
