@@ -12,7 +12,7 @@ Cancel any time.</p>
 <Link href="https://app.shopaver.com/Sign-up" className='mt-[13.5px] md:mt-[17.2px] bg-[#FFF] flex justify-center items-center w-[150px] h-[35px] md:w-[125px] md:h-[31px] rounded-[4.303px] text-[#5801B7] text-[14px] md:text-[12px] font-medium'>Start your free trial</Link>
 </div>
 <div className='md:w-1/2 flex justify-end items-end'>
-    <Image src={'/landingPage/FreeTrialBannerImg.webp'} className="md:w-[445px] md:h-[225px]" width={445} height={225}/>
+    <Image src={'/landingPage/FreeTrialBannerImg.webp'} alt='Get started with Shopaver today' className="md:w-[445px] md:h-[225px]" width={445} height={225}/>
 </div>
         </div>
 

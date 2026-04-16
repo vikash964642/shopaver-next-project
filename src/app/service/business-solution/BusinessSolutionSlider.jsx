@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -21,7 +20,7 @@ function BusinessSolutionSlider({ data = [] }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
-const [swiperReady, setSwiperReady] = useState(false);
+  const [swiperReady, setSwiperReady] = useState(false);
   const swiperRef = useRef(null);
   const sectionRef = useRef(null);
 
@@ -39,34 +38,33 @@ const [swiperReady, setSwiperReady] = useState(false);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  
-useLayoutEffect(() => {
-  if (!isMounted || !isDesktop || !swiperReady) return;
+  useLayoutEffect(() => {
+    if (!isMounted || !isDesktop || !swiperReady) return;
 
-  const swiper = swiperRef.current;
+    const swiper = swiperRef.current;
 
-  const st = ScrollTrigger.create({
-    trigger: sectionRef.current,
-    start: "center center",
-    end: "+=" + window.innerHeight * (filteredData.length - 1),
+    const st = ScrollTrigger.create({
+      trigger: sectionRef.current,
+      start: "center center",
+      end: "+=" + window.innerHeight * (filteredData.length - 1),
 
-    pin: true,
-    scrub: 1,
-    anticipatePin: 1,
+      pin: true,
+      scrub: 1,
+      anticipatePin: 1,
 
-    onUpdate: (self) => {
-      const progress = self.progress * (filteredData.length - 1);
-      const index = Math.floor(progress + 0.0001);
+      onUpdate: (self) => {
+        const progress = self.progress * (filteredData.length - 1);
+        const index = Math.floor(progress + 0.0001);
 
-      swiper.slideTo(index);
-      setActiveIndex(index);
-    },
-  });
+        swiper.slideTo(index);
+        setActiveIndex(index);
+      },
+    });
 
-  ScrollTrigger.refresh();
+    ScrollTrigger.refresh();
 
-  return () => st.kill();
-}, [isMounted, isDesktop, swiperReady, filteredData.length]);
+    return () => st.kill();
+  }, [isMounted, isDesktop, swiperReady, filteredData.length]);
   // ✅ HYDRATION FIX
   if (!isMounted) return null;
 
@@ -106,9 +104,7 @@ useLayoutEffect(() => {
                 {index !== filteredData.length - 1 && (
                   <div
                     className={`h-px w-[105px] ${
-                      index <= activeIndex
-                        ? "bg-[#5801B7]"
-                        : "bg-[#939393]"
+                      index <= activeIndex ? "bg-[#5801B7]" : "bg-[#939393]"
                     }`}
                   />
                 )}
@@ -119,10 +115,10 @@ useLayoutEffect(() => {
           {/* SLIDER */}
           <div className="overflow-hidden mt-[45px]">
             <Swiper
-              onSwiper={(swiper) => {swiperRef.current = swiper
-                setSwiperReady(true)
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper;
+                setSwiperReady(true);
               }}
-                
               modules={[Autoplay, Pagination, EffectFade]}
               allowTouchMove={!isDesktop}
               loop={false}
@@ -133,7 +129,6 @@ useLayoutEffect(() => {
               {filteredData.map((card, index) => (
                 <SwiperSlide key={index}>
                   <div className="flex flex-col md:flex-row items-center px-6 md:px-0">
-                    
                     {/* TEXT */}
                     <div className="md:w-1/2 md:pl-[40px]">
                       <h3 className="text-[32px] lg:text-[40px] font-semibold text-[#5801B7]">
@@ -187,7 +182,6 @@ useLayoutEffect(() => {
           {filteredData.map((card, index) => (
             <SwiperSlide key={index} className="!w-[250px] h-auto">
               <div className="rounded-[16px] border border-[#E7D1FF] flex flex-col h-full p-3">
-                
                 <Image
                   src={
                     card.image
@@ -208,9 +202,7 @@ useLayoutEffect(() => {
                   {card.subHeading}
                 </p>
 
-                <p className="text-[12px] text-[#5F5F5F]">
-                  {card.description}
-                </p>
+                <p className="text-[12px] text-[#5F5F5F]">{card.description}</p>
               </div>
             </SwiperSlide>
           ))}

@@ -1,5 +1,4 @@
 "use client";
-
 import { useRef } from "react";
 import HeroSection from "../hero-section/HeroSection";
 import HomeSlider from "../home-slider/HomeSlider";
@@ -17,31 +16,35 @@ import HomeCardSlider from "../card-slider/HomeCardSlider";
 import SubscriptionPlan from "../subscription-plan/SubscriptionPlan";
 import FreeTrialBanner from "../free-trial-banner/FreeTrialBanner";
 
-export default function ServicePageClient({ data, faqData, allSlugData, slug,slugList }) {
+export default function ServicePageClient({
+  data,
+  faqData,
+  allSlugData,
+  slug,
+  slugList,
+}) {
   const formRef = useRef(null);
 
-const scrollToForm = () => {
-  if (!formRef.current) return;
+  const scrollToForm = () => {
+    if (!formRef.current) return;
 
-  const top =
-    formRef.current.getBoundingClientRect().top +
-    window.pageYOffset -
-    150; // offset for sticky header
+    const top =
+      formRef.current.getBoundingClientRect().top + window.pageYOffset - 150; // offset for sticky header
 
-  window.scrollTo({
-    top,
-    behavior: "smooth",
-  });
-
-};
-if (!data) {
-  return (
-    <div style={{ padding: "100px", textAlign: "center" }}>
-      <h2>Oops 😕</h2>
-      <p>Unable to load data. Please try again.</p>
-    </div>
-  );
-}
+    window.scrollTo({
+      top,
+      behavior: "smooth",
+    });
+  };
+  if (!data) {
+    return (
+      <div style={{ padding: "100px", textAlign: "center" }}>
+        <h2>Oops 😕</h2>
+        <p>Unable to load data. Please try again.</p>
+      </div>
+    );
+  }
+  // console.log("Client Component Rendered with data:");
   return (
     <div>
       {data?.bannerSection && (
