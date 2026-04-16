@@ -6,6 +6,7 @@ async function getLandingPage(slug) {
   try {
     const res = await fetch(
       `https://shopaverleadapi.shopaver.com/api/SupportMarketingDashBoard/GetLandingPageBySlug?slug=${slug}`,
+      
       { method: "POST",
         headers: {
     "Content-Type": "application/json",
@@ -25,6 +26,38 @@ async function getLandingPage(slug) {
     return null;
   }
 }
+
+
+export async function generateMetadata({ params }) {
+  const data = await getLandingPage(params.slug);
+
+  const url = `https://shopaver.com/service/${params.slug}`;
+
+  return {
+    title: data?.metaTitle || data?.title,
+    description: data?.metaDescription || data?.description,
+
+    // ✅ Canonical URL
+    alternates: {
+      canonical: url,
+    },
+
+    // ✅ Robots Tag
+    robots: {
+      index: true,
+      follow: true,
+    },
+
+    // (optional but recommended)
+    openGraph: {
+      title: data?.metaTitle,
+      description: data?.metaDescription,
+      url: url,
+      type: "website",
+    },
+  };
+}
+
 
 async function getFaq(slug) {
   try {
@@ -46,7 +79,9 @@ async function getFaq(slug) {
     console.error("FAQ API Error:", err);
     return [];
   }
+
 }
+
 
 async function getSlugList() {
   try {

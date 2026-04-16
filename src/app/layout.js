@@ -5,7 +5,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import DynamicHeader from "../Component/DynamicHeader";
 import DynamicFooter from "../Component/DynamicFooter";
 import { Lato } from "next/font/google";
-
+import Navbar from "../Component/NewNavbar/Navbar";
 // Font
 const latoFont = Lato({
   subsets: ["latin"],
@@ -64,7 +64,8 @@ export default function RootLayout({ children }) {
         />
 
         {/* ✅ Layout Components */}
-        <DynamicHeader />
+        {/* <DynamicHeader /> */}
+        <Navbar />
         {children}
         <DynamicFooter />
       <DynamicBottomIcon />

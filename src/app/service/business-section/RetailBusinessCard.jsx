@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Navigation } from "swiper/modules";
@@ -14,9 +13,9 @@ function RetailBusinessCard({ onePlatform = [] }) {
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
   const filteredData = onePlatform.filter(
-    (item) => item.heading && item.description,
+    (item) => item.keyword && item.description,
   );
-
+// console.log("RetailBusinessCard Rendered with data:", filteredData); 
   if (filteredData.length === 0) return null;
 
   return (
@@ -105,38 +104,46 @@ function Card({ item }) {
   const BASE_IMAGE_URL = "https://media-shopaver-uat.s3.amazonaws.com";
 
   return (
-    <div className="flex items-center h-full gap-[14.5px] lg:gap-[35px] bg-white rounded-[25.47px] border border-[#EBD9FF] p-4">
-      <div className="flex flex-col w-[50%]">
-        <p className="text-[#5801B7] text-[18px] font-medium break-words">
-          {item.heading}
-        </p>
+    <div className="flex items-stretch gap-[14.5px] lg:gap-[35px] bg-white rounded-[25.47px] border border-[#EBD9FF] p-4 h-full">
 
-        <p className="pt-[5px] text-[#525252] text-[10px] md:text-[12px] break-words">
-          {item.description}
-        </p>
+  {/* LEFT CONTENT */}
+  <div className="flex flex-col w-[50%] justify-between">
 
-        <Link
-          href={`/service/${item.slug}`}
-          className="mt-[20px] rounded-[30px] bg-[#E6D2FF] w-[90px] h-[27px] flex justify-center items-center"
-        >
-          <p className="text-[#5801B7] text-[10px]">Read More</p>
-        </Link>
-      </div>
+    <div>
+      <p className="text-[#5801B7] text-[18px] font-medium break-words line-clamp-2">
+        {item.keyword}
+      </p>
 
-      <div className="w-[50%] flex justify-end items-center">
-        <Image
-          src={
-            item.image
-              ? `${BASE_IMAGE_URL}${item.image}`
-              : "/landingPage/BusinessSolutionSliderImg6.webp"
-          }
-          alt={item.heading}
-          width={218}
-          height={227}
-          className="rounded-[7.8px] lg:rounded-[11.6px] max-[375px]:h-auto max-[375px]:w-full w-[147px] h-[153px] lg:w-[218px] lg:h-[227px]"
-        />
-      </div>
+      <p className="pt-[5px] text-[#525252] text-[13px] break-words line-clamp-5">
+        {item.description}
+      </p>
     </div>
+
+    <Link
+      href={`/service/${item.slug}`}
+      className="mt-[20px] rounded-[30px] bg-[#E6D2FF] w-[90px] h-[27px] flex justify-center items-center"
+    >
+      <p className="text-[#5801B7] text-[10px]">Read More</p>
+    </Link>
+
+  </div>
+
+  {/* RIGHT IMAGE */}
+  <div className="w-[50%] flex justify-end items-center">
+    <Image
+      src={
+        item.image
+          ? `${BASE_IMAGE_URL}${item.image}`
+          : "/landingPage/BusinessSolutionSliderImg6.webp"
+      }
+      alt={item.keyword}
+      width={218}
+      height={227}
+      className="rounded-[11px] object-cover w-full h-auto max-w-[218px]"
+    />
+  </div>
+
+</div>
   );
 }
 

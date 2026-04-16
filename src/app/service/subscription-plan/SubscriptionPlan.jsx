@@ -55,7 +55,7 @@ function SubscriptionPlan() {
     </div>
     <div className='max-[400px]:hidden max-[550px]:w-[50%] sm:w-[33%] md:w-[25%] h-[160px] lg:h-[180px] relative border-[0.86px] border-[#5801B7]'>
         <div className='w-full absolute top-0 text-[#F7F5F2] text-[12px] bg-[#5801B7] flex justify-center'>
-            <Image src={'/landingPage/bestValueIcon.svg'} width={20} height={20} />
+            <Image src={'/landingPage/bestValueIcon.svg'} alt='Best Value' width={20} height={20} />
          Best Value
         </div>
           <div className=' px-[15px] py-[30px]  '>

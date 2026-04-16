@@ -104,7 +104,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Buttons */}
-          <div className="flex items-center space-x-3 ml-4">     
+          <div className="flex items-center space-x-3 ml-4">
             <Link
               href="https://app.shopaver.com/login"
               className="py-[4.58px] px-[15px] text-[#240029] text-[11.66px] rounded-[6.661px] bg-[rgba(41,0,41,0.05)] shadow-[inset_0_0_0_0.833px_rgba(41,0,41,0.11)] hover:bg-gray-100 transition"

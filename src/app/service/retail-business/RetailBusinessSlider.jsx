@@ -1,5 +1,3 @@
-
-
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -38,132 +36,119 @@ const contentData = [
 export default function RetailBusinessSlider() {
   const sectionRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
-const paginationRef = useRef(null);
-// useLayoutEffect(() => {
-//   const section = sectionRef.current;
-//   const slides = contentData.length;
+  const paginationRef = useRef(null);
 
-//   const ctx = gsap.context(() => {
-//     ScrollTrigger.create({
-//       trigger: section,
-//       start: "top top",
-//       end: "+=" + window.innerHeight * (slides - 1),
-//       scrub: true,
+  useLayoutEffect(() => {
+    const section = sectionRef.current;
+    const slides = contentData.length;
 
-//       onUpdate: (self) => {
-//         const index = Math.floor(self.progress * slides);
-//         setActiveIndex(Math.min(index, slides - 1));
-//       },
-//     });
-//   });
+    const ctx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top 50%",
+        end: "+=" + window.innerHeight * (slides - 1),
+        scrub: 1,
 
-//   ScrollTrigger.refresh();
-//   return () => ctx.revert();
-// }, []);
-useLayoutEffect(() => {
-  const section = sectionRef.current;
-  const slides = contentData.length;
+        immediateRender: false,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+        refreshPriority: -1,
 
-  const ctx = gsap.context(() => {
-    ScrollTrigger.create({
-      trigger: section,
-      start: "top 50%",
-      end: "+=" + window.innerHeight * (slides - 1),
-      scrub: 1,
+        onEnter: () => setActiveIndex(0), // ✅ KEY FIX
+        onEnterBack: () => setActiveIndex(0), // ✅ KEY FIX
 
-      immediateRender: false,
-      anticipatePin: 1,
-      invalidateOnRefresh: true,
-      refreshPriority: -1,
-
-      onEnter: () => setActiveIndex(0),       // ✅ KEY FIX
-      onEnterBack: () => setActiveIndex(0),   // ✅ KEY FIX
-
-      onUpdate: (self) => {
-        const progress = Math.max(0, Math.min(1, self.progress));
-        const index = Math.floor(progress * slides);
-        setActiveIndex(Math.min(index, slides - 1));
-      },
+        onUpdate: (self) => {
+          const progress = Math.max(0, Math.min(1, self.progress));
+          const index = Math.floor(progress * slides);
+          setActiveIndex(Math.min(index, slides - 1));
+        },
+      });
     });
-  });
 
-  setTimeout(() => {
-    ScrollTrigger.refresh();
-  }, 500);
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 500);
 
-  return () => ctx.revert();
-}, []);
+    return () => ctx.revert();
+  }, []);
   return (
     <>
-    <section
-      ref={sectionRef}
-      className="hidden md:block px-[20px] xl:px-0 mt-[70px] relative" style={{ height: `${contentData.length * 100}vh` }}
-    >
-     <div className="sticky top-0 h-screen flex items-center">
-       <div className="max-w-6xl mx-auto w-full px-[20px] xl:px-0">
-        <h3 className="text-[#5801B7] text-[28px] lg:text-[30px] text-center font-semibold px-[30px] lg:px-0 max-[375px]:text-[24px]">
-          Run Your Entire Retail Business from a Single Dashboard
-        </h3>
-        <div className="flex justify-center mt-2 max-[375px]:px-5 px-[30px] sm:px-0">
-          <p className="sm:w-[450px] lg:w-[760px] text-[#5F5F5F] text-[14px] lg:text-[18px] text-center font-normal max-[375px]:text-[13px]">
-            Manage your entire store operations from one platform. No more
-            switching between multiple tools. From billing to sales, everything
-            is fully integrated
-          </p>
-        </div>
+      <section
+        ref={sectionRef}
+        className="hidden md:block px-[20px] xl:px-0 mt-[70px] relative"
+        style={{ height: `${contentData.length * 100}vh` }}
+      >
+        <div className="sticky top-0 h-screen flex items-center">
+          <div className="max-w-6xl mx-auto w-full px-[20px] xl:px-0">
+            <h3 className="text-[#5801B7] text-[28px] lg:text-[30px] text-center font-semibold px-[30px] lg:px-0 max-[375px]:text-[24px]">
+              Run Your Entire Retail Business from a Single Dashboard
+            </h3>
+            <div className="flex justify-center mt-2 max-[375px]:px-5 px-[30px] sm:px-0">
+              <p className="sm:w-[450px] lg:w-[760px] text-[#5F5F5F] text-[14px] lg:text-[18px] text-center font-normal max-[375px]:text-[13px]">
+                Manage your entire store operations from one platform. No more
+                switching between multiple tools. From billing to sales,
+                everything is fully integrated
+              </p>
+            </div>
 
-        <div className="flex justify-between items-center mt-20">
-          {/* LEFT CONTENT */}
-          <div className=" space-y-10">
-            {contentData.map((item, i) => (
-              <div key={i} className="flex gap-6">
-                <div
-                  className={`transition-all duration-300 ${
-                    activeIndex === i ? "border-l border-[#5801B7]" : ""
-                  }`}
-                />
-                <div>
-                  <h2
-                    className={`md:text-[18px] lg:text-[20px] font-medium transition-colors duration-300 ${
-                      activeIndex === i ? "text-[#5801B7]" : "text-[#393939]"
-                    }`}
-                  >
-                    {item.heading}
-                  </h2>
-                  <p className="pt-2 text-[#2E2E2E] md:text-[13px] lg:text-[14px] font-normal">
-                    {item.paragraph}
-                  </p>
-                </div>
+            <div className="flex justify-between items-center mt-20">
+              {/* LEFT CONTENT */}
+              <div className=" space-y-10">
+                {contentData.map((item, i) => (
+                  <div key={i} className="flex gap-6">
+                    <div
+                      className={`transition-all duration-300 ${
+                        activeIndex === i ? "border-l border-[#5801B7]" : ""
+                      }`}
+                    />
+                    <div>
+                      <h2
+                        className={`md:text-[18px] lg:text-[20px] font-medium transition-colors duration-300 ${
+                          activeIndex === i
+                            ? "text-[#5801B7]"
+                            : "text-[#393939]"
+                        }`}
+                      >
+                        {item.heading}
+                      </h2>
+                      <p className="pt-2 text-[#2E2E2E] md:text-[13px] lg:text-[14px] font-normal">
+                        {item.paragraph}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
 
-          {/* RIGHT IMAGE */}
-          <div className="  relative ">
-          <Image src={'/landingPage/laptopImage.webp'} className="md:w-[350px] lg:w-[526.14px] aspect-[77/54]" width={526.14} height={369} />
-            {contentData.map((item, i) => (
-              <Image
-                key={i}
-                src={item.image}
-                alt={item.heading}
-                width={381}
-                height={241}
-                className={`absolute transition-opacity duration-500 md:w-[258px] md:h-[161px] lg:w-[389px] lg:h-[243px] md:left-[48px] md:top-[10px] lg:left-[72px] lg:top-[15px]  ${
-                  i === activeIndex ? "opacity-100 z-10" : "opacity-0 z-0"
-                }`}
-              />
-            ))}
+              {/* RIGHT IMAGE */}
+              <div className="  relative ">
+                <Image
+                  src={"/landingPage/laptopImage.webp"}
+                  className="md:w-[350px] lg:w-[526.14px] aspect-[77/54]"
+                  width={526.14}
+                  height={369}
+                  alt="blank laptop image"
+                />
+                {contentData.map((item, i) => (
+                  <Image
+                    key={i}
+                    src={item.image}
+                    alt={item.heading}
+                    width={381}
+                    height={241}
+                    className={`absolute transition-opacity duration-500 md:w-[258px] md:h-[161px] lg:w-[389px] lg:h-[243px] md:left-[48px] md:top-[10px] lg:left-[72px] lg:top-[15px]  ${
+                      i === activeIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-    
-
-      </div>
-     </div>
       </section>
 
       {/* Mobile View */}
-<section className="mt-[60px] block md:hidden">
-   <h3 className="text-[#5801B7] max-[375px]:text-[24px] text-[28px]  text-center font-semibold px-[30px] ">
+      <section className="mt-[60px] block md:hidden">
+        <h3 className="text-[#5801B7] max-[375px]:text-[24px] text-[28px]  text-center font-semibold px-[30px] ">
           Run Your Entire Retail Business from a Single Dashboard
         </h3>
         <div className="flex justify-center mt-2 max-[375px]:px-5 px-[30px] sm:px-0">
@@ -173,58 +158,63 @@ useLayoutEffect(() => {
             is fully integrated
           </p>
         </div>
-      <div className="flex justify-center">
+        <div className="flex justify-center">
           <div className=" w-[275px] border-[0.97px] border-[#E7D1FF] rounded-[18.575px] px-[7.42px] pt-[7.42px] pb-[15.5px] mt-[42px]">
+            {/* Static Background */}
+            <div className="relative flex justify-center">
+              <div className="w-full flex justify-center rounded-[15.9px] h-[250px] bg-[#F4E9FF]  absolute">
+                <Image
+                  src={"/landingPage/laptopImage.webp"}
+                  className="absolute top-[52px] aspect-[77/54]"
+                  width={233.35}
+                  height={163.65}
+                  alt="Blank laptop image"
+                />
+              </div>
 
-  {/* Static Background */}
-  <div className="relative flex justify-center">
-
-    <div className="w-full flex justify-center rounded-[15.9px] h-[250px] bg-[#F4E9FF]  absolute">
-      <Image src={'/landingPage/laptopImage.webp'} className="absolute top-[52px] aspect-[77/54]" width={233.35} height={163.65} /> 
-    </div>
-
-    <Swiper
-    modules={[Pagination,Autoplay]}
-      autoplay={{
-    delay: 3000,
-    disableOnInteraction: false,
-  }}
-   pagination={{
-    el: ".RetailBusinessSliderPagination",
-    clickable: true,
-  }}
-      slidesPerView={1}
-      spaceBetween={20}
-      loop={true}
-      className="  retailSwiper"
-    >
-      {contentData.map((item, index) => (
-        <SwiperSlide key={index}>
-          <div className="h-[250px] flex justify-center items-center ">
-
-            <img
-              src={item.image}
-              alt={item.heading}
-              className="w-[168px] h-[108px] top-[-13px] left-[0px] relative z-10 "
-            />
-   </div>
-         <div className="mt-[14.2px]">
-             <h3 className="w-[195px] text-[#5801B7] text-[21.8px] font-semibold">{item.heading}</h3>
-            <p className="pt-[5.3px] text-[#525252] text-[15px]">{item.paragraph}</p>
-         </div>
-
-       
-        </SwiperSlide>
-      ))}
-    </Swiper>
-
-  </div>
-  
-</div>
-
-</div>
-<div ref={paginationRef} className="RetailBusinessSliderPagination flex justify-center mt-[22px]"></div>
-    </section>
+              <Swiper
+                modules={[Pagination, Autoplay]}
+                autoplay={{
+                  delay: 3000,
+                  disableOnInteraction: false,
+                }}
+                pagination={{
+                  el: ".RetailBusinessSliderPagination",
+                  clickable: true,
+                }}
+                slidesPerView={1}
+                spaceBetween={20}
+                loop={true}
+                className="  retailSwiper"
+              >
+                {contentData.map((item, index) => (
+                  <SwiperSlide key={index}>
+                    <div className="h-[250px] flex justify-center items-center ">
+                      <img
+                        src={item.image}
+                        alt={item.heading}
+                        className="w-[168px] h-[108px] top-[-13px] left-[0px] relative z-10 "
+                      />
+                    </div>
+                    <div className="mt-[14.2px]">
+                      <h3 className="w-[195px] text-[#5801B7] text-[21.8px] font-semibold">
+                        {item.heading}
+                      </h3>
+                      <p className="pt-[5.3px] text-[#525252] text-[15px]">
+                        {item.paragraph}
+                      </p>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+          </div>
+        </div>
+        <div
+          ref={paginationRef}
+          className="RetailBusinessSliderPagination flex justify-center mt-[22px]"
+        ></div>
+      </section>
     </>
   );
 }
