@@ -10,7 +10,27 @@ function WhyChooseSection({ data = [] }) {
   const ScrollTop = () => {
     window.scrollTo({ top: 0 });
   };
-    const filteredData = [...data]
+
+  const filteredData = [...data];
+  const renderRichText = (content) => {
+    const text = content || "";
+    const hasHtml = /<\/?[a-z][\s\S]*>/i.test(text);
+
+    if (hasHtml) {
+      return (
+        <div
+          className="business-solution-description text-[14px] lg:text-[16px] text-[#5F5F5F] pt-2 max-w-[380px]"
+          dangerouslySetInnerHTML={{ __html: text }}
+        />
+      );
+    }
+
+    return (
+      <p className="text-[14px] lg:text-[16px] text-[#5F5F5F] pt-2 max-w-[380px]">
+        {text}
+      </p>
+    );
+  };
   return (
     <section className="pt-[60px] lg:pt-[78px] px-[20px] xl:px-0 max-w-5xl mx-auto">
       <h2 className="text-[#5801B7] text-center lg:text-[30px] text-[22px] font-semibold">
@@ -23,7 +43,7 @@ function WhyChooseSection({ data = [] }) {
             className="bg-[#FFF] px-2.5 pt-2.5 pb-[15px] shadow-[0_0_4px_0_rgba(0,0,0,0.20)]"
           >
             <Image
-            src={`/landingPage/PosHomeImg${index + 1}.webp`}
+              src={`/landingPage/PosHomeImg${index + 1}.webp`}
               alt={item.heading}
               width={264}
               height={264}
@@ -31,9 +51,7 @@ function WhyChooseSection({ data = [] }) {
             <p className="pt-3 max-w-[210px] text-[#0A0A0A] text-[18px] font-medium  leading-[normal]">
               {item.heading}
             </p>
-            <p className="pt-[5px] text-[#525252] text-[12px] font-normal ">
-              {item.description}
-            </p>
+            {renderRichText(item.description)}
           </div>
         ))}
       </div>
@@ -42,13 +60,13 @@ function WhyChooseSection({ data = [] }) {
           className={`flex md:justify-center overflow-x-auto gap-[11px] pt-1 pl-0.5 pr-0.5 pb-2 cursor-grab ${styles.hideScrollbar}`}
           style={{ scrollSnapType: "x mandatory" }}
         >
-          {filteredData.map((item,index) => (
+          {filteredData.map((item, index) => (
             <div
               key={index}
               className="bg-[#FFF] shrink-0 w-[180px] sm:w-[200px] md:w-[220px] px-2.5 pt-2.5 pb-[15px] shadow-[0_0_4px_0_rgba(0,0,0,0.20)]"
             >
               <Image
-               src={`/landingPage/PosHomeImg${index + 1}.webp`}
+                src={`/landingPage/PosHomeImg${index + 1}.webp`}
                 alt={item.heading}
                 width={264}
                 height={264}
@@ -56,9 +74,7 @@ function WhyChooseSection({ data = [] }) {
               <p className="pt-[11.5] max-w-[150px] text-[#0A0A0A] text-[15px] sm:text-[16.5px] font-medium ">
                 {item.heading}
               </p>
-              <p className="pt-1 text-[#525252] text-[11px] sm:text-[12px] font-normal ">
-                {item.description}
-              </p>
+              {renderRichText(item.description)}
             </div>
           ))}
         </div>

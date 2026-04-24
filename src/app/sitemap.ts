@@ -1,13 +1,14 @@
 
 
 import { MetadataRoute } from "next";
+import { LANDING_PAGE_API_URL, SITE_URL } from "@/lib/env";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let pages: any[] = [];
 
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/landingpage/all`,
+      `${LANDING_PAGE_API_URL}/landingpage/all`,
       {
         next: { revalidate: 300 },
       }
@@ -24,7 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const servicePages = pages
     ?.filter((page: any) => page?.isActive)
     ?.map((page: any) => ({
-      url: `https://www.shopaver.com/service/${page?.slug}`,
+      url: `${SITE_URL}/service/${page?.slug}`,
       lastModified: page?.updatedDate
         ? new Date(page.updatedDate)
         : new Date(),
@@ -34,7 +35,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     {
-      url: "https://www.shopaver.com",
+      url: SITE_URL,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 1,

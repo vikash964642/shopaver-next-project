@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { toast } from "react-toastify";
+import { LEAD_API_BASE_URL } from "@/lib/env";
 function Form({slug}) {
   const [formData, setFormData] = useState({
     name: "",
@@ -99,7 +100,7 @@ function Form({slug}) {
     if (Object.keys(newErrors).length !== 0) return;
 
     try {
-      const res = await fetch("https://shopaverleadapi.shopaver.com/api/SupportMarketingDashBoard/InsertSchedule", {
+      const res = await fetch(`${LEAD_API_BASE_URL}/InsertSchedule`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

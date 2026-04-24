@@ -1,6 +1,7 @@
 "use client";
 import PropTypes from "prop-types";
 import { useEffect, useState } from 'react';
+import { FORM_API_URL } from "@/lib/env";
 
 const FormHome = (props) => {
 
@@ -33,7 +34,7 @@ const FormHome = (props) => {
     console.log('Submitting form with data:', formData);
 
     try {
-      const response = await fetch('https://shopaver.com/api/api/index.php', {
+      const response = await fetch(FORM_API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

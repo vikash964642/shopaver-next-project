@@ -9,13 +9,31 @@ import "swiper/css/effect-fade";
 import { useLayoutEffect, useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { resolveAssetUrl } from "@/lib/imageUrl";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function BusinessSolutionSlider({ data = [] }) {
-  const BASE_IMAGE_URL = "https://media-shopaver-uat.s3.amazonaws.com";
-
   const filteredData = [...data];
+  const renderRichText = (content) => {
+    const text = content || "";
+    const hasHtml = /<\/?[a-z][\s\S]*>/i.test(text);
+
+    if (hasHtml) {
+      return (
+        <div
+          className="business-solution-description text-[14px] lg:text-[16px] text-[#5F5F5F] pt-2 max-w-[380px]"
+          dangerouslySetInnerHTML={{ __html: text }}
+        />
+      );
+    }
+
+    return (
+      <p className="text-[14px] lg:text-[16px] text-[#5F5F5F] pt-2 max-w-[380px]">
+        {text}
+      </p>
+    );
+  };
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [isMounted, setIsMounted] = useState(false);
@@ -139,18 +157,17 @@ function BusinessSolutionSlider({ data = [] }) {
                         {card.subHeading}
                       </p>
 
-                      <p className="text-[14px] lg:text-[16px] text-[#5F5F5F] pt-2 max-w-[380px]">
-                        {card.description}
-                      </p>
+                      {renderRichText(card.description)}
                     </div>
 
                     {/* IMAGE */}
                     <div className="md:w-1/2 flex justify-center mt-6 md:mt-0">
                       <Image
                         src={
-                          card.image
-                            ? `${BASE_IMAGE_URL}${card.image}`
-                            : "/landingPage/BusinessSolutionSliderImg1.webp"
+                          resolveAssetUrl(
+                            card.image,
+                            "/landingPage/BusinessSolutionSliderImg1.webp"
+                          )
                         }
                         alt={card.heading}
                         width={400}
@@ -184,9 +201,10 @@ function BusinessSolutionSlider({ data = [] }) {
               <div className="rounded-[16px] border border-[#E7D1FF] flex flex-col h-full p-3">
                 <Image
                   src={
-                    card.image
-                      ? `${BASE_IMAGE_URL}${card.image}`
-                      : "/landingPage/BusinessSolutionSliderImg1.webp"
+                    resolveAssetUrl(
+                      card.image,
+                      "/landingPage/BusinessSolutionSliderImg1.webp"
+                    )
                   }
                   alt={card.heading}
                   width={250}
@@ -202,7 +220,9 @@ function BusinessSolutionSlider({ data = [] }) {
                   {card.subHeading}
                 </p>
 
-                <p className="text-[12px] text-[#5F5F5F]">{card.description}</p>
+                <div className="text-[12px] text-[#5F5F5F]">
+                  {renderRichText(card.description)}
+                </div>
               </div>
             </SwiperSlide>
           ))}

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import PricingCard from "../../../Component/Utils/PricingCard";
 import MultiplePricingCard from "../../../Component/Utils/MultiplePricingCard";
+import { BILLING_API_BASE_URL } from "@/lib/env";
 
 const HeroSection = () => {
   const [isYearly, setIsYearly] = useState(true);
@@ -22,7 +23,7 @@ const HeroSection = () => {
 
   useEffect(() => {
     axios
-      .post("https://billingapi.shopaver.com/api/ReferralCode/get_shopaver_active_subscription")
+      .post(`${BILLING_API_BASE_URL}/get_shopaver_active_subscription`)
       .then((response) => {
         
         

@@ -4,13 +4,7 @@ import Script from "next/script";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import DynamicHeader from "../Component/DynamicHeader";
 import DynamicFooter from "../Component/DynamicFooter";
-import { Lato } from "next/font/google";
 import Navbar from "../Component/NewNavbar/Navbar";
-// Font
-const latoFont = Lato({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
 
 // ✅ Metadata (SEO + Google Verification)
 export const metadata = {
@@ -40,7 +34,7 @@ export default function RootLayout({ children }) {
         />
       </head>
 
-      <body className={latoFont.className}>
+      <body className="font-sans">
         {/* ✅ Google Tag Manager (noscript) */}
         <noscript>
           <iframe

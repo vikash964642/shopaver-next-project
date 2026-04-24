@@ -16,6 +16,23 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Environment Variables
+
+This project reads runtime configuration from `.env.local`.
+
+1. Copy `.env.example` to `.env.local`.
+2. Set the values for your local or deployment environment.
+3. Restart the dev server after changing env values.
+
+Available variables:
+
+- `NEXT_PUBLIC_SITE_URL`
+- `NEXT_PUBLIC_API_URL`
+- `NEXT_PUBLIC_FORM_API_URL`
+- `NEXT_PUBLIC_LEAD_API_URL`
+- `NEXT_PUBLIC_BILLING_API_URL`
+- `NEXT_PUBLIC_ASSET_BASE_URL`
+
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.

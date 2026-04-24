@@ -7,6 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Navigation } from "swiper/modules";
 import "swiper/css/navigation";
+import { resolveAssetUrl } from "@/lib/imageUrl";
 
 function RetailBusinessCard({ onePlatform = [] }) {
   const [visibleCount, setVisibleCount] = useState(2);
@@ -15,9 +16,28 @@ function RetailBusinessCard({ onePlatform = [] }) {
   const filteredData = onePlatform.filter(
     (item) => item.keyword && item.description,
   );
-// console.log("RetailBusinessCard Rendered with data:", filteredData); 
-  if (filteredData.length === 0) return null;
 
+  // console.log("RetailBusinessCard Rendered with data:", filteredData);
+  if (filteredData.length === 0) return null;
+  const renderRichText = (content) => {
+    const text = content || "";
+    const hasHtml = /<\/?[a-z][\s\S]*>/i.test(text);
+
+    if (hasHtml) {
+      return (
+        <div
+          className="business-solution-description pt-[5px] text-[#525252] text-[13px] break-words line-clamp-5"
+          dangerouslySetInnerHTML={{ __html: text }}
+        />
+      );
+    }
+
+    return (
+      <p className="pt-[5px] text-[#525252] text-[13px] break-words line-clamp-5">
+        {text}
+      </p>
+    );
+  };
   return (
     <section className="bg-[#F9F4FF] mt-[100px] py-[41px] lg:pt-[68px] lg:pb-[81px]">
       <div className="max-w-5xl px-[22px] xl:px-0 mx-auto">
@@ -101,49 +121,58 @@ function RetailBusinessCard({ onePlatform = [] }) {
 
 /* ================= CARD ================= */
 function Card({ item }) {
-  const BASE_IMAGE_URL = "https://media-shopaver-uat.s3.amazonaws.com";
+  const renderRichText = (content) => {
+    const text = content || "";
+    const hasHtml = /<\/?[a-z][\s\S]*>/i.test(text);
 
+    if (hasHtml) {
+      return (
+        <div
+          className="business-solution-description pt-[5px] text-[#525252] text-[13px] break-words line-clamp-5"
+          dangerouslySetInnerHTML={{ __html: text }}
+        />
+      );
+    }
+
+    return (
+      <p className="pt-[5px] text-[#525252] text-[13px] break-words line-clamp-5">
+        {text}
+      </p>
+    );
+  };
   return (
     <div className="flex items-stretch gap-[14.5px] lg:gap-[35px] bg-white rounded-[25.47px] border border-[#EBD9FF] p-4 h-full">
+      {/* LEFT CONTENT */}
+      <div className="flex flex-col w-[50%] justify-between">
+        <div>
+          <p className="text-[#5801B7] text-[18px] font-medium break-words line-clamp-2">
+            {item.keyword}
+          </p>
+          {renderRichText(item.description)}
+        </div>
 
-  {/* LEFT CONTENT */}
-  <div className="flex flex-col w-[50%] justify-between">
+        <Link
+          href={`/service/${item.slug}`}
+          className="mt-[20px] rounded-[30px] bg-[#E6D2FF] w-[90px] h-[27px] flex justify-center items-center"
+        >
+          <p className="text-[#5801B7] text-[10px]">Read More</p>
+        </Link>
+      </div>
 
-    <div>
-      <p className="text-[#5801B7] text-[18px] font-medium break-words line-clamp-2">
-        {item.keyword}
-      </p>
-
-      <p className="pt-[5px] text-[#525252] text-[13px] break-words line-clamp-5">
-        {item.description}
-      </p>
+      {/* RIGHT IMAGE */}
+      <div className="w-[50%] flex justify-end items-center">
+        <Image
+          src={resolveAssetUrl(
+            item.image,
+            "/landingPage/BusinessSolutionSliderImg6.webp",
+          )}
+          alt={item.keyword}
+          width={218}
+          height={227}
+          className="rounded-[11px] object-cover w-full h-auto max-w-[218px]"
+        />
+      </div>
     </div>
-
-    <Link
-      href={`/service/${item.slug}`}
-      className="mt-[20px] rounded-[30px] bg-[#E6D2FF] w-[90px] h-[27px] flex justify-center items-center"
-    >
-      <p className="text-[#5801B7] text-[10px]">Read More</p>
-    </Link>
-
-  </div>
-
-  {/* RIGHT IMAGE */}
-  <div className="w-[50%] flex justify-end items-center">
-    <Image
-      src={
-        item.image
-          ? `${BASE_IMAGE_URL}${item.image}`
-          : "/landingPage/BusinessSolutionSliderImg6.webp"
-      }
-      alt={item.keyword}
-      width={218}
-      height={227}
-      className="rounded-[11px] object-cover w-full h-auto max-w-[218px]"
-    />
-  </div>
-
-</div>
   );
 }
 

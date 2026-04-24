@@ -2,6 +2,7 @@
 
 "use client";
 import { useState } from "react";
+import { FORM_API_URL } from "@/lib/env";
 function FormSection() {
   const [formData, setFormData] = useState({
     from: "Email page",
@@ -23,7 +24,7 @@ function FormSection() {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://shopaver.com/api/api/index.php", {
+      const response = await fetch(FORM_API_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

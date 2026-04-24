@@ -7,6 +7,26 @@ function FAQ({ faqData = [] }) {
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+  const renderRichText = (content) => {
+    const text = content || "";
+    const hasHtml = /<\/?[a-z][\s\S]*>/i.test(text);
+
+    if (hasHtml) {
+      return (
+        <div
+          className="business-solution-description text-white text-[12px] lg:text-[15px] leading-normal w-[90%]"
+          dangerouslySetInnerHTML={{ __html: text }}
+        />
+      );
+    }
+
+    return (
+      <p className="text-white text-[12px] lg:text-[15px] leading-normal w-[90%]">
+        {text}
+      </p>
+    );
+  };
+
   return (
     <section className="bg-[#5801B7] py-[55px] lg:py-[90px]">
       <div className="max-w-5xl mx-auto">
@@ -48,9 +68,8 @@ backdrop-blur-[15px] w-full lg:w-[675px] py-[7.5px] px-[9.5px]  lg:lg:py-[15px] 
                         : "max-h-0 opacity-0"
                     }`}
                   >
-                    <p className="text-white text-[12px] lg:text-[15px] leading-normal w-[90%]">
-                      {data.description}
-                    </p>
+                    {renderRichText(data.description)}
+                   
                   </div>
                 </div>
               ))}
