@@ -5,9 +5,20 @@
 import Link from "next/link";
 import Image from "next/image";
 import { resolveAssetUrl } from "@/lib/imageUrl";
+import { decode } from "html-entities";
 function HeroSection({ data ,onEnquiryClick}) {
-  const description = data?.description || "";
-  const hasHtmlDescription = /<\/?[a-z][\s\S]*>/i.test(description);
+ let description = decode(data?.description || "");
+
+description = description
+  .replace(/<span[^>]*>/g, "")
+  .replace(/<\/span>/g, "");
+
+description = description.replace(
+  /<a\s+/g,
+  '<a target="_blank" rel="noopener noreferrer" '
+);
+
+const hasHtmlDescription = /<\/?[a-z][\s\S]*>/i.test(description);
 
   return (
     <section className="max-w-5xl mx-auto">
@@ -24,7 +35,7 @@ function HeroSection({ data ,onEnquiryClick}) {
           </h2>
           {hasHtmlDescription ? (
             <div
-              className="text-[#5F5F5F] sm:px-[60px] lg:px-0 text-[12px] sm:text-[14px] lg:text-[15px] font-normal pt-[22px] lg:pt-[24.16px] text-center lg:text-left hero-description"
+              className="business-solution-description text-[#5F5F5F] sm:px-[60px] lg:px-0 text-[12px] sm:text-[14px] lg:text-[15px] font-normal pt-[22px] lg:pt-[24.16px] text-center lg:text-left "
               dangerouslySetInnerHTML={{ __html: description }}
             />
           ) : (

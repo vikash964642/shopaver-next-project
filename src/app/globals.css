@@ -84,7 +84,14 @@
   margin-bottom: 0.35rem;
   break-inside: avoid;
 }
-
+.business-solution-description a {
+ color: #5801B7; /* jo color chahiye */
+  text-decoration: underline; /* optional */
+  font-weight: 500; 
+}
+.business-solution-description a:hover {
+  color: #7b2be0;
+}
 @media (min-width: 1024px) {
   .business-solution-description ol {
     column-count: 2;

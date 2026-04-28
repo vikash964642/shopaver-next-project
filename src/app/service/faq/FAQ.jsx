@@ -1,32 +1,44 @@
 "use client";
 import { useState } from "react";
-
+import { decode } from "html-entities";
 function FAQ({ faqData = [] }) {
   const [openIndex, setOpenIndex] = useState(null);
   const faqs = faqData?.[0]?.faq || [];
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
-  const renderRichText = (content) => {
-    const text = content || "";
-    const hasHtml = /<\/?[a-z][\s\S]*>/i.test(text);
+ 
+const renderRichText = (content) => {
+  let decodedText = decode(content || "");
 
-    if (hasHtml) {
-      return (
-        <div
-          className="business-solution-description text-white text-[12px] lg:text-[15px] leading-normal w-[90%]"
-          dangerouslySetInnerHTML={{ __html: text }}
-        />
-      );
-    }
+  // remove unwanted spans
+  decodedText = decodedText
+    .replace(/<span[^>]*>/g, "")
+    .replace(/<\/span>/g, "");
 
+  // fix anchor tag (NO inline style)
+  decodedText = decodedText.replace(
+    /<a\s+/g,
+    '<a target="_blank" rel="noopener noreferrer" '
+  );
+
+  const hasHtml = /<\/?[a-z][\s\S]*>/i.test(decodedText);
+
+  if (hasHtml) {
     return (
-      <p className="text-white text-[12px] lg:text-[15px] leading-normal w-[90%]">
-        {text}
-      </p>
+      <div
+        className="business-solution-description text-white text-[12px] lg:text-[15px] leading-normal w-[90%]"
+        dangerouslySetInnerHTML={{ __html: decodedText }}
+      />
     );
-  };
+  }
 
+  return (
+    <p className="text-white text-[12px] lg:text-[15px] leading-normal w-[90%]">
+      {decodedText}
+    </p>
+  );
+};
   return (
     <section className="bg-[#5801B7] py-[55px] lg:py-[90px]">
       <div className="max-w-5xl mx-auto">

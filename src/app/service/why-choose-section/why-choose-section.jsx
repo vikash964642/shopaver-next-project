@@ -5,32 +5,44 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import styles from "./home.module.css";
-
+import { decode } from "html-entities";
 function WhyChooseSection({ data = [] }) {
   const ScrollTop = () => {
     window.scrollTo({ top: 0 });
   };
 
   const filteredData = [...data];
-  const renderRichText = (content) => {
-    const text = content || "";
-    const hasHtml = /<\/?[a-z][\s\S]*>/i.test(text);
+const renderRichText = (content) => {
+  let decodedText = decode(content || "");
 
-    if (hasHtml) {
-      return (
-        <div
-          className="business-solution-description text-[14px] lg:text-[16px] text-[#5F5F5F] pt-2 max-w-[380px]"
-          dangerouslySetInnerHTML={{ __html: text }}
-        />
-      );
-    }
+  // remove unwanted spans
+  decodedText = decodedText
+    .replace(/<span[^>]*>/g, "")
+    .replace(/<\/span>/g, "");
 
+  // fix anchor tag (open in new tab)
+  decodedText = decodedText.replace(
+    /<a\s+/g,
+    '<a target="_blank" rel="noopener noreferrer" '
+  );
+
+  const hasHtml = /<\/?[a-z][\s\S]*>/i.test(decodedText);
+
+  if (hasHtml) {
     return (
-      <p className="text-[14px] lg:text-[16px] text-[#5F5F5F] pt-2 max-w-[380px]">
-        {text}
-      </p>
+      <div
+        className="business-solution-description text-[14px] lg:text-[16px] text-[#5F5F5F] pt-2 max-w-[380px]"
+        dangerouslySetInnerHTML={{ __html: decodedText }}
+      />
     );
-  };
+  }
+
+  return (
+    <p className="text-[14px] lg:text-[16px] text-[#5F5F5F] pt-2 max-w-[380px]">
+      {decodedText}
+    </p>
+  );
+};
   return (
     <section className="pt-[60px] lg:pt-[78px] px-[20px] xl:px-0 max-w-5xl mx-auto">
       <h2 className="text-[#5801B7] text-center lg:text-[30px] text-[22px] font-semibold">
