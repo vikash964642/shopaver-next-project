@@ -53,7 +53,7 @@ function RetailBusinessCard({ onePlatform = [] }) {
           }`}
         >
           {filteredData.slice(0, visibleCount).map((item, index) => (
-            <div key={index}>
+            <div key={index} className="h-[240px]">
               <Card item={item} />
             </div>
           ))}
@@ -87,7 +87,7 @@ function RetailBusinessCard({ onePlatform = [] }) {
           >
             {filteredData.map((item, index) => (
               <SwiperSlide key={index}>
-                <div className="w-full max-w-[500px] mx-auto">
+                <div className="w-full max-w-[500px] mx-auto h-[250px]">
                   <Card item={item} />
                 </div>
               </SwiperSlide>
@@ -169,7 +169,7 @@ function Card({ item }) {
           alt={item.keyword}
           width={218}
           height={227}
-          className="rounded-[11px] object-cover w-full h-auto max-w-[218px]"
+          className="rounded-[11px] w-full h-full "
         />
       </div>
     </div>

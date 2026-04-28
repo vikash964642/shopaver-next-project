@@ -69,7 +69,6 @@ backdrop-blur-[15px] w-full lg:w-[675px] py-[7.5px] px-[9.5px]  lg:lg:py-[15px] 
                     }`}
                   >
                     {renderRichText(data.description)}
-                   
                   </div>
                 </div>
               ))}
