@@ -39,14 +39,17 @@ const MultiplePricingCard = (props) => {
               planTier === "premium" ? "text-primary" : "text-[#222222]"
             } text-left font-semibold my-[18px]`}
           >
-            {planTier === "premium"
+            {/* {planTier === "premium"
               ? "Pro"
               : planTier === "standard"
               ? "Standard"
-              : "Basic"}
+              : "Basic"} */}
+               {proPlan?.plan_name}
           </h3>
-          <div className="flex">
-            <h2
+          
+            {Number(proPlan.amount)>0 ? (
+              <div className="flex">
+              <h2
               className={`text-3xl ${
                 planTier === "premium" ? "text-primary" : "text-[#393939]"
               } font-bold mb-1 text-left`}
@@ -67,17 +70,38 @@ const MultiplePricingCard = (props) => {
                 / {isYearly ? "Year" : "Month"}
               </span>
             </p>
-          </div>
+              </div>
+               ) : (
+ <div className="flex flex-col items-start mb-[12px]">
+        <p className="text-[14px] font-semibold text-[#6b21a8] ">According to</p>
+    <p className="text-[14px] font-semibold text-[#6b21a8] ">customized plan</p>
+</div>
+
+            )}
+            
+          
            <Link href="https://app.shopaver.com/Sign-up" target="_blank" > 
-          <button
+          {Number(proPlan.amount)>0 ? (
+            <button
             className={`w-full cursor-pointer border ${
               planTier === "premium"
                 ? "text-white hover:bg-white hover:text-primary bg-primary"
                 : "text-primary hover:bg-purple-50 bg-white"
             } border-purple-700 text-purple-700 font-semibold rounded-full px-4 py-2 mb-6  transition`}
           >
-          Start Free Trial
+          Buy Now
           </button>
+          ) : (
+            <button
+            className={`w-full cursor-pointer border ${
+              planTier === "premium"
+                ? "text-white hover:bg-white hover:text-primary bg-primary"
+                : "text-primary hover:bg-purple-50 bg-white"
+            } border-purple-700 text-purple-700 font-semibold rounded-full px-4 py-2 mb-6  transition`}
+          >
+          Contact Us
+          </button>
+          )}
           </Link>
        <ul className="text-sm text-[#3F3F3F] font-semibold space-y-2 text-left leading-[30px] lg:hidden">
             {loading ? (
@@ -123,7 +147,8 @@ const MultiplePricingCard = (props) => {
 MultiplePricingCard.propTypes = {
   planTier: PropsType.any,
   loading: PropsType.bool,
-  proPlan: PropsType.array,
+  // proPlan: PropsType.array,
+  proPlan: PropsType.object,
   isYearly: PropsType.bool,
   amount: PropsType.string,
 };

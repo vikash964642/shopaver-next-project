@@ -29,7 +29,7 @@ const PricingCard = (props) => {
                 </button>
               </div>
               <div className="py-[38px] px-[47px]">
-                <ul className="text-sm flex flex-wrap justify-between grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-3 text-[#3F3F3F] font-semibold text-left leading-[24px] break-words items-start">
+                <ul className="text-sm text-[#3F3F3F] font-semibold text-left leading-[24px] break-words items-start">
                   {loading ? (
                     <li className="list-disc list-outside">
                       Loading features...
@@ -38,7 +38,7 @@ const PricingCard = (props) => {
                     proPlan?.features?.map((f, idx) => (
                       <li className="list-disc list-outside" key={idx}>
                         {" "}
-                        {f.feature}
+                        {f.featureName}
                       </li>
                     ))
                   )}
@@ -50,7 +50,7 @@ const PricingCard = (props) => {
 
 PricingCard.propTypes = {
   loading: PropsType.bool,
-  proPlan: PropsType.array,
+   proPlan: PropsType.object,
 };
 
 export default PricingCard;
