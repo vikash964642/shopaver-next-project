@@ -6,44 +6,41 @@ import PropsType from "prop-types";
 import { useState } from "react";
 
 const MultiplePricingCard = (props) => {
-  const { loading, proPlan, isYearly, planTier } = props;
+  const { loading, proPlan, isYearly, planTier, allFeatures } = props;
     const [isExpanded, setIsExpanded] = useState(false);
 
   const handleToggleExpand = () => {
     setIsExpanded(!isExpanded);
   };
-   const mobileFeatures = isExpanded
-    ? proPlan?.features || []
-    : proPlan?.features?.slice(0, 4) || [];
+  const mobileFeatures = isExpanded
+  ? allFeatures || []
+  : allFeatures?.slice(0, 4) || [];
   return (
     <div className="relative">
       <div
-        className={`
-            ${
-              planTier === "premium"
-                ? "border-primary bg-purple-50"
-                : "border-[#dddddd] bg-white"
-            }
-       m-2 border p-6 text-center shadow-sm lg:max-h-full
+        className={`mx-2 rounded-[10px] border p-6 text-center shadow-sm lg:max-h-full
       transition-all duration-700 ease-in-out
       relative
       hover:scale-105
       lg:h-full
       h-auto
-    `}
+            ${
+              planTier === "premium"
+                ? "border-primary bg-purple-50"
+                : "border-[#dddddd] bg-white"
+            } 
+             ${isExpanded ? "h-[750px]" : "h-[420px]"}  // 👈 yaha change
+    overflow-hidden
+  `}
+      
       >
         <div className={` ${planTier === "premium" ?'absolute':'hidden'} p-1 top-0 left-0 w-full bg-primary text-white text-[14px] font-medium`}>Best Value</div>
         <div>
           <h3
-            className={`text-[24px]  ${
+            className={`text-[22px] lg:text-[24px]  ${
               planTier === "premium" ? "text-primary" : "text-[#222222]"
             } text-left font-semibold my-[18px]`}
           >
-            {/* {planTier === "premium"
-              ? "Pro"
-              : planTier === "standard"
-              ? "Standard"
-              : "Basic"} */}
                {proPlan?.plan_name}
           </h3>
           
@@ -89,7 +86,7 @@ const MultiplePricingCard = (props) => {
                 : "text-primary hover:bg-purple-50 bg-white"
             } border-purple-700 text-purple-700 font-semibold rounded-full px-4 py-2 mb-6  transition`}
           >
-          Buy Now
+          Get Started
           </button>
           ) : (
             <button
@@ -103,33 +100,59 @@ const MultiplePricingCard = (props) => {
           </button>
           )}
           </Link>
-       <ul className="text-sm text-[#3F3F3F] font-semibold space-y-2 text-left leading-[30px] lg:hidden">
-            {loading ? (
-              <li className="list-disc list-inside">Loading features...</li>
-            ) : (
-             mobileFeatures.map((f, idx) => (
-                <li className="list-disc list-inside" key={idx}>
-                  {f.featureName}
-                </li>
-              ))
-            )}
-          </ul>
+      
+<div
+  className='md:hidden'
+>
+  <ul className="text-sm font-semibold space-y-2 text-left leading-[26px]">
+    {mobileFeatures.map((feature, idx) => {
+      const hasFeature = proPlan?.features?.some((f) =>
+        (f.featureName || "")
+          .toLowerCase()
+          .trim() === feature.featureName.toLowerCase().trim()
+      );
 
-           <ul className="text-sm text-[#3F3F3F] font-semibold space-y-2 text-left leading-[30px] hidden lg:block">
-            {loading ? (
-              <li className="list-disc list-inside">Loading features...</li>
-            ) : (
-          proPlan?.features?.map((f, idx) => (
-                <li className="list-disc list-inside" key={idx}>
-                  {f.featureName}
-                </li>
-              ))
-            )}
-          </ul>
+      return (
+        <li key={idx} className="flex items-start gap-2">
+          <span className={hasFeature ? "text-green-500" : "text-gray-300"}>
+            {hasFeature ? "✓" : "✕"}
+          </span>
+          <span className={hasFeature ? "" : "line-through text-gray-400"}>
+            {feature.featureName}
+          </span>
+        </li>
+      );
+    })}
+  </ul>
+</div>
+          <ul className="hidden md:block text-sm font-semibold space-y-2 text-left leading-[26px]">
+  {loading ? (
+    <li>Loading features...</li>
+  ) : (
+    allFeatures?.map((feature, idx) => {
+      const hasFeature = proPlan?.features?.some((f) =>
+        (f.featureName || "")
+          .toLowerCase()
+          .trim() === feature.featureName.toLowerCase().trim()
+      );
+
+      return (
+        <li key={idx} className="flex items-start gap-2">
+          <span className={hasFeature ? "text-green-500" : "text-gray-300"}>
+            {hasFeature ? "✓" : "✕"}
+          </span>
+          <span className={hasFeature ? "" : "line-through text-gray-400"}>
+            {feature.featureName}
+          </span>
+        </li>
+      );
+    })
+  )}
+</ul>
         </div>
       </div>
 
-      <div onClick={handleToggleExpand} className="w-[33px] h-[33px] bg-[#5801B7] rounded-full flex justify-center items-center absolute left-[45%] bottom-[-10px] lg:hidden cursor-pointer">
+      <div onClick={handleToggleExpand} className="w-[33px] h-[33px] rounded-full bg-[#5801B7]  flex justify-center items-center absolute left-[45%] bottom-[-14px] md:hidden cursor-pointer">
         <Image
           src={"/icons/down-angle.png"}
           width={33}

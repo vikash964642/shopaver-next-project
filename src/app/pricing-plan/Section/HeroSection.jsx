@@ -47,11 +47,12 @@ const HeroSection = () => {
       return plan?.features?.map((f) => f.featureName || f.feature) || [];
   }
 };
+
   const [isYearly, setIsYearly] = useState(true);
   const [monthlyPlanCount, setMonthlyPlanCount] = useState(0);
   const [yearlyPlanCount, setYearlyPlanCount] = useState(0);
 
-  // const [AllPlan, setAllPlan] = useState(null);
+  const [allPlans, setAllPlans] = useState([]);
   const [allMonthPlan, setallMonthPlan] = useState(null);
   const [allYearPlan, setallYearPlan] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -69,7 +70,7 @@ const [addOns, setAddOns] = useState({
 
 
 useEffect(() => {
-  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiNzAyMTE5NDg5MSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzc3ODE4MDAxLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo0NDMxMSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjQ0MzExIn0.9Vh_f_CVWw5QEqF8NX6yCaz1eUBDeSQ0m4m3nvmRcoo";
+  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiNzAyMTE5NDg5MSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzc4MDUyODEyLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo0NDMxMSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjQ0MzExIn0.5TJXQFqQYIn8vnEuUtZGZCY0xbOGCE6AvdBrpBDlmus";
 
   axios
     .post(
@@ -83,6 +84,9 @@ useEffect(() => {
     )
     .then((response) => {
       if (response.data.success) {
+         const plans = response.data.data;
+
+  setAllPlans(plans);
         const allPlans = response.data.data;
 
         const sortWhatsappPlans = (plans) => {
@@ -251,6 +255,21 @@ setAddOns({
       setLoading(false);
     });
 }, []);
+
+const enterprisePlan = allPlans.find(
+  (p) => p.plan_name === "Enterprise" && p.planType === "plan"
+);
+const whatsappEnterprise = allPlans.find(
+  (p) =>
+    p.plan_name === "WhatsApp Enterprise" &&
+    p.planType === "module"
+);
+const hasFeature = (plan, featureId) => {
+  return plan?.features?.some((f) => f.featureId === featureId);
+};
+
+const masterWhatsappFeatures = whatsappEnterprise?.features || [];
+const masterFeatures = enterprisePlan?.features || [];
   return (
     <section className="max-w-screen-lg mx-auto">
       <div className="py-12">
@@ -310,7 +329,7 @@ setAddOns({
                   <div className={`grid grid-cols-1 md:grid-cols-${yearlyPlanCount} gap-8 mt-10`}>
                     {allYearPlan &&
                       allYearPlan.slice(0, 3).map((plan, idx) => (
-                        <MultiplePricingCard key={idx} proPlan={plan} isYearly={true} amount={plan.amount}  planTier={plan.planTier}/>
+                        <MultiplePricingCard key={idx} proPlan={plan} isYearly={true} amount={plan.amount}  planTier={plan.planTier} allFeatures={masterFeatures} />
                       ))}
                   </div>
                 )}
@@ -327,6 +346,7 @@ setAddOns({
               proPlan={plan}
               isYearly={true}
               planTier={plan.planTier}
+              allFeatures={masterWhatsappFeatures} 
             />
           ))}
         </div>
@@ -339,17 +359,17 @@ setAddOns({
       Other Add-ons
     </h2>
 
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 mx-3">
       {addOns.yearly.map((item,id) => (
-         <div key={id} className="px-[24px] py-[20px] rounded-[10px] bg-[#fff] border border-[#e5e7eb]">
-          <div className="flex justify-between items-start">
-            <div className="flex items-center gap-[10px]">
+         <div key={id} className="px-[15px] md:px-[24px] py-[20px] rounded-[10px] bg-[#fff] border border-[#e5e7eb]">
+          <div className="flex justify-between items-start flex-col md:flex-row">
+            <div className="flex items-center gap-[10px] ">
               <h2 className="text-[18px] font-semibold text-[#1f2937]">{item.plan_name}</h2>
               <p className="text-[11px] font-bold px-[8px] py-[3px] rounded-[12px] text-[#854d0e] bg-[#fde047]">Add-On</p>
               <p className="text-[10px] font-semibold px-[8px] py-[2px] rounded-[10px] text-[#5b21b6] bg-[#ede9fe]">Requires WhatsApp Business</p>
               </div>
-              <div>
-                <button className="bg-[#e5e7eb] text-[#6b7280] border-none py-[10px] px-[18px] rounded-[6px] text-[13px] font-semibold cursor-not-allowed">Requires WA Business</button>
+              <div className="mt-[15px] md:mt-0">
+                <button className="bg-[#e5e7eb] text-[#6b7280] border-none py-[5px] px-[10px] md:py-[10px] md:px-[18px]  rounded-[6px] text-[11px] md:text-[13px] font-semibold cursor-not-allowed">Requires WA Business</button>
                 <div className="mt-2">
                   <span className="text-[#10b981] text-[16px] font-bold">₹ {item.amount}/year </span>
                   <span className="text-[11px] text-[#6b7280]">( Tax Excl. )</span>
@@ -398,6 +418,7 @@ setAddOns({
     loading={loading}
     isYearly={false}
     planTier={plan.planTier}
+    allFeatures={masterFeatures} 
   />
                       ))}
                       
@@ -420,6 +441,7 @@ setAddOns({
                   proPlan={plan}
                   isYearly={false}
                   planTier={plan.planTier}
+                   allFeatures={masterWhatsappFeatures}
                 />
               ))}
             </div>
@@ -434,16 +456,16 @@ setAddOns({
       Other Add-ons
     </h2>
 
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 mx-3">
       {addOns.monthly.map((item,id) => (
-         <div key={id} className="px-[24px] py-[20px] rounded-[10px] bg-[#fff] border border-[#e5e7eb]">
-          <div className="flex justify-between items-start">
+         <div key={id} className="px-[15px] md:px-[24px] py-[20px] rounded-[10px] bg-[#fff] border border-[#e5e7eb]">
+          <div className="flex justify-between items-start flex-col md:flex-row">
             <div className="flex items-center gap-[10px]">
               <h2 className="text-[18px] font-semibold text-[#1f2937]">{item.plan_name}</h2>
               <p className="text-[11px] font-bold px-[8px] py-[3px] rounded-[12px] text-[#854d0e] bg-[#fde047]">Add-On</p>
               <p className="text-[10px] font-semibold px-[8px] py-[2px] rounded-[10px] text-[#5b21b6] bg-[#ede9fe]">Requires WhatsApp Business</p>
               </div>
-              <div>
+              <div className="mt-[15px] md:mt-0">
                 <button className="bg-[#e5e7eb] text-[#6b7280] border-none py-[10px] px-[18px] rounded-[6px] text-[13px] font-semibold cursor-not-allowed">Requires WA Business</button>
                 <div className="mt-2">
                   <span className="text-[#10b981] text-[16px] font-bold">₹ {item.amount}/month </span>
