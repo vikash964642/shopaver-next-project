@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import PricingCard from "../../../Component/Utils/PricingCard";
 import MultiplePricingCard from "../../../Component/Utils/MultiplePricingCard";
-import { BILLING_API_BASE_URL } from "@/lib/env";
+
 
 const HeroSection = () => {
   const getAddOnPoints = (plan) => {
@@ -70,17 +70,11 @@ const [addOns, setAddOns] = useState({
 
 
 useEffect(() => {
-  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiNzAyMTE5NDg5MSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzc4MDUyODEyLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo0NDMxMSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjQ0MzExIn0.5TJXQFqQYIn8vnEuUtZGZCY0xbOGCE6AvdBrpBDlmus";
+  // const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiNzAyMTE5NDg5MSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZXhwIjoxNzc4MDUyODEyLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo0NDMxMSIsImF1ZCI6Imh0dHBzOi8vbG9jYWxob3N0OjQ0MzExIn0.5TJXQFqQYIn8vnEuUtZGZCY0xbOGCE6AvdBrpBDlmus";
 
   axios
     .post(
-      `https://billingapi.xoomsales.com/api/ReferralCode/GetShopaverSubcriptionPlan`,
-      {},
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
+      `https://billingapi.xoomsales.com/api/ReferralCode/GetShopaverSubcriptionPlanPublic` 
     )
     .then((response) => {
       if (response.data.success) {
