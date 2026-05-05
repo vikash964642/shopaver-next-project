@@ -12,14 +12,13 @@ import FaqSection from "./Section/Faq";
 import Certification from "./Section/Certification";
 import Download from "./Section/Download";
 import TestimonialSlider from "./Section/TestimonialSlider";
-import HomeSlider from "./Section/HomeSlider";
-import Counter from "./Section/Counter";
+
 function HomePage() {
   return (
         <div className="m-auto">
           <HeroSection />
-          <HomeSlider />
-           {/* <HomeTitle/> */}
+        
+           <HomeTitle/>
            <PosBilling/>
            <QuickBilling/>
            <InventoryManagement/>
@@ -28,7 +27,6 @@ function HomePage() {
            <WhatsappCommerce/>
            <Marketing/>
            <TestimonialSlider/>
-           <Counter />
            <FaqSection/>
            <Download/>
            <Certification/>
