@@ -1,6 +1,11 @@
 'use client'
 import React from 'react'
 import Image from 'next/image';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css";
 function CarouselSlider() {
   const testimonials = [
     {
@@ -48,19 +53,35 @@ function CarouselSlider() {
   <div className='flex justify-center mt-[10px]'>
     <p className='w-[505px] text-[#666] text-[18px] text-center leading-normal'>We provide simple, smart tools and trusted support to help your business grow faster and run smoothly.</p>
   </div>
-  <div>
+  <div className='mt-[55px]'>
+     <Swiper
+          modules={[Autoplay]}
+  centeredSlides={true}
+          spaceBetween={17}
+          slidesPerView={1.4}
+          loop={true}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+        
+        >
 {testimonials.map((item,index)=>(
-  <div className='h-[380px] p-[19px] border-1 border-[#DADAFF] bg-[#F8F8FF] rounded-[39px] flex gap-[10px]'>
+   <SwiperSlide key={index}>
+  <div className='h-[380px] p-[19px] border border-[#DADAFF] bg-[#F8F8FF] rounded-[39px] flex gap-[24px]'>
 <div className='w-[50%] h-full'>
-  <Image className='h-full w-full' src={item.image} height={341} width={370}></Image>
+  <Image className='h-full w-full object-cover rounded-[24px]' src={item.image} height={341} width={370}></Image>
 </div>
 <div className='w-[50%] flex flex-col justify-center'>
-  <h2>{item.merchantName}</h2>
-  <p>{item.content}</p>
+  <h2 className='text-[#393939] text-[22px] font-medium leading-normal'>{item.merchantName}</h2>
+  <p className='pt-[5px] text-[#666] text-[16px] font-normal leading-normal'>{item.content}</p>
 </div>
   </div>
+  </SwiperSlide>
 ))}
+</Swiper>
   </div>
+  
 </div>
     </div>
   )

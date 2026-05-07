@@ -38,7 +38,7 @@ function FaqSection() {
                    </span>
                  </summary>
                  <p className=" mt-3 group-open:animate-fadeIn text-[18px] font-normal">
-                       POS (Point of Sale) software is an advanced billing and inventory management system designed to simplify and automate business transactions. This user-friendly solution helps enhance your business by managing billing, inventory, digital ledger (Khata), ONDC, online stores, WhatsApp commerce, and more—all from a single platform.                 </p>
+                       POS (Point of Sale) software is an advanced billing and inventory management system designed to simplify and automate business transactions. This user-friendly solution helps enhance your business by managing billing, inventory, digital ledger (Khata), ONDC, online stores, WhatsApp commerce, and more—all from a single platform.</p>
                </details>
              </div>
              <div className="py-5">
