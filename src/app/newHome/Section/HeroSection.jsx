@@ -3,9 +3,26 @@
 import Link from "next/link";
 import Image from "next/image";
 import './HeroSection.css'
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 function HeroSection() {
+    const container = useRef(null);
+   useGSAP(
+    () => {
+      
+      gsap.from(".float-3d", {
+        scale: 0,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "back.out(1.7)",
+      });
+    },
+    { scope: container }
+  );
   return (
-    <section className=" max-w-5xl mx-auto">
+    <section ref={container} className=" max-w-5xl mx-auto">
     <div className="mt-[175px] relative">
        <div className="flex flex-col items-center gap-[20px]">
       <h2 className="lg:w-[511px] text-center text-[#5801B7] lg:text-[40px] font-medium leading-normal">The All-in-One Business Solution for MSMEs</h2>

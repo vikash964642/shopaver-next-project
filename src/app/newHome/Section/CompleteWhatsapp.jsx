@@ -1,27 +1,12 @@
-// import React from 'react'
-
-// function CompleteWhatsapp() {
-//   return (
-//     <div className='max-w-5xl mx-auto mt-[110px]'>
-//       <div className='flex flex-col gap-[20px] items-center'>
-//         <h1 className='w-[650px] text-[#075E54] text-center text-[40px] font-medium leading-normal'>The Complete WhatsApp Platform for Your Business Growth</h1>
-//         <p className='w-[790px] text-[#666] text-center text-[18px] font-normal leading-normal'>Take your business communication to the next level with WhatsApp Business Suite. Engage customers through chat, run targeted campaigns, sell products, track performance with real-time analytics, and connect all your tools, all within the WhatsApp platform.</p>
-//       </div>
-//     </div>
-//   )
-// }
-
-// export default CompleteWhatsapp
-
-
 
 "use client";
 
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-
-export default function HeroSection() {
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+export default function CompleteWhatsapp() {
   const container = useRef(null);
 
   useGSAP(
@@ -34,53 +19,56 @@ export default function HeroSection() {
         ease: "none",
         transformOrigin: "center center",
       });
-
+const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container.current,
+          start: "top 20%",
+          toggleActions: "play none none none",
+        },
+      });
           // ================= RIGHT CARD =================
-gsap.from("#rightCard", {
+tl.from("#rightCard", {
   scale: 0.7,
   opacity: 0,
-  duration: 1.2,
-  delay: 0.3,
+  duration: 0.6,
   ease: "power3.out",
 });
 
       // ================= LEFT CARD =================
-gsap.from("#leftCard", {
+tl.from("#leftCard", {
   scale: 0.7,
   opacity: 0,
-  duration: 1.2,
-  delay: 0.6,
+  duration: 0.7,
   ease: "power3.out",
 });
 
       // ================= CHAT BOX =================
-gsap.from("#chatBox", {
+tl.from("#chatBox", {
   scale: 0,
   opacity: 0,
-  duration: 1,
-  delay: 0.9,
+  duration: 0.8,
   ease: "back.out(1.7)",
 });
       // ================= SMALL ICON =================
-      gsap.from("#smallIcon", {
+      tl.from("#smallIcon", {
   scale: 0,
   opacity: 0,
-  duration: 1,
-  delay: 1.2,
+  duration: 0.9,
   ease: "elastic.out(1,0.5)",
 });
-    },
+
+     },
     { scope: container }
   );
 
   return (
- <section className='max-w-5xl mx-auto mt-[110px]'>
+ <section ref={container} className='max-w-5xl mx-auto mt-[110px]'>
         <div className='flex flex-col gap-[20px] items-center'>
        <h1 className='w-[650px] text-[#075E54] text-center text-[40px] font-medium leading-normal'>The Complete WhatsApp Platform for Your Business Growth</h1>
         <p className='w-[790px] text-[#666] text-center text-[18px] font-normal leading-normal'>Take your business communication to the next level with WhatsApp Business Suite. Engage customers through chat, run targeted campaigns, sell products, track performance with real-time analytics, and connect all your tools, all within the WhatsApp platform.</p>
       </div>
      <div
-      ref={container}
+      
       className="flex justify-center mt-[80px]"
     >
       <svg
