@@ -30,7 +30,7 @@ const tl = gsap.timeline({
 tl.from("#rightCard", {
   scale: 0.7,
   opacity: 0,
-  duration: 0.6,
+  duration: 0.5,
   ease: "power3.out",
 });
 
@@ -38,7 +38,7 @@ tl.from("#rightCard", {
 tl.from("#leftCard", {
   scale: 0.7,
   opacity: 0,
-  duration: 0.7,
+  duration: 0.6,
   ease: "power3.out",
 });
 
@@ -46,14 +46,14 @@ tl.from("#leftCard", {
 tl.from("#chatBox", {
   scale: 0,
   opacity: 0,
-  duration: 0.8,
+  duration: 0.7,
   ease: "back.out(1.7)",
 });
       // ================= SMALL ICON =================
       tl.from("#smallIcon", {
   scale: 0,
   opacity: 0,
-  duration: 0.9,
+  duration: 0.8,
   ease: "elastic.out(1,0.5)",
 });
 
@@ -64,12 +64,12 @@ tl.from("#chatBox", {
   return (
  <section ref={container} className='max-w-5xl mx-auto mt-[110px]'>
         <div className='flex flex-col gap-[20px] items-center'>
-       <h1 className='w-[650px] text-[#075E54] text-center text-[40px] font-medium leading-normal'>The Complete WhatsApp Platform for Your Business Growth</h1>
-        <p className='w-[790px] text-[#666] text-center text-[18px] font-normal leading-normal'>Take your business communication to the next level with WhatsApp Business Suite. Engage customers through chat, run targeted campaigns, sell products, track performance with real-time analytics, and connect all your tools, all within the WhatsApp platform.</p>
+       <h1 className='w-[345px] lg:w-[650px] text-[#075E54] text-center text-[30px] lg:text-[40px] font-bold leading-normal'>The Complete WhatsApp Platform for Your Business Growth</h1>
+        <p className='w-[333px] lg:w-[790px] text-[#666] text-center text-[14px] lg:text-[18px] font-normal leading-normal'>Take your business communication to the next level with WhatsApp Business Suite. Engage customers through chat, run targeted campaigns, sell products, track performance with real-time analytics, and connect all your tools, all within the WhatsApp platform.</p>
       </div>
      <div
       
-      className="flex justify-center mt-[80px]"
+      className="flex justify-center mt-[40px] lg:mt-[80px]"
     >
       <svg
         width="642"

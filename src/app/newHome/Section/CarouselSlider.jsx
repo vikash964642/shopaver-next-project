@@ -68,13 +68,13 @@ function CarouselSlider() {
         >
 {testimonials.map((item,index)=>(
    <SwiperSlide key={index}>
-  <div className='h-[380px] p-[19px] border border-[#DADAFF] bg-[#F8F8FF] rounded-[39px] flex gap-[24px]'>
-<div className='w-[50%] h-full'>
+  <div className='h-full lg:h-[380px] p-[19px] border border-[#DADAFF] bg-[#F8F8FF] rounded-[39px] flex flex-col-reverse lg:flex-row gap-[24px]'>
+<div className='lg:w-[50%] h-full'>
   <Image className='h-full w-full object-cover rounded-[24px]' src={item.image} height={341} width={370}></Image>
 </div>
-<div className='w-[50%] flex flex-col justify-center'>
+<div className='lg:w-[50%] flex flex-col justify-center'>
   <h2 className='text-[#393939] text-[22px] font-medium leading-normal'>{item.merchantName}</h2>
-  <p className='pt-[5px] text-[#666] text-[16px] font-normal leading-normal'>{item.content}</p>
+  <p className='pt-[5px] text-[#666] text-[14px] lg:text-[16px] font-normal leading-normal'>{item.content}</p>
 </div>
   </div>
   </SwiperSlide>

@@ -159,7 +159,7 @@ function CardSlider() {
         <div
           ref={(el) => (refs.current[0] = el)}
           style={getStyle(0)}
-          className="sticky h-[500px] px-[33.5px] rounded-[30px] border shadow-xl bg-[#075E54] will-change-transform flex justify-between items-center"
+          className="sticky h-[500px] px-[33.5px] rounded-[30px] border shadow-xl bg-[#075E54] will-change-transform flex justify-between items-center flex-col lg:flex-row"
         >
           <div>
             <h1 className='text-[#FFF] text-[20px] font-semibold leading-normal'>AI Flow Builder</h1>
@@ -176,7 +176,7 @@ function CardSlider() {
         <div
           ref={(el) => (refs.current[1] = el)}
           style={getStyle(1)}
-          className="px-[33.5px] sticky h-[500px] rounded-[30px] shadow-xl bg-[#128C7E] will-change-transform flex justify-between items-center"
+          className="px-[33.5px] sticky h-[500px] rounded-[30px] shadow-xl bg-[#128C7E] will-change-transform flex justify-between items-center flex-col lg:flex-row"
         >
              <div>
                 <Image src={"/img/CardSliderImg1.png"} width={450} height={300}></Image>
@@ -194,7 +194,7 @@ function CardSlider() {
         <div
           ref={(el) => (refs.current[2] = el)}
           style={getStyle(2)}
-          className="px-[33.5px] sticky h-[500px] rounded-[30px] shadow-xl bg-[#DCF8C6] will-change-transform flex justify-between items-center"
+          className="px-[33.5px] sticky h-[500px] rounded-[30px] shadow-xl bg-[#DCF8C6] will-change-transform flex justify-between items-center flex-col lg:flex-row"
         >
             <div>
             <h1 className='text-[#525252] text-[20px] font-semibold leading-normal'>WhatsApp Marketing</h1>
@@ -211,7 +211,7 @@ function CardSlider() {
         <div
           ref={(el) => (refs.current[3] = el)}
           style={getStyle(3)}
-          className="px-[33.5px] sticky h-[500px] rounded-[30px] border shadow-xl bg-[#ECE5DD] will-change-transform flex justify-between items-center"
+          className="px-[33.5px] sticky h-[500px] rounded-[30px] border shadow-xl bg-[#ECE5DD] will-change-transform flex justify-between items-center flex-col lg:flex-row"
         >
              <div>
                 <Image src={"/img/CardSliderImg1.png"} width={450} height={300}></Image>
@@ -228,7 +228,7 @@ function CardSlider() {
         <div
           ref={(el) => (refs.current[4] = el)}
           style={getStyle(4)}
-          className="px-[33.5px] sticky h-[500px] rounded-[30px] border shadow-xl bg-[#FFF] will-change-transform flex justify-between items-center"
+          className="px-[33.5px] sticky h-[500px] rounded-[30px] border shadow-xl bg-[#FFF] will-change-transform flex justify-between items-center flex-col lg:flex-row"
         >
              <div>
                 <Image src={"/img/CardSliderImg1.png"} width={450} height={300}></Image>
