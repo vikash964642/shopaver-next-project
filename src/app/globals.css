@@ -3,6 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 /* :root {
   primary: #5801B7;
   --secondary: #F6EDFF;
