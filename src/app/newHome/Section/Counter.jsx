@@ -4,7 +4,7 @@ import CountUp from "react-countup";
 export default function Counter() {
   return (
     <div className="max-w-5xl mx-auto mt-[124px]">
-<div className="grid grid-cols-1 lg:grid-cols-2 gap-[30px] px-[60px] lg:px-[120px]">
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-[20px] lg:gap-[30px] px-[60px] lg:px-[120px]">
 <div className="h-[130px] lg:h-[200px] flex flex-col gap-[5px] justify-center items-center rounded-[24px] border-[0.8px] border-[#DADAFF] bg-[#F8F8FF]">
 <h1 className="text-[#5801B7] text-[50px] lg:text-[65px] font-bold">
     <CountUp

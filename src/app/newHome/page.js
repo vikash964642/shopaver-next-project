@@ -4,15 +4,15 @@ import HeroSection from './Section/HeroSection';
 import HomeSlider from './Section/HomeSlider';
 import CarouselSlider from './Section/CarouselSlider';
 import CardSlider from './Section/CardSlider';
-import CompleteWhatsapp from './Section/CompleteWhatsapp';
+import RotatingCircle from './Section/RotatingCircle';
 import FAQ from './Section/FAQ';
 function page() {
   return (
     <div>
         <HeroSection />
+         <RotatingCircle />
           <HomeSlider />
-          <CompleteWhatsapp />
-          <CardSlider />
+         <CardSlider />
         <Counter />
         <CarouselSlider />
         <FAQ />

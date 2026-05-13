@@ -50,23 +50,23 @@ function HeroSection() {
       </button>
       </Link>
      </div>
-     <div className="absolute top-0 ">
-     <Image src={"/img/HomeHeroImg1.webp"}  alt="Business growth icon" className="h-auto w-auto float-3d" width={39} height={40}   priority/>
+     <div className="absolute top-[-40px] lg:top-0 left-[50px] lg:left-0">
+     <Image src={"/img/HomeHeroImg1.webp"}  alt="Business growth icon" className="lg:h-[40px] lg:w-[39px] w-[23.5px] h-[24.3px] float-3d" width={39} height={40}   priority/>
      </div>
-     <div className="absolute top-[40%] left-[140px]">
-     <Image src={"/img/HomeHeroImg2.webp"} alt="Business analytics icon" className="h-auto w-auto float-3d" width={39} height={40} />
+     <div className="absolute lg:top-[40%] lg:left-[140px] top-[30%] left-[10px]">
+     <Image src={"/img/HomeHeroImg2.webp"} alt="Business analytics icon" className="w-[26.95px] h-[27.6px] lg:h-[45.7px] lg:w-[44.5px] float-3d" width={44.5} height={45.7} />
      </div>
-     <div className="absolute bottom-0 ">
-     <Image src={"/img/HomeHeroImg3.webp"} alt="Business analytics icon" className="h-auto w-auto float-3d" width={39} height={40} />
+     <div className="absolute bottom-[50px] lg:bottom-0 left-[10px] lg:left-0">
+     <Image src={"/img/HomeHeroImg3.webp"} alt="Business analytics icon" className="w-[38.75px] h-[34.5px] lg:h-[57px] lg:w-[64px] float-3d" width={64} height={57} />
      </div>
-     <div className="absolute top-0 right-0">
-     <Image src={"/img/HomeHeroImg4.webp"} alt="Business analytics icon" className="h-auto w-auto float-3d" width={39} height={40} />
+     <div className="absolute top-[-40px] lg:top-0 right-[50px] lg:right-0">
+     <Image src={"/img/HomeHeroImg4.webp"} alt="Business analytics icon" className="w-[22.12px] h-[29.87px] lg:h-[47.92px] lg:w-[35.5px] float-3d" width={39} height={40} />
      </div>
-     <div className="absolute top-[40%] right-[140px]">
-     <Image src={"/img/HomeHeroImg5.webp"} alt="Business analytics icon" className="h-auto w-auto float-3d" width={39} height={40} />
+     <div className="absolute top-[30%] lg:top-[40%] lg:right-[140px] right-[20px]">
+     <Image src={"/img/HomeHeroImg5.webp"} alt="Business analytics icon" className="w-[32.62px] h-[34px] lg:h-[64.87px] lg:w-[62.22px] float-3d" width={62.22} height={64.87} />
      </div>
-     <div className="absolute bottom-0 right-0 ">
-     <Image src={"/img/HomeHeroImg6.webp"} alt="Business analytics icon" className="h-auto w-auto float-3d" width={39} height={40} />
+     <div className="absolute bottom-[50px] right-[20px] lg:bottom-0 lg:right-0 ">
+     <Image src={"/img/HomeHeroImg6.webp"} alt="Business analytics icon" className="w-[29.56px] h-[33.12px] lg:w-[58.87px] lg:h-[66px] float-3d" width={39} height={40} />
      </div>
     </div>
     </section>

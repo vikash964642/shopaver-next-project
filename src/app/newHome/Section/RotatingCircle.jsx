@@ -6,7 +6,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
-export default function CompleteWhatsapp() {
+export default function RotatingCircle() {
   const container = useRef(null);
 
   useGSAP(
@@ -22,7 +22,7 @@ export default function CompleteWhatsapp() {
 const tl = gsap.timeline({
         scrollTrigger: {
           trigger: container.current,
-          start: "top 20%",
+          start: "top 40%",
           toggleActions: "play none none none",
         },
       });
@@ -63,22 +63,15 @@ tl.from("#chatBox", {
 
   return (
  <section ref={container} className='max-w-5xl mx-auto mt-[110px]'>
-        <div className='flex flex-col gap-[20px] items-center'>
-       <h1 className='w-[345px] lg:w-[650px] text-[#075E54] text-center text-[30px] lg:text-[40px] font-bold leading-normal'>The Complete WhatsApp Platform for Your Business Growth</h1>
-        <p className='w-[333px] lg:w-[790px] text-[#666] text-center text-[14px] lg:text-[18px] font-normal leading-normal'>Take your business communication to the next level with WhatsApp Business Suite. Engage customers through chat, run targeted campaigns, sell products, track performance with real-time analytics, and connect all your tools, all within the WhatsApp platform.</p>
-      </div>
-     <div
-      
-      className="flex justify-center mt-[40px] lg:mt-[80px]"
-    >
+       
+     <div className="flex justify-center mt-[40px] lg:mt-[80px]">
       <svg
         width="642"
         height="499"
         viewBox="0 0 642 499"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-full max-w-[700px] h-auto"
-      >
+        className="w-full max-w-[700px] h-auto">
         {/* ================= ROTATING CIRCLE ================= */}
         <g id="rotatingCircle">
           <circle
@@ -96,7 +89,7 @@ tl.from("#chatBox", {
     {/* ================= RIGHT CARD ================= */}
         <g id="rightCard">
           <image
-            href="/img/CompleteWhatsappImg3.png"
+            href="/img/RotatingCircleImg3.png"
             x="467"
             y="82"
             width="169"
@@ -107,7 +100,7 @@ tl.from("#chatBox", {
         {/* ================= MOBILE PHONE ================= */}
         <g id="mobilePhone">
           <image className="abc"
-            href="/img/CompleteWhatsappImg2.png"
+            href="/img/RotatingCircleImg2.png"
             x="164"
             y="26"
             width="334"
@@ -121,7 +114,7 @@ tl.from("#chatBox", {
         {/* ================= LEFT CARD ================= */}
         <g id="leftCard">
           <image
-            href="/img/CompleteWhatsappImg4.png"
+            href="/img/RotatingCircleImg4.png"
             x="0"
             y="139"
             width="170"
@@ -133,7 +126,7 @@ tl.from("#chatBox", {
         {/* ================= CHAT BOX ================= */}
         <g id="chatBox">
           <image
-            href="/img/CompleteWhatsappImg5.png"
+            href="/img/RotatingCircleImg5.png"
             x="158"
             y="359"
             width="148"
@@ -145,7 +138,7 @@ tl.from("#chatBox", {
         {/* ================= SMALL ICON ================= */}
         <g id="smallIcon">
           <image
-            href="/img/CompleteWhatsappImg6.png"
+            href="/img/RotatingCircleImg6.png"
             x="175"
             y="20"
             width="40"

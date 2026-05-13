@@ -43,7 +43,7 @@ function FAQ() {
   };
  
   return (
-    <section className="bg-[#5801B7] py-[55px] lg:py-[90px]">
+    <section className="bg-[#5801B7] py-[55px] lg:py-[90px] mt-[90px]">
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center lg:items-start lg:justify-between lg:flex-row flex-col px-[20px]">
           <div className="w-[225px] lg:w-[280px]">
