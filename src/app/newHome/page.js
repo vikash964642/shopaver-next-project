@@ -1,17 +1,31 @@
-import React from 'react'
+'use client'
 import Counter from './Section/Counter';
 import HeroSection from './Section/HeroSection';
 import HomeSlider from './Section/HomeSlider';
+
+import CarouselSlider from './Section/CarouselSlider';
+import CardSlider from './Section/CardSlider';
+import RotatingCircle from './Section/RotatingCircle';
+import FAQ from './Section/FAQ';
+
 import SmartFeaturesSection from './Section/SmartFeaturesSection';
+
 
 
 function page() {
   return (
     <div>
         <HeroSection />
+         <RotatingCircle />
           <HomeSlider />
+
+         <CardSlider />
+
           <SmartFeaturesSection />
+
         <Counter />
+        <CarouselSlider />
+        <FAQ />
     </div>
   )
 }
