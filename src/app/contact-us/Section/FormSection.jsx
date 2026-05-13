@@ -1,9 +1,12 @@
-// import React from 'react'
-
 "use client";
+
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { FORM_API_URL } from "@/lib/env";
+
 function FormSection() {
+  const router = useRouter();
+
   const [formData, setFormData] = useState({
     from: "Email page",
     name: "",
@@ -23,35 +26,51 @@ function FormSection() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // API payload
+    const payload = {
+      slug: formData.from,
+      name: formData.name,
+      contact: formData.contact_number,
+      company: formData.company_name,
+      businessEmail: formData.business_email_address,
+      message: formData.message,
+    };
+
+    console.log("Submitting:", payload);
+
     try {
       const response = await fetch(FORM_API_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
+      const data = await response.json();
+
       if (response.ok) {
-        const data = await response.json();
-      
-        window.location.href = "/thank-you";
-      
+        console.log("Success:", data);
+
+        // Reset form
         setFormData({
-          from: "",
+          from: "Email page",
           name: "",
           company_name: "",
           contact_number: "",
           business_email_address: "",
           message: "",
         });
+
+        // Redirect
+        router.push("/thank-you");
       } else {
-        console.error("Error:", response.statusText);
-        alert("Error submitting form");
+        console.error("API Error:", data);
+        alert(data?.message || "Error submitting form");
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("Error submitting form");
+      alert("Something went wrong");
     }
   };
   return (

@@ -1,5 +1,5 @@
-import HomePage from "../app/Home/page";
-
+// import HomePage from "../app/Home/page";
+import HomePage from "../app/newHome/page";
 export const metadata = {
   metadataBase: new URL("https://shopaver.com"),
   title: "All-in-One POS Solutions for Small, Medium & Large Businesses.",
