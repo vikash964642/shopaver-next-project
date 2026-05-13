@@ -1,67 +1,77 @@
 "use client";
+
 import PropTypes from "prop-types";
-import { useEffect, useState } from 'react';
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { FORM_API_URL } from "@/lib/env";
 
 const FormHome = (props) => {
+  const router = useRouter();
 
   const [formData, setFormData] = useState({
     from: props.from || "",
-    name: '',
-    company_name: '',
-    contact_number: '',
-    business_email_address: '',
-    message: ''
+    name: "",
+    company_name: "",
+    contact_number: "",
+    business_email_address: "",
+    message: "",
   });
-
-  // FIXED useEffect
-  // useEffect(() => {
-  //   setFormData(prev => ({
-  //     ...prev,
-  //     from: props.from
-  //   }));
-  // }, [props.from]);
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Submitting form with data:', formData);
+
+    const payload = {
+      slug: formData.from,
+      name: formData.name,
+      contact: formData.contact_number,
+      company: formData.company_name,
+      businessEmail: formData.business_email_address,
+      message: formData.message,
+    };
+
+    console.log("Submitting form:", payload);
 
     try {
       const response = await fetch(FORM_API_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
       });
 
+      const data = await response.json();
+
       if (response.ok) {
-        const data = await response.json();
-        sessionStorage.setItem('formSubmitted', 'true');
-        window.location.href = '/thank-you';
+        console.log("Success:", data);
+
+        sessionStorage.setItem("formSubmitted", "true");
 
         setFormData({
-          from: '',
-          name: '',
-          company_name: '',
-          contact_number: '',
-          business_email_address: '',
-          message: ''
+          from: "",
+          name: "",
+          company_name: "",
+          contact_number: "",
+          business_email_address: "",
+          message: "",
         });
 
+        // Next.js redirect
+        router.push("/thank-you");
       } else {
-        console.error('Error:', response.statusText);
-        alert('Error submitting form');
+        console.error("API Error:", data);
+        alert(data?.message || "Form submission failed");
       }
-
     } catch (error) {
-      console.error('Error:', error);
-      alert('Error submitting form');
+      console.error("Error:", error);
+      alert("Something went wrong");
     }
   };
 
