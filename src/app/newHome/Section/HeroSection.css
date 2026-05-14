@@ -171,18 +171,19 @@
 
 .CarouselSliderGradient1{
 position:absolute;
-inset:0% 93% 0% 0%;
-background: linear-gradient(270deg,rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 1) 100%);
- 
+inset:0% 95% 0% 0%;
+/* background: linear-gradient(270deg,rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 1) 100%); */
+ background: linear-gradient(273deg, #FFF 15.46%, rgba(255, 255, 255, 0.00) 97.66%);
 z-index:999;
-filter:blur(60px)
+filter:blur(20px)
 }
 .CarouselSliderGradient2{
 position:absolute;
 inset:0% 0% 0% 93%;
-background: linear-gradient(90deg,rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 1) 100%);
+/* background: linear-gradient(90deg,rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 1) 100%); */
+background: linear-gradient(273deg, #FFF 15.46%, rgba(255, 255, 255, 0.00) 97.66%);
 z-index:999;
-filter:blur(60px)
+filter:blur(20px)
 }
  
 .RotatingCircleGradient{

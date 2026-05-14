@@ -5,7 +5,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import DynamicHeader from "../Component/DynamicHeader";
 import DynamicFooter from "../Component/DynamicFooter";
 import Navbar from "../Component/NewNavbar/Navbar";
-
+import { bricolage, dmSans, poppins } from "@/lib/fonts";
 // ✅ Metadata (SEO + Google Verification)
 export const metadata = {
   icons: {
@@ -18,7 +18,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${bricolage.variable} ${dmSans.variable} ${poppins.variable}`}>
       <head>
         {/* ✅ Google Tag Manager Script */}
         <Script
@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
         />
       </head>
 
-      <body className="font-sans">
+      <body >
         {/* ✅ Google Tag Manager (noscript) */}
         <noscript>
           <iframe

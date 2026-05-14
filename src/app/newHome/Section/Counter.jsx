@@ -1,6 +1,8 @@
 "use client"
-import CountUp from "react-countup";
+// import CountUp from "react-countup";
+import dynamic from "next/dynamic";
 
+const CountUp = dynamic(() => import("react-countup"), { ssr: false });
 export default function Counter() {
   return (
     <div className="max-w-5xl mx-auto mt-[124px]">

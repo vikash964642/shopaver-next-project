@@ -13,7 +13,7 @@ function HomeSlider() {
 
   return (
     <section className="max-w-5xl max-[350px]:px-[15px] px-[30px] xl:px-0 mx-auto mt-[200px]">
-      <h3 className="text-[#5801B7] text-[24px]  font-semibold text-center">
+      <h3 className="text-[#393939] text-[24px]  font-semibold text-center font-bricolage">
       Trusted by Growing Businesses Across India
       </h3>
     <div className={styles.slider}>

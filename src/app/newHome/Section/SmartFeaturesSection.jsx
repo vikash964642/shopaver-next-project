@@ -1,3 +1,7 @@
+
+"use client";
+
+import { useState, useRef } from "react";
 import Image from "next/image";
 
 const features = [
@@ -15,31 +19,28 @@ const features = [
     description:
       "Our POS Billing lets businesses bill faster, manage sales, and handle transactions in one place.",
   },
-
   {
     title: "Quick Billing",
     heading: "Create Invoices Instantly without Inventory",
+    image: "/newImage/quick_billing_grid.webp",
     description:
       "Built for small retailers and service providers who value speed and simplicity.",
-    image: "/newImage/quick_billing_grid.webp",
   },
   {
     title: "Inventory",
     heading: "Real-Time Stock Tracking Made Simple",
+    image: "/newImage/inventory_management_grid.webp",
     description:
       "Avoid stock issues and manual errors with smart inventory management.",
-    image: "/newImage/inventory_management_grid.webp",
   },
   {
     title: "Udhar Khata",
     heading: "Move from Manual to Digital Records",
+    image: "/newImage/bahi_khata_grid.webp",
     description:
       "Go digital with your udhar records. Track transactions, monitor balances, and manage complete credit and debit history with ease.",
-    image: "/newImage/bahi_khata_grid.webp",
-    full: true,
   },
 ];
-
 function FeatureCard({ item }) {
   return (
 <div className=" group relative overflow-hidden
@@ -54,12 +55,12 @@ function FeatureCard({ item }) {
     >
       {/* Content */}
       <div className="mb-5">
-        <p className="text-[#5801B7] text-sm font-medium mb-2">{item.title}</p>
+        <p className="text-[#5801B7] text-[18px] font-medium mb-2 font-bricolage">{item.title}</p>
 
-        <h3 className="text-[28px] leading-[34px] font-semibold text-[#3C3939]">
+        <h3 className="text-[28px] leading-[34px] font-medium text-[#3C3939] font-bricolage">
           {item.heading}
         </h3>
-        <p className="mt-3 text-sm md:text-base text-[#666666] leading-relaxed">
+        <p className="mt-3 text-[16px]  text-[#666666] leading-normal font-dm-sans">
           {item.description}
         </p>
       </div>
@@ -162,15 +163,15 @@ function FullWidthCard({ item }) {
         {/* Left Content */}
 <div className="max-w-[520px]">
   
-  <p className="text-[#5801B7] text-sm font-medium mb-2">
+  <p className="text-[#5801B7] text-[18px] font-medium mb-2 font-bricolage">
     {item.title}
   </p>
 
-  <h3 className="text-[28px] md:text-[42px] leading-[34px] md:leading-[48px] font-semibold text-[#3C3939]">
+  <h3 className="text-[28px] leading-[30px] font-medium text-[#3C3939] font-bricolage">
     {item.heading}
   </h3>
 
-  <p className="mt-4 text-sm md:text-base text-[#666666] leading-relaxed">
+  <p className="mt-4 text-[16px] text-[#666] leading-relaxed font-bricolage">
     {item.description}
   </p>
 
@@ -234,29 +235,75 @@ function FullWidthCard({ item }) {
     </div>
   );
 }
-import { useState, useRef } from "react";
-
-
-
-
-const ROTATIONS = [0, -5, 5];
 export default function SmartFeaturesSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [displayIndex, setDisplayIndex] = useState(0);
+
+  // Current card flying out
   const [flyOut, setFlyOut] = useState(false);
   const [flyDirection, setFlyDirection] = useState("left");
+
+  // Reset animation after last card
+  const [isResetting, setIsResetting] = useState(false);
+  const [resetDirection, setResetDirection] = useState("left");
+
   const [isAnimating, setIsAnimating] = useState(false);
+
   const touchStartX = useRef(null);
   const touchStartY = useRef(null);
 
+  // Track direction for each card
+  const [swipeDirections, setSwipeDirections] = useState(
+    Array(features.length).fill("left")
+  );
+
+  // --------------------------------------------------
+  // Swipe to next
+  // --------------------------------------------------
   const goNext = (direction = "left") => {
     if (isAnimating) return;
+
+    // Save current card direction
+    setSwipeDirections((prev) => {
+      const updated = [...prev];
+      updated[activeIndex] = direction;
+      return updated;
+    });
+
+    // Last card swipe => reset animation
+    if (activeIndex === features.length - 1) {
+      setIsAnimating(true);
+      setFlyDirection(direction);
+      setFlyOut(true);
+
+      setTimeout(() => {
+        // Last card removed
+        setFlyOut(false);
+
+        // Start bringing all cards back
+        setResetDirection(direction);
+        setIsResetting(true);
+
+        // Reset to first card
+        setActiveIndex(0);
+        setDisplayIndex(0);
+
+        setTimeout(() => {
+          setIsResetting(false);
+          setIsAnimating(false);
+        }, 2200);
+      }, 380);
+
+      return;
+    }
+
+    // Normal swipe
     setIsAnimating(true);
     setFlyDirection(direction);
     setFlyOut(true);
 
     setTimeout(() => {
-      const next = (activeIndex + 1) % features.length;
+      const next = activeIndex + 1;
       setFlyOut(false);
       setActiveIndex(next);
       setDisplayIndex(next);
@@ -264,6 +311,9 @@ export default function SmartFeaturesSection() {
     }, 380);
   };
 
+  // --------------------------------------------------
+  // Touch handlers
+  // --------------------------------------------------
   const handleTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX;
     touchStartY.current = e.touches[0].clientY;
@@ -271,112 +321,253 @@ export default function SmartFeaturesSection() {
 
   const handleTouchEnd = (e) => {
     if (touchStartX.current === null) return;
+
     const diffX = touchStartX.current - e.changedTouches[0].clientX;
-    const diffY = Math.abs(touchStartY.current - e.changedTouches[0].clientY);
-    if (diffY > Math.abs(diffX)) { touchStartX.current = null; return; }
-    if (Math.abs(diffX) > 30) goNext(diffX > 0 ? "left" : "right");
+    const diffY = Math.abs(
+      touchStartY.current - e.changedTouches[0].clientY
+    );
+
+    // Ignore vertical scroll
+    if (diffY > Math.abs(diffX)) {
+      touchStartX.current = null;
+      return;
+    }
+
+    // Swipe threshold
+    if (Math.abs(diffX) > 30) {
+      goNext(diffX > 0 ? "left" : "right");
+    }
+
     touchStartX.current = null;
   };
 
-  const total = features.length;
+  // --------------------------------------------------
+  // Visible cards
+  // --------------------------------------------------
+  let visibleCards = [];
 
-  const visibleCards = [];
-  for (let i = 0; i < total; i++) {
-    const offset = (i - displayIndex + total) % total;
-    if (offset <= 2) visibleCards.push({ index: i, offset });
+  // During reset animation => show all cards
+  if (isResetting) {
+    visibleCards = features.map((_, index) => ({
+      index,
+      offset: index,
+    }));
+  } else {
+    // Normal mode => if last card active, only show last card
+    // so hidden cards don't appear behind it
+    if (activeIndex === features.length - 1) {
+      visibleCards = [
+        {
+          index: activeIndex,
+          offset: 0,
+        },
+      ];
+    } else {
+      // Show top 3 cards
+      for (let i = 0; i < features.length; i++) {
+        const offset =
+          (i - displayIndex + features.length) % features.length;
+
+        if (offset <= 2) {
+          visibleCards.push({ index: i, offset });
+        }
+      }
+    }
   }
+
+  // Render back cards first
   visibleCards.sort((a, b) => b.offset - a.offset);
+
+  // --------------------------------------------------
+  // Card position styles
+  // --------------------------------------------------
+  const getCardBaseStyle = (offset) => {
+    if (offset === 0) {
+      return {
+        rotate: 0,
+        x: 0,
+        zIndex: 30,
+      };
+    }
+
+    if (offset === 1) {
+      return {
+        rotate: -3,
+        x: -6,
+        zIndex: 20,
+      };
+    }
+
+    return {
+      rotate: 3,
+      x: 6,
+      zIndex: 10,
+    };
+  };
+
+
+// Reset animation style
+const getResetStyle = (index) => {
+  const originalDirection = swipeDirections[index] || "left";
+  const startX = originalDirection === "left" ? "-120%" : "120%";
+  const startRotate = originalDirection === "left" ? -12 : 12;
+
+  const totalCards = features.length;
+  const delay = (totalCards - 1 - index) * 0.30;
+  const zIndex = 100 + (totalCards - 1 - index);
+
+  // ✅ Final position mein offset ka rotation
+  const { rotate, x } = getCardBaseStyle(index); // index 0 = active, 1 = -3deg, 2 = +3deg
+
+  return {
+    position: "absolute",
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
+    transform: `translate3d(${x}px, 0px, 0px) rotate(${rotate}deg)`, // ✅ bent position
+    opacity: 1,
+    zIndex,
+    animation: `resetCardIn 1.6s cubic-bezier(0.22, 1, 0.36, 1) ${delay}s both`,
+    "--start-x": startX,
+    "--start-rotate": `${startRotate}deg`,
+    "--end-x": `${x}px`,           // ✅ keyframe end position
+    "--end-rotate": `${rotate}deg`, // ✅ keyframe end rotation
+  };
+};
   return (
     <>
-    <section className="mx-auto max-w-5xl px-4 xl:px-0 py-16 space-y-6 hidden lg:block">
+        <section className="mx-auto max-w-5xl px-4 xl:px-0 py-16 space-y-6 hidden lg:block">
       {/* Row 1 */}
-      <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-6">
-        <FeatureCard item={features[0]} />
+       <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-6">
+         <FeatureCard item={features[0]} />
         <FeatureCard item={features[1]} />
       </div>
-
-      {/* Row 2 */}
+       {/* Row 2 */}
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-6">
         <FeatureCard item={features[2]} />
-        <FeatureCard item={features[3]} />
-      </div>
+         <FeatureCard item={features[3]} />
+       </div>
 
-      {/* Full Width */}
-      <div>
-        <FullWidthCard item={features[4]} />
+       {/* Full Width */}
+       <div>
+         <FullWidthCard item={features[4]} />
       </div>
     </section>
-      <section className="block lg:hidden py-10">
-      
-
-      {/* ✅ overflow: hidden hata diya — sirf isolation rakha */}
-      <div
-        className="relative max-[375px]:w-[290px] w-[320px] h-[620px] mx-auto"
-        style={{ isolation: "isolate" }}
+    <section className="block lg:hidden mt-[100px] ">
+   <div className="overflow-hidden py-[10px]">
+       <div
+        className="relative max-[375px]:w-[290px] w-[320px] h-[520px] mx-auto"
+        style={{
+          isolation: "isolate",
+          touchAction: "pan-y",
+        }}
       >
         {visibleCards.map(({ index, offset }) => {
           const item = features[index];
           const isActive = index === activeIndex;
           const isFlyingOut = isActive && flyOut;
 
-       
+          let style = {};
 
-const rotate = ROTATIONS[offset] ?? 0;
-const scale = 1; // sab cards same size
-const y = 0;     // sab cards same top position
-const zIndex = 30 - offset;
+          // ----------------------------------------
+          // Reset animation
+          // ----------------------------------------
+          if (isResetting) {
+            style = getResetStyle(index);
+          }
 
-          // ✅ -100% use karo taaki page width affect na ho
-          const flyX = flyDirection === "left" ? "-100%" : "100%";
-          const flyRotate = flyDirection === "left" ? -12 : 12;
+          // ----------------------------------------
+          // Flying out card
+          // ----------------------------------------
+          else if (isFlyingOut) {
+            const flyX =
+              flyDirection === "left" ? "-120%" : "120%";
+            const flyRotate =
+              flyDirection === "left" ? -12 : 12;
 
-         
-const style = isFlyingOut
-  ? {
-      transform: `translateX(${flyX}) rotate(${flyRotate}deg) scale(1)`,
-      opacity: 0,
-      zIndex: 50,
-      transition: "transform 0.38s ease-in, opacity 0.3s ease-in",
-      pointerEvents: "none",
-    }
-  : {
-      transform: `translateY(${y}px) rotate(${rotate}deg) scale(${scale})`,
-      opacity: 1,
-      zIndex,
-      transition:
-        "transform 0.4s cubic-bezier(0.32,0.72,0,1), opacity 0.4s ease",
-      pointerEvents: isActive && !flyOut ? "auto" : "none",
-    };
+            style = {
+              position: "absolute",
+              top: 0,
+              bottom: 0,
+              left: 0,
+              right: 0,
+              transform: `translate3d(${flyX},0,0) rotate(${flyRotate}deg)`,
+              opacity: 0,
+              zIndex: 50,
+              transition:
+                "transform 0.38s ease-in, opacity 0.3s ease-in",
+              pointerEvents: "none",
+              willChange: "transform, opacity",
+            };
+          }
+
+          // ----------------------------------------
+          // Normal card stack
+          // ----------------------------------------
+          else {
+            const { rotate, x, zIndex } =
+              getCardBaseStyle(offset);
+
+            style = {
+              position: "absolute",
+              top: 0,
+              bottom: 0,
+              left: 0,
+              right: 0,
+              transform: `translate3d(${x}px,0,0) rotate(${rotate}deg)`,
+              transformOrigin: "center center",
+              opacity: 1,
+              zIndex,
+              transition:
+                "transform 0.45s cubic-bezier(0.32,0.72,0,1), opacity 0.4s ease",
+              pointerEvents:
+                isActive && !flyOut ? "auto" : "none",
+              willChange: "transform, opacity",
+            };
+          }
+
           return (
             <div
               key={index}
-              className="absolute inset-0 rounded-[32px] border border-[#CBCBFF] bg-[#F8F8FF] shadow-sm"
+              className="rounded-[32px] border border-[#CBCBFF] bg-[#F8F8FF] shadow-sm h-[525px] overflow-hidden"
               style={style}
-              onTouchStart={isActive && !flyOut ? handleTouchStart : undefined}
-              onTouchEnd={isActive && !flyOut ? handleTouchEnd : undefined}
+              onTouchStart={
+                isActive && !flyOut && !isResetting
+                  ? handleTouchStart
+                  : undefined
+              }
+              onTouchEnd={
+                isActive && !flyOut && !isResetting
+                  ? handleTouchEnd
+                  : undefined
+              }
             >
-           <div className="py-[31px] px-[21.22px]">
-               <p className="text-[#5801B7] text-[15.6px] font-semibold">{item.title}</p>
+              <div className="py-[31px] px-[21.22px]">
+                <p className="text-[#5801B7] text-[15.6px] font-semibold font-bricolage">
+                  {item.title}
+                </p>
 
-              <h3 className="pr-[4px] text-[23.40.px] leading-normal font-semibold text-[#393939]">
-                {item.heading}
-              </h3>
+                <h3 className="pt-[4px] pr-[4px] text-[23.4px] font-medium text-[#393939] font-bricolage">
+                  {item.heading}
+                </h3>
 
-              <p className="pt-[8.5px] text-[13.65px] leading-normal text-[#666]">
-                {item.description}
-              </p>
+                <p className="pt-[8.5px] text-[13.65px] leading-normal text-[#666]">
+                  {item.description}
+                </p>
 
-              <button className="mt-[17px] rounded-[7.8px] bg-[#5801B7] h-[38.25px] w-[105.5px] text-[11.33px] text-white font-medium">
-                Know More
-              </button>
-           </div>
+                <button className="mt-[17px] rounded-[7.8px] bg-[#5801B7] h-[38.25px] w-[105.5px] text-[11.33px] text-white font-medium">
+                  Know More
+                </button>
+              </div>
 
-              <div className="relative mt-8 h-[280px] w-full">
+              <div className="relative h-[220px] w-full">
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
-                  className="object-contain"
+             
+                  className=""
                   priority={index === 0}
                 />
               </div>
@@ -384,11 +575,31 @@ const style = isFlyingOut
           );
         })}
       </div>
+
+      {/* Reset animation keyframes */}
+<style jsx>{`
+  @keyframes resetCardIn {
+  0% {
+    transform: translate3d(var(--start-x), 0, 0)
+      rotate(var(--start-rotate)) scale(0.96);
+    opacity: 0;
+  }
+
+  60% {
+    transform: translate3d(var(--end-x), 0, 0)
+      rotate(var(--end-rotate)) scale(1.01);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(var(--end-x), 0, 0)
+      rotate(var(--end-rotate)) scale(1);
+    opacity: 1;
+  }
+}
+`}</style>
+   </div>
     </section>
     </>
   );
 }
-
-
-
-
