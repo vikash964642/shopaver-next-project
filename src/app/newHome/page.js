@@ -10,7 +10,7 @@ import FAQ from './Section/FAQ';
 
 import SmartFeaturesSection from './Section/SmartFeaturesSection';
 import LandingPageList from './Section/LandingPageList';
-
+import BusinessHeroSection from './Section/BusinessHeroSection';
 
 function page() {
   return (
@@ -18,14 +18,13 @@ function page() {
         <HeroSection />
          <RotatingCircle />
           <HomeSlider />
-
          <CardSlider />
-
           <SmartFeaturesSection />
-<LandingPageList />
+         <LandingPageList />
         <Counter />
         <CarouselSlider />
         <FAQ />
+        <BusinessHeroSection />
     </div>
   )
 }

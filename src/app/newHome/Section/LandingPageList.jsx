@@ -42,8 +42,8 @@ const listData=[
 ]
 function LandingPageList() {
   const [visibleCount, setVisibleCount] = useState(2);
-  const [isBeginning, setIsBeginning] = useState(true);
-  const [isEnd, setIsEnd] = useState(false);
+
+
  
    
   return (
@@ -55,7 +55,7 @@ function LandingPageList() {
         </h2>
 
         {/* ================= MOBILE ================= */}
-        <div
+        {/* <div
           className={`grid grid-cols-1 md:grid-cols-2 gap-[20px] lg:hidden mt-10 ${
             listData.length === 1 ? "justify-items-center" : ""
           }`}
@@ -67,7 +67,7 @@ function LandingPageList() {
           ))}
         </div>
 
-        {/* SHOW MORE BUTTON */}
+        
         {visibleCount < listData.length && (
           <div className="flex justify-center mt-6 lg:hidden">
             <div
@@ -77,47 +77,77 @@ function LandingPageList() {
               <p className="text-white text-[16px] font-medium">View More</p>
             </div>
           </div>
-        )}
-        <div className="hidden lg:block mt-9">
+        )} */}
+          <div className="block lg:hidden mt-9">
+          
           <Swiper
-            onSlideChange={(swiper) => {
-              setIsBeginning(swiper.isBeginning);
-              setIsEnd(swiper.isEnd);
-            }}
-            modules={[Navigation]}
-            spaceBetween={20}
-            slidesPerView={2}
-            loop={false}
-            navigation={{
-              nextEl: ".custom-next",
-              prevEl: ".custom-prev",
-            }}
-          >
-            {listData.map((item, index) => (
-              <SwiperSlide key={index}>
-                <div className="w-full max-w-[500px] mx-auto h-[250px]">
-                  <Card item={item} />
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+  modules={[Navigation]}
+  spaceBetween={20}
+  slidesPerView={1}        // ✅ 1 slide = 1 group of 4
+  slidesPerGroup={1}
+  loop={true}
+  navigation={{
+    nextEl: ".custom-next",
+    prevEl: ".custom-prev",
+  }}
+>
+  {/* ✅ Har 2 items ka ek group banao */}
+  {Array.from({ length: Math.ceil(listData.length / 2) }).map((_, groupIndex) => (
+    <SwiperSlide key={groupIndex}>
+      <div className="grid grid-cols-1 gap-[20px]">
+        {listData.slice(groupIndex * 2, groupIndex * 2 + 2).map((item, index) => (
+          <div key={index} className="h-[240px]">
+            <Card item={item} />
+          </div>
+        ))}
+      </div>
+    </SwiperSlide>
+  ))}
+</Swiper>
           <div className="flex justify-center gap-[12.75px] mt-[10px] lg:mt-[40px]">
             <div
-              className={`custom-prev h-[28px] w-[28px] lg:h-[36.36px] lg:w-[36.36px] rounded-full border-2 border-[#C4C4C4] text-[#C4C4C4]  text-[15px] lg:text-[18px]  flex justify-center items-center ${
-                isBeginning
-                  ? "cursor-not-allowed"
-                  : "cursor-pointer hover:border-[#5801B7] hover:text-[#5801B7]"
-              }`}
-            >
+              className="custom-prev h-[28px] w-[28px] lg:h-[36.36px] lg:w-[36.36px] rounded-full border-2 border-[#C4C4C4] text-[#C4C4C4]  text-[15px] lg:text-[18px]  flex justify-center items-center cursor-pointer hover:border-[#5801B7] hover:text-[#5801B7] ">
               <i className="fa-solid fa-angle-left"></i>
             </div>
             <div
-              className={`custom-next w-[28px] h-[28px] lg:h-[36.36px] lg:w-[36.36px] rounded-full border-2 border-[#C4C4C4] text-[#C4C4C4]  text-[15px] lg:text-[18px] flex justify-center items-center ${
-                isEnd
-                  ? "cursor-not-allowed"
-                  : "cursor-pointer hover:border-[#5801B7] hover:text-[#5801B7]"
-              }`}
-            >
+              className="custom-next w-[28px] h-[28px] lg:h-[36.36px] lg:w-[36.36px] rounded-full border-2 border-[#C4C4C4] text-[#C4C4C4]  text-[15px] lg:text-[18px] flex justify-center items-center cursor-pointer hover:border-[#5801B7] hover:text-[#5801B7]">
+              <i className="fa-solid fa-angle-right"></i>
+            </div>
+          </div>
+        </div>
+        <div className="hidden lg:block mt-9">
+          
+          <Swiper
+  modules={[Navigation]}
+  spaceBetween={20}
+  slidesPerView={1}        // ✅ 1 slide = 1 group of 4
+  slidesPerGroup={1}
+  loop={true}
+  navigation={{
+    nextEl: ".custom-next",
+    prevEl: ".custom-prev",
+  }}
+>
+  {/* ✅ Har 2 items ka ek group banao */}
+  {Array.from({ length: Math.ceil(listData.length / 4) }).map((_, groupIndex) => (
+    <SwiperSlide key={groupIndex}>
+      <div className="grid grid-cols-2 gap-[20px]">
+        {listData.slice(groupIndex * 4, groupIndex * 4 + 4).map((item, index) => (
+          <div key={index} className="h-[250px]">
+            <Card item={item} />
+          </div>
+        ))}
+      </div>
+    </SwiperSlide>
+  ))}
+</Swiper>
+          <div className="flex justify-center gap-[12.75px] mt-[10px] lg:mt-[40px]">
+            <div
+              className="custom-prev h-[28px] w-[28px] lg:h-[36.36px] lg:w-[36.36px] rounded-full border-2 border-[#C4C4C4] text-[#C4C4C4]  text-[15px] lg:text-[18px]  flex justify-center items-center cursor-pointer hover:border-[#5801B7] hover:text-[#5801B7] ">
+              <i className="fa-solid fa-angle-left"></i>
+            </div>
+            <div
+              className="custom-next w-[28px] h-[28px] lg:h-[36.36px] lg:w-[36.36px] rounded-full border-2 border-[#C4C4C4] text-[#C4C4C4]  text-[15px] lg:text-[18px] flex justify-center items-center cursor-pointer hover:border-[#5801B7] hover:text-[#5801B7]">
               <i className="fa-solid fa-angle-right"></i>
             </div>
           </div>
@@ -130,22 +160,19 @@ function LandingPageList() {
 /* ================= CARD ================= */
 function Card({ item }) {
   
-
-   
-  
   return (
     <div className="flex items-stretch gap-[14.5px] lg:gap-[35px] bg-white rounded-[25.47px] border border-[#EBD9FF] py-[13px] pl-[20.5px] pr-[12.7px] h-full">
       {/* LEFT CONTENT */}
       <div className="flex flex-col w-[50%] justify-center">
      
-          <p className="text-[#5801B7] text-[18px] font-medium break-words line-clamp-2">
+          <p className="text-[#3C3939] text-[18px] font-medium break-words line-clamp-2 font-bricolage">
             {item.title}
           </p>
          <p className="pt-[5.5px] text-[#666] text-[16px] font-normal leading-normal font-dm-sans line-clamp-5">{item.description}</p>
       
 
-        <Link
-          href={`/service/${item.slug}`}
+        <button
+         
           className="mt-[20px] rounded-[30px] bg-[#E6D2FF] w-[97px] h-[30px] flex justify-center items-center gap-[4.5px]"
         >
           <p className="text-[#5801B7] font-normal lg:font-medium text-[10.5px] lg:text-[12px]">Read More</p>
@@ -154,7 +181,7 @@ function Card({ item }) {
   <path d="M10.3536 4.03519C10.5488 3.83993 10.5488 3.52335 10.3536 3.32809L7.17157 0.146107C6.97631 -0.0491549 6.65973 -0.0491549 6.46447 0.146107C6.2692 0.341369 6.2692 0.657952 6.46447 0.853214L9.29289 3.68164L6.46447 6.51007C6.2692 6.70533 6.2692 7.02191 6.46447 7.21718C6.65973 7.41244 6.97631 7.41244 7.17157 7.21718L10.3536 4.03519ZM0 3.68164L-4.37114e-08 4.18164L10 4.18164L10 3.68164L10 3.18164L4.37114e-08 3.18164L0 3.68164Z" fill="#5801B7"/>
 </svg>
           </div>
-        </Link>
+        </button>
       </div>
 
       {/* RIGHT IMAGE */}

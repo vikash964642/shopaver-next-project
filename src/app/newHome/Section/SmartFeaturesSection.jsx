@@ -599,6 +599,14 @@ const getResetStyle = (index) => {
 }
 `}</style>
    </div>
+   <div className="flex justify-center mt-[43px]">
+              <div onClick={() => goNext("left")} className="w-[101px] h-[44px] rounded-[12px] bg-[#F8F8FF] border-[0.74px] border-[#F0E2FF] flex justify-center items-center gap-[6px]">
+              <p className="text-[#5801B7] text-[16px] font-medium">Swap</p>
+              <div className="h-[20px] w-[20px] rounded-full bg-[#5801B7] flex justify-center items-center">
+                <Image src={'/newImage/swapbtn.svg'} className="w-auto h-auto" width={10.5} height={5}/>
+              </div>
+              </div>
+            </div>
     </section>
     </>
   );
