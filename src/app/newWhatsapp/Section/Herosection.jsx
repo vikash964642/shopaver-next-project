@@ -7,32 +7,30 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 function Herosection() {
     const container = useRef(null);
-   useGSAP(
+useGSAP(
     () => {
-      
-      // gsap.from(".float-3d", {
-      //   scale: 0,
-      //   opacity: 0,
-      //   duration: 1,
-      //   stagger: 0.2,
-      //   ease: "back.out(1.7)",
-      // });
-      gsap.utils.toArray(".float-3d").forEach((img, i) => {
-  gsap.to(img, {
-    y: -20,
-    duration: 2 + i * 0.3,
-    repeat: -1,
-    yoyo: true,
-    ease: "power1.inOut",
-    delay: i * 0.2,
-  });
-});
-    },
+      const tl = gsap.timeline({
+        delay: 0.5, // page load hone ke baad 0.5s delay
+      });
+  
+      tl.from("#tickmark1", {
+        scale: 0.5,
+        opacity: 0,
+        duration: 0.8,
+        ease: "back.out(1.4)",
+      });
+      tl.from("#tickmark2", {
+        scale: 0.5,
+        opacity: 0,
+        duration: 0.8,
+        ease: "back.out(1.4)",
+      }, "-=0.3"); // overlap animation for smoother flow
+     },
     { scope: container }
   );
   return (
     <section ref={container} className=" bg-[#F8F8FF]">
-  <div className="max-w-[1850px] mx-auto pt-[175px]">
+  <div className="max-w-5xl mx-auto pt-[75px]">
    
        <div className="flex flex-col items-center gap-[20px]">
       <h2 className="w-[276px] lg:w-[511px] text-center text-[#5801B7] text-[30px] lg:text-[40px] font-bold leading-normal font-bricolage">Get Verified with WhatsApp Blue Tick</h2>
@@ -50,7 +48,24 @@ function Herosection() {
       </button>
       </Link>
      </div>
-     
+     {/* <div className="flex justify-center relative">
+      <Image src={"/newImage/WhatsappHeroImg1.webp"} height={544} width={500}/>
+      <div className="absolute">
+        <Image src={"/newImage/WhatsappHeroImg2.png"} height={154.32} width={149.7}></Image>
+      </div>
+     </div> */}
+     <div className="flex justify-center  mt-[50px]">
+  <div className="h-[372.35px] max-[450px]:w-full w-[342.5px] sm:w-[400px] lg:h-[544px] lg:w-[550px] relative">
+    <Image src={"/newImage/WhatsappHeroImg1.webp"} className="relative z-30 h-full w-[342.5px] lg:w-[500px]" height={544} width={500} alt="WhatsApp Hero"/>
+    <div className="absolute top-[90px] lg:top-[125px] max-[450px]:right-0 right-[-30px] sm:right-[12px] lg:right-0" id="tickmark1">
+    <Image src={"/newImage/WhatsappHeroImg2.png"} className="h-[105.5px] w-[102.5px] lg:h-[154px] lg:w-[150px]" height={154} width={150} alt="Blue Tick"/>
+  </div>
+    <div className="absolute z-20 top-[42px] max-[450px]:right-[85px] right-[60px] sm:right-[117px] lg:top-[65px] lg:right-[135px]" id="tickmark2">
+    <Image src={"/newImage/WhatsappHeroImg3.png"} className="h-[45.55px] w-[44.18px] lg:h-[66.5px] lg:w-[64.5px]" height={66.5} width={64.5} alt="Blue Tick"/>
+  </div>
+  </div>
+  
+</div>
     </div>
     </section>
   );

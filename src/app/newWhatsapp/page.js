@@ -4,6 +4,7 @@ import HomeSlider from './Section/HomeSlider';
 import WhatsappBlueTick from './Section/WhatsappBlueTick';
 import BlueTickComparison from './Section/BlueTickComparison';
 import RequirementsWhatsapp from './Section/RequirementsWhatsapp';
+import FAQ from './Section/FAQ';
 function page() {
   return (
     <div>
@@ -12,6 +13,7 @@ function page() {
         <WhatsappBlueTick />
         <BlueTickComparison />
         <RequirementsWhatsapp />
+        <FAQ />
     </div>
   )
 }

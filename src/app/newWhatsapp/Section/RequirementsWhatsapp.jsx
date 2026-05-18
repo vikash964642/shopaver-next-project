@@ -1,90 +1,119 @@
 import React from 'react'
+import Image from 'next/image';
 const arrayData=[
     {
-        icon:"",
+        icon:"/newImage/RequirementsWhatsappIcon1.svg",
         title:"Active WhatsApp Business Setup",
-        description:"Your business must be live and actively using the WhatsApp Business API."
+        description:"Your business must be live and actively using the WhatsApp Business API.",
+        iconHeight:"h-[20px] lg:h-[25px]",
+        iconWidth:"w-[19.6px] lg:w-[24.48px]"
     },
      {
-        icon:"",
+        icon:"/newImage/RequirementsWhatsappIcon2.svg",
         title:"Meta Business Verification",
-        description:"Complete your Meta Business Manager (KYC) verification to confirm your business identity."
+        description:"Complete your Meta Business Manager (KYC) verification to confirm your business identity.",
+         iconHeight:"h-[20.7px] lg:h-[25.88px]",
+        iconWidth:"w-[17.6px] lg:w-[22px]"
     },
      {
-        icon:"",
+        icon:"/newImage/RequirementsWhatsappIcon3.svg",
         title:"5 Organic PR or News Coverage",
-        description:"Your brand should have at least 5 organic PR or news mentions online. Paid or sponsored articles are not eligible."
+        description:"Your brand should have at least 5 organic PR or news mentions online. Paid or sponsored articles are not eligible.",
+         iconHeight:"h-[21.15px] lg:h-[26.45px]",
+        iconWidth:"w-[19px] lg:w-[23.8px]"
     },
      {
-        icon:"",
+        icon:"/newImage/RequirementsWhatsappIcon4.svg",
         title:"Messaging Tier Requirement",
-        description:"Your account should be Tier 2 or higher in messaging activity. Tier 1 may also qualify if you’ve exchanged 10–15 messages."
+        description:"Your account should be Tier 2 or higher in messaging activity. Tier 1 may also qualify if you’ve exchanged 10–15 messages.",
+         iconHeight:"h-[19.8px] lg:h-[24.8px]",
+        iconWidth:"w-[22px] lg:w-[27.6px]"
     },
      {
-        icon:"",
+        icon:"/newImage/RequirementsWhatsappIcon5.svg",
         title:"Two-Factor Authentication (2FA)",
-        description:"Enable 2-step verification on your WhatsApp account for security and eligibility."
+        description:"Enable 2-step verification on your WhatsApp account for security and eligibility.",
+         iconHeight:"h-[20px] lg:h-[25px]",
+        iconWidth:"w-[20px] lg:w-[25px]"
     },
      {
-        icon:"",
+        icon:"/newImage/RequirementsWhatsappIcon6.svg",
         title:"Notable & Reputable Business",
-        description:"Your business must be well-known, credible, and trusted in your industry."
+        description:"Your business must be well-known, credible, and trusted in your industry.",
+         iconHeight:"h-[20.5px] lg:h-[25.65px]",
+        iconWidth:"w-[21.6px] lg:w-[27px]"
     },
      {
-        icon:"",
+        icon:"/newImage/RequirementsWhatsappIcon7.svg",
         title:"Registered Business",
-        description:"Only legally registered businesses are eligible; individuals cannot apply."
+        description:"Only legally registered businesses are eligible; individuals cannot apply.",
+         iconHeight:"h-[19.2px] lg:h-[24px]",
+        iconWidth:"w-[19.2px] lg:w-[24px]"
     },
      {
-        icon:"",
+        icon:"/newImage/RequirementsWhatsappIcon8.svg",
         title:"Approved Display Name",
-        description:"Your WhatsApp Display Name must be approved by Meta before verification."
+        description:"Your WhatsApp Display Name must be approved by Meta before verification.",
+         iconHeight:"h-[20px] lg:h-[25px]",
+        iconWidth:"w-[20px] lg:w-[25px]"
     },
      {
-        icon:"",
+        icon:"/newImage/RequirementsWhatsappIcon9.svg",
         title:"High-Quality Account Activity",
-        description:"Your account should maintain active, meaningful interactions with customers."
+        description:"Your account should maintain active, meaningful interactions with customers.",
+         iconHeight:"h-[20px] lg:h-[25px]",
+        iconWidth:"w-[20px] lg:w-[25px]"
     },
 ]
 function RequirementsWhatsapp() {
   return (
-  <section className='my-4 px-4'>
-    <div className='grid grid-cols-2 lg:grid-cols-3 '>
-      {arrayData.map((item, i) => {
-             const isFirstRowMd = i < 2;
-          const isLastColMd = (i + 1) % 2 === 0; 
+    <section className='max-w-5xl mx-auto mt-[80px]'>
+        <div>
+         <h2 className='max-w-[410px] lg:max-w-[527px] px-[15px] sm:px-0 mx-auto text-[30px] lg:text-[40px] text-[#3C3939] font-bold font-bricolage text-center'>Requirements to Apply for <span className='text-[#06AAFF]'>WhatsApp Blue Tick</span></h2>
+         <p className='max-w-[450px] lg:max-w-[737px] px-[30px] sm:px-0 pt-[20px] text-[14px] lg:text-[18px] text-[#666] font-normal text-center mx-auto'>Getting the WhatsApp Blue Tick verification ensures your business account is authentic, credible, and trustworthy. To qualify, your account must meet the following criteria:</p>   
+        </div>
+      <div className='grid grid-cols-2 lg:grid-cols-3 mt-[60px] lg:mt-[47px]'>
+        {arrayData.map((item, i) => {
+          const totalCols2 = 2;
+          const totalCols3 = 3;
 
-          const isFirstRowLg = i < 3;
-          const isLastColLg = (i + 1) % 3 === 0;
+          // Mobile/tablet (2 cols)
+          const isLastCol2 = (i + 1) % totalCols2 === 0;
+          const isLastRow2 = i >= arrayData.length - (arrayData.length % totalCols2 || totalCols2);
 
+          // Desktop (3 cols)
+          const isLastCol3 = (i + 1) % totalCols3 === 0;
+          const isLastRow3 = i >= arrayData.length - (arrayData.length % totalCols3 || totalCols3);
+          
+          const isFirstRow3 = i < totalCols3;  // i < 3
+        const isFirstRow2 = i < totalCols2;  // i < 2
           return (
             <div
               key={i}
-              className={`p-6 border-[#CBCBFF] 
-                ${isFirstRowMd ? "md:border-t-[0.73px] md:border-b-[0.73px]  " : " md:border-b-[0.73px]"}
-                ${!isLastColMd ? "md:border-r-[0.73px] " : ""}
+              className={`px-[22px] py-[40px] lg:px-[35px] lg:py-[35px] border-[#E3E3FF] hover:bg-[#F8F8FF]
+  ${!isLastCol2 ? "border-r-[1px]" : ""}
+  ${isFirstRow2 ? "border-t-[1px]" : ""}
+  border-b-[1px]
 
-               ${isFirstRowLg ? "lg:border-t-[0.73px] lg:border-b-[0.73px]" : "lg:border-b-[0.73px]"}
-                ${isLastColLg ? " " : "lg:border-r-[0.73px]"}
-                
-              
-              `}
+  ${!isLastCol3 ? "lg:border-r-[1px]" : "lg:border-r-0"}
+  ${isFirstRow3 ? "lg:border-t-[1px]" : ""}
+  lg:border-b-[1px]
+`}
             >
-              <div className="w-[38px] h-[38px] rounded-[8px] border border-[#CBCBFF] bg-[#F8F8FF] flex justify-center items-center mb-3">
-                <i className={`${item.icon} text-[#5801B7] text-[16px]`}></i>
+              <div className="">
+                <Image className={`${item.iconHeight} ${item.iconWidth}`} src={item.icon} height={24} width={24} alt="Icon"></Image>
               </div>
-              <h3 className="text-[18px] font-semibold text-[#5801B7] font-bricolage leading-snug mb-2">
+              <h3 className="pt-[12px] lg:pt-[15px] text-[17.66px] lg:text-[22px] font-semibold text-[#5801B7] font-bricolage lg:leading-[26.4px]">
                 {item.title}
               </h3>
-              <p className="text-[14px] text-[#666] leading-relaxed font-dm-sans">
+              <p className="lg:w-[80%] pt-[5px] lg:pt-[10px] text-[11.2px] lg:text-[14px] text-[#666] font-medium lg:font-normal leading-[22px] font-dm-sans">
                 {item.description}
               </p>
             </div>
           );
         })}
-    </div>
-  </section>
-  )
+      </div>
+    </section>
+  );
 }
-
 export default RequirementsWhatsapp
