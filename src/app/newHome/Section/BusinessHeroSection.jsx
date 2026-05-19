@@ -4,16 +4,17 @@ import Image from "next/image";
  
 export default function BusinessHeroSection() {
   return (
-    <section className="mx-32  max-w-[1850px]  px-3 xl:px-0 my-[130px]">
-      <div className="md:h-[440px] flex flex-col items-center overflow-hidden rounded-[21px] lg:rounded-[30px] border-[0.7px] lg:border border-[#DCD8FF] bg-[#f6f2fb]  md:flex-row">
-       
+    <section className="mx-auto  max-w-[115.625rem]  my-[7.5rem]">
+      <div className="mx-32 px-3 xl:px-0">
+      <div className="md:h-[27.5rem] flex flex-col items-center overflow-hidden rounded-[1.3125rem] lg:rounded-[1.875rem] border-[0.04375rem] lg:border border-[#DCD8FF] bg-[#f6f2fb]  md:flex-row">
+
         {/* LEFT CONTENT */}
-        <div className="w-full md:w-[50%] px-[20px] md:px-0 md:pl-[20px]  lg:pl-[74px]">
-          <h2 className="text-3xl font-bold leading-[45px] tracking-tight text-[#5B14D1] lg:text-4xl font-bricolage">
+        <div className="w-full md:w-[50%] px-[1.25rem] md:px-0 md:pl-[1.25rem]  lg:pl-[4.625rem]">
+          <h2 className="text-3xl font-bold leading-[2.8125rem] tracking-tight text-[#5B14D1] lg:text-4xl font-bricolage">
             Ready to Take Control of Your Business?
           </h2>
  
-          <p className="mt-6 text-[0.812rem] md:text-[0.938rem] lg:text-lg leading-[18px] md:leading-[26px] text-gray-600">
+          <p className="mt-6 text-[0.812rem] md:text-[0.938rem] lg:text-lg leading-[1.125rem] md:leading-[1.625rem] text-gray-600">
             Stop using multiple tools. Manage your entire business in one
             place with Shopaver. Join{" "}
             <span className="font-semibold text-[#5B14D1]">
@@ -28,8 +29,8 @@ export default function BusinessHeroSection() {
  
   <button
     className="
-      h-[44px] lg:h-[54px]
-      w-[140px] md:w-[165px] lg:w-[176px]
+      h-[2.75rem] lg:h-[3.375rem]
+      w-[8.75rem] md:w-[10.3125rem] lg:w-[11rem]
       rounded-xl
       bg-[#5B14D1]
       
@@ -47,8 +48,8 @@ export default function BusinessHeroSection() {
  
   <button
     className="
-      h-[44px] lg:h-[54px]
-      w-[140px] md:w-[165px] lg:w-[176px]
+      h-[2.75rem] lg:h-[3.375rem]
+      w-[8.75rem] md:w-[10.3125rem] lg:w-[11rem]
       rounded-xl
       border border-gray-300
       bg-white
@@ -79,6 +80,7 @@ export default function BusinessHeroSection() {
             className=""
           />
         </div>
+      </div>
       </div>
     </section>
   );

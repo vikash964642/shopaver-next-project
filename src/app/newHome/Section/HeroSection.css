@@ -170,22 +170,27 @@
  */
 
 .CarouselSliderGradient1{
-position:absolute;
-inset:0% 95% 0% 0%;
-/* background: linear-gradient(270deg,rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 1) 100%); */
- background: linear-gradient(273deg, #FFF 15.46%, rgba(255, 255, 255, 0.00) 97.66%);
-z-index:999;
-filter:blur(20px)
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 160px;
+  background: linear-gradient(to right, #fff 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: 10;
+  pointer-events: none;
 }
+
 .CarouselSliderGradient2{
-position:absolute;
-inset:0% 0% 0% 93%;
-/* background: linear-gradient(90deg,rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 1) 100%); */
-background: linear-gradient(273deg, #FFF 15.46%, rgba(255, 255, 255, 0.00) 97.66%);
-z-index:999;
-filter:blur(20px)
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 160px;
+  background: linear-gradient(to left, #fff 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: 10;
+  pointer-events: none;
 }
- 
+
 .RotatingCircleGradient{
     position:absolute;
     background: linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 1) 68%);
@@ -194,6 +199,7 @@ filter:blur(20px)
     border-radius: 90.399px 90.399px 0 0;
     z-index:1;
 }
+
 @media(max-width:1023px){
    .CarouselSliderGradient1, .CarouselSliderGradient2 {
     display:none;

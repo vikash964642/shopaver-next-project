@@ -1,61 +1,66 @@
-"use client"
-// import CountUp from "react-countup";
-import dynamic from "next/dynamic";
+"use client";
+import { useEffect, useRef, useState } from "react";
+import CountUp from "react-countup";
 
-const CountUp = dynamic(() => import("react-countup"), { ssr: false });
+const stats = [
+  { end: 75, suffix: "x", label: "Sales Growth" },
+  { end: 70, suffix: "%", label: "Faster Business Operations" },
+  { end: 90, suffix: "%", label: "Boost Customer Engagement" },
+  { end: 50, suffix: "%", label: "Less Work with AI Automation" },
+];
+
+function StatCard({ end, suffix, label }) {
+  const ref = useRef(null);
+  const [started, setStarted] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStarted(true);
+          observer.disconnect(); // fire once
+        }
+      },
+      { threshold: 0.4 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className="h-[8.125rem] lg:h-[12.5rem] flex flex-col gap-[0.3125rem] justify-center items-center rounded-[1.5rem] border-[0.05rem] border-[#DADAFF] bg-[#F8F8FF]"
+    >
+      <h1 className="text-[#5801B7] text-[3.125rem] lg:text-[4.062rem] font-bold leading-none">
+        {started ? (
+          <CountUp start={0} end={end} duration={2.2} useEasing={true} />
+        ) : (
+          <span>0</span>
+        )}
+        {suffix}
+      </h1>
+      <p className="text-[#525252] text-[0.881rem] lg:text-[1.125rem] font-medium">
+        {label}
+      </p>
+    </div>
+  );
+}
+
 export default function Counter() {
   return (
-    <div className="max-w-[1850px] mx-32 mt-[124px]">
-<div className="grid grid-cols-1 lg:grid-cols-2 gap-[20px] lg:gap-[30px] px-[60px] lg:px-[120px]">
-<div className="h-[130px] lg:h-[200px] flex flex-col gap-[5px] justify-center items-center rounded-[24px] border-[0.8px] border-[#DADAFF] bg-[#F8F8FF]">
-<h1 className="text-[#5801B7] text-[3.125rem] lg:text-[4.062rem] font-bold">
-    <CountUp
-          start={0}
-          end={75}
-          duration={2}
-          enableScrollSpy={true}
-          scrollSpyOnce={true}
-        />x
-</h1>
-        <p className="text-[#525252] text-[0.881rem] lg:text-[1.125rem] font-medium">Sales Growth</p>
-</div>
-<div className="h-[130px] lg:h-[200px]  flex flex-col gap-[5px] justify-center items-center rounded-[24px] border-[0.8px] border-[#DADAFF] bg-[#F8F8FF]">
-<h1 className="text-[#5801B7] text-[3.125rem] lg:text-[4.062rem] font-bold">
-    <CountUp
-          start={0}
-          end={70}
-          duration={2}
-          enableScrollSpy={true}
-          scrollSpyOnce={true}
-        />%
-</h1>
-        <p className="text-[#525252] text-[0.881rem] lg:text-[1.125rem] font-medium">Faster Business Operations</p>
-</div>
-<div className="h-[130px] lg:h-[200px] flex flex-col gap-[5px] justify-center items-center rounded-[24px] border-[0.8px] border-[#DADAFF] bg-[#F8F8FF]">
-<h1 className="text-[#5801B7] text-[3.125rem] lg:text-[4.062rem] font-bold">
-    <CountUp
-          start={0}
-          end={90}
-          duration={2}
-          enableScrollSpy={true}
-          scrollSpyOnce={true}
-        />%
-</h1>
-        <p className="text-[#525252] text-[0.881rem] lg:text-[1.125rem] font-medium">Boost Customer Engagement</p>
-</div>
-<div className="h-[130px] lg:h-[200px] flex flex-col gap-[5px] justify-center items-center rounded-[24px] border-[0.8px] border-[#DADAFF] bg-[#F8F8FF]">
-<h1 className="text-[#5801B7] text-[3.125rem] lg:text-[4.062rem] font-bold">
-    <CountUp
-          start={0}
-          end={50}
-          duration={2}
-          enableScrollSpy={true}
-          scrollSpyOnce={true}
-        />%
-</h1>
-        <p className="text-[#525252] text-[0.881rem] lg:text-[1.125rem] font-medium">Less Work with AI Automation</p>
-</div>
-</div>
-    </div>
+    <section className="max-w-[115.625rem] mx-auto mt-[7.5rem]">
+      <div className="mx-32">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-[1.25rem] lg:gap-[1.875rem] px-[3.75rem] lg:px-[7.5rem]">
+        {stats.map((stat, i) => (
+          <StatCard key={i} {...stat} />
+        ))}
+      </div>
+      </div>
+    </section>
   );
 }

@@ -48,14 +48,15 @@ function CarouselSlider() {
     // Add more testimonials as needed
   ];
   return (
-    <div className='max-w-[1850px] mx-32 mt-[165px]'>
-  <div className='flex items-center flex-col gap-[10px] mt-[10px]'>
-  <h2 className='w-[243px] lg:w-full text-[#5801B7] text-[1.875rem] lg:text-[2.5rem] font-bold text-center leading-normal font-bricolage'>What our Customers Say ?</h2>
-    <p className='max-w-[335px] lg:max-w-[505px] text-[#666] text-[0.875rem] lg:text-[1.125rem] text-center leading-normal font-dm-sans'>We provide simple, smart tools and trusted support to help your business grow faster and run smoothly.</p>
+    <section className='max-w-[115.625rem] mx-auto mt-[7.5rem]'>
+    <div className="mx-32">
+  <div className='flex items-center flex-col gap-[0.625rem] mt-[0.625rem]'>
+  <h2 className='w-[15.1875rem] lg:w-full text-[#5801B7] text-[1.875rem] lg:text-[2.5rem] font-bold text-center leading-normal font-bricolage'>What our Customers Say ?</h2>
+    <p className='max-w-[20.9375rem] lg:max-w-[31.5625rem] text-[#666] text-[0.875rem] lg:text-[1.125rem] text-center leading-normal font-dm-sans'>We provide simple, smart tools and trusted support to help your business grow faster and run smoothly.</p>
   </div>
 
  
-<div className='mt-[25px] lg:mt-[55px] relative hidden lg:block'>
+<div className='mt-[1.5625rem] lg:mt-[3.4375rem] relative hidden lg:block overflow-hidden'>
      <div className='CarouselSliderGradient1'></div>
     <div className='CarouselSliderGradient2'></div>
        <Swiper
@@ -81,20 +82,20 @@ function CarouselSlider() {
         >
 {testimonials.map((item,index)=>(
    <SwiperSlide key={index}>
-  <div className='h-full lg:h-[380px] w-[320px] lg:w-auto p-[19px] border border-[#DADAFF] bg-[#F8F8FF] rounded-[39px] flex flex-col-reverse lg:flex-row gap-[24px]'>
+  <div className='h-full lg:h-[23.75rem] w-[20rem] lg:w-auto p-[1.1875rem] border border-[#DADAFF] bg-[#F8F8FF] rounded-[2.4375rem] flex flex-col-reverse lg:flex-row gap-[1.5rem]'>
 <div className='lg:w-[50%] h-full'>
-  <Image className='h-[269px] w-[288.5px] lg:h-full lg:w-full object-cover rounded-[24px]' src={item.image} height={341} width={370}></Image>
+  <Image className='h-[16.8125rem] w-[18.03125rem] lg:h-full lg:w-full object-cover rounded-[1.5rem]' src={item.image} height={341} width={370}></Image>
 </div>
 <div className='lg:w-[50%] flex flex-col justify-center'>
   <h2 className='text-[#393939] text-[1.375rem] font-medium leading-normal font-bricolage'>{item.merchantName}</h2>
-  <p className='pt-[5px] text-[#666] text-[0.875rem] lg:text-[1rem] font-normal leading-normal font-dm-sans'>{item.content}</p>
+  <p className='pt-[0.3125rem] text-[#666] text-[0.875rem] lg:text-[1rem] font-normal leading-normal font-dm-sans'>{item.content}</p>
 </div>
   </div>
   </SwiperSlide>
 ))}
 </Swiper>
 </div>
-  <div className="ml-[20px] mt-[25px] lg:mt-[55px] relative overflow-hidden block lg:hidden">
+  <div className="ml-[1.25rem] mt-[1.5625rem] lg:mt-[3.4375rem] relative overflow-hidden block lg:hidden">
   <Swiper
     modules={[Autoplay,Navigation]}
    
@@ -119,16 +120,16 @@ function CarouselSlider() {
     {testimonials.map((item, index) => (
       <SwiperSlide
         key={index}
-        className="!w-[320px]"
+        className="!w-[20rem]"
       >
-        <div className="h-full w-full p-[19px] border border-[#DADAFF] bg-[#F8F8FF] rounded-[32px] flex flex-col-reverse gap-[60px]">
+        <div className="h-full w-full p-[1.1875rem] border border-[#DADAFF] bg-[#F8F8FF] rounded-[2rem] flex flex-col-reverse gap-[3.75rem]">
           <div className="">
             <Image
               src={item.image}
               width={370}
               height={341}
               alt={item.merchantName}
-              className="h-[269px] w-full object-cover rounded-[24px]"
+              className="h-[16.8125rem] w-full object-cover rounded-[1.5rem]"
             />
           </div>
 
@@ -137,7 +138,7 @@ function CarouselSlider() {
               {item.merchantName}
             </h2>
 
-            <p className="pt-[5px] text-[#666] text-[0.875rem] lg:text-[1rem] font-normal leading-normal font-dm-sans">
+            <p className="pt-[0.3125rem] text-[#666] text-[0.875rem] lg:text-[1rem] font-normal leading-normal font-dm-sans">
               {item.content}
             </p>
           </div>
@@ -145,14 +146,14 @@ function CarouselSlider() {
       </SwiperSlide>
     ))}
   </Swiper>
-  <div className='flex justify-center items-center gap-[15px] mt-[30px]'>
-  <button  onClick={() => setActiveButton("prev")} className={`testimonial-prev h-[36px] w-[36px] flex justify-center items-center  rounded-full border-[0.9px]  ${activeButton === "prev"
+  <div className='flex justify-center items-center gap-[0.9375rem] mt-[1.875rem]'>
+  <button  onClick={() => setActiveButton("prev")} className={`testimonial-prev h-[2.25rem] w-[2.25rem] flex justify-center items-center  rounded-full border-[0.05625rem]  ${activeButton === "prev"
         ? "bg-[#F8F8FF]  border-[#CBCBFF]"
         : " bg-[#ECECEC] border-[#D7D7D7]"
     }`}>
     <i className={`fa-solid fa-chevron-left ${activeButton==="prev" ? "text-[#5801B7]" : "text-[#525252]"}`}></i>
   </button>
-    <button  onClick={() => setActiveButton("next")} className={`testimonial-next h-[36px] w-[36px] flex justify-center items-center  rounded-full border-[0.9px]  ${activeButton === "next"
+    <button  onClick={() => setActiveButton("next")} className={`testimonial-next h-[2.25rem] w-[2.25rem] flex justify-center items-center  rounded-full border-[0.05625rem]  ${activeButton === "next"
         ? " bg-[#F8F8FF]  border-[#CBCBFF]"
         : "bg-[#ECECEC] border-[#D7D7D7]"
     }`}>
@@ -161,9 +162,8 @@ function CarouselSlider() {
   </div>
 </div>
 
-
-  
 </div>
+    </section>
   )
 }
 
