@@ -9,7 +9,7 @@ export const links = [
         { name: 'Khata', link: "/bahi-khata-software", img: "Khata_icon"  },
         // { name: 'ONDC', link: "/ondc-solutions", img: "ondc_icon"  },
         { name: 'Online Store', link: "/online-store", img: "online_store_icon"  },
-        { name: 'Whatsapp Commerce', link: "/whatsapp-commerce", img: "whatsapp_icon"  }
+        { name: 'Whatsapp Commerce', link: "/newWhatsapp", img: "whatsapp_icon"  }
     ],
  },
     { name: 'Resources', submenu: true, sublinks: [

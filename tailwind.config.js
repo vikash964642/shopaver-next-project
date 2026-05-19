@@ -25,8 +25,9 @@ module.exports = {
   headerBorder: "#e5e7eb",
     },
      fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
-        lato: ['Lato', 'sans-serif'],
+        bricolage: ["var(--font-bricolage)"],
+        "dm-sans": ["var(--font-dm-sans)"],
+        poppins: ["var(--font-poppins)"],
       },
   },
 },

@@ -11,6 +11,13 @@ export default function RotatingCircle() {
 
   useGSAP(
     () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: container.current,
+          start: "top 40%",
+          toggleActions: "play none none none",
+        },
+      });
       // ================= ROTATING CIRCLE =================
       gsap.to("#rotatingCircle", {
         rotate: 360,
@@ -19,18 +26,12 @@ export default function RotatingCircle() {
         ease: "none",
         transformOrigin: "center center",
       });
-const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: container.current,
-          start: "top 40%",
-          toggleActions: "play none none none",
-        },
-      });
+
           // ================= RIGHT CARD =================
 tl.from("#rightCard", {
   scale: 0.7,
   opacity: 0,
-  duration: 0.5,
+  duration: 0.4,
   ease: "power3.out",
 });
 
@@ -38,7 +39,7 @@ tl.from("#rightCard", {
 tl.from("#leftCard", {
   scale: 0.7,
   opacity: 0,
-  duration: 0.6,
+  duration: 0.5,
   ease: "power3.out",
 });
 
@@ -46,14 +47,14 @@ tl.from("#leftCard", {
 tl.from("#chatBox", {
   scale: 0,
   opacity: 0,
-  duration: 0.7,
+  duration: 0.6,
   ease: "back.out(1.7)",
 });
       // ================= SMALL ICON =================
       tl.from("#smallIcon", {
   scale: 0,
   opacity: 0,
-  duration: 0.8,
+  duration: 0.7,
   ease: "elastic.out(1,0.5)",
 });
 
@@ -64,7 +65,7 @@ tl.from("#chatBox", {
   return (
  <section ref={container} className='max-w-5xl mx-auto mt-[110px]'>
        
-     <div className="flex justify-center mt-[40px] lg:mt-[80px]">
+     <div className="flex justify-center mt-[40px] lg:mt-[80px] relative">
       <svg
         width="642"
         height="499"
@@ -129,14 +130,14 @@ tl.from("#chatBox", {
             href="/img/RotatingCircleImg5.png"
             x="158"
             y="359"
-            width="148"
+            width="140"
             height="90"
             preserveAspectRatio="xMidYMid meet"
           />
         </g>
 
         {/* ================= SMALL ICON ================= */}
-        <g id="smallIcon">
+        <g id="smallIcon" style={{ position: "relative", zIndex: 50 }}>
           <image
             href="/img/RotatingCircleImg6.png"
             x="175"
@@ -147,6 +148,7 @@ tl.from("#chatBox", {
           />
         </g>
       </svg>
+      <div className="RotatingCircleGradient"></div>
     </div>
  </section>
   );

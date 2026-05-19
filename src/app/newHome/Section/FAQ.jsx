@@ -47,10 +47,10 @@ function FAQ() {
       <div className="max-w-5xl mx-auto">
         <div className="flex items-center lg:items-start lg:justify-between lg:flex-row flex-col px-[20px]">
           <div className="w-[225px] lg:w-[280px]">
-            <h2 className="text-[#FFF] text-[26px] lg:text-[36px] font-semibold leading-normal text-center lg:text-left">
+            <h2 className="text-[#FFF] text-[26px] lg:text-[36px] font-semibold leading-normal text-center lg:text-left font-bricolage">
               Frequently Asked Questions
             </h2>
-            <p className="pt-[22px] text-[#FFF] text-[14px] lg:text-[20px] leading-normal text-center lg:text-left">
+            <p className="pt-[22px] text-[#FFF] text-[14px] lg:text-[20px] leading-normal text-center lg:text-left font-dm-sans">
               Have any questions? We are here to assist you.
             </p>
           </div>

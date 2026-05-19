@@ -3,6 +3,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 /* :root {
   primary: #5801B7;
   --secondary: #F6EDFF;
@@ -22,7 +23,10 @@
   --headerBorder: #e5e7eb;
 } */
 
-
+body {
+  font-family: var(--font-dm-sans); /* default body font */
+  overflow-x: hidden;
+}
 @keyframes fadeInUp {
   from {
     opacity: 0;
