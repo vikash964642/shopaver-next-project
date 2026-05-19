@@ -4,7 +4,7 @@ import Image from "next/image";
  
 export default function BusinessHeroSection() {
   return (
-    <section className="mx-32  max-w-[1850px] w-full px-3 xl:px-0 my-[130px]">
+    <section className="mx-32  max-w-[1850px]  px-3 xl:px-0 my-[130px]">
       <div className="md:h-[440px] flex flex-col items-center overflow-hidden rounded-[21px] lg:rounded-[30px] border-[0.7px] lg:border border-[#DCD8FF] bg-[#f6f2fb]  md:flex-row">
        
         {/* LEFT CONTENT */}
