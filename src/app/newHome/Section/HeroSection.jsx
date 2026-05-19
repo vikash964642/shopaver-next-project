@@ -36,8 +36,8 @@ function HeroSection() {
     <div className="mx-32">
     <div className="mt-[10.9375rem] relative lg:mx-[7.8125rem]">
        <div className="flex flex-col items-center gap-[1.25rem]">
-      <h2 className="w-[17.25rem] lg:w-[31.9375rem] text-center text-[#5801B7] text-[1.875rem] lg:text-[2.5rem] font-bold leading-normal font-bricolage">The All-in-One Business Solution for MSMEs</h2>
-      <p className="w-[19.5625rem] lg:w-[35.9375rem] text-[#666] text-center text-[0.875rem] lg:text-[1.125rem] font-normal leading-normal font-dm-sans">Manage everything your business needs from a single platform, including WhatsApp Business Suite, online store setup, smart billing, real-time inventory, Khata, detailed reports, and more.</p>
+      <h2 className="w-[17.25rem] lg:w-[31.9375rem] text-center text-[#5801B7] text-[1.875rem] lg:text-[2.4975rem] min-[1380px]:text-[3.3975rem] font-bold leading-normal font-bricolage">The All-in-One Business Solution for MSMEs</h2>
+      <p className="w-[19.5625rem] lg:w-[35.9375rem] text-[#666] text-center text-[0.875rem] lg:text-[1.125rem] min-[1380px]:text-[1.5288rem] font-normal leading-normal font-dm-sans">Manage everything your business needs from a single platform, including WhatsApp Business Suite, online store setup, smart billing, real-time inventory, Khata, detailed reports, and more.</p>
      </div>
      <div className="flex justify-center items-center gap-[0.625rem] mt-[1.875rem]">
       <Link href="https://app.shopaver.com/Sign-up">
