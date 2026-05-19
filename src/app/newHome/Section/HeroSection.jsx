@@ -32,20 +32,20 @@ function HeroSection() {
     { scope: container }
   );
   return (
-    <section ref={container} className=" max-w-[1850px] mx-auto">
+    <section ref={container} className=" max-w-[1850px] mx-32">
     <div className="mt-[175px] relative lg:mx-[125px]">
        <div className="flex flex-col items-center gap-[20px]">
-      <h2 className="w-[276px] lg:w-[511px] text-center text-[#5801B7] text-[30px] lg:text-[40px] font-bold leading-normal font-bricolage">The All-in-One Business Solution for MSMEs</h2>
-      <p className="w-[313px] lg:w-[575px] text-[#666] text-center text-[14px] lg:text-[18px] font-normal leading-normal font-dm-sans">Manage everything your business needs from a single platform, including WhatsApp Business Suite, online store setup, smart billing, real-time inventory, Khata, detailed reports, and more.</p>
+      <h2 className="w-[276px] lg:w-[511px] text-center text-[#5801B7] text-[1.875rem] lg:text-[2.5rem] font-bold leading-normal font-bricolage">The All-in-One Business Solution for MSMEs</h2>
+      <p className="w-[313px] lg:w-[575px] text-[#666] text-center text-[0.875rem] lg:text-[1.125rem] font-normal leading-normal font-dm-sans">Manage everything your business needs from a single platform, including WhatsApp Business Suite, online store setup, smart billing, real-time inventory, Khata, detailed reports, and more.</p>
      </div>
      <div className="flex justify-center items-center gap-[10px] mt-[30px]">
       <Link href="https://app.shopaver.com/Sign-up">
-      <button className="bg-[#5801B7] rounded-[11px] h-[45px] w-[147px] lg:h-[54px] lg:w-[176px] border-none text-[#FFF] text-[13.33px] lg:text-[16px] font-medium font-dm-sans">
+      <button className="bg-[#5801B7] rounded-[11px] h-[45px] w-[147px] lg:h-[54px] lg:w-[176px] border-none text-[#FFF] text-[0.833rem] lg:text-[1rem] font-medium font-dm-sans">
         Start Free Trial
       </button>
       </Link>
       <Link href="https://app.shopaver.com/Sign-up">
-      <button className="bg-[#ECECEC] rounded-[11px] border border-[#D7D7D7] h-[45px] w-[147px] lg:h-[54px] lg:w-[176px] text-[#525252] text-[13.33px] lg:text-[16px] font-medium font-dm-sans">
+      <button className="bg-[#ECECEC] rounded-[11px] border border-[#D7D7D7] h-[45px] w-[147px] lg:h-[54px] lg:w-[176px] text-[#525252] text-[0.833rem] lg:text-[1rem] font-medium font-dm-sans">
         Schedule a Demo
       </button>
       </Link>

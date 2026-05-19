@@ -44,13 +44,13 @@ function FAQ() {
  
   return (
     <section className="bg-[#5801B7] py-[55px] lg:py-[90px] mt-[90px]">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-[1850px] mx-32">
         <div className="flex items-center lg:items-start lg:justify-between lg:flex-row flex-col px-[20px]">
           <div className="w-[225px] lg:w-[280px]">
-            <h2 className="text-[#FFF] text-[26px] lg:text-[36px] font-semibold leading-normal text-center lg:text-left font-bricolage">
+            <h2 className="text-[#FFF] text-[1.625rem] lg:text-[2.25rem] font-semibold leading-normal text-center lg:text-left font-bricolage">
               Frequently Asked Questions
             </h2>
-            <p className="pt-[22px] text-[#FFF] text-[14px] lg:text-[20px] leading-normal text-center lg:text-left font-dm-sans">
+            <p className="pt-[22px] text-[#FFF] text-[0.875rem] lg:text-[1.25rem] leading-normal text-center lg:text-left font-dm-sans">
               Have any questions? We are here to assist you.
             </p>
           </div>
@@ -66,10 +66,10 @@ shadow-[0_0_4px_rgba(0,0,0,0.25)]
 backdrop-blur-[15px] w-full lg:w-[675px] py-[7.5px] px-[9.5px]  lg:lg:py-[15px] lg:px-[19px] mt-[10px] lg:mt-[20px] flex justify-center flex-col cursor-pointer"
                 >
                   <div className="flex justify-between items-center w-full">
-                    <h2 className="text-[#FFF] text-[14px] lg:text-[18px] font-medium leading-normal w-[75%]">
+                    <h2 className="text-[#FFF] text-[0.875rem] lg:text-[1.125rem] font-medium leading-normal w-[75%]">
                       {data.question}
                     </h2>
-                    <p className="text-[#FFF] text-[14px] lg:text-[18px] font-medium ">
+                    <p className="text-[#FFF] text-[0.875rem] lg:text-[1.125rem] font-medium ">
                       {openIndex === index ? "-" : "+"}
                     </p>
                   </div>
@@ -80,7 +80,7 @@ backdrop-blur-[15px] w-full lg:w-[675px] py-[7.5px] px-[9.5px]  lg:lg:py-[15px] 
                         : "max-h-0 opacity-0"
                     }`}
                   >
-                    <p className="pt-[10.5px] text-[#FFF] text-[15px] font-normal leading-normal w-[90%]">{data.answer}</p>
+                    <p className="pt-[10.5px] text-[#FFF] text-[0.938rem] font-normal leading-normal w-[90%]">{data.answer}</p>
                   </div>
                 </div>
               ))}

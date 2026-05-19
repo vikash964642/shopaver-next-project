@@ -55,12 +55,12 @@ function FeatureCard({ item }) {
     >
       {/* Content */}
       <div className="mb-5">
-        <p className="text-[#5801B7] text-[18px] font-medium mb-2 font-bricolage">{item.title}</p>
+        <p className="text-[#5801B7] text-[1.125rem] font-medium mb-2 font-bricolage">{item.title}</p>
 
-        <h3 className="text-[28px] leading-[34px] font-medium text-[#3C3939] font-bricolage">
+        <h3 className="text-[1.75rem] leading-[34px] font-medium text-[#3C3939] font-bricolage">
           {item.heading}
         </h3>
-        <p className="mt-3 text-[16px]  text-[#666666] leading-normal font-dm-sans">
+        <p className="mt-3 text-[1rem]  text-[#666666] leading-normal font-dm-sans">
           {item.description}
         </p>
       </div>
@@ -163,15 +163,15 @@ function FullWidthCard({ item }) {
         {/* Left Content */}
 <div className="max-w-[520px]">
   
-  <p className="text-[#5801B7] text-[18px] font-medium mb-2 font-bricolage">
+  <p className="text-[#5801B7] text-[1.125rem] font-medium mb-2 font-bricolage">
     {item.title}
   </p>
 
-  <h3 className="text-[28px] leading-[30px] font-medium text-[#3C3939] font-bricolage">
+  <h3 className="text-[1.75rem] leading-[30px] font-medium text-[#3C3939] font-bricolage">
     {item.heading}
   </h3>
 
-  <p className="mt-4 text-[16px] text-[#666] leading-relaxed font-bricolage">
+  <p className="mt-4 text-[1rem] text-[#666] leading-relaxed font-bricolage">
     {item.description}
   </p>
 
@@ -437,7 +437,7 @@ const getResetStyle = (index) => {
 };
   return (
     <>
-        <section className="mx-auto max-w-5xl px-4 xl:px-0 py-16 space-y-6 hidden lg:block">
+        <section className="mx-32 max-w-[1850px] px-4 xl:px-0 py-16 space-y-6 hidden lg:block">
       {/* Row 1 */}
        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-6">
          <FeatureCard item={features[0]} />
@@ -544,19 +544,19 @@ const getResetStyle = (index) => {
               }
             >
               <div className="py-[31px] px-[21.22px]">
-                <p className="text-[#5801B7] text-[15.6px] font-semibold font-bricolage">
+                <p className="text-[#5801B7] text-[0.975rem] font-semibold font-bricolage">
                   {item.title}
                 </p>
 
-                <h3 className="pt-[4px] pr-[4px] text-[23.4px] font-medium text-[#393939] font-bricolage">
+                <h3 className="pt-[4px] pr-[4px] text-[1.462rem] font-medium text-[#393939] font-bricolage">
                   {item.heading}
                 </h3>
 
-                <p className="pt-[8.5px] text-[13.65px] leading-normal text-[#666]">
+                <p className="pt-[8.5px] text-[0.853rem] leading-normal text-[#666]">
                   {item.description}
                 </p>
 
-                <button className="mt-[17px] rounded-[7.8px] bg-[#5801B7] h-[38.25px] w-[105.5px] text-[11.33px] text-white font-medium">
+                <button className="mt-[17px] rounded-[7.8px] bg-[#5801B7] h-[38.25px] w-[105.5px] text-[0.708rem] text-white font-medium">
                   Know More
                 </button>
               </div>
@@ -601,7 +601,7 @@ const getResetStyle = (index) => {
    </div>
    <div className="flex justify-center mt-[43px]">
               <div onClick={() => goNext("left")} className="w-[101px] h-[44px] rounded-[12px] bg-[#F8F8FF] border-[0.74px] border-[#F0E2FF] flex justify-center items-center gap-[6px]">
-              <p className="text-[#5801B7] text-[16px] font-medium">Swap</p>
+              <p className="text-[#5801B7] text-[1rem] font-medium">Swap</p>
               <div className="h-[20px] w-[20px] rounded-full bg-[#5801B7] flex justify-center items-center">
                 <Image src={'/newImage/swapbtn.svg'} className="w-auto h-auto" width={10.5} height={5}/>
               </div>

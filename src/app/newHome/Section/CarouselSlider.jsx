@@ -48,10 +48,10 @@ function CarouselSlider() {
     // Add more testimonials as needed
   ];
   return (
-    <div className='max-w-5xl mx-auto mt-[165px]'>
+    <div className='max-w-[1850px] mx-32 mt-[165px]'>
   <div className='flex items-center flex-col gap-[10px] mt-[10px]'>
-  <h2 className='w-[243px] lg:w-full text-[#5801B7] text-[30px] lg:text-[40px] font-bold text-center leading-normal font-bricolage'>What our Customers Say ?</h2>
-    <p className='max-w-[335px] lg:max-w-[505px] text-[#666] text-[14px] lg:text-[18px] text-center leading-normal font-dm-sans'>We provide simple, smart tools and trusted support to help your business grow faster and run smoothly.</p>
+  <h2 className='w-[243px] lg:w-full text-[#5801B7] text-[1.875rem] lg:text-[2.5rem] font-bold text-center leading-normal font-bricolage'>What our Customers Say ?</h2>
+    <p className='max-w-[335px] lg:max-w-[505px] text-[#666] text-[0.875rem] lg:text-[1.125rem] text-center leading-normal font-dm-sans'>We provide simple, smart tools and trusted support to help your business grow faster and run smoothly.</p>
   </div>
 
  
@@ -86,8 +86,8 @@ function CarouselSlider() {
   <Image className='h-[269px] w-[288.5px] lg:h-full lg:w-full object-cover rounded-[24px]' src={item.image} height={341} width={370}></Image>
 </div>
 <div className='lg:w-[50%] flex flex-col justify-center'>
-  <h2 className='text-[#393939] text-[22px] font-medium leading-normal font-bricolage'>{item.merchantName}</h2>
-  <p className='pt-[5px] text-[#666] text-[14px] lg:text-[16px] font-normal leading-normal font-dm-sans'>{item.content}</p>
+  <h2 className='text-[#393939] text-[1.375rem] font-medium leading-normal font-bricolage'>{item.merchantName}</h2>
+  <p className='pt-[5px] text-[#666] text-[0.875rem] lg:text-[1rem] font-normal leading-normal font-dm-sans'>{item.content}</p>
 </div>
   </div>
   </SwiperSlide>
@@ -133,11 +133,11 @@ function CarouselSlider() {
           </div>
 
           <div className="flex flex-col justify-center">
-            <h2 className="text-[#393939] text-[22px] font-medium leading-normal font-bricolage">
+            <h2 className="text-[#393939] text-[1.375rem] font-medium leading-normal font-bricolage">
               {item.merchantName}
             </h2>
 
-            <p className="pt-[5px] text-[#666] text-[14px] lg:text-[16px] font-normal leading-normal font-dm-sans">
+            <p className="pt-[5px] text-[#666] text-[0.875rem] lg:text-[1rem] font-normal leading-normal font-dm-sans">
               {item.content}
             </p>
           </div>

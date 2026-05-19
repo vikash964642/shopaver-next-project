@@ -4,7 +4,7 @@ import Image from "next/image";
  
 export default function BusinessHeroSection() {
   return (
-    <section className="mx-auto  max-w-5xl w-full px-3 xl:px-0 my-[130px]">
+    <section className="mx-32  max-w-[1850px] w-full px-3 xl:px-0 my-[130px]">
       <div className="md:h-[440px] flex flex-col items-center overflow-hidden rounded-[21px] lg:rounded-[30px] border-[0.7px] lg:border border-[#DCD8FF] bg-[#f6f2fb]  md:flex-row">
        
         {/* LEFT CONTENT */}
@@ -13,7 +13,7 @@ export default function BusinessHeroSection() {
             Ready to Take Control of Your Business?
           </h2>
  
-          <p className="mt-6 text-[13px] md:text-[15px] lg:text-lg leading-[18px] md:leading-[26px] text-gray-600">
+          <p className="mt-6 text-[0.812rem] md:text-[0.938rem] lg:text-lg leading-[18px] md:leading-[26px] text-gray-600">
             Stop using multiple tools. Manage your entire business in one
             place with Shopaver. Join{" "}
             <span className="font-semibold text-[#5B14D1]">

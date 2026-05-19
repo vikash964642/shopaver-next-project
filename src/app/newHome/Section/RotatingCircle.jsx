@@ -63,7 +63,7 @@ tl.from("#chatBox", {
   );
 
   return (
- <section ref={container} className='max-w-5xl mx-auto mt-[110px]'>
+ <section ref={container} className='max-w-[1850px] mx-32 mt-[110px]'>
        
      <div className="flex justify-center mt-[40px] lg:mt-[80px] relative">
       <svg

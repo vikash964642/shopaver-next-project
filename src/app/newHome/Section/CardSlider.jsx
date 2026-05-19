@@ -151,10 +151,10 @@ function CardSlider() {
   }
 
   return (
-    <div className="max-w-5xl mx-auto mt-[150px]">
+    <div className="max-w-[1850px] mx-32 mt-[150px]">
  <div className='flex flex-col gap-[20px] items-center'>
-       <h1 className='max-w-[345px] lg:max-w-[700px] text-[#075E54] text-center text-[30px] lg:text-[40px] font-bold leading-normal font-bricolage'>The Complete WhatsApp Platform for Your Business Growth</h1>
-        <p className='max-w-[333px] lg:max-w-[790px] text-[#666] text-center text-[14px] lg:text-[18px] font-normal leading-normal font-dm-sans'>Take your business communication to the next level with WhatsApp Business Suite. Engage customers through chat, run targeted campaigns, sell products, track performance with real-time analytics, and connect all your tools, all within the WhatsApp platform.</p>
+       <h1 className='max-w-[345px] lg:max-w-[700px] text-[#075E54] text-center text-[1.875rem] lg:text-[2.5rem] font-bold leading-normal font-bricolage'>The Complete WhatsApp Platform for Your Business Growth</h1>
+        <p className='max-w-[333px] lg:max-w-[790px] text-[#666] text-center text-[0.875rem] lg:text-[1.125rem] font-normal leading-normal font-dm-sans'>Take your business communication to the next level with WhatsApp Business Suite. Engage customers through chat, run targeted campaigns, sell products, track performance with real-time analytics, and connect all your tools, all within the WhatsApp platform.</p>
       </div>
       <div className="space-y-[80px] mx-[12px] lg:mx-[33.5px] mt-[80px]">
 
@@ -162,86 +162,85 @@ function CardSlider() {
         <div
           ref={(el) => (refs.current[0] = el)}
           style={getStyle(0)}
-          className="sticky h-[600px] lg:h-[500px] px-[25px] pt-[44px] pb-[30px] lg:px-[33.5px] rounded-[30px] border shadow-xl bg-[#075E54] will-change-transform flex justify-between items-center flex-col lg:flex-row"
+          className="sticky h-[700px] lg:h-[600px] px-[25px] pt-[44px] pb-[30px] lg:px-[33.5px] rounded-[30px] border shadow-xl bg-[#075E54] will-change-transform flex justify-between items-center gap-[20px] flex-col lg:flex-row overflow-hidden"
         >
-          <div>
-            <h1 className='text-[#FFF] text-[18px] lg:text-[20px] font-semibold leading-normal font-bricolage'>AI Flow Builder</h1>
-            <h2 className='lg:w-[314px] pt-[5px] text-[#FFF] text-[28px] lg:text-[36.7px] font-medium lg:font-semibold leading-normal lg:leading-[44px] font-bricolage'>Design a no-code chats in minutes</h2>
-            <p className='lg:w-[331px] pt-[10px] text-[#FFF] text-[14px] lg:text-[16px] font-normal leading-normal font-dm-sans'>Create flows with drag and drop, or simply describe your flow and let AI build it for you.</p>
-            <button className='mt-[20px] lg:mt-[30px] bg-[#FFF] rounded-[9px] lg:rounded-[11px] h-[45px] w-[124px] lg:h-[54px] lg:w-[149px] text-[#525252] text-[13.33px] lg:text-[16px] font-medium font-dm-sans'>Know More</button>
-            </div> 
-            <div>
-                <Image src={"/img/CardSliderImg1.png"} width={450} height={300}></Image>
-                </div> 
+          <div className="w-full lg:w-[45%] shrink-0">
+            <h1 className='text-[#FFF] text-[1.125rem] lg:text-[1.25rem] font-semibold leading-normal font-bricolage'>AI Flow Builder</h1>
+            <h2 className='pt-[5px] text-[#FFF] text-[1.75rem] lg:text-[2.294rem] font-medium lg:font-semibold leading-normal lg:leading-[44px] font-bricolage'>Design a no-code chats in minutes</h2>
+            <p className='pt-[10px] text-[#FFF] text-[0.875rem] lg:text-[1rem] font-normal leading-normal font-dm-sans'>Create flows with drag and drop, or simply describe your flow and let AI build it for you.</p>
+            <button className='mt-[20px] lg:mt-[30px] bg-[#FFF] rounded-[9px] lg:rounded-[11px] h-[45px] w-[124px] lg:h-[54px] lg:w-[149px] text-[#525252] text-[0.833rem] lg:text-[1rem] font-medium font-dm-sans'>Know More</button>
+          </div>
+          <div className="w-full lg:w-[50%] h-[200px] lg:h-full relative shrink-0">
+            <Image src={"/img/CardSliderImg1.png"} alt="AI Flow Builder" fill className="object-contain object-center" />
+          </div>
         </div>
 
         {/* Card 2 */}
         <div
           ref={(el) => (refs.current[1] = el)}
           style={getStyle(1)}
-          className=" px-[25px] pt-[44px] pb-[30px] lg:px-[33.5px] sticky h-[600px] lg:h-[500px] rounded-[30px] shadow-xl bg-[#128C7E] will-change-transform flex justify-between items-center flex-col-reverse lg:flex-row"
+          className="sticky h-[700px] lg:h-[600px] px-[25px] pt-[44px] pb-[30px] lg:px-[33.5px] rounded-[30px] shadow-xl bg-[#128C7E] will-change-transform flex justify-between items-center gap-[20px] flex-col-reverse lg:flex-row overflow-hidden"
         >
-             <div>
-                <Image src={"/img/CardSliderImg1.png"} width={450} height={300}></Image>
-                </div> 
-            <div>
-            <h1 className='text-[#FFF] text-[18px] lg:text-[20px] font-semibold leading-normal font-bricolage'>AI WhatsApp Inbox</h1>
-            <h2 className='lg:w-[392px] pt-[5px] text-[#FFF] text-[28px] lg:text-[36.7px] font-medium lg:font-semibold leading-normal lg:leading-[44px] font-bricolage'>Turn Every Chat Into a Sales on WhatsApp</h2>
-            <p className='lg:w-[345px] pt-[10px] text-[#FFF] text-[14px] lg:text-[16px] font-normal leading-normal font-dm-sans'>Automate conversations, track customer behavior & close more deals—without missing a single message.</p>
-            <button className='mt-[20px] lg:mt-[30px] bg-[#FFF] rounded-[9px] lg:rounded-[11px] h-[45px] w-[124px] lg:h-[54px] lg:w-[149px] text-[#525252] text-[13.33px] lg:text-[16px] font-medium font-dm-sans'>Know More</button>
-            </div> 
-           
+          <div className="w-full lg:w-[50%] h-[200px] lg:h-full relative shrink-0">
+            <Image src={"/img/CardSliderImg1.png"} alt="AI WhatsApp Inbox" fill className="object-contain object-center" />
+          </div>
+          <div className="w-full lg:w-[45%] shrink-0">
+            <h1 className='text-[#FFF] text-[1.125rem] lg:text-[1.25rem] font-semibold leading-normal font-bricolage'>AI WhatsApp Inbox</h1>
+            <h2 className='pt-[5px] text-[#FFF] text-[1.75rem] lg:text-[2.294rem] font-medium lg:font-semibold leading-normal lg:leading-[44px] font-bricolage'>Turn Every Chat Into a Sales on WhatsApp</h2>
+            <p className='pt-[10px] text-[#FFF] text-[0.875rem] lg:text-[1rem] font-normal leading-normal font-dm-sans'>Automate conversations, track customer behavior & close more deals—without missing a single message.</p>
+            <button className='mt-[20px] lg:mt-[30px] bg-[#FFF] rounded-[9px] lg:rounded-[11px] h-[45px] w-[124px] lg:h-[54px] lg:w-[149px] text-[#525252] text-[0.833rem] lg:text-[1rem] font-medium font-dm-sans'>Know More</button>
+          </div>
         </div>
 
         {/* Card 3 */}
         <div
           ref={(el) => (refs.current[2] = el)}
           style={getStyle(2)}
-          className=" px-[25px] pt-[44px] pb-[30px] lg:px-[33.5px] sticky h-[600px] lg:h-[500px] rounded-[30px] shadow-xl bg-[#DCF8C6] will-change-transform flex justify-between items-center flex-col lg:flex-row"
+          className="sticky h-[700px] lg:h-[600px] px-[25px] pt-[44px] pb-[30px] lg:px-[33.5px] rounded-[30px] shadow-xl bg-[#DCF8C6] will-change-transform flex justify-between items-center gap-[20px] flex-col lg:flex-row overflow-hidden"
         >
-            <div>
-            <h1 className='text-[#525252] text-[20px] font-semibold leading-normal font-bricolage'>WhatsApp Marketing</h1>
-            <h2 className='lg:w-[363px] pt-[5px] text-[#075E54] text-[28px] lg:text-[36.7px] font-medium lg:font-semibold leading-normal lg:leading-[44px] font-bricolage'>Increase Sales with Targeted Campaigns</h2>
-            <p className='lg:w-[358px] pt-[10px] text-[#525252] text-[14px] lg:text-[16px] font-normal leading-normal font-dm-sans'>Send bulk broadcasts, personalized campaigns, and promotional offers in one click.</p>
-            <button className='mt-[30px] bg-[#075E54] rounded-[9px] lg:rounded-[11px] lg:h-[54px] lg:w-[149px] h-[45px] w-[124px] text-[#FFF] text-[13.33px] lg:text-[16px] font-medium font-dm-sans'>Know More</button>
-            </div> 
-            <div>
-                <Image src={"/img/CardSliderImg1.png"} width={450} height={300}></Image>
-                </div> 
+          <div className="w-full lg:w-[45%] shrink-0">
+            <h1 className='text-[#525252] text-[1.25rem] font-semibold leading-normal font-bricolage'>WhatsApp Marketing</h1>
+            <h2 className='pt-[5px] text-[#075E54] text-[1.75rem] lg:text-[2.294rem] font-medium lg:font-semibold leading-normal lg:leading-[44px] font-bricolage'>Increase Sales with Targeted Campaigns</h2>
+            <p className='pt-[10px] text-[#525252] text-[0.875rem] lg:text-[1rem] font-normal leading-normal font-dm-sans'>Send bulk broadcasts, personalized campaigns, and promotional offers in one click.</p>
+            <button className='mt-[30px] bg-[#075E54] rounded-[9px] lg:rounded-[11px] lg:h-[54px] lg:w-[149px] h-[45px] w-[124px] text-[#FFF] text-[0.833rem] lg:text-[1rem] font-medium font-dm-sans'>Know More</button>
+          </div>
+          <div className="w-full lg:w-[50%] h-[200px] lg:h-full relative shrink-0">
+            <Image src={"/img/CardSliderImg1.png"} alt="WhatsApp Marketing" fill className="object-contain object-center" />
+          </div>
         </div>
 
         {/* Card 4 */}
         <div
           ref={(el) => (refs.current[3] = el)}
           style={getStyle(3)}
-          className=" px-[25px] pt-[44px] pb-[30px] lg:px-[33.5px] sticky h-[600px] lg:h-[500px] rounded-[30px] border shadow-xl bg-[#ECE5DD] will-change-transform flex justify-between items-center flex-col-reverse lg:flex-row"
+          className="sticky h-[700px] lg:h-[600px] px-[25px] pt-[44px] pb-[30px] lg:px-[33.5px] rounded-[30px] border shadow-xl bg-[#ECE5DD] will-change-transform flex justify-between items-center gap-[20px] flex-col-reverse lg:flex-row overflow-hidden"
         >
-             <div>
-                <Image src={"/img/CardSliderImg1.png"} width={450} height={300}></Image>
-                </div> 
-            <div>
-            <h1 className='text-[#525252] text-[18px] lg:text-[20px] font-semibold leading-normal font-bricolage'>WhatsApp Payments</h1>
-            <h2 className='lg:w-[364px] pt-[5px] text-[#075E54] text-[28px] lg:text-[36.7px] font-medium lg:font-semibold leading-normal lg:leading-[44px] font-bricolage'>Sales and Payments All in One Place</h2>
-            <p className='lg:w-[300px] pt-[10px] text-[#525252] text-[14px] lg:text-[16px] font-normal leading-normal font-dm-sans'>Collect payments seamlessly inside WhatsApp via UPI, cards, and net banking.</p>
-            <button className='mt-[20px] lg:mt-[30px] bg-[#075E54] rounded-[9px] lg:rounded-[11px] lg:h-[54px] lg:w-[149px] h-[45px] w-[124px] text-[#FFF] text-[13.33px] lg:text-[16px] font-medium font-dm-sans'>Know More</button>
-            </div> 
+          <div className="w-full lg:w-[50%] h-[200px] lg:h-full relative shrink-0">
+            <Image src={"/img/CardSliderImg1.png"} alt="WhatsApp Payments" fill className="object-contain object-center" />
+          </div>
+          <div className="w-full lg:w-[45%] shrink-0">
+            <h1 className='text-[#525252] text-[1.125rem] lg:text-[1.25rem] font-semibold leading-normal font-bricolage'>WhatsApp Payments</h1>
+            <h2 className='pt-[5px] text-[#075E54] text-[1.75rem] lg:text-[2.294rem] font-medium lg:font-semibold leading-normal lg:leading-[44px] font-bricolage'>Sales and Payments All in One Place</h2>
+            <p className='pt-[10px] text-[#525252] text-[0.875rem] lg:text-[1rem] font-normal leading-normal font-dm-sans'>Collect payments seamlessly inside WhatsApp via UPI, cards, and net banking.</p>
+            <button className='mt-[20px] lg:mt-[30px] bg-[#075E54] rounded-[9px] lg:rounded-[11px] lg:h-[54px] lg:w-[149px] h-[45px] w-[124px] text-[#FFF] text-[0.833rem] lg:text-[1rem] font-medium font-dm-sans'>Know More</button>
+          </div>
         </div>
 
         {/* Card 5 */}
         <div
           ref={(el) => (refs.current[4] = el)}
           style={getStyle(4)}
-          className="px-[25px] pt-[44px] pb-[30px] lg:px-[33.5px] sticky h-[600px] lg:h-[500px] rounded-[30px] border shadow-xl bg-[#FFF] will-change-transform flex justify-between items-center flex-col-reverse lg:flex-row"
+          className="sticky h-[700px] lg:h-[600px] px-[25px] pt-[44px] pb-[30px] lg:px-[33.5px] rounded-[30px] border shadow-xl bg-[#FFF] will-change-transform flex justify-between items-center gap-[20px] flex-col-reverse lg:flex-row overflow-hidden"
         >
-             <div>
-                <Image src={"/img/CardSliderImg1.png"} width={450} height={300}></Image>
-                </div> 
-            <div>
-            <h1 className='text-[#525252] text-[18px] lg:text-[20px] font-semibold leading-normal font-bricolage'>QR Code</h1>
-            <h2 className='lg:w-[458px] pt-[5px] text-[#2E9F49] text-[28px] lg:text-[36.7px] font-medium lg:font-semibold leading-normal lg:leading-[44px] font-bricolage'>Get a QR Code to Connect your customers instantly</h2>
-            <p className='lg:w-[390px] pt-[10px] text-[#525252] text-[14px] lg:text-[16px] font-normal leading-normal font-dm-sans'>Automate conversations, track customer behavior & close more deals—without missing a single message.</p>
-            <button className='mt-[20px] lg:mt-[30px] bg-[#2E9F49] rounded-[9px] lg:rounded-[11px] h-[45px] w-[124px] lg:h-[54px] lg:w-[149px] text-[#FFF] text-[13.33px] lg:text-[16px] font-medium font-dm-sans'>Know More</button>
-            </div> 
+          <div className="w-full lg:w-[50%] h-[200px] lg:h-full relative shrink-0">
+            <Image src={"/img/CardSliderImg1.png"} alt="QR Code" fill className="object-contain object-center" />
+          </div>
+          <div className="w-full lg:w-[45%] shrink-0">
+            <h1 className='text-[#525252] text-[1.125rem] lg:text-[1.25rem] font-semibold leading-normal font-bricolage'>QR Code</h1>
+            <h2 className='pt-[5px] text-[#2E9F49] text-[1.75rem] lg:text-[2.294rem] font-medium lg:font-semibold leading-normal lg:leading-[44px] font-bricolage'>Get a QR Code to Connect your customers instantly</h2>
+            <p className='pt-[10px] text-[#525252] text-[0.875rem] lg:text-[1rem] font-normal leading-normal font-dm-sans'>Automate conversations, track customer behavior & close more deals—without missing a single message.</p>
+            <button className='mt-[20px] lg:mt-[30px] bg-[#2E9F49] rounded-[9px] lg:rounded-[11px] h-[45px] w-[124px] lg:h-[54px] lg:w-[149px] text-[#FFF] text-[0.833rem] lg:text-[1rem] font-medium font-dm-sans'>Know More</button>
+          </div>
         </div>
 
       </div>
