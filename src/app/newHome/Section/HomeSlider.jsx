@@ -14,8 +14,8 @@ const logos = [
 function HomeSlider() {
   return (
     <section className="max-w-[115.625rem] mx-auto mt-[7.5rem]">
-      <div className="mx-32 max-[21.875rem]:px-[0.9375rem] px-[1.875rem] xl:px-0">
-      <h3 className="text-[#393939] text-[1.5rem] font-semibold text-center font-bricolage">
+      <div className="">
+      <h3 className="text-[#393939] text-[1.5rem] xl2:text-[2.11rem] font-semibold text-center font-bricolage">
         Trusted by Growing Businesses Across India
       </h3>
       <div className={styles.slider}>

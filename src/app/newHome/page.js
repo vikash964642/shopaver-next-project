@@ -19,12 +19,12 @@ function page() {
          <RotatingCircle />
           <HomeSlider />
          <CardSlider />
-          <SmartFeaturesSection />
-         <LandingPageList />
-        <Counter />
-        <CarouselSlider />
-        <FAQ />
-        <BusinessHeroSection />
+          {/* <SmartFeaturesSection /> */}
+         {/* <LandingPageList /> */}
+        {/* <Counter /> */}
+        {/* <CarouselSlider /> */}
+        {/* <FAQ /> */}
+        {/* <BusinessHeroSection /> */}
     </div>
   )
 }
