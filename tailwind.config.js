@@ -29,6 +29,11 @@ module.exports = {
         "dm-sans": ["var(--font-dm-sans)"],
         poppins: ["var(--font-poppins)"],
       },
+      screens: {
+        xm1:"375px",
+        xm2:"425px",
+        xl2: "1480px"
+      },
   },
 },
   plugins: [],

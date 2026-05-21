@@ -63,16 +63,16 @@ tl.from("#chatBox", {
   );
 
   return (
- <section ref={container} className='max-w-5xl mx-auto mt-[110px]'>
-       
-     <div className="flex justify-center mt-[40px] lg:mt-[80px] relative">
+ <section ref={container} className='max-w-[115.625rem] mx-auto mt-[7.5rem]'>
+    <div className="mx-32">
+     <div className="flex justify-center mt-[2.5rem] lg:mt-[5rem] relative">
       <svg
         width="642"
         height="499"
         viewBox="0 0 642 499"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-full max-w-[700px] h-auto">
+        className="w-full max-w-[43.75rem] h-auto">
         {/* ================= ROTATING CIRCLE ================= */}
         <g id="rotatingCircle">
           <circle
@@ -149,6 +149,7 @@ tl.from("#chatBox", {
         </g>
       </svg>
       <div className="RotatingCircleGradient"></div>
+    </div>
     </div>
  </section>
   );

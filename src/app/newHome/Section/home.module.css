@@ -1,44 +1,68 @@
 .slider {
   overflow: hidden;
   width: 100%;
- margin-top:40px;
-  position:relative;
+  margin-top: 40px;
+  position: relative;
 }
 
 .slideTrack {
-  /* display: flex;
-  gap:20px;
-  width: calc(250px * 12);
-  animation: scroll 20s linear infinite; */
   display: flex;
-  gap: 20px;
-  width: max-content;   /* 🔥 important */
-  animation: scroll 20s linear infinite;
+  align-items: center;
+  /* gap must match the value used in the -50% calculation — keep consistent */
+  gap: 60px;
+  width: max-content;
+  /* GPU-accelerated, perfectly seamless: scroll exactly one half (= original set) */
+  animation: marquee 18s linear infinite;
+  will-change: transform;
+}
+
+/* Pause on hover for better UX */
+.slideTrack:hover {
+  animation-play-state: paused;
 }
 
 .slide {
-  /* width: 250px; */
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
 }
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+.slideImage {
+  width: auto;
+  height: 40px;
+  object-fit: contain;
+  display: block;
 }
 
-.gradient1{
-  position:absolute;
-  height:50px;
-  width:100px;
-  opacity:0.4;
-  left:0px;
-  background: linear-gradient(270deg, #FFF 14.02%, rgba(255, 255, 255, 0.00) 100%);
+/* Single keyframe: translate exactly one full copy (-50% of the doubled track) */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Left fade */
+.gradientLeft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 120px;
+  background: linear-gradient(to right, #fff 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Right fade */
+.gradientRight {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 120px;
+  background: linear-gradient(to left, #fff 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: 2;
+  pointer-events: none;
 }
 
 /* Pos Billing */ 

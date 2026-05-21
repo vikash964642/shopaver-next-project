@@ -43,98 +43,40 @@ const features = [
 ];
 function FeatureCard({ item }) {
   return (
-<div className=" group relative overflow-hidden
-        rounded-[32px] border border-[#E5E7EB]
-        bg-[#F8F8FF] 
-        transition-all duration-500
-        hover:shadow-2xl">
-      <div
-      className="
-       px-6 pt-[36px] pb-[10px]
-      "
-    >
-      {/* Content */}
-      <div className="mb-5">
-        <p className="text-[#5801B7] text-[18px] font-medium mb-2 font-bricolage">{item.title}</p>
-
-        <h3 className="text-[28px] leading-[34px] font-medium text-[#3C3939] font-bricolage">
+    <div className="group relative overflow-hidden rounded-[1.5rem] border border-[#E5E7EB] bg-[#F8F8FF] transition-all duration-500 hover:shadow-2xl flex flex-col h-[47.625rem]">
+      {/* Text Content */}
+      <div className="px-6 pt-[1.875rem] pb-[1.25rem]">
+        <p className="text-[#5801B7] text-[1.5456rem] font-semibold mb-[0.375rem] font-bricolage">{item.title}</p>
+        <h3 className="text-[2.4038rem] leading-[2.125rem] font-medium text-[#3C3939] font-bricolage">
           {item.heading}
         </h3>
-        <p className="mt-3 text-[16px]  text-[#666666] leading-normal font-dm-sans">
+        <p className="mt-[0.625rem] text-[1.375rem] text-[#666666] leading-normal font-dm-sans">
           {item.description}
         </p>
       </div>
 
-      {/* Image */}
-      <div className="relative h-[340px] w-full overflow-hidden rounded-[11px]">
-        {/* Image */}
+      {/* Image — fills remaining space */}
+      <div className="relative flex-1 w-full overflow-hidden rounded-b-[1.5rem]">
         <Image
           src={item.image}
           alt={item.title}
           fill
-          className="
-      object-cover
-      object-center
-      padding-[20px]
-      transition-transform duration-700
-      group-hover:scale-105
-    "
+          className="object-contain object-bottom transition-transform duration-700 group-hover:scale-105"
         />
-
-   
       </div>
-           {/* Bottom Hover Panel */}
-        <div
-          className="
-      absolute bottom-0 left-0 w-full z-20
 
-      translate-y-full
-      group-hover:translate-y-0
-
-      opacity-0
-      group-hover:opacity-100
-
-      transition-all duration-500 ease-out
-    "
-        >
-          <div
-            className="
-        bg-white
-        px-5 py-4
-        flex items-center justify-center gap-3 flex-wrap
-
-        
-        shadow-[0_-10px_30px_rgba(0,0,0,0.08)]
-      "
-          >
-            <button
-              className="
-          whitespace-nowrap rounded-full
-          bg-[#5801B7]
-          px-5 py-2.5
-          text-sm font-medium text-white
-          transition hover:bg-[#47009A]
-        "
-            >
-              Know More
-            </button>
-
-            <button
-              className="
-          whitespace-nowrap rounded-full
-          border border-[#D1D5DB]
-          bg-[#F5F5F5]
-          px-5 py-2.5
-          text-sm font-medium text-[#3C3939]
-          transition hover:bg-[#EAEAEA]
-        "
-            >
-              Schedule a Demo
-            </button>
-          </div>
+      {/* Bottom Hover Panel */}
+      <div className="absolute bottom-0 left-0 w-full z-20 translate-y-full group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out">
+        <div className="bg-white px-5 py-4 flex items-center justify-center gap-3 flex-wrap shadow-[0_-10px_30px_rgba(0,0,0,0.08)]">
+          <button className="whitespace-nowrap rounded-full bg-[#5801B7] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#47009A]">
+            Know More
+          </button>
+          <button className="whitespace-nowrap rounded-full border border-[#D1D5DB] bg-[#F5F5F5] px-5 py-2.5 text-sm font-medium text-[#3C3939] transition hover:bg-[#EAEAEA]">
+            Schedule a Demo
+          </button>
         </div>
+      </div>
     </div>
-</div>
   );
 }
 
@@ -143,11 +85,13 @@ function FullWidthCard({ item }) {
     <div
       className="
         group relative overflow-hidden
-        rounded-[32px]
+        rounded-[2rem]
         border border-[#E5E7EB]
         bg-[#F8F8FF]
         px-6 md:px-10
         py-8
+        w-[80.8125rem]
+        h-[25.1875rem]
       "
     >
       <div
@@ -160,76 +104,34 @@ function FullWidthCard({ item }) {
         "
       >
         {/* Left Content */}
-        {/* Left Content */}
-<div className="max-w-[520px]">
-  
-  <p className="text-[#5801B7] text-[18px] font-medium mb-2 font-bricolage">
-    {item.title}
-  </p>
-
-  <h3 className="text-[28px] leading-[30px] font-medium text-[#3C3939] font-bricolage">
-    {item.heading}
-  </h3>
-
-  <p className="mt-4 text-[16px] text-[#666] leading-relaxed font-bricolage">
-    {item.description}
-  </p>
-
-  {/* Buttons */}
-  {/* Buttons */}
-<div
-  className="
-    mt-6 flex flex-wrap gap-3
-    opacity-0 translate-y-5
-    group-hover:opacity-100
-    group-hover:translate-y-0
-
-    transition-all duration-500 ease-out
-  "
->
-  <button
-    className="
-      rounded-full
-      bg-[#5801B7]
-      px-5 py-2.5
-      text-sm font-medium text-white
-      transition hover:bg-[#47009A]
-    "
-  >
-    Know More
-  </button>
-
-  <button
-    className="
-      rounded-full
-      border border-[#D1D5DB]
-      bg-white
-      px-5 py-2.5
-      text-sm font-medium text-[#3C3939]
-      transition hover:bg-[#F5F5F5]
-    "
-  >
-    Schedule a Demo
-  </button>
-</div>
-</div>
+        <div className="max-w-[32.5rem]">
+          <p className="text-[#5801B7] text-[1.125rem] font-medium mb-2 font-bricolage">
+            {item.title}
+          </p>
+          <h3 className="text-[1.75rem] leading-[1.875rem] font-medium text-[#3C3939] font-bricolage">
+            {item.heading}
+          </h3>
+          <p className="mt-4 text-[1rem] text-[#666] leading-relaxed font-dm-sans">
+            {item.description}
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3 opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
+            <button className="rounded-full bg-[#5801B7] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#47009A]">
+              Know More
+            </button>
+            <button className="rounded-full border border-[#D1D5DB] bg-white px-5 py-2.5 text-sm font-medium text-[#3C3939] transition hover:bg-[#F5F5F5]">
+              Schedule a Demo
+            </button>
+          </div>
+        </div>
 
         {/* Right Image */}
-        <div className="relative h-[320px] w-full lg:w-[420px] overflow-hidden rounded-[16px] shrink-0">
+        <div className="relative h-[20rem] w-full lg:w-[26.25rem] overflow-hidden rounded-[1rem] shrink-0">
           <Image
             src={item.image}
             alt={item.title}
             fill
-            className="
-              object-cover
-              object-center
-              transition-transform duration-700
-              padding-[20px]
-              group-hover:scale-105
-            "
+            className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
           />
-
-          
         </div>
       </div>
     </div>
@@ -437,27 +339,27 @@ const getResetStyle = (index) => {
 };
   return (
     <>
-        <section className="mx-auto max-w-5xl px-4 xl:px-0 py-16 space-y-6 hidden lg:block">
-      {/* Row 1 */}
-       <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-6">
-         <FeatureCard item={features[0]} />
-        <FeatureCard item={features[1]} />
-      </div>
-       {/* Row 2 */}
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-6">
-        <FeatureCard item={features[2]} />
-         <FeatureCard item={features[3]} />
-       </div>
-
-       {/* Full Width */}
-       <div>
-         <FullWidthCard item={features[4]} />
+        <section className="mx-auto max-w-[115.625rem] mt-[7.5rem] hidden lg:block">
+      <div className="mx-32 px-4 xl:px-0 flex flex-col gap-6 items-center">
+        {/* Row 1 — 701 : 568 */}
+        <div className="grid grid-cols-[43.8125rem_35.5rem] gap-6">
+          <FeatureCard item={features[0]} />
+          <FeatureCard item={features[1]} />
+        </div>
+        {/* Row 2 — 568 : 701 (flipped) */}
+        <div className="grid grid-cols-[35.5rem_43.8125rem] gap-6">
+          <FeatureCard item={features[2]} />
+          <FeatureCard item={features[3]} />
+        </div>
+        {/* Full Width */}
+        <FullWidthCard item={features[4]} />
       </div>
     </section>
-    <section className="block lg:hidden mt-[100px] ">
-   <div className="overflow-hidden py-[10px]">
+    <section className="block lg:hidden mt-[7.5rem]">
+    <div className="mx-32">
+   <div className="overflow-hidden py-[0.625rem]">
        <div
-        className="relative max-[375px]:w-[290px] w-[320px] h-[520px] mx-auto"
+        className="relative max-[23.4375rem]:w-[18.125rem] w-[20rem] h-[32.5rem] mx-auto"
         style={{
           isolation: "isolate",
           touchAction: "pan-y",
@@ -530,7 +432,7 @@ const getResetStyle = (index) => {
           return (
             <div
               key={index}
-              className="rounded-[32px] border border-[#CBCBFF] bg-[#F8F8FF] shadow-sm h-[525px] overflow-hidden"
+              className="rounded-[2rem] border border-[#CBCBFF] bg-[#F8F8FF] shadow-sm h-[32.8125rem] overflow-hidden"
               style={style}
               onTouchStart={
                 isActive && !flyOut && !isResetting
@@ -543,25 +445,25 @@ const getResetStyle = (index) => {
                   : undefined
               }
             >
-              <div className="py-[31px] px-[21.22px]">
-                <p className="text-[#5801B7] text-[15.6px] font-semibold font-bricolage">
+              <div className="py-[1.9375rem] px-[1.32625rem]">
+                <p className="text-[#5801B7] text-[0.975rem] font-semibold font-bricolage">
                   {item.title}
                 </p>
 
-                <h3 className="pt-[4px] pr-[4px] text-[23.4px] font-medium text-[#393939] font-bricolage">
+                <h3 className="pt-[0.25rem] pr-[0.25rem] text-[1.462rem] font-medium text-[#393939] font-bricolage">
                   {item.heading}
                 </h3>
 
-                <p className="pt-[8.5px] text-[13.65px] leading-normal text-[#666]">
+                <p className="pt-[0.53125rem] text-[0.853rem] leading-normal text-[#666]">
                   {item.description}
                 </p>
 
-                <button className="mt-[17px] rounded-[7.8px] bg-[#5801B7] h-[38.25px] w-[105.5px] text-[11.33px] text-white font-medium">
+                <button className="mt-[1.0625rem] rounded-[0.4875rem] bg-[#5801B7] h-[2.39rem] w-[6.594rem] text-[0.708rem] text-white font-medium">
                   Know More
                 </button>
               </div>
 
-              <div className="relative h-[220px] w-full">
+              <div className="relative h-[13.75rem] w-full">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -599,14 +501,15 @@ const getResetStyle = (index) => {
 }
 `}</style>
    </div>
-   <div className="flex justify-center mt-[43px]">
-              <div onClick={() => goNext("left")} className="w-[101px] h-[44px] rounded-[12px] bg-[#F8F8FF] border-[0.74px] border-[#F0E2FF] flex justify-center items-center gap-[6px]">
-              <p className="text-[#5801B7] text-[16px] font-medium">Swap</p>
-              <div className="h-[20px] w-[20px] rounded-full bg-[#5801B7] flex justify-center items-center">
+   <div className="flex justify-center mt-[2.6875rem]">
+              <div onClick={() => goNext("left")} className="w-[6.3125rem] h-[2.75rem] rounded-[0.75rem] bg-[#F8F8FF] border-[0.046375rem] border-[#F0E2FF] flex justify-center items-center gap-[0.375rem]">
+              <p className="text-[#5801B7] text-[1rem] font-medium">Swap</p>
+              <div className="h-[1.25rem] w-[1.25rem] rounded-full bg-[#5801B7] flex justify-center items-center">
                 <Image src={'/newImage/swapbtn.svg'} className="w-auto h-auto" width={10.5} height={5}/>
               </div>
               </div>
             </div>
+    </div>
     </section>
     </>
   );

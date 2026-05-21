@@ -61,7 +61,7 @@ export default function RootLayout({ children }) {
         {/* <DynamicHeader /> */}
         <Navbar />
         {children}
-        <DynamicFooter />
+        {/* <DynamicFooter /> */}
       <DynamicBottomIcon />
       </body>
     </html>
