@@ -152,7 +152,7 @@ function CardSlider() {
 
   return (
     <section className="bg-[#F4FFF7] mt-[70px]">
- <div className='max-w-[115.625rem] mx-auto pt-[4.3rem] md:pt-[60px] lg:pt-[80px] xl2:pt-[97px]'>
+ <div className='max-w-[115.625rem] mx-auto py-[4.3rem] md:py-[60px] lg:py-[80px] xl2:py-[97px]'>
      <div className="md:mx-[5vw] xl:mx-[7vw]">
  <div className='flex flex-col gap-[1.25rem] items-center'>
        <h1 className='px-[1rem] xm1:px-0 max-w-[22rem] md:max-w-[32.8rem] lg:max-w-[43.75rem] xl2:max-w-[53.1rem] text-[#075E54] text-center text-[1.7rem] xm1:text-[1.875rem] md:text-[1.875rem] lg:text-[2.5rem] xl2:text-[48.44px] font-bold leading-normal font-bricolage'>The Complete WhatsApp Platform for Your Business Growth</h1>
@@ -232,15 +232,15 @@ function CardSlider() {
         <div
           ref={(el) => (refs.current[4] = el)}
           style={getStyle(4)}
-          className="sticky lg:h-[35vw]  px-[1.5625rem] pt-[2.75rem] pb-[1.875rem] lg:px-[2.09375rem] rounded-[1.875rem] border shadow-xl bg-[#FFF] will-change-transform flex justify-between items-center gap-[1.25rem] flex-col-reverse lg:flex-row overflow-hidden"
+          className="sticky md:h-[45vw] lg:h-[35vw] px-[1.5625rem] pt-[2.5rem] pb-[4.3rem] md:pt-0 md:pb-0 md:px-[1.5rem] lg:px-[2.09375rem] xl2:px-[2.5rem] rounded-[1.875rem] border shadow-xl bg-[#FFF] will-change-transform flex justify-between items-center gap-[4rem] md:gap-[2.2rem] flex-col md:flex-row overflow-hidden"
         >
-          <div className="w-full lg:w-[50%] lg:h-full ">
-            <Image src={"/img/CardSliderImg1.png"} alt="QR Code" height={400} width={400} className="h-full w-full" />
+          <div className="w-full md:w-[50%] md:h-full flex justify-center items-center ">
+            <Image src={"/img/CardSliderImg1.png"} alt="QR Code" height={400} width={400} className="w-full h-[14.5rem] md:h-[13.6rem] lg:h-[18.16rem] xl2:h-[22rem]" />
           </div>
-          <div className="w-full lg:w-[45%] shrink-0">
-            <h1 className='text-[#525252] text-[1.125rem] lg:text-[1.25rem] font-semibold leading-normal font-bricolage'>QR Code</h1>
-            <h2 className='pt-[0.3125rem] text-[#2E9F49] text-[1.75rem] lg:text-[2.294rem] font-medium lg:font-semibold leading-normal lg:leading-[2.75rem] font-bricolage'>Get a QR Code to Connect your customers instantly</h2>
-            <p className='pt-[0.625rem] text-[#525252] text-[0.875rem] lg:text-[1rem] font-normal leading-normal font-dm-sans'>Automate conversations, track customer behavior & close more deals—without missing a single message.</p>
+          <div className="w-full md:w-[50%] shrink-0">
+            <h1 className='text-[#525252] text-[1.125rem] md:text-[0.91rem] lg:text-[1.21rem] xl2:text-[1.465rem] font-semibold leading-normal font-bricolage'>QR Code</h1>
+            <h2 className=' text-[#2E9F49] pt-[0.3125rem] md:w-[21rem] lg:w-[28rem] xl2:w-[34rem] text-[1.75rem] md:text-[1.67rem] lg:text-[2.22rem] xl2:text-[2.69rem] font-medium lg:font-semibold leading-normal md:leading-[2rem] lg:leading-[2.663rem] xl2:leading-[3.23rem] font-bricolage'>Get a QR Code to Connect your customers instantly</h2>
+            <p className='text-[#525252] pt-[0.625rem] md:w-[17.5rem] lg:w-[20.75rem] xl2:w-[25rem] text-[0.875rem] lg:text-[0.97rem] xl2:text-[1.172rem] font-normal leading-normal font-dm-sans'>Automate conversations, track customer behavior & close more deals—without missing a single message.</p>
             <button className='mt-[1.25rem] lg:mt-[1.875rem] bg-[#2E9F49] rounded-[0.5625rem] lg:rounded-[0.6875rem] h-[2.8125rem] w-[7.75rem] lg:h-[3.375rem] lg:w-[9.3125rem] text-[#FFF] text-[0.833rem] lg:text-[1rem] font-medium font-dm-sans'>Know More</button>
           </div>
         </div>

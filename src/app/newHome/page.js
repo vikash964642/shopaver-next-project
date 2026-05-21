@@ -19,7 +19,7 @@ function page() {
          <RotatingCircle />
           <HomeSlider />
          <CardSlider />
-          {/* <SmartFeaturesSection /> */}
+          <SmartFeaturesSection />
          {/* <LandingPageList /> */}
         {/* <Counter /> */}
         {/* <CarouselSlider /> */}

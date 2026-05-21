@@ -35,7 +35,7 @@ function HeroSection() {
     <section ref={container} className="max-w-[115.625rem] mx-auto">
   
     <div className="mt-[10.9375rem] relative lg:mx-[5vw] xl:mx-[7vw]">
-       <div className="flex flex-col items-center">
+       <div className="hidden md:flex flex-col items-center">
       {/* <h2 className="w-[17.25rem] lg:w-[31.9375rem] text-center text-[#5801B7] text-[1.875rem] lg:text-[2.4975rem] min-[1480px]:!text-[3.3975rem] font-bold leading-normal font-bricolage">The All-in-One Business Solution for MSMEs</h2> */}
       <h2
   className="
@@ -65,8 +65,19 @@ function HeroSection() {
 >
   Business Solution for MSMEs
 </h2>
-      <p className="pt-[10px] w-[19.5625rem] lg:w-[35.9375rem] text-[#666] text-center text-[0.875rem] lg:text-[1.125rem] min-[1380px]:text-[1.5288rem] font-normal leading-normal font-dm-sans">Manage everything your business needs from a single platform, including WhatsApp Business Suite, online store setup, smart billing, real-time inventory, Khata, detailed reports, and more.</p>
+   </div>
+   <div className="flex justify-center md:hidden">
+    <h2 className="text-center max-w-[17.7rem]
+    text-[#5801B7]
+    text-[1.875rem] font-bold
+    leading-none
+    font-bricolage">The All-in-One 
+Business Solution for MSMEs</h2>
+   </div>
+     <div className="flex justify-center pt-[20px] md:pt-[15px] lg:pt-[19px] xl2:pt-[23pxpx]">
+       <p className=" w-[19.5625rem] md:w-[27rem] lg:w-[35.9375rem] xl2:w-[53rem] text-[#666] text-center text-[0.875rem] md:text-[0.85rem] lg:text-[1.125rem] xl2:text-[1.65rem] font-normal leading-normal font-dm-sans">Manage everything your business needs from a single platform, including WhatsApp Business Suite, online store setup, smart billing, real-time inventory, Khata, detailed reports, and more.</p>
      </div>
+  
      <div className="flex justify-center items-center gap-[0.625rem] mt-[1.875rem]">
       <Link href="https://app.shopaver.com/Sign-up">
       <button className="bg-[#5801B7] rounded-[0.6875rem] h-[2.8125rem] w-[9.1875rem] lg:h-[3.375rem] lg:w-[11rem] border-none text-[#FFF] text-[0.833rem] lg:text-[1rem] font-medium font-dm-sans">
