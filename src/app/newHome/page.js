@@ -20,11 +20,11 @@ function page() {
           <HomeSlider />
          <CardSlider />
           <SmartFeaturesSection />
-         {/* <LandingPageList /> */}
-        {/* <Counter /> */}
-        {/* <CarouselSlider /> */}
-        {/* <FAQ /> */}
-        {/* <BusinessHeroSection /> */}
+         <LandingPageList />
+        <Counter />
+        <CarouselSlider />
+        <FAQ />
+        <BusinessHeroSection />
     </div>
   )
 }

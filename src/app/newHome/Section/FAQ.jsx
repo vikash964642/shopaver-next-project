@@ -43,18 +43,18 @@ function FAQ() {
   };
  
   return (
-    <section className="bg-[#5801B7] py-[3.4375rem] lg:py-[5.625rem] mt-[7.5rem]">
-      <div className="max-w-[115.625rem] mx-32">
-        <div className="flex items-center lg:items-start lg:justify-between lg:flex-row flex-col px-[1.25rem]">
-          <div className="w-[14.0625rem] lg:w-[17.5rem]">
-            <h2 className="text-[#FFF] text-[1.625rem] lg:text-[2.25rem] font-semibold leading-normal text-center lg:text-left font-bricolage">
+    <section className="bg-[#5801B7] py-[3.5rem] lg:py-[5.625rem] xl:py-[90px] xl2:py-[110px] mt-[7.5rem]">
+      <div className="lg:max-w-5xl xl:max-w-[76.25rem] xl2:max-w-[90rem] mx-auto px-[27px] md:px-[34px] lg:px-[47px] xl2:px-[35px]">
+        <div className="flex items-center md:items-start md:justify-between md:flex-row flex-col">
+          <div className="w-[14.0625rem] lg:w-[330px] xl:w-[400px] xl2:w-[480px]">
+            <h2 className="text-[#FFF] text-[1.625rem] md:text-[30px] lg:text-[2.5rem] xl:text-[48.3px] xl2:text-[58.5px] font-semibold leading-normal text-center md:text-left font-bricolage">
               Frequently Asked Questions
             </h2>
-            <p className="pt-[1.375rem] text-[#FFF] text-[0.875rem] lg:text-[1.25rem] leading-normal text-center lg:text-left font-dm-sans">
+            <p className="pt-[11px] lg:pt-[15px] xl:pt-[18.3px] xl2:pt-[1.375rem] text-[#FFF] text-[0.895rem] md:text-[13.5px] lg:text-[1.13rem] xl:text-[21.77px] xl2:text-[26.3px] leading-normal text-center md:text-left font-dm-sans">
               Have any questions? We are here to assist you.
             </p>
           </div>
-          <div className="mt-[2.25rem] lg:mt-0">
+          <div className="mt-[2.1rem] md:mt-0">
             {faqs &&
               faqs.map((data, index) => (
                 <div
@@ -63,10 +63,10 @@ function FAQ() {
                   className="rounded-[0.454375rem] lg:rounded-[0.9375rem] border border-white/50
 bg-gradient-to-r from-[#FFF]/30 to-[#5801B7]/60
 shadow-[0_0_4px_rgba(0,0,0,0.25)]
-backdrop-blur-[0.9375rem] w-full lg:w-[42.1875rem] py-[0.46875rem] px-[0.59375rem]  lg:lg:py-[0.9375rem] lg:px-[1.1875rem] mt-[0.625rem] lg:mt-[1.25rem] flex justify-center flex-col cursor-pointer"
+backdrop-blur-[0.9375rem] w-full md:w-[402px] lg:w-[536px] xl:w-[650px] xl2:w-[784px] py-[0.46875rem] px-[0.59375rem]  lg:lg:py-[0.9375rem] lg:px-[1.1875rem] mt-[0.625rem] lg:mt-[1.25rem] flex justify-center flex-col cursor-pointer"
                 >
                   <div className="flex justify-between items-center w-full">
-                    <h2 className="text-[#FFF] text-[0.875rem] lg:text-[1.125rem] font-medium leading-normal w-[75%]">
+                    <h2 className="text-[#FFF] text-[0.875rem] md:text-[15px] lg:text-[1.125rem] xl:text-[21.8px] xl2:text-[26.33px] font-medium leading-normal w-full md:w-[90%]">
                       {data.question}
                     </h2>
                     <p className="text-[#FFF] text-[0.875rem] lg:text-[1.125rem] font-medium ">
@@ -80,7 +80,7 @@ backdrop-blur-[0.9375rem] w-full lg:w-[42.1875rem] py-[0.46875rem] px-[0.59375re
                         : "max-h-0 opacity-0"
                     }`}
                   >
-                    <p className="pt-[0.65625rem] text-[#FFF] text-[0.938rem] font-normal leading-normal w-[90%]">{data.answer}</p>
+                    <p className=" text-[#FFF] text-[12px] lg:text-[14px] xl:text-[16px] xl2:text-[18px] font-normal leading-normal w-[95%]">{data.answer}</p>
                   </div>
                 </div>
               ))}
