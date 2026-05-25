@@ -43,25 +43,26 @@ const features = [
 ];
 function FeatureCard({ item }) {
   return (
-    <div className="group relative overflow-hidden rounded-[1.5rem] border border-[#E5E7EB] bg-[#F8F8FF] transition-all duration-500 hover:shadow-2xl flex flex-col h-[47.625rem]">
+    <div className="group relative overflow-hidden rounded-[1.5rem] border border-[#E5E7EB] bg-[#F8F8FF] transition-all duration-500 hover:shadow-2xl flex flex-col justify-between xl:h-[550px] xl2:h-[750px]">
       {/* Text Content */}
-      <div className="px-6 pt-[1.875rem] pb-[1.25rem]">
-        <p className="text-[#5801B7] text-[1.5456rem] font-semibold mb-[0.375rem] font-bricolage">{item.title}</p>
-        <h3 className="text-[2.4038rem] leading-[2.125rem] font-medium text-[#3C3939] font-bricolage">
+      <div className="md:px-[18.3px] lg:px-[23px] xl:px-[28px] xl2:px-[35.5px] md:pt-[25.5px] lg:pt-[33px] xl:pt-[40px] xl2:pt-[3rem] pb-[1.25rem] w-[90%]">
+        <p className="text-[#5801B7] md:text-[13.2px] lg:text-[17.6px] xl:text-[21.3px] xl2:text-[25.7px] font-semibold mb-[0.375rem] font-bricolage">{item.title}</p>
+        <h3 className="text-[2.4038rem] md:text-[20.5px] lg:text-[27.35px] xl:text-[33.12px] xl2:text-[40px] leading-[2.125rem] xl2:leading-[41px] font-medium text-[#3C3939] font-bricolage">
           {item.heading}
         </h3>
-        <p className="mt-[0.625rem] text-[1.375rem] text-[#666666] leading-normal font-dm-sans">
+        <p className="mt-[0.75rem] md:text-[11.8px] lg:text-[15.4px] xl:text-[18.9px] xl2:text-[22.86px] text-[#666666] leading-normal font-dm-sans">
           {item.description}
         </p>
       </div>
 
       {/* Image — fills remaining space */}
-      <div className="relative flex-1 w-full overflow-hidden rounded-b-[1.5rem]">
+      <div className="relative  w-full overflow-hidden rounded-b-[1.5rem]">
         <Image
           src={item.image}
           alt={item.title}
-          fill
-          className="object-contain object-bottom transition-transform duration-700 group-hover:scale-105"
+          width={400}
+          height={400}
+          className="h-full w-full  object-bottom transition-transform duration-700 group-hover:scale-105"
         />
       </div>
 
@@ -88,44 +89,46 @@ function FullWidthCard({ item }) {
         rounded-[2rem]
         border border-[#E5E7EB]
         bg-[#F8F8FF]
-        px-6 md:px-10
-        py-8
-        w-[80.8125rem]
-        h-[25.1875rem]
+         md:pl-[18.3px] md:pr-[16.4px]
+         lg:pl-[24px] lg:pr-[17.5px]
+         xl:pl-[29.5px] xl:pr-[20px]
+       xl2:pl-[35px] xl2:pr-[24px]
+       md:py-[12.4px]
+       lg:py-[16.5px]
+       xl:py-[20px]
+       xl2:py-[24px]
+        md:h-[290px]
+        xl:h-[25.1875rem]
+        xl2:h-[420px]
       "
     >
       <div
         className="
-          flex flex-col-reverse
-          lg:flex-row
+          flex 
           items-center
           justify-between
-          gap-8
+          md:gap-[36px]
+          xl:gap-[40px]
+          xl2:gap-[48px]
+          h-full
         "
       >
         {/* Left Content */}
-        <div className="max-w-[32.5rem]">
-          <p className="text-[#5801B7] text-[1.125rem] font-medium mb-2 font-bricolage">
+        <div className="flex flex-col justify-center h-full">
+          <p className="text-[#5801B7] md:text-[13.2px] lg:text-[17.6px] xl:text-[21.3px] xl2:text-[25.7px] font-medium mb-2 font-bricolage">
             {item.title}
           </p>
-          <h3 className="text-[1.75rem] leading-[1.875rem] font-medium text-[#3C3939] font-bricolage">
+          <h3 className="md:text-[20.5px] lg:text-[27.35px] xl:text-[33.12px] xl2:text-[40px] leading-[1.875rem] font-medium text-[#3C3939] font-bricolage">
             {item.heading}
           </h3>
-          <p className="mt-4 text-[1rem] text-[#666] leading-relaxed font-dm-sans">
+          <p className="mt-4 md:text-[11.8px] lg:text-[15.4px] xl:text-[18.9px] xl2:text-[22.86px] text-[#666] leading-relaxed font-dm-sans">
             {item.description}
           </p>
-          <div className="mt-6 flex flex-wrap gap-3 opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out">
-            <button className="rounded-full bg-[#5801B7] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#47009A]">
-              Know More
-            </button>
-            <button className="rounded-full border border-[#D1D5DB] bg-white px-5 py-2.5 text-sm font-medium text-[#3C3939] transition hover:bg-[#F5F5F5]">
-              Schedule a Demo
-            </button>
-          </div>
+         
         </div>
 
         {/* Right Image */}
-        <div className="relative h-[20rem] w-full lg:w-[26.25rem] overflow-hidden rounded-[1rem] shrink-0">
+        <div className="relative h-full w-full md:w-[267px] lg:w-[356px] xl:w-[431px] xl2:w-[520px]  overflow-hidden rounded-[1rem] shrink-0">
           <Image
             src={item.image}
             alt={item.title}
@@ -133,7 +136,16 @@ function FullWidthCard({ item }) {
             className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
           />
         </div>
+        
       </div>
+       <div className=" flex flex-wrap gap-3 opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out absolute bottom-[35px]">
+            <button className="rounded-full bg-[#5801B7] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#47009A]">
+              Know More
+            </button>
+            <button className="rounded-full border border-[#D1D5DB] bg-white px-5 py-2.5 text-sm font-medium text-[#3C3939] transition hover:bg-[#F5F5F5]">
+              Schedule a Demo
+            </button>
+          </div>
     </div>
   );
 }
@@ -339,15 +351,15 @@ const getResetStyle = (index) => {
 };
   return (
     <>
-        <section className="mx-auto max-w-[115.625rem] mt-[7.5rem] hidden lg:block">
-      <div className="mx-32 px-4 xl:px-0 flex flex-col gap-6 items-center">
+        <section className="lg:max-w-5xl xl:max-w-[76.25rem] xl2:max-w-[90rem] md:px-[32px] lg:px-[47px] xl:px-[40px] xl2:px-[35px] mx-auto mt-[7.5rem] hidden md:block">
+      <div className=" flex flex-col gap-6 items-center">
         {/* Row 1 — 701 : 568 */}
-        <div className="grid grid-cols-[43.8125rem_35.5rem] gap-6">
+        <div className="grid grid-cols-[1.23fr_1fr] md:gap-[19px] lg:gap-[26px] xl:gap-[31px] xl2:gap-[38.5px]">
           <FeatureCard item={features[0]} />
           <FeatureCard item={features[1]} />
         </div>
         {/* Row 2 — 568 : 701 (flipped) */}
-        <div className="grid grid-cols-[35.5rem_43.8125rem] gap-6">
+        <div className="grid grid-cols-[1fr_1.23fr] md:gap-[19px] lg:gap-[26px] xl:gap-[31px] xl2:gap-[38.5px]">
           <FeatureCard item={features[2]} />
           <FeatureCard item={features[3]} />
         </div>
@@ -355,11 +367,11 @@ const getResetStyle = (index) => {
         <FullWidthCard item={features[4]} />
       </div>
     </section>
-    <section className="block lg:hidden mt-[7.5rem]">
-    <div className="mx-32">
+    <section className="block md:hidden mt-[7.5rem]">
+    <div className="">
    <div className="overflow-hidden py-[0.625rem]">
        <div
-        className="relative max-[23.4375rem]:w-[18.125rem] w-[20rem] h-[32.5rem] mx-auto"
+        className="relative w-[18rem] xm1:w-[20rem] h-[32.5rem] mx-auto"
         style={{
           isolation: "isolate",
           touchAction: "pan-y",

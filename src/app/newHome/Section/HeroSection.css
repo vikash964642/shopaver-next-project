@@ -200,7 +200,7 @@
     z-index:1;
 }
 
-@media(max-width:1023px){
+@media(max-width:767px){
    .CarouselSliderGradient1, .CarouselSliderGradient2 {
     display:none;
    }
