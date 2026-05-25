@@ -133,7 +133,7 @@ function LandingPageList() {
     <SwiperSlide key={groupIndex}>
       <div className="grid grid-cols-2 md:gap-[0.94rem] lg:gap-[1.25rem] xl:gap-[1.5rem] xl2:gap-[1.875rem] ">
         {listData.slice(groupIndex * 4, groupIndex * 4 + 4).map((item, index) => (
-          <div key={index} className=" md:h-[193.3px] lg:h-[257.75px] xl:h-[312px] xl2:h-[23.57rem]">
+          <div key={index} className=" md:h-[193.3px] lg:h-[257.75px] xl:h-[300px] ">
             <Card item={item} />
           </div>
         ))}
@@ -168,7 +168,7 @@ function Card({ item }) {
           <p className="text-[#3C3939] text-[18.4px] md:text-[14.96px] lg:text-[19.94px] xl:text-[24.15px] xl2:text-[1.83rem] font-medium break-words line-clamp-2 leading-none font-bricolage">
             {item.title}
           </p>
-         <p className="pt-[4px] lg:pt-[5.25px]  xl:pt-[6px] xl2:pt-[0.48rem] text-[#666] text-[12.6px] xm1:text-[14.3px] md:text-[11.96px] lg:text-[15.95px] xl:text-[19.3px] xl2:text-[1.45rem] font-normal leading-none md:leading-normal font-dm-sans line-clamp-5">{item.description}</p>
+         <p className="pt-[4px] lg:pt-[5.25px]  xl:pt-[6px] xl2:pt-[0.48rem] text-[#666] text-[12.6px] xm1:text-[14.3px] md:text-[11.96px] lg:text-[15.95px] xl:text-[19.3px]  font-normal leading-none md:leading-normal font-dm-sans line-clamp-5">{item.description}</p>
 
 
         <button

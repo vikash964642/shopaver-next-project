@@ -45,7 +45,7 @@ function FeatureCard({ item }) {
   return (
     <div className="group relative overflow-hidden rounded-[1.5rem] border border-[#E5E7EB] bg-[#F8F8FF] transition-all duration-500 hover:shadow-2xl flex flex-col justify-between xl:h-[550px] xl2:h-[750px]">
       {/* Text Content */}
-      <div className="md:px-[18.3px] lg:px-[23px] xl:px-[28px] xl2:px-[35.5px] md:pt-[25.5px] lg:pt-[33px] xl:pt-[40px] xl2:pt-[3rem] pb-[1.25rem] w-[90%]">
+      <div className="md:px-[18.3px] lg:px-[23px] xl:px-[28px] xl2:px-[35.5px] md:pt-[25.5px] lg:pt-[33px] xl:pt-[40px] xl2:pt-[3rem] pb-[1.25rem] w-[93%]">
         <p className="text-[#5801B7] md:text-[13.2px] lg:text-[17.6px] xl:text-[21.3px] xl2:text-[25.7px] font-semibold mb-[0.375rem] font-bricolage">{item.title}</p>
         <h3 className="text-[2.4038rem] md:text-[20.5px] lg:text-[27.35px] xl:text-[33.12px] xl2:text-[40px] leading-[2.125rem] xl2:leading-[41px] font-medium text-[#3C3939] font-bricolage">
           {item.heading}
