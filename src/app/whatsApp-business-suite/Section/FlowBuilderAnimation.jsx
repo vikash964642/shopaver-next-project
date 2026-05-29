@@ -2,6 +2,7 @@
 
 import React from "react";
 import { CircleCheck } from "lucide-react";
+import { motion } from "framer-motion";
 
 const features = [
   {
@@ -45,32 +46,96 @@ const features = [
     ],
     reverse: false,
   },
+  {
+    tag: "WhatsApp marketing",
+    title: "Increase Sales with Targeted Campaigns",
+    description:
+      "Send bulk broadcasts, promotional offers & personalized campaigns in one click.",
+    points: [
+      "Send bulk messages in one click.",
+      "Schedule campaigns in advance easily",
+      "Retarget non-responsive customers automatically",
+      "Track delivery and read rates",
+      "Personalize messages with customer names",
+    ],
+    reverse: true,
+  },
+  {
+    tag: "WhatsApp marketing",
+    title: "Increase Sales with Targeted Campaigns",
+    description:
+      "Send bulk broadcasts, promotional offers & personalized campaigns in one click.",
+    points: [
+      "Send bulk messages in one click.",
+      "Schedule campaigns in advance easily",
+      "Retarget non-responsive customers automatically",
+      "Track delivery and read rates",
+      "Personalize messages with customer names",
+    ],
+    reverse: false,
+  },
+  {
+    tag: "WhatsApp marketing",
+    title: "Increase Sales with Targeted Campaigns",
+    description:
+      "Send bulk broadcasts, promotional offers & personalized campaigns in one click.",
+    points: [
+      "Send bulk messages in one click.",
+      "Schedule campaigns in advance easily",
+      "Retarget non-responsive customers automatically",
+      "Track delivery and read rates",
+      "Personalize messages with customer names",
+    ],
+    reverse: true,
+  },
+  {
+    tag: "WhatsApp marketing",
+    title: "Increase Sales with Targeted Campaigns",
+    description:
+      "Send bulk broadcasts, promotional offers & personalized campaigns in one click.",
+    points: [
+      "Send bulk messages in one click.",
+      "Schedule campaigns in advance easily",
+      "Retarget non-responsive customers automatically",
+      "Track delivery and read rates",
+      "Personalize messages with customer names",
+    ],
+    reverse: false,
+  },
 ];
 
 function FlowBuilderAnimation() {
   return (
-    <section className="w-full  py-14 md:py-24">
+    <section className="w-full py-14 md:py-24">
       <div className="mx-auto flex max-w-7xl flex-col gap-10 px-4 sm:px-6 lg:px-8">
-        
         {features.map((item, index) => (
-          <div
+          <motion.div
             key={index}
+            /* INITIAL STATE */
+            initial={{ opacity: 0, y: 120 }}
+            /* WHEN IN VIEW */
+            whileInView={{ opacity: 1, y: 0 }}
+            /* ONLY ONCE */
+            viewport={{ once: true, amount: 0.2 }}
+            /* ANIMATION SETTINGS */
+            transition={{
+              duration: 0.5,
+              ease: "easeOut",
+            }}
             className={`rounded-[32px] border border-[#CBCBFF] bg-[#F8F8FF] p-4 sm:p-6 md:p-[42px] ${
               item.reverse ? "lg:[&_.content]:order-2" : ""
             }`}
           >
-            <div className="grid items-center gap-[6.75rem] lg:grid-cols-2">
-              
+            <div className="grid items-center gap-6 md:gap-[6.75rem] lg:grid-cols-2">
               {/* CONTENT */}
               <div className="content">
-                
                 {/* TAG */}
                 <span className="text-xs font-medium uppercase tracking-wide text-[#5801B7] md:text-[1.3rem]">
                   {item.tag}
                 </span>
 
                 {/* TITLE */}
-                <h2 className="mt-3 max-w-[28rem] text-2xl font-bold  text-[#3C3939] sm:text-3xl md:text-[38px] md:leading-[38px]">
+                <h2 className="mt-3 max-w-[28rem] text-2xl font-bold text-[#3C3939] sm:text-3xl md:text-[38px] md:leading-[38px]">
                   {item.title}
                 </h2>
 
@@ -83,13 +148,10 @@ function FlowBuilderAnimation() {
                 <div className="mt-6 space-y-4">
                   {item.points.map((point, idx) => (
                     <div key={idx} className="flex items-start gap-3">
-                      
-                      {/* ICON */}
                       <div className="mt-0.5 shrink-0">
                         <CircleCheck className="h-4 w-4 text-[#16a34a]" />
                       </div>
 
-                      {/* TEXT */}
                       <p className="text-sm leading-6 text-[#666666] sm:text-[18px]">
                         {point}
                       </p>
@@ -99,11 +161,9 @@ function FlowBuilderAnimation() {
               </div>
 
               {/* IMAGE BOX */}
-              <div className=" mx-auto h-[260px] w-full max-w-[500px] rounded-[25px] bg-[#fff] sm:h-[420px] md:h-[515px]">
-                
-              </div>
+              <div className="mx-auto h-[260px] w-full max-w-[500px] rounded-[25px] bg-[#fff] sm:h-[420px] md:h-[515px]"></div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
