@@ -48,7 +48,7 @@ function CarouselSlider() {
     // Add more testimonials as needed
   ];
   return (
-    <section className='lg:max-w-5xl xl:max-w-[76.25rem] xl2:max-w-[90rem] mx-auto  mt-[100px] lg:mt-[150px] xl2:mt-[180px]'>
+    <section className='max-w-[90rem] mx-auto xl2:px-[85px]  mt-[100px] lg:mt-[150px] xl2:mt-[180px]'>
    
   <div className='flex items-center flex-col gap-[0.625rem] mt-[0.625rem]'>
   <h2 className='w-[15.1875rem] md:w-full text-[#5801B7] text-[1.875rem] md:text-[30px] lg:text-[2.5rem] xl:text-[48.3px] xl2:text-[58.4px] font-bold text-center leading-normal font-bricolage'>What our Customers Say ?</h2>
@@ -60,7 +60,7 @@ function CarouselSlider() {
      <div className='CarouselSliderGradient1'></div>
     <div className='CarouselSliderGradient2'></div>
        <Swiper
-          modules={[]}
+          modules={[Autoplay]}
           loop={true}
           autoplay={{
             delay: 3000,
@@ -87,8 +87,8 @@ function CarouselSlider() {
   <Image className='h-[16.8125rem] w-[18.03125rem] md:h-full md:w-full object-cover rounded-[1.5rem]' src={item.image} height={341} width={370}></Image>
 </div>
 <div className='md:w-[50%] flex flex-col justify-center'>
-  <h2 className='text-[#393939] text-[1.375rem] md:text-[16.5px] lg:text-[21.97px] xl:text-[26.6px] xl2:text-[32.15px] font-medium leading-normal font-bricolage'>{item.merchantName}</h2>
-  <p className='pt-[0.3125rem] xl2:pt-2 text-[#666] text-[0.875rem] md:text-[12px] lg:text-[1rem] xl:text-[19.3px] xl2:text-[23.38px] font-normal leading-normal font-dm-sans'>{item.content}</p>
+  <h2 className='text-[#393939] text-[1.375rem] md:text-[16.5px] lg:text-[21.97px] xl2:text-[26.6px] xl3:text-[32.15px] font-medium leading-normal font-bricolage'>{item.merchantName}</h2>
+  <p className='pt-[0.3125rem] xl2:pt-2 text-[#666] text-[0.875rem] md:text-[12px] lg:text-[1rem] xl2:text-[19.3px]  font-normal md:leading-[16px] lg:leading-[21px] xl2:leading-[30px] font-dm-sans'>{item.content}</p>
 </div>
   </div>
   </SwiperSlide>
@@ -97,12 +97,16 @@ function CarouselSlider() {
 </div>
   <div className="ml-[20.5px] mt-[1.5625rem] lg:mt-[3.4375rem] relative overflow-hidden block md:hidden">
   <Swiper
-    modules={[Navigation]}
+    modules={[Navigation,Autoplay]}
    
     autoplay={{
-      delay: 3000,
+      delay: 0,
       disableOnInteraction: false,
+       pauseOnMouseEnter: false,
     }}
+      speed={5000}
+        loop={true}
+        freeMode={true}
        navigation={{
       prevEl: ".testimonial-prev",
       nextEl: ".testimonial-next",
@@ -122,7 +126,7 @@ function CarouselSlider() {
         key={index}
         className="!w-[19rem] xm1:!w-[20rem]"
       >
-        <div className="h-full w-full px-[15.4px] pt-[30.8px] pb-[14.2px] border border-[#DADAFF] bg-[#F8F8FF] rounded-[2rem] flex flex-col-reverse justify-between gap-[3.75rem]">
+        <div className="h-full w-full px-[15.4px] pt-[30.8px] pb-[14.2px] border border-[#DADAFF] bg-[#F8F8FF] rounded-[2rem] flex flex-col-reverse justify-between gap-[3.5rem]">
           <div className="">
             <Image
               src={item.image}
@@ -138,7 +142,7 @@ function CarouselSlider() {
               {item.merchantName}
             </h2>
 
-            <p className="pt-[0.5rem] text-[#666] text-[0.894rem]  font-normal leading-normal font-dm-sans">
+            <p className="pt-[0.5rem] text-[#666] text-[0.894rem]  font-normal leading-[19px] font-dm-sans">
               {item.content}
             </p>
           </div>
@@ -146,7 +150,7 @@ function CarouselSlider() {
       </SwiperSlide>
     ))}
   </Swiper>
-  <div className='flex justify-center items-center gap-[0.9375rem] mt-[1.875rem]'>
+  {/* <div className='flex justify-center items-center gap-[0.9375rem] mt-[1.875rem]'>
   <button  onClick={() => setActiveButton("prev")} className={`testimonial-prev h-[2.25rem] w-[2.25rem] flex justify-center items-center  rounded-full border-[0.05625rem]  ${activeButton === "prev"
         ? "bg-[#F8F8FF]  border-[#CBCBFF]"
         : " bg-[#ECECEC] border-[#D7D7D7]"
@@ -159,7 +163,7 @@ function CarouselSlider() {
     }`}>
       <i className={`fa-solid fa-chevron-right ${activeButton==="next" ? "text-[#5801B7]" : "text-[#525252]"}`}></i>
   </button>
-  </div>
+  </div> */}
 </div>
     </section>
   )

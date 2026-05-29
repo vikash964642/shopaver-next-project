@@ -10,14 +10,6 @@ function HeroSection() {
     const container = useRef(null);
    useGSAP(
     () => {
-      
-      // gsap.from(".float-3d", {
-      //   scale: 0,
-      //   opacity: 0,
-      //   duration: 1,
-      //   stagger: 0.2,
-      //   ease: "back.out(1.7)",
-      // });
       gsap.utils.toArray(".float-3d").forEach((img, i) => {
   gsap.to(img, {
     y: -20,
@@ -43,7 +35,8 @@ function HeroSection() {
     text-[#5801B7]
     text-[1.875rem]
     lg:text-[2.4rem]
-    xl2:text-[3.3975rem]
+    xl2:text-[46px]
+    xl3:text-[3.3975rem]
     font-bold
     leading-none
     font-bricolage
@@ -74,8 +67,8 @@ function HeroSection() {
     font-bricolage">The All-in-One 
 Business Solution for MSMEs</h2>
    </div>
-     <div className="flex justify-center pt-[20px] md:pt-[15px] lg:pt-[19px] xl2:pt-[23pxpx]">
-       <p className=" w-[19.5625rem] md:w-[27rem] lg:w-[35.9375rem] xl2:w-[53rem] text-[#666] text-center text-[0.875rem] md:text-[0.85rem] lg:text-[1.125rem] xl2:text-[1.65rem] font-normal leading-normal font-dm-sans">Manage everything your business needs from a single platform, including WhatsApp Business Suite, online store setup, smart billing, real-time inventory, Khata, detailed reports, and more.</p>
+     <div className="flex justify-center pt-[20px] md:pt-[15px] lg:pt-[19px] xl2:pt-[23px] xl3:pt-[28px]">
+       <p className=" w-[19.5625rem] md:w-[27rem] lg:w-[35.9375rem] xl2:w-[53rem] text-[#666] text-center text-[0.875rem] md:text-[0.85rem] lg:text-[1.125rem] xl2:text-[21.5px] xl3:text-[1.65rem] font-normal leading-[18px] lg:leading-[23px] xl2:leading-[28px] xl3:leading-[34px] font-dm-sans">Manage everything your business needs from a single platform, including WhatsApp Business Suite, online store setup, smart billing, real-time inventory, Khata, detailed reports, and more.</p>
      </div>
   
      <div className="flex justify-center items-center gap-[0.625rem] mt-[1.875rem]">

@@ -14,7 +14,7 @@ const listData=[
         description:"Shopaver helps restaurants streamline orders, manage tables, track inventory, and handle billing effortlessly.",
         image:''
     },
-      {
+    {
         title:"Footwear",
         description:"Shopaver empowers footwear stores to manage inventory by size, style, and brand with real-time stock tracking.",
         image:''
@@ -39,6 +39,7 @@ const listData=[
         description:"Shopaver helps spas and salons manage appointments, track service-wise revenue, and maintain client records effortlessly.",
         image:''
     },
+      
 ]
 function LandingPageList() {
   const [visibleCount, setVisibleCount] = useState(2);
@@ -48,20 +49,17 @@ function LandingPageList() {
    
   return (
     <section className="bg-[#E3E3FF] mt-[7.5rem] py-[3rem] md:py-[2.9rem] lg:py-[3.75rem] xl:py-[4.6rem] xl2:py-[5.65rem]">
-      <div className=" lg:max-w-5xl xl:max-w-[76.25rem] xl2:max-w-[90rem] mx-auto px-[20.5px] md:px-[2rem] xl:px-[2.94rem] xl2:px-[2.65rem]">
+      <div className="max-w-[90rem] mx-auto px-[20px] md:px-[32px] lg:px-[47px] xl2:px-[150px] xl3:px-[42px]">
         {/* TITLE */}
-        <h2 className="text-[#5801B7] text-center text-[27px] xm1:text-[1.875rem]  xl:text-[3rem] xl2:text-[3.65rem] font-bold lg:font-medium font-bricolage">
+        <h2 className="max-w-[325px] md:max-w-full mx-auto text-[#5801B7] text-center text-[27px] xm1:text-[1.875rem]  xl:text-[3rem] xl2:text-[3.65rem] font-bold lg:font-medium font-bricolage leading-[37px] md:leading-none">
          Built to Scale Across Every Industry
         </h2>
 
         {/* ================= MOBILE ================= */}
         <div
-          className={`grid grid-cols-1 md:grid-cols-2 gap-[20px] md:hidden mt-10 ${
-            listData.length === 1 ? "justify-items-center" : ""
-          }`}
-        >
+          className="flex items-center flex-col  gap-[20px] md:hidden mt-10">
           {listData.slice(0, visibleCount).map((item, index) => (
-            <div key={index} className="h-[200px]">
+            <div key={index} className="h-[200px] max-w-[400px]">
               <Card item={item} />
             </div>
           ))}
@@ -78,43 +76,7 @@ function LandingPageList() {
             </div>
           </div>
         )}
-          {/* <div className="block md:hidden mt-9">
-          
-          <Swiper
-  modules={[Navigation]}
-  spaceBetween={20}
-  slidesPerView={1}        // ✅ 1 slide = 1 group of 4
-  slidesPerGroup={1}
-  loop={true}
-  navigation={{
-    nextEl: ".custom-next",
-    prevEl: ".custom-prev",
-  }}
->
- 
-  {Array.from({ length: Math.ceil(listData.length / 2) }).map((_, groupIndex) => (
-    <SwiperSlide key={groupIndex}>
-      <div className="grid grid-cols-1 gap-[1.25rem]">
-        {listData.slice(groupIndex * 2, groupIndex * 2 + 2).map((item, index) => (
-          <div key={index} className="h-[200px]">
-            <Card item={item} />
-          </div>
-        ))}
-      </div>
-    </SwiperSlide>
-  ))}
-</Swiper>
-          <div className="flex justify-center gap-[0.796875rem] mt-[0.625rem] lg:mt-[2.5rem]">
-            <div
-              className="custom-prev h-[1.75rem] w-[1.75rem] lg:h-[2.2725rem] lg:w-[2.2725rem] rounded-full border-2 border-[#C4C4C4] text-[#C4C4C4]  text-[0.938rem] lg:text-[1.125rem]  flex justify-center items-center cursor-pointer hover:border-[#5801B7] hover:text-[#5801B7] ">
-              <i className="fa-solid fa-angle-left"></i>
-            </div>
-            <div
-              className="custom-next w-[1.75rem] h-[1.75rem] lg:h-[2.2725rem] lg:w-[2.2725rem] rounded-full border-2 border-[#C4C4C4] text-[#C4C4C4]  text-[0.938rem] lg:text-[1.125rem] flex justify-center items-center cursor-pointer hover:border-[#5801B7] hover:text-[#5801B7]">
-              <i className="fa-solid fa-angle-right"></i>
-            </div>
-          </div>
-        </div> */}
+         
         <div className="hidden md:block md:mt-[1.69rem] lg:mt-[36px] xl:mt-[43.55px] xl2:mt-[3.25rem]">
           
           <Swiper
@@ -131,9 +93,13 @@ function LandingPageList() {
   {/* ✅ Har 2 items ka ek group banao */}
   {Array.from({ length: Math.ceil(listData.length / 4) }).map((_, groupIndex) => (
     <SwiperSlide key={groupIndex}>
-      <div className="grid grid-cols-2 md:gap-[0.94rem] lg:gap-[1.25rem] xl:gap-[1.5rem] xl2:gap-[1.875rem] ">
+      <div className={` ${
+            listData.length === 1 ? "flex justify-center" : "grid grid-cols-2 md:gap-[0.94rem] lg:gap-[1.25rem] xl:gap-[1.5rem] xl2:gap-[1.875rem]"
+          }`}>
         {listData.slice(groupIndex * 4, groupIndex * 4 + 4).map((item, index) => (
-          <div key={index} className=" md:h-[193.3px] lg:h-[257.75px] xl:h-[300px] ">
+          <div key={index} className={`md:h-[193.3px] lg:h-[257.75px] xl3:h-[300px]  ${
+            listData.length === 1 ? "md:max-w-[350px] lg:max-w-[450px] xl2:max-w-[550px]  xl3:max-w-[600px]" : ""
+          }`}>
             <Card item={item} />
           </div>
         ))}
@@ -143,11 +109,11 @@ function LandingPageList() {
 </Swiper>
           <div className="flex justify-center gap-[0.796875rem] mt-[0.625rem] lg:mt-[2.5rem]">
             <div
-              className="custom-prev h-[1.75rem] w-[1.75rem] lg:h-[2.2725rem] lg:w-[2.2725rem] rounded-full border-2 border-[#C4C4C4] text-[#C4C4C4]  text-[0.938rem] lg:text-[1.125rem]  flex justify-center items-center cursor-pointer hover:border-[#5801B7] hover:text-[#5801B7] ">
+              className="custom-prev h-[1.75rem] w-[1.75rem] lg:h-[2.2725rem] lg:w-[2.2725rem] rounded-full border-2 border-[#5801B7] text-[#5801B7]  text-[0.938rem] lg:text-[1.125rem]  flex justify-center items-center cursor-pointer ">
               <i className="fa-solid fa-angle-left"></i>
             </div>
             <div
-              className="custom-next w-[1.75rem] h-[1.75rem] lg:h-[2.2725rem] lg:w-[2.2725rem] rounded-full border-2 border-[#C4C4C4] text-[#C4C4C4]  text-[0.938rem] lg:text-[1.125rem] flex justify-center items-center cursor-pointer hover:border-[#5801B7] hover:text-[#5801B7]">
+              className="custom-next w-[1.75rem] h-[1.75rem] lg:h-[2.2725rem] lg:w-[2.2725rem] rounded-full border-2 border-[#5801B7] text-[#5801B7]  text-[0.938rem] lg:text-[1.125rem] flex justify-center items-center cursor-pointer ">
               <i className="fa-solid fa-angle-right"></i>
             </div>
           </div>
@@ -165,10 +131,10 @@ function Card({ item }) {
       {/* LEFT CONTENT */}
       <div className="flex flex-col w-[50%] justify-center">
      
-          <p className="text-[#3C3939] text-[18.4px] md:text-[14.96px] lg:text-[19.94px] xl:text-[24.15px] xl2:text-[1.83rem] font-medium break-words line-clamp-2 leading-none font-bricolage">
+          <p className="text-[#3C3939] text-[18.4px] md:text-[14.96px] lg:text-[19.94px] xl2:text-[24.15px] xl3:text-[1.83rem] font-medium break-words line-clamp-2 leading-none font-bricolage">
             {item.title}
           </p>
-         <p className="pt-[4px] lg:pt-[5.25px]  xl:pt-[6px] xl2:pt-[0.48rem] text-[#666] text-[12.6px] xm1:text-[14.3px] md:text-[11.96px] lg:text-[15.95px] xl:text-[19.3px]  font-normal leading-none md:leading-normal font-dm-sans line-clamp-5">{item.description}</p>
+         <p className="pt-[4px] lg:pt-[5.25px]  xl:pt-[6px] xl2:pt-[0.48rem] text-[#666] text-[12.6px] xm1:text-[14.3px] md:text-[11.96px] lg:text-[15.95px] xl2:text-[19.3px]  font-normal leading-none md:leading-[16px] lg:leading-[21px] xl2:leading-[25px] font-dm-sans line-clamp-5">{item.description}</p>
 
 
         <button
