@@ -9,7 +9,7 @@ export default function BusinessHeroSection() {
   return (
     <section className="max-w-[90rem] flex justify-center px-[12.5px]  md:px-[46.5px] lg:px-[60px] xl2:px-[175px] mx-auto my-[90px] lg:my-[120px] xl:my-[135px] xl2:my-[150px]">
      
-      <div className="max-w-[400px] md:max-w-full md:h-[328px] lg:h-[420px] xl2:h-[500px] xl3:h-[550px] pt-[30px] md:pt-0 flex flex-col items-center overflow-hidden rounded-[1.3125rem] lg:rounded-[1.875rem] border-[0.04375rem] lg:border border-[#DCD8FF] bg-[#f6f2fb]  md:flex-row">
+      <div className="max-w-[400px] md:max-w-full md:h-[328px] lg:h-[420px] xl2:h-[500px] xl3:h-[550px] pt-[30px] md:pt-0 flex flex-col items-center gap-[45px] md:gap-0 overflow-hidden rounded-[1.3125rem] lg:rounded-[1.875rem] border-[0.04375rem] lg:border border-[#DCD8FF] bg-[#f6f2fb]  md:flex-row">
 
         {/* LEFT CONTENT */}
         <div className="w-full md:w-[60%] px-[1.25rem] md:px-0 md:pl-[24px] lg:pl-[32px] xl2:pl-[36px]  xl3:pl-[45px]">

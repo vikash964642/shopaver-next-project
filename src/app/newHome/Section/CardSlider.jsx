@@ -113,7 +113,7 @@ const getStyle = (index) => {
             <button className='bg-[#FFF] mt-[1.25rem] lg:mt-[1.875rem] xl2:mt-[42px]  rounded-[0.5625rem] lg:rounded-[0.6875rem] h-[2.8125rem] w-[7.75rem] lg:h-[3.27rem] xl3:h-[76px] lg:w-[9.3125rem] xl3:w-[210px]  text-[0.833rem] lg:text-[1rem] xl2:text-[18.75px] xl3:text-[22.6px] text-[#525252] font-medium font-dm-sans'>Know More</button>
           </div>
           <div className="w-full md:w-[50%] md:h-full flex justify-center items-center ">
-            <Image src={"/img/CardSliderImg1.png"} alt="AI Flow Builder" height={400} width={400} className="w-full h-[14.5rem] md:h-[13.6rem] lg:h-[18.16rem] xl2:h-[22rem]" />
+            <Image src={"/newImage/CardSliderImg1.webp"} alt="AI Flow Builder" height={400} width={400} className="w-full h-[14.5rem] md:h-[13.6rem] lg:h-[18.16rem] xl2:h-[22rem]" />
           </div>
         </div>
 
@@ -124,7 +124,7 @@ const getStyle = (index) => {
           className="sticky w-full max-w-[400px] md:max-w-full md:h-[377px] lg:h-[42vw] xl2:h-[38vw]  xl3:h-[680px] px-[1.5625rem] pt-[2.5rem] pb-[4.3rem] md:pt-0 md:pb-0 md:px-[1.5rem] lg:px-[2.09375rem] xl2:px-[2.5rem] rounded-[1.875rem] border shadow-xl bg-[#128C7E] will-change-transform flex justify-between items-center gap-[4rem] md:gap-[2.2rem] flex-col-reverse md:flex-row overflow-hidden"
         >
           <div className="w-full md:w-[50%] md:h-full flex justify-center items-center ">
-            <Image src={"/img/CardSliderImg1.png"} alt="AI WhatsApp Inbox"  height={400} width={400} className="w-full h-[14.5rem] md:h-[13.6rem] lg:h-[18.16rem] xl2:h-[22rem]" />
+            <Image src={"/newImage/CardSliderImg2.webp"} alt="AI WhatsApp Inbox"  height={400} width={400} className="w-full h-[14.5rem] md:h-[13.6rem] lg:h-[18.16rem] xl2:h-[22rem]" />
           </div>
           <div className="w-full md:w-[50%] shrink-0">
             <h1 className='text-[#FFF] text-[1.125rem] md:text-[0.91rem] lg:text-[1.21rem] xl:text-[23.4px] xl2:text-[28.3px] font-semibold leading-normal font-bricolage'>AI WhatsApp Inbox</h1>
@@ -147,7 +147,7 @@ const getStyle = (index) => {
             <button className='mt-[1.25rem] lg:mt-[1.875rem] xl2:mt-[42px] bg-[#075E54] rounded-[0.5625rem] lg:rounded-[0.6875rem] h-[2.8125rem] w-[7.75rem] lg:h-[3.27rem] xl3:h-[76px] lg:w-[9.3125rem] xl3:w-[210px]  text-[0.833rem] lg:text-[1rem] xl2:text-[18.75px] xl3:text-[22.6px] text-[#FFF] font-medium font-dm-sans'>Know More</button>
           </div>
           <div className="w-full md:w-[50%] md:h-full flex justify-center items-center ">
-            <Image src={"/img/CardSliderImg1.png"} alt="WhatsApp Marketing" height={400} width={400} className="w-full h-[14.5rem] md:h-[13.6rem] lg:h-[18.16rem] xl2:h-[22rem]" />
+            <Image src={"/newImage/CardSliderImg3.webp"} alt="WhatsApp Marketing" height={400} width={400} className="w-full h-[14.5rem] md:h-[13.6rem] lg:h-[18.16rem] xl2:h-[22rem]" />
           </div>
         </div>
 
@@ -155,10 +155,10 @@ const getStyle = (index) => {
         <div
           ref={(el) => (refs.current[3] = el)}
           style={getStyle(3)}
-          className="sticky w-full max-w-[400px] md:max-w-full md:h-[377px] lg:h-[42vw] xl2:h-[38vw] xl3:h-[680px] px-[1.5625rem] pt-[2.5rem] pb-[4.3rem] md:pt-0 md:pb-0 md:px-[1.5rem] lg:px-[2.09375rem] xl2:px-[2.5rem] rounded-[1.875rem] border shadow-xl bg-[#ECE5DD] will-change-transform flex justify-between items-center gap-[4rem] md:gap-[2.2rem] flex-col md:flex-row overflow-hidden"
+          className="sticky w-full max-w-[400px] md:max-w-full md:h-[377px] lg:h-[42vw] xl2:h-[38vw] xl3:h-[680px] px-[1.5625rem] pt-[2.5rem] pb-[4.3rem] md:pt-0 md:pb-0 md:px-[1.5rem] lg:px-[2.09375rem] xl2:px-[2.5rem] rounded-[1.875rem] border shadow-xl bg-[#ECE5DD] will-change-transform flex justify-between items-center gap-[4rem] md:gap-[2.2rem] flex-col-reverse md:flex-row overflow-hidden"
         >
           <div className="w-full md:w-[50%] md:h-full flex justify-center items-center ">
-            <Image src={"/img/CardSliderImg1.png"} alt="WhatsApp Payments" height={400} width={400} className="w-full h-[14.5rem] md:h-[13.6rem] lg:h-[18.16rem] xl2:h-[22rem]"/>
+            <Image src={"/newImage/CardSliderImg4.webp"} alt="WhatsApp Payments" height={400} width={400} className="w-full h-[14.5rem] md:h-[13.6rem] lg:h-[18.16rem] xl2:h-[22rem]"/>
           </div>
           <div className="w-full md:w-[50%] shrink-0">
             <h1 className='text-[#525252] text-[1.125rem] md:text-[0.91rem] lg:text-[1.21rem] xl:text-[23.4px] xl2:text-[28.3px] font-semibold leading-normal font-bricolage'>WhatsApp Payments</h1>
@@ -172,10 +172,10 @@ const getStyle = (index) => {
         <div
           ref={(el) => (refs.current[4] = el)}
           style={getStyle(4)}
-          className="sticky w-full max-w-[400px] md:max-w-full md:h-[377px] lg:h-[42vw] xl2:h-[38vw]  xl3:h-[680px] px-[1.5625rem] pt-[2.5rem] pb-[4.3rem] md:pt-0 md:pb-0 md:px-[1.5rem] lg:px-[2.09375rem] xl2:px-[2.5rem] rounded-[1.875rem] border shadow-xl bg-[#FFF] will-change-transform flex justify-between items-center gap-[4rem] md:gap-[2.2rem] flex-col md:flex-row overflow-hidden"
+          className="sticky w-full max-w-[400px] md:max-w-full md:h-[377px] lg:h-[42vw] xl2:h-[38vw]  xl3:h-[680px] px-[1.5625rem] pt-[2.5rem] pb-[4.3rem] md:pt-0 md:pb-0 md:px-[1.5rem] lg:px-[2.09375rem] xl2:px-[2.5rem] rounded-[1.875rem] border shadow-xl bg-[#FFF] will-change-transform flex justify-between items-center gap-[4rem] md:gap-[2.2rem] flex-col-reverse md:flex-row overflow-hidden"
         >
           <div className="w-full md:w-[50%] md:h-full flex justify-center items-center ">
-            <Image src={"/img/CardSliderImg1.png"} alt="QR Code" height={400} width={400} className="w-full h-[14.5rem] md:h-[13.6rem] lg:h-[18.16rem] xl2:h-[22rem]" />
+            <Image src={"/newImage/CardSliderImg5.webp"} alt="QR Code" height={400} width={400} className="w-auto h-[14.5rem] md:h-[13.6rem] lg:h-[18.16rem] xl2:h-[22rem]" />
           </div>
           <div className="w-full md:w-[50%] shrink-0">
             <h1 className='text-[#525252] text-[1.125rem] md:text-[0.91rem] lg:text-[1.21rem] xl:text-[23.4px] xl2:text-[28.3px] font-semibold leading-normal font-bricolage'>QR Code</h1>

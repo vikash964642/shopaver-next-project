@@ -8,32 +8,51 @@ function WhatsappBlueTickSlider() {
   const col2 = useRef(null);
   const mobileSlider1 = useRef(null);
 const mobileSlider2 = useRef(null);
+const col1Tween = useRef(null);
+const col2Tween = useRef(null);
 
-  const images1 = [
-    "newImage/businessHeroSection.webp",
-    "newImage/businessWhatsappHeroSection.webp",
-    "newImage/inventory_management_grid.webp",
-    "newImage/online_inventory_grid.webp",
-  ];
+const mobileTween1 = useRef(null);
+const mobileTween2 = useRef(null);
 
-  const images2 = [
-    "newImage/businessWhatsappHeroSection.webp",
-    "newImage/online_inventory_grid.webp",
-    "newImage/inventory_management_grid.webp",
-     "newImage/businessHeroSection.webp",
-    
-  ];
+const sliderData1=[
+  {
+    title:"Educational Institute",
+    Image:"newImage/WhatsappBlueTickSliderImg1.webp"
+  },
+    {
+    title:"Restaurant",
+    Image:"newImage/WhatsappBlueTickSliderImg2.webp"
+  },
+    {
+    title:"E-Commerce",
+    Image:"newImage/WhatsappBlueTickSliderImg3.webp"
+  },
+]
+const sliderData2=[
+  {
+    title:"Financial Services",
+    Image:"newImage/WhatsappBlueTickSliderImg4.webp"
+  },
+    {
+    title:"Travel Agencies",
+    Image:"newImage/WhatsappBlueTickSliderImg5.webp"
+  },
+    {
+    title:"Educational Institutions",
+    Image:"newImage/WhatsappBlueTickSliderImg6.webp"
+  },
+]
 
 
 
-useGSAP(() => {
-  const col1Height =
-    col1.current.scrollHeight / 2;
+// useGSAP(() => {
+//   const col1Height =
+//     col1.current.scrollHeight / 2;
 
-  const col2Height =
-    col2.current.scrollHeight / 2;
-// MOBILE HORIZONTAL
-// MOBILE ROW 1
+//   const col2Height =
+//     col2.current.scrollHeight / 2;
+
+// // MOBILE ROW 1
 // const mobileWidth1 =
 //   mobileSlider1.current.scrollWidth / 2;
 
@@ -41,12 +60,14 @@ useGSAP(() => {
 //   mobileSlider1.current,
 //   {
 //     x: 0,
+//     force3D: true,
 //   },
 //   {
 //     x: -mobileWidth1,
 //     duration: 18,
 //     ease: "none",
 //     repeat: -1,
+//     force3D: true,
 //   }
 // );
 
@@ -58,82 +79,161 @@ useGSAP(() => {
 //   mobileSlider2.current,
 //   {
 //     x: -mobileWidth2,
+//     force3D: true,
 //   },
 //   {
 //     x: 0,
 //     duration: 18,
 //     ease: "none",
 //     repeat: -1,
+//     force3D: true,
 //   }
 // );
-// MOBILE ROW 1
-const mobileWidth1 =
-  mobileSlider1.current.scrollWidth / 2;
-
-gsap.fromTo(
-  mobileSlider1.current,
-  {
-    x: 0,
-    force3D: true,
-  },
-  {
-    x: -mobileWidth1,
-    duration: 18,
-    ease: "none",
-    repeat: -1,
-    force3D: true,
-  }
-);
-
-// MOBILE ROW 2
-const mobileWidth2 =
-  mobileSlider2.current.scrollWidth / 2;
-
-gsap.fromTo(
-  mobileSlider2.current,
-  {
-    x: -mobileWidth2,
-    force3D: true,
-  },
-  {
-    x: 0,
-    duration: 18,
-    ease: "none",
-    repeat: -1,
-    force3D: true,
-  }
-);
 
 
-//For Big Screen
-  // COLUMN 1
-  gsap.fromTo(
-    col1.current,
-    {
-      y: 0,
-    },
-    {
-      y: -col1Height,
-      duration: 15,
-      ease: "none",
-      repeat: -1,
-    }
-  );
+// //For Big Screen
+//   // COLUMN 1
+//   gsap.fromTo(
+//     col1.current,
+//     {
+//       y: 0,
+//     },
+//     {
+//       y: -col1Height,
+//       duration: 15,
+//       ease: "none",
+//       repeat: -1,
+//     }
+//   );
 
-  // COLUMN 2
-  gsap.fromTo(
-    col2.current,
-    {
-      y: -col2Height,
-    },
-    {
-      y: 0,
-      duration: 15,
-      ease: "none",
-      repeat: -1,
-    }
-  );
-});
+//   // COLUMN 2
+//   gsap.fromTo(
+//     col2.current,
+//     {
+//       y: -col2Height,
+//     },
+//     {
+//       y: 0,
+//       duration: 15,
+//       ease: "none",
+//       repeat: -1,
+//     }
+//   );
+// });
+
+useGSAP(() => {
+  if (
+    !col1.current ||
+    !col2.current ||
+    !mobileSlider1.current ||
+    !mobileSlider2.current
+  )
+    return;
+
+  const ctx = gsap.context(() => {
+    // MOBILE ROW 1
+    const mobileWidth1 =
+      mobileSlider1.current.scrollWidth / 2;
+
+    mobileTween1.current = gsap.to(
+      mobileSlider1.current,
+      {
+        x: -mobileWidth1,
+        duration: 20,
+        ease: "none",
+        repeat: -1,
+        force3D: true,
+      }
+    );
+
+    // MOBILE ROW 2
+    const mobileWidth2 =
+      mobileSlider2.current.scrollWidth / 2;
+
+    mobileTween2.current = gsap.fromTo(
+      mobileSlider2.current,
+      {
+        x: -mobileWidth2,
+      },
+      {
+        x: 0,
+        duration: 20,
+        ease: "none",
+        repeat: -1,
+        force3D: true,
+      }
+    );
+
+    // DESKTOP COLUMN 1
+    const col1Height =
+      col1.current.scrollHeight / 2;
+
+    col1Tween.current = gsap.to(
+      col1.current,
+      {
+        y: -col1Height,
+        duration: 30,
+        ease: "none",
+        repeat: -1,
+        force3D: true,
+      }
+    );
+
+    // DESKTOP COLUMN 2
+    const col2Height =
+      col2.current.scrollHeight / 2;
+
+    col2Tween.current = gsap.fromTo(
+      col2.current,
+      {
+        y: -col2Height,
+      },
+      {
+        y: 0,
+        duration: 30,
+        ease: "none",
+        repeat: -1,
+        force3D: true,
+      }
+    );
+  });
+
+  return () => {
+    ctx.revert();
+  };
+}, []);
+
+const pauseCol1 = () => {
+  col1Tween.current?.pause();
+};
+
+const resumeCol1 = () => {
+  col1Tween.current?.play();
+};
+
+const pauseCol2 = () => {
+  col2Tween.current?.pause();
+};
+
+const resumeCol2 = () => {
+  col2Tween.current?.play();
+};
+
+const pauseMobile1 = () => {
+  mobileTween1.current?.pause();
+};
+
+const resumeMobile1 = () => {
+  mobileTween1.current?.play();
+};
+
+const pauseMobile2 = () => {
+  mobileTween2.current?.pause();
+};
+
+const resumeMobile2 = () => {
+  mobileTween2.current?.play();
+};
   return (
     <section className='bg-[#5801B7]'>
         <div className='max-w-[1440px] mx-auto pt-[66px] pb-[85px] md:py-0  md:px-[47px] xl2:px-[110px] xl3:px-[70px] mt-[90px] lg:mt-[130px] xl3:mt-[150px]'>
@@ -155,21 +255,23 @@ gsap.fromTo(
         </div>
 
         {/* RIGHT */}
-        <div className="w-full md:w-[47%] hidden md:flex gap-5 md:h-[450px] lg:h-[590px] xl2:h-[750px] overflow-hidden">
+        <div className="w-full md:w-[47%] hidden md:flex md:gap-4 lg:gap-[20px] xl2:gap-[25px] xl3:gap-[30px] md:h-[450px] lg:h-[600px] xl3:h-[750px] overflow-hidden">
 
           {/* COLUMN 1 */}
-          <div className="w-1/2 overflow-hidden">
-            <div ref={col1} className="flex flex-col gap-5">
+          <div className=" overflow-hidden">
+            <div ref={col1} className="flex flex-col md:gap-[13px] lg:gap-[16px] xl2:gap-[20px] xl3:gap-[24px]">
               
-              {[...images1, ...images1].map((img, i) => (
+              {[...sliderData1, ...sliderData1].map((data, i) => (
                 <div
-                  key={i}
-                  className="bg-white rounded-3xl p-2"
+                  key={i} onMouseEnter={pauseCol1}
+  onMouseLeave={resumeCol1}
+                  className="bg-white border-[1.1px] border-[#EFE0FF] md:rounded-[13px] lg:rounded-[17px] xl2:rounded-[22px] xl3:rounded-[27px] md:w-[131px] md:h-[182px] lg:w-[171px] lg:h-[238px] xl2:w-[221px] xl2:h-[307px] xl3:w-[276px] xl3:h-[382px] md:px-[4px] md:pt-[6px] md:pb-[10px] xl2:px-[6px] xl2:pt-[6px] xl2:pb-[15px] flex flex-col justify-between items-center"
                 >
                   <img
-                    src={img}
-                    className="w-full h-[250px] object-cover rounded-2xl"
+                    src={data.Image}
+                    className="w-full md:h-[150px] lg:h-[195.5px] xl2:h-[251px] xl3:h-[314px] object-cover md:rounded-[11.5px] lg:rounded-[15px] xl2:rounded-[20px] xl3:rounded-[25px]"
                   />
+                  <p className="md:text-[11px] lg:text-[14px] xl2:text-[18px] xl3:text-[22.5px] text-[#3C3939] font-medium">{data.title}</p>
                 </div>
               ))}
 
@@ -177,18 +279,20 @@ gsap.fromTo(
           </div>
 
           {/* COLUMN 2 */}
-          <div className="w-1/2 overflow-hidden">
-            <div ref={col2} className="flex flex-col gap-5">
+          <div className=" overflow-hidden">
+            <div ref={col2} className="flex flex-col md:gap-[13px] lg:gap-[16px] xl2:gap-[20px] xl3:gap-[24px]">
               
-              {[...images2, ...images2].map((img, i) => (
+             {[...sliderData2, ...sliderData2].map((data, i) => (
                 <div
-                  key={i}
-                  className="bg-white rounded-3xl p-2"
+                  key={i} onMouseEnter={pauseCol2}
+  onMouseLeave={resumeCol2}
+                  className="bg-white border-[1.1px] border-[#EFE0FF] md:rounded-[13px] lg:rounded-[17px] xl2:rounded-[22px] xl3:rounded-[27px] md:w-[131px] md:h-[182px] lg:w-[171px] lg:h-[238px] xl2:w-[221px] xl2:h-[307px] xl3:w-[276px] xl3:h-[382px] md:px-[4px] md:pt-[6px] md:pb-[10px] xl2:px-[6px] xl2:pt-[6px] xl2:pb-[15px] flex flex-col justify-between items-center"
                 >
                   <img
-                    src={img}
-                    className="w-full h-[250px] object-cover rounded-2xl"
+                    src={data.Image}
+                    className="w-full md:h-[150px] lg:h-[195.5px] xl2:h-[251px] xl3:h-[314px] object-cover md:rounded-[11.5px] lg:rounded-[15px] xl2:rounded-[20px] xl3:rounded-[25px]"
                   />
+                  <p className="md:text-[11px] lg:text-[14px] xl2:text-[18px] xl3:text-[22.5px] text-[#3C3939] font-medium">{data.title}</p>
                 </div>
               ))}
 
@@ -204,37 +308,45 @@ gsap.fromTo(
   <div className="overflow-hidden">
     <div
       ref={mobileSlider1}
-      className="flex gap-4 will-change-transform"
+      className="flex gap-2 will-change-transform"
     >
-      {[...images1, ...images1].map((img, i) => (
-        <div
-          key={i}
-          className="min-w-[240px] bg-white rounded-[22px] p-2 shrink-0"
+      {[...sliderData1, ...sliderData1].map((item, i) => (
+       <div
+          key={i} 
+          onTouchStart={pauseMobile1}
+    onTouchEnd={resumeMobile1}
+    onTouchCancel={resumeMobile1}
+          className="w-[151px] h-[209px] border-[1.1px] border-[#EFE0FF] bg-white rounded-[15px] px-[3.5px] pt-[3.5px] pb-[8.5px] shrink-0 flex flex-col justify-between items-center"
         >
           <img
-            src={img}
-            className="w-full h-[220px] object-cover rounded-[18px]"
+            src={item.Image}
+            className="w-full h-[171px] object-cover rounded-[13.7px]"
           />
+          <p className="text-[12.4px] text-[#3C3939] font-medium">{item.title}</p>
         </div>
       ))}
     </div>
   </div>
 
   {/* ROW 2 */}
-  <div className="overflow-hidden mt-[28px]">
+  <div className="overflow-hidden mt-[25px]">
     <div
       ref={mobileSlider2}
-      className="flex gap-4 will-change-transform"
+      className="flex gap-2 will-change-transform"
     >
-      {[...images2, ...images2].map((img, i) => (
+      {[...sliderData2, ...sliderData2].map((item, i) => (
         <div
           key={i}
-          className="min-w-[240px] bg-white rounded-[22px] p-2 shrink-0"
+          onTouchStart={pauseMobile2}
+    onTouchEnd={resumeMobile2}
+    onTouchCancel={resumeMobile2}
+          className="w-[151px] h-[209px] border-[1.1px] border-[#EFE0FF] bg-white rounded-[15px] px-[3.5px] pt-[3.5px] pb-[8.5px] shrink-0 flex flex-col justify-between items-center"
         >
           <img
-            src={img}
-            className="w-full h-[220px] object-cover rounded-[18px]"
+            src={item.Image}
+            className="w-full h-[171px] object-cover rounded-[13.7px]"
           />
+          <p className="text-[12.4px] text-[#3C3939] font-medium">{item.title}</p>
         </div>
       ))}
     </div>

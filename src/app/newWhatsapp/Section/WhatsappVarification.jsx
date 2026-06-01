@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Image from 'next/image'
 function WhatsappVarification() {
   return (
     <section className='max-w-[1440px] mx-auto px-[27px] md:px-[47px] xl2:px-[110px] xl3:px-[70px] mt-[90px] lg:mt-[130px] xl3:mt-[150px]'>
@@ -8,13 +8,15 @@ function WhatsappVarification() {
             <h2 className='md:w-[350px] lg:w-[470px] xl2:w-[550px] xl3:w-[650px] text-center text-[#3C3939] text-[28.5px] md:text-[26.2px] lg:text-[34.3px] xl2:text-[44.3px] xl3:text-[55px] font-semibold font-bricolage leading-none'>Our <span className='text-[#06AAFF]'>WhatsApp Blue Tick</span> Verification Process</h2>
             <p className='max-w-[325px] lg:max-w-[420px] xl3:max-w-[580px] text-center text-[#666] text-[13.2px] lg:text-[15.4px] xl2:text-[19.9px] xl3:text-[24.8px] font-normal leading-none'>We simplify the entire verification process so your business can get verified faster.</p>
         </div>
-        <div className="mt-[38px] md:mt-[70px] xl2:mt-[90px] xl3:mt-[120px] flex flex-col gap-[70px] md:gap-[64px] lg:gap-[75px] xl3:gap-[95px]">
+        <div className="mt-[38px] md:mt-[70px] xl2:mt-[90px] xl3:mt-[120px] flex flex-col gap-[65px] md:gap-[64px] lg:gap-[75px] xl3:gap-[95px]">
 
   {/* STEP 01 */}
-  <div className="flex flex-col md:flex-row items-center justify-center gap-[19px] md:gap-[50px] w-full">
+  <div className="flex flex-col md:flex-row xm1:items-center justify-center gap-[19px] md:gap-[50px] w-full">
 
     {/* BOX */}
-    <div className="w-[90%] xm1:w-[333px] h-[229.3px] md:w-[284px] md:h-[197px] lg:w-[371px] lg:h-[258px] xl2:w-[478.5px] xl2:h-[333.33px] xl3:w-[596px] xl3:h-[414.5px] bg-[#F6F6FF] rounded-[27px]" />
+    <div className="w-[100%] xm1:w-[333px] h-[229.3px] md:w-[284px] md:h-[197px] lg:w-[371px] lg:h-[258px] xl2:w-[478.5px] xl2:h-[333.33px] xl3:w-[596px] xl3:h-[414.5px] bg-[#F6F6FF] rounded-[27px]" >
+      <Image src={"/newImage/WhatsappVarificationImg1.webp"} height={400} width={400} className='h-full w-full'/>
+      </div>
 
     {/* TEXT */}
     <div className="w-[90%] xm1:w-[333px] md:w-[284px] lg:w-[371px] xl2:w-[478.5px] xl3:w-[596px]">
@@ -33,10 +35,10 @@ function WhatsappVarification() {
   </div>
 
   {/* STEP 02 */}
-  <div className="flex flex-col md:flex-row items-center justify-center gap-[50px] w-full">
+  <div className="flex flex-col-reverse md:flex-row xm1:items-center justify-center gap-[19px] md:gap-[50px] w-full">
 
     {/* TEXT */}
-    <div className="order-2 md:order-1 w-[90%] xm1:w-[333px] md:w-[284px] lg:w-[371px] xl2:w-[478.5px] xl3:w-[596px]">
+    <div className="  xm1:w-[333px] md:w-[284px] lg:w-[371px] xl2:w-[478.5px] xl3:w-[596px]">
       <div className="md:w-[66px] md:h-[29px] lg:w-[83px] lg:h-[38px] xl2:w-[97px] xl2:h-[44px]xl2:w-[97px] xl2:h-[44px] border border-[#D9D9FF] md:rounded-[9px] xl2:rounded-[11px] bg-[#F8F8FF] hidden md:flex justify-center items-center">
         <p className="text-[#5801B7] md:text-[12px] lg:text-[14px] xl2:text-[16px] font-medium">Step 02</p>
       </div>
@@ -51,17 +53,21 @@ function WhatsappVarification() {
     </div>
 
     {/* BOX */}
-    <div className="order-1 md:order-2 w-[90%] xm1:w-[333px] h-[229.3px] md:w-[284px] md:h-[197px] lg:w-[371px] lg:h-[258px] xl2:w-[478.5px] xl2:h-[333.33px] xl3:w-[596px] xl3:h-[414.5px] bg-[#F6F6FF] rounded-[27px]" />
+     <div className="w-[100%] xm1:w-[333px] h-[229.3px] md:w-[284px] md:h-[197px] lg:w-[371px] lg:h-[258px] xl2:w-[478.5px] xl2:h-[333.33px] xl3:w-[596px] xl3:h-[414.5px] bg-[#F6F6FF] rounded-[27px]" >
+      <Image src={"/newImage/WhatsappVarificationImg2.webp"} height={400} width={400} className='h-full w-full'/>
+      </div>
   </div>
 
   {/* STEP 03 */}
-  <div className="flex flex-col md:flex-row items-center justify-center gap-[50px] w-full">
+  <div className="flex flex-col md:flex-row xm1:items-center justify-center gap-[19px] md:gap-[50px] w-full">
 
     {/* BOX */}
-    <div className="w-[90%] xm1:w-[333px] h-[229.3px] md:w-[284px] md:h-[197px] lg:w-[371px] lg:h-[258px] xl2:w-[478.5px] xl2:h-[333.33px] xl3:w-[596px] xl3:h-[414.5px] bg-[#F6F6FF] rounded-[27px]" />
+    <div className="w-[100%] xm1:w-[333px] h-[229.3px] md:w-[284px] md:h-[197px] lg:w-[371px] lg:h-[258px] xl2:w-[478.5px] xl2:h-[333.33px] xl3:w-[596px] xl3:h-[414.5px] bg-[#F6F6FF] rounded-[27px]" >
+      <Image src={"/newImage/WhatsappVarificationImg3.webp"} height={400} width={400} className='h-full w-full'/>
+      </div>
 
     {/* TEXT */}
-    <div className="w-[90%] xm1:w-[333px] md:w-[284px] lg:w-[371px] xl2:w-[478.5px] xl3:w-[596px]">
+    <div className=" xm1:w-[333px] md:w-[284px] lg:w-[371px] xl2:w-[478.5px] xl3:w-[596px]">
   <div className="md:w-[66px] md:h-[29px] lg:w-[83px] lg:h-[38px] xl2:w-[97px] xl2:h-[44px]xl2:w-[97px] xl2:h-[44px] border border-[#D9D9FF] md:rounded-[9px] xl2:rounded-[11px] bg-[#F8F8FF] hidden md:flex justify-center items-center">
         <p className="text-[#5801B7] md:text-[12px] lg:text-[14px] xl2:text-[16px] font-medium">Step 03</p>
       </div>
@@ -77,10 +83,10 @@ function WhatsappVarification() {
   </div>
 
   {/* STEP 04 */}
-  <div className="flex flex-col md:flex-row items-center justify-center gap-[50px] w-full">
+  <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-[19px] md:gap-[50px] w-full">
 
     {/* TEXT */}
-    <div className="order-2 md:order-1 w-[90%] xm1:w-[333px] md:w-[284px] lg:w-[371px] xl2:w-[478.5px] xl3:w-[596px]">
+    <div className=" w-[90%] xm1:w-[333px] md:w-[284px] lg:w-[371px] xl2:w-[478.5px] xl3:w-[596px]">
        <div className="md:w-[66px] md:h-[29px] lg:w-[83px] lg:h-[38px] xl2:w-[97px] xl2:h-[44px]xl2:w-[97px] xl2:h-[44px] border border-[#D9D9FF] md:rounded-[9px] xl2:rounded-[11px] bg-[#F8F8FF] hidden md:flex justify-center items-center">
         <p className="text-[#5801B7] md:text-[12px] lg:text-[14px] xl2:text-[16px] font-medium">Step 04</p>
       </div>
@@ -95,7 +101,9 @@ function WhatsappVarification() {
     </div>
 
     {/* BOX */}
-    <div className="order-1 md:order-2 w-[90%] xm1:w-[333px] h-[229.3px] md:w-[284px] md:h-[197px] lg:w-[371px] lg:h-[258px] xl2:w-[478.5px] xl2:h-[333.33px] xl3:w-[596px] xl3:h-[414.5px] bg-[#F6F6FF] rounded-[27px]" />
+    <div className="w-[100%] xm1:w-[333px] h-[229.3px] md:w-[284px] md:h-[197px] lg:w-[371px] lg:h-[258px] xl2:w-[478.5px] xl2:h-[333.33px] xl3:w-[596px] xl3:h-[414.5px] bg-[#F6F6FF] rounded-[27px]" >
+      <Image src={"/newImage/WhatsappVarificationImg4.webp"} height={400} width={400} className='h-full w-full'/>
+      </div>
   </div>
 
 </div>
