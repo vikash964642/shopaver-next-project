@@ -130,6 +130,11 @@ function FinalFooter() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/whatsApp-business-suite" onClick={ScrollTop}>
+                    WhatsApp Business Suite
+                  </Link>
+                </li>
+                <li>
                   <Link href="/whatsapp-commerce" onClick={ScrollTop}>
                     Whatsapp Commerce
                   </Link>
