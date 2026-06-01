@@ -30,11 +30,11 @@ useGSAP(
   );
   return (
     <section ref={container} className=" bg-[#F8F8FF]">
-  <div className="max-w-5xl mx-auto pt-[75px]">
+  <div className="max-w-[1440px] mx-auto xl2:pt-[150px] lg:pt-[110px] md:pt-[85px] pt-[65px]">
    
        <div className="flex flex-col items-center gap-[20px]">
-      <h2 className="w-[276px] lg:w-[511px] text-center text-[#5801B7] text-[30px] lg:text-[40px] font-bold leading-normal font-bricolage">Get Verified with WhatsApp Blue Tick</h2>
-      <p className="w-[313px] lg:w-[575px] text-[#666] text-center text-[14px] lg:text-[18px] font-normal leading-normal font-dm-sans">With WhatsApp Blue Tick verification, your brand stands out, gains customer trust, and improves engagement across conversations.</p>
+      <h2 className="w-[285px] lg:w-[clamp(440px,40vw,700px)] text-center text-[#5801B7] text-[28.5px] lg:text-[clamp(34.4px,3vw,44.3px)] xl2:text-[clamp(44.3px,3vw,55px)] font-bold leading-none font-bricolage">Get Verified with WhatsApp Blue Tick</h2>
+      <p className="w-[301px] lg:w-[clamp(482px,50vw,850px)] text-[#666] text-center text-[13.3px] lg:text-[clamp(15.48px,1.5vw,19.94px)] xl2:text-[clamp(19.94px,1.45vw,24.8px)] font-normal leading-none font-dm-sans">With WhatsApp Blue Tick verification, your brand stands out, gains customer trust, and improves engagement across conversations.</p>
      </div>
      <div className="flex justify-center items-center gap-[10px] mt-[30px]">
       <Link href="https://app.shopaver.com/Sign-up">

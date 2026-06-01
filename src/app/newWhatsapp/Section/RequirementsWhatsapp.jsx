@@ -67,12 +67,12 @@ const arrayData=[
 ]
 function RequirementsWhatsapp() {
   return (
-    <section className='max-w-5xl mx-auto mt-[80px]'>
+    <section className='max-w-[1440px] mx-auto px-[15px] md:px-[47px] xl2:px-[110px] xl3:px-[70px] mt-[80px]'>
         <div>
-         <h2 className='max-w-[410px] lg:max-w-[527px] px-[15px] sm:px-0 mx-auto text-[30px] lg:text-[40px] text-[#3C3939] font-bold font-bricolage text-center'>Requirements to Apply for <span className='text-[#06AAFF]'>WhatsApp Blue Tick</span></h2>
+         <h2 className='max-w-[410px] lg:max-w-[527px] xl3:max-w-[730px] px-[15px] sm:px-0 mx-auto text-[28.5px] md:text-[clamp(26.2px,3.35vw,34.4px)] lg:text-[clamp(34.4px,2.6vw,44.3px)] xl2:text-[clamp(44.3px,3vw,55px)] text-[#3C3939] leading-none font-bold font-bricolage text-center'>Requirements to Apply for <span className='text-[#06AAFF]'>WhatsApp Blue Tick</span></h2>
          <p className='max-w-[450px] lg:max-w-[737px] px-[30px] sm:px-0 pt-[20px] text-[14px] lg:text-[18px] text-[#666] font-normal text-center mx-auto'>Getting the WhatsApp Blue Tick verification ensures your business account is authentic, credible, and trustworthy. To qualify, your account must meet the following criteria:</p>   
         </div>
-      <div className='grid grid-cols-2 lg:grid-cols-3 mt-[60px] lg:mt-[47px]'>
+      <div className='grid grid-cols-2 md:grid-cols-3 mt-[60px] lg:mt-[47px]'>
         {arrayData.map((item, i) => {
           const totalCols2 = 2;
           const totalCols3 = 3;
@@ -90,23 +90,23 @@ function RequirementsWhatsapp() {
           return (
             <div
               key={i}
-              className={`px-[22px] py-[40px] lg:px-[35px] lg:py-[35px] border-[#E3E3FF] hover:bg-[#F8F8FF]
+              className={`px-[18px] xm1:px-[24px] py-[35px] lg:px-[35px]  border-[#E3E3FF] hover:bg-[#F8F8FF] 
   ${!isLastCol2 ? "border-r-[1px]" : ""}
   ${isFirstRow2 ? "border-t-[1px]" : ""}
   border-b-[1px]
 
-  ${!isLastCol3 ? "lg:border-r-[1px]" : "lg:border-r-0"}
-  ${isFirstRow3 ? "lg:border-t-[1px]" : ""}
-  lg:border-b-[1px]
+  ${!isLastCol3 ? "md:border-r-[1px]" : "md:border-r-0"}
+  ${isFirstRow3 ? "md:border-t-[1px]" : ""}
+  md:border-b-[1px]
 `}
             >
               <div className="">
                 <Image className={`${item.iconHeight} ${item.iconWidth}`} src={item.icon} height={24} width={24} alt="Icon"></Image>
               </div>
-              <h3 className="pt-[12px] lg:pt-[15px] text-[17.66px] lg:text-[22px] font-semibold text-[#5801B7] font-bricolage lg:leading-[26.4px]">
+              <h3 className="xm2:w-[85%] sm:w-[60%] md:w-[80%] lg:w-[90%] xl:w-[60%] pt-[11px] lg:pt-[15px] text-[16.8px] lg:text-[22px] font-semibold text-[#5801B7] font-bricolage lg:leading-[26.4px]">
                 {item.title}
               </h3>
-              <p className="lg:w-[80%] pt-[5px] lg:pt-[10px] text-[11.2px] lg:text-[14px] text-[#666] font-medium lg:font-normal leading-[22px] font-dm-sans">
+              <p className="xm2:w-[90%] sm:w-[70%] md:w-[90%] lg:w-[85%] xl:w-[70%] pt-[5px] lg:pt-[10px] text-[11px] lg:text-[14px] text-[#666] font-medium lg:font-normal leading-[22px] font-dm-sans">
                 {item.description}
               </p>
             </div>

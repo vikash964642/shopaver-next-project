@@ -13,7 +13,7 @@ const logos = [
 
 function HomeSlider() {
   return (
-    <section className="lg:max-w-5xl xl:max-w-[76.25rem] xl2:max-w-[90rem]  mx-auto  mt-[7.5rem]">
+    <section className="max-w-[90rem]  mx-auto xl2:px-[103px] xl3:px-0  mt-[7.5rem]">
       <div className="">
       <h3 className="hidden md:block text-[#393939] text-[1.42rem] md:text-[18px] lg:text-[24px] xl:text-[29px] xl2:text-[35.11px] font-medium text-center font-bricolage">
         Trusted by Growing Businesses Across India

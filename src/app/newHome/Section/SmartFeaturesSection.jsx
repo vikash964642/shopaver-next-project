@@ -47,10 +47,10 @@ function FeatureCard({ item }) {
       {/* Text Content */}
       <div className="md:px-[18.3px] lg:px-[23px] xl:px-[28px] xl2:px-[35.5px] md:pt-[25.5px] lg:pt-[33px] xl:pt-[40px] xl2:pt-[3rem] pb-[1.25rem] w-[93%]">
         <p className="text-[#5801B7] md:text-[13.2px] lg:text-[17.6px] xl:text-[21.3px] xl2:text-[25.7px] font-semibold mb-[0.375rem] font-bricolage">{item.title}</p>
-        <h3 className="text-[2.4038rem] md:text-[20.5px] lg:text-[27.35px] xl:text-[33.12px] xl2:text-[40px] leading-[2.125rem] xl2:leading-[41px] font-medium text-[#3C3939] font-bricolage">
+        <h3 className="text-[2.4038rem] md:text-[20.5px] lg:text-[27.35px] xl2:text-[33.12px] xl3:text-[40px]  md:leading-[22px] lg:leading-[29.3px] xl2:leading-[35px] xl3:leading-[41px] font-medium text-[#3C3939] font-bricolage">
           {item.heading}
         </h3>
-        <p className="mt-[0.75rem] md:text-[11.8px] lg:text-[15.4px] xl:text-[18.9px] xl2:text-[22.86px] text-[#666666] leading-normal font-dm-sans">
+        <p className="mt-[0.75rem] md:text-[12px] lg:text-[15.4px] xl2:text-[18.9px] xl3:text-[22.86px] text-[#666666] leading-none font-dm-sans">
           {item.description}
         </p>
       </div>
@@ -118,10 +118,10 @@ function FullWidthCard({ item }) {
           <p className="text-[#5801B7] md:text-[13.2px] lg:text-[17.6px] xl:text-[21.3px] xl2:text-[25.7px] font-medium mb-2 font-bricolage">
             {item.title}
           </p>
-          <h3 className="md:text-[20.5px] lg:text-[27.35px] xl:text-[33.12px] xl2:text-[40px] leading-[1.875rem] font-medium text-[#3C3939] font-bricolage">
+          <h3 className="text-[2.4038rem] md:text-[20.5px] lg:text-[27.35px] xl2:text-[33.12px] xl3:text-[40px]  md:leading-[22px] lg:leading-[29.3px] xl2:leading-[35px] xl3:leading-[41px] font-medium text-[#3C3939] font-bricolage">
             {item.heading}
           </h3>
-          <p className="mt-4 md:text-[11.8px] lg:text-[15.4px] xl:text-[18.9px] xl2:text-[22.86px] text-[#666] leading-relaxed font-dm-sans">
+          <p className="mt-4 md:text-[12px] lg:text-[15.4px] xl2:text-[18.9px] xl3:text-[22.86px] text-[#666666] leading-none font-dm-sans">
             {item.description}
           </p>
          
@@ -351,15 +351,15 @@ const getResetStyle = (index) => {
 };
   return (
     <>
-        <section className="lg:max-w-5xl xl:max-w-[76.25rem] xl2:max-w-[90rem] md:px-[32px] lg:px-[47px] xl:px-[40px] xl2:px-[35px] mx-auto mt-[7.5rem] hidden md:block">
+        <section className="max-w-[90rem] md:px-[32px] lg:px-[47px] xl2:px-[150px] xl3:px-[42px] mx-auto mt-[7.5rem] hidden md:block">
       <div className=" flex flex-col gap-6 items-center">
         {/* Row 1 — 701 : 568 */}
-        <div className="grid grid-cols-[1.23fr_1fr] md:gap-[19px] lg:gap-[26px] xl:gap-[31px] xl2:gap-[38.5px]">
+        <div className="grid grid-cols-[1.23fr_1fr] md:gap-[19px] lg:gap-[26px] xl2:gap-[31px] xl3:gap-[38.5px]">
           <FeatureCard item={features[0]} />
           <FeatureCard item={features[1]} />
         </div>
         {/* Row 2 — 568 : 701 (flipped) */}
-        <div className="grid grid-cols-[1fr_1.23fr] md:gap-[19px] lg:gap-[26px] xl:gap-[31px] xl2:gap-[38.5px]">
+        <div className="grid grid-cols-[1fr_1.23fr] md:gap-[19px] lg:gap-[26px] xl2:gap-[31px] xl3:gap-[38.5px]">
           <FeatureCard item={features[2]} />
           <FeatureCard item={features[3]} />
         </div>
