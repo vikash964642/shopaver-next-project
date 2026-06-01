@@ -106,8 +106,8 @@ const features = [
 
 function FlowBuilderAnimation() {
   return (
-    <section className="w-full py-14 md:py-24">
-      <div className="mx-auto flex max-w-7xl flex-col gap-10 px-4 sm:px-6 lg:px-8">
+    <section className="xl2:max-w-[1220px] xl3:max-w-[90rem] mx-auto  py-14 md:py-24 md:px-[65px] lg:px-[93px] xl2:px-[60px]  xl3:px-[72px]">
+      <div className=" flex  flex-col gap-10 ">
         {features.map((item, index) => (
           <motion.div
             key={index}
@@ -130,17 +130,17 @@ function FlowBuilderAnimation() {
               {/* CONTENT */}
               <div className="content">
                 {/* TAG */}
-                <span className="text-xs font-medium uppercase tracking-wide text-[#5801B7] md:text-[1.3rem]">
+                <span className="text-xs font-medium uppercase tracking-wide text-[#5801B7] text-[16px] md:text-[14px] lg:text-[16px] xl2:text-[21px] xl3:text-[24.75px]">
                   {item.tag}
                 </span>
 
                 {/* TITLE */}
-                <h2 className="mt-3 max-w-[28rem] text-2xl font-bold text-[#3C3939] sm:text-3xl md:text-[38px] md:leading-[38px]">
+                <h2 className="mt-3 max-w-[28rem] text-2xl font-bold text-[#3C3939] sm:text-3xl text-[25px] md:text-[22px] lg:text-[28.5px] xl2:text-[38px] xl3:text-[44.5px] md:leading-[38px] font-bricolage">
                   {item.title}
                 </h2>
 
                 {/* DESCRIPTION */}
-                <p className="mt-4 max-w-[29rem] text-sm font-medium leading-6 text-[#525252] sm:text-[18px]">
+                <p className="mt-4 max-w-[29rem] text-sm font-medium leading-6 text-[#525252] text-[13px] lg:text-[14px] xl2:text-[18px] xl3:text-[21px]">
                   {item.description}
                 </p>
 
@@ -152,7 +152,7 @@ function FlowBuilderAnimation() {
                         <CircleCheck className="h-4 w-4 text-[#16a34a]" />
                       </div>
 
-                      <p className="text-sm leading-6 text-[#666666] sm:text-[18px]">
+                      <p className="text-sm leading-6 text-[#666666] text-[13px] lg:text-[15px] xl2:text-[18px] xl3:text-[21px]">
                         {point}
                       </p>
                     </div>
