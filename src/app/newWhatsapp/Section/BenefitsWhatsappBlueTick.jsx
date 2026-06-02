@@ -12,25 +12,25 @@ function BenefitsWhatsappBlueTick() {
       title: "Build Customer Trust",
       description:
         "Only legally registered businesses are eligible; individuals cannot apply.",
-      video: "/newVideo/BenefitsWhatsappBlueTickVideo1.mp4",
+      Image: "/newImage/BenefitsWhatsappBlueTickImg1.webp",
     },
     {
       title: "Boost Sales Conversions",
       description:
         "Higher message open and reply rates help convert more WhatsApp chats into actual paying customers.",
-      video: "/video/Homepagevideo.mp4",
+    Image: "/newImage/BenefitsWhatsappBlueTickImg2.webp",
     },
     {
       title: "Prevent Fraud Risks",
       description:
         "Your WhatsApp Display Name must be approved by Meta before verification.",
-      video: "/newVideo/BenefitsWhatsappBlueTickVideo1.mp4",
+     Image: "/newImage/BenefitsWhatsappBlueTickImg3.webp",
     },
     {
       title: "Compete With Giants",
       description:
         "Your business must be well-known, credible, and trusted in your industry.",
-    video: "/video/Homepagevideo.mp4",
+ Image: "/newImage/BenefitsWhatsappBlueTickImg4.webp",
     },
   ];
 
@@ -38,97 +38,8 @@ function BenefitsWhatsappBlueTick() {
 
 const container = useRef(null);
 const progressRefs = useRef([]);
-  const videoRef = useRef(null);
 const animationRef = useRef(null);
-//  useGSAP(
-//     () => {
-//       let current = 0;
 
-//       gsap.set(progressRefs.current, {
-//         scaleX: 0,
-//         transformOrigin: "left",
-//       });
-
-//       const runAnimation = () => {
-//         // gsap.set(progressRefs.current, {
-//         //   scaleX: 0,
-//         // });
-// gsap.set(progressRefs.current[current], {
-//   scaleX: 0,
-// });
-//         setActiveIndex(current);
-
-//         gsap.to(progressRefs.current[current], {
-//           scaleX: 1,
-//           duration: 5,
-//           ease: "none",
-
-//           onComplete: () => {
-//             current =
-//               current === arrayData.length - 1 ? 0 : current + 1;
-
-//             runAnimation();
-//           },
-//         });
-//       };
-
-//       ScrollTrigger.create({
-//         trigger: container.current,
-//         start: "top 70%",
-//         once: true,
-
-//         onEnter: () => {
-//           runAnimation();
-//         },
-//       });
-//     },
-//     { scope: container }
-//   );
-
-// useGSAP(
-//   () => {
-//     let current = 0;
-
-//     const runAnimation = () => {
-//       // sab reset
-//       gsap.set(progressRefs.current, {
-//         scaleX: 0,
-//         transformOrigin: "left",
-//       });
-
-//       setActiveIndex(current);
-
-//       gsap.to(progressRefs.current[current], {
-//         scaleX: 1,
-//         duration: 5,
-//         ease: "none",
-
-//         onComplete: () => {
-//           // current line reset back to gray
-//           gsap.set(progressRefs.current[current], {
-//             scaleX: 0,
-//           });
-
-//           current =
-//             current === arrayData.length - 1 ? 0 : current + 1;
-
-//           runAnimation();
-//         },
-//       });
-//     };
-
-//     ScrollTrigger.create({
-//       trigger: container.current,
-//       start: "top 70%",
-//       once: true,
-
-//       onEnter: () => {
-//         runAnimation();
-//       },
-//     });
-//   },
-//   { scope: container }
-// );
 
 useGSAP(
   () => {
@@ -137,50 +48,33 @@ useGSAP(
     const runAnimation = (index) => {
       current = index;
 
-      // previous animation stop
+      // Previous animation stop
       animationRef.current?.kill();
 
-      // all progress reset
+      // Reset all progress bars
       gsap.set(progressRefs.current, {
         scaleX: 0,
         transformOrigin: "left",
       });
 
-      // active item update
+      // Active item update
       setActiveIndex(current);
 
-      // active progress animate
+      // Animate current progress bar
       animationRef.current = gsap.to(
         progressRefs.current[current],
         {
           scaleX: 1,
-          duration: 5,
+          duration: 3, // 3 second timer
           ease: "none",
 
-          onStart: () => {
-            // video restart
-            if (videoRef.current) {
-              videoRef.current.currentTime = 0;
-
-              const playPromise =
-                videoRef.current.play();
-
-              if (playPromise !== undefined) {
-                playPromise.catch(() => {});
-              }
-            }
-          },
-
           onComplete: () => {
-            // current line reset
-            gsap.set(
-              progressRefs.current[current],
-              {
-                scaleX: 0,
-              }
-            );
+            // Reset current progress
+            gsap.set(progressRefs.current[current], {
+              scaleX: 0,
+            });
 
-            // next slide
+            // Next slide/image
             current =
               current === arrayData.length - 1
                 ? 0
@@ -192,7 +86,7 @@ useGSAP(
       );
     };
 
-    // expose globally for click
+    // Click se trigger karne ke liye expose
     container.current.runAnimation = runAnimation;
 
     const trigger = ScrollTrigger.create({
@@ -226,10 +120,10 @@ useGSAP(
             WhatsApp Blue Tick Verification
           </h2>
         </div>
-<div className="mt-[100px] flex flex-col-reverse md:flex-row justify-between items-center gap-[23px] md:gap-[50px] lg:gap-[70px] xl2:gap-[90px]">
+<div className="mt-[100px] flex flex-col-reverse md:flex-row justify-between items-center xm2:items-start md:items-center gap-[23px] md:gap-[50px] lg:gap-[70px] xl2:gap-[90px]">
 
   {/* Left Titles */}
-  <div className="flex flex-col gap-[15px] flex-1 min-w-0">
+  <div className="flex flex-col gap-[15px] w-full">
 
     {arrayData.map((item, index) => (
       <div key={index}>
@@ -331,25 +225,20 @@ useGSAP(
       flex
       justify-center
       items-center
-      p-[10px]
+         px-[25px]
+       pt-[35px]
+       xl2:px-[30px]
+       xl2:pt-[45px]
     "
   >
-   <video
-              key={activeIndex}
-              ref={videoRef}
-              src={arrayData[activeIndex].video}
-              loop
-              autoPlay
-              muted
-                preload="metadata"
-              playsInline
-              className="h-full w-full object-fill rounded-[26px]
-      md:rounded-[18px]
-      lg:rounded-[24px]
-      xl2:rounded-[31px]
-      xl3:rounded-[38px]"
-              
-            />
+   <Image
+  key={activeIndex}
+  src={arrayData[activeIndex].Image}
+  alt={arrayData[activeIndex].title}
+ height={400}
+ width={400}
+  className="w-full h-full"
+/>
   </div>
 </div>
       </div>

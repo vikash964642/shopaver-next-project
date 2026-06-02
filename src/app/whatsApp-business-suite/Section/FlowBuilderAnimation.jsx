@@ -3,6 +3,7 @@
 import React from "react";
 import { CircleCheck } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const features = [
   {
@@ -10,6 +11,7 @@ const features = [
     title: "Create Flows with simple Prompts",
     description:
       "Build complete WhatsApp customer journeys in seconds with drag & drop or using AI.",
+      Image:"/newImage/FlowBuilderAnimationImg1.webp",
     points: [
       "Generate flows simply using prompts",
       "Automate end-to-end customer journey",
@@ -22,6 +24,7 @@ const features = [
   {
     tag: "AI WHATSAPP INBOX",
     title: "Turn Every Chat Into a Sales on WhatsApp",
+      Image:"/newImage/FlowBuilderAnimationImg2.webp",
     description:
       "Automate conversations, track customer behavior, and close more deals.",
     points: [
@@ -35,6 +38,7 @@ const features = [
   {
     tag: "WhatsApp marketing",
     title: "Increase Sales with Targeted Campaigns",
+      Image:"/newImage/FlowBuilderAnimationImg3.webp",
     description:
       "Send bulk broadcasts, promotional offers & personalized campaigns in one click.",
     points: [
@@ -47,58 +51,90 @@ const features = [
     reverse: false,
   },
   {
-    tag: "WhatsApp marketing",
-    title: "Increase Sales with Targeted Campaigns",
+    tag: "whatsapp commerce",
+    title: "Sell Products Directly On WhatsApp",
+      Image:"/newImage/FlowBuilderAnimationImg4.webp",
     description:
-      "Send bulk broadcasts, promotional offers & personalized campaigns in one click.",
+      "Transform WhatsApp into a full sales channel with catalog and ordering.",
     points: [
-      "Send bulk messages in one click.",
-      "Schedule campaigns in advance easily",
-      "Retarget non-responsive customers automatically",
-      "Track delivery and read rates",
-      "Personalize messages with customer names",
+      "Showcase entire product catalog inside WhatsApp",
+      "Send order confirmations after every purchase",
+      "Offer seamless end-to-end shopping experience",
+      "Recover abandoned carts with automated reminders",
+      "Accept orders and payments directly inside WhatsApp",
     ],
     reverse: true,
   },
   {
-    tag: "WhatsApp marketing",
-    title: "Increase Sales with Targeted Campaigns",
+    tag: "AI WhatsApp forms",
+    title: "Collect Customer Info via AI Created Form",
+      Image:"/newImage/FlowBuilderAnimationImg5.webp",
     description:
-      "Send bulk broadcasts, promotional offers & personalized campaigns in one click.",
+      "Create smart forms or simply describe your requirement and let AI build it for you.",
     points: [
-      "Send bulk messages in one click.",
-      "Schedule campaigns in advance easily",
-      "Retarget non-responsive customers automatically",
-      "Track delivery and read rates",
-      "Personalize messages with customer names",
+      "Generate forms using simple AI prompts",
+      "Capture leads, feedback, and customer data",
+      "Ask dynamic, context-based questions",
+      "Increase completion rates with conversational forms",
+      "Sync data instantly with your system",
     ],
     reverse: false,
   },
   {
-    tag: "WhatsApp marketing",
-    title: "Increase Sales with Targeted Campaigns",
+    tag: "WhatsApp Payments",
+    title: "Sales and Payments All in One Place",
+      Image:"/newImage/FlowBuilderAnimationImg6.webp",
     description:
-      "Send bulk broadcasts, promotional offers & personalized campaigns in one click.",
+      "Collect payments seamlessly inside WhatsApp via UPI, cards, and net banking.",
     points: [
-      "Send bulk messages in one click.",
-      "Schedule campaigns in advance easily",
-      "Retarget non-responsive customers automatically",
-      "Track delivery and read rates",
-      "Personalize messages with customer names",
+      "Accept UPI and card payments directly",
+      "Send instant payment links to customers",
+      "Auto-remind customers with pending dues",
+      "Recover revenue from abandoned payments",
+      "Track all transactions from one dashboard",
     ],
     reverse: true,
   },
   {
-    tag: "WhatsApp marketing",
-    title: "Increase Sales with Targeted Campaigns",
+    tag: "Appointment Booking",
+    title: "Appointments Made Super Easy",
+      Image:"/newImage/FlowBuilderAnimationImg7.webp",
     description:
-      "Send bulk broadcasts, promotional offers & personalized campaigns in one click.",
+      "Let customers schedule & confirm appointments directly on WhatsApp",
     points: [
-      "Send bulk messages in one click.",
-      "Schedule campaigns in advance easily",
-      "Retarget non-responsive customers automatically",
-      "Track delivery and read rates",
-      "Personalize messages with customer names",
+      "Confirm or reschedule bookings instantly",
+      "Send automated reminders to reduce missing appointments",
+      "Customer can book appointments anywhere anytime inside WhatsApp",
+      "Sync appointments with your calendar automatically",
+    ],
+    reverse: false,
+  },
+   {
+    tag: "Bluetick Verification",
+    title: "Earn Trust, Go Verified Today",
+      Image:"/newImage/FlowBuilderAnimationImg8.webp",
+    description:
+      "Get officially verified by Meta and build instant credibility on WhatsApp.",
+    points: [
+      "Display the official blue tick badge",
+      "Increase message open rates significantly",
+      "Stand out from unverified competitors easily",
+      "Protect your brand from impersonation",
+      "Boost customer confidence across all campaigns",
+    ],
+    reverse: true,
+  },
+   {
+    tag: "WhatsApp QR Code",
+    title: "One Scan, Instant Connection",
+      Image:"/newImage/FlowBuilderAnimationImg9.webp",
+    description:
+      "Let customers scan your QR code and connect with your business instantly.",
+    points: [
+      "No app download or contact saving needed",
+      "Let customers place orders by simply scanning",
+      "Drive more walk-in customers to WhatsApp easily",
+      "Turn offline customers into WhatsApp contacts instantly",
     ],
     reverse: false,
   },
@@ -106,8 +142,8 @@ const features = [
 
 function FlowBuilderAnimation() {
   return (
-    <section className="xl2:max-w-[1220px] xl3:max-w-[90rem] mx-auto  py-14 md:py-24 md:px-[65px] lg:px-[93px] xl2:px-[60px]  xl3:px-[72px]">
-      <div className=" flex  flex-col gap-10 ">
+    <section className="mt-[45px] md:mt-[65px] lg:mt-[80px] xl2:mt-[100px] xl3:mt-[120px] xl2:max-w-[1220px] xl3:max-w-[90rem] mx-auto  px-[15px] md:px-[65px] lg:px-[93px] xl2:px-[60px]  xl3:px-[72px]">
+      <div className=" flex items-center flex-col gap-7 md:gap-11 lg:gap-[60px] xl2:gap-[75px] xl3:gap-[90px]">
         {features.map((item, index) => (
           <motion.div
             key={index}
@@ -122,37 +158,37 @@ function FlowBuilderAnimation() {
               duration: 0.5,
               ease: "easeOut",
             }}
-            className={`rounded-[32px] border border-[#CBCBFF] bg-[#F8F8FF] p-4 sm:p-6 md:p-[42px] ${
+            className={`max-w-[400px] md:max-w-full rounded-[32px] border border-[#CBCBFF] bg-[#F8F8FF] p-5 sm:p-6 lg:p-[32px] xl3:p-[42px] ${
               item.reverse ? "lg:[&_.content]:order-2" : ""
             }`}
           >
-            <div className="grid items-center gap-6 md:gap-[6.75rem] lg:grid-cols-2">
+            <div className="grid items-center gap-6 lg:gap-[60px] xl3:gap-[6.25rem] md:grid-cols-2">
               {/* CONTENT */}
               <div className="content">
                 {/* TAG */}
-                <span className="text-xs font-medium uppercase tracking-wide text-[#5801B7] text-[16px] md:text-[14px] lg:text-[16px] xl2:text-[21px] xl3:text-[24.75px]">
+                <span className=" font-medium uppercase tracking-wide text-[#5801B7] text-[16px] md:text-[14px] lg:text-[16px] xl2:text-[21px] xl3:text-[24.75px]">
                   {item.tag}
                 </span>
 
                 {/* TITLE */}
-                <h2 className="mt-3 max-w-[28rem] text-2xl font-bold text-[#3C3939] sm:text-3xl text-[25px] md:text-[22px] lg:text-[28.5px] xl2:text-[38px] xl3:text-[44.5px] md:leading-[38px] font-bricolage">
+                <h2 className="mt-2 xl2:mt-3 max-w-[30rem] text-2xl font-medium text-[#3C3939]  text-[25px] md:text-[22px] lg:text-[28.5px] xl2:text-[38px] xl3:text-[44.5px] leading-[30px] md:leading-[26px] lg:leading-[33px] xl2:leading-[40px] xl3:leading-[52px] font-bricolage">
                   {item.title}
                 </h2>
 
                 {/* DESCRIPTION */}
-                <p className="mt-4 max-w-[29rem] text-sm font-medium leading-6 text-[#525252] text-[13px] lg:text-[14px] xl2:text-[18px] xl3:text-[21px]">
+                <p className="mt-[10px] xl2:mt-4 max-w-[29rem] text-sm font-medium  text-[#525252] text-[13px] lg:text-[14px] xl2:text-[18px] xl3:text-[21px] leading-[20px] md:leading-[18px] lg:leading-[20px] xl3:leading-[30px]">
                   {item.description}
                 </p>
 
                 {/* POINTS */}
-                <div className="mt-6 space-y-4">
+                <div className="mt-[13px] lg:mt-4 space-y-3 xl2:space-y-4">
                   {item.points.map((point, idx) => (
                     <div key={idx} className="flex items-start gap-3">
                       <div className="mt-0.5 shrink-0">
                         <CircleCheck className="h-4 w-4 text-[#16a34a]" />
                       </div>
 
-                      <p className="text-sm leading-6 text-[#666666] text-[13px] lg:text-[15px] xl2:text-[18px] xl3:text-[21px]">
+                      <p className="text-[13px] lg:text-[15px] xl2:text-[18px] xl3:text-[21px] leading-[17px] md:leading-[16px] lg:leading-[18px] xl2:leading-6 text-[#666666] ">
                         {point}
                       </p>
                     </div>
@@ -161,7 +197,9 @@ function FlowBuilderAnimation() {
               </div>
 
               {/* IMAGE BOX */}
-              <div className="mx-auto h-[260px] w-full max-w-[500px] rounded-[25px] bg-[#fff] sm:h-[420px] md:h-[515px]"></div>
+              <div className="mx-auto p-[20px] w-full max-w-[500px] rounded-[25px] bg-[#fff] h-[330px] md:h-[300px] lg:h-[390px] xl2:h-[500px] xl3:h-[550px] flex justify-center items-center">
+               <Image src={item.Image} height={400} width={420} className="w-full md:w-[260px] lg:w-[325px] xl2:w-[425px]"></Image>
+              </div>
             </div>
           </motion.div>
         ))}

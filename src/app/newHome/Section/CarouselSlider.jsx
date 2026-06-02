@@ -100,16 +100,15 @@ function CarouselSlider() {
     modules={[Navigation,Autoplay]}
    
     autoplay={{
-      delay: 0,
+      delay: 3000,
       disableOnInteraction: false,
        pauseOnMouseEnter: false,
     }}
-      speed={5000}
+      speed={600}
         loop={true}
-        freeMode={true}
        navigation={{
       prevEl: ".testimonial-prev",
-      nextEl: ".testimonial-next",
+  nextEl: ".testimonial-next",
     }}
     breakpoints={{
       0: {
@@ -124,7 +123,7 @@ function CarouselSlider() {
     {testimonials.map((item, index) => (
       <SwiperSlide
         key={index}
-        className="!w-[19rem] xm1:!w-[20rem]"
+        className="!w-[16.5rem] xm1:!w-[17.5rem] "
       >
         <div className="h-full w-full px-[15.4px] pt-[30.8px] pb-[14.2px] border border-[#DADAFF] bg-[#F8F8FF] rounded-[2rem] flex flex-col-reverse justify-between gap-[3.5rem]">
           <div className="">
@@ -150,7 +149,7 @@ function CarouselSlider() {
       </SwiperSlide>
     ))}
   </Swiper>
-  {/* <div className='flex justify-center items-center gap-[0.9375rem] mt-[1.875rem]'>
+  <div className='flex justify-center items-center gap-[0.9375rem] mt-[1.875rem]'>
   <button  onClick={() => setActiveButton("prev")} className={`testimonial-prev h-[2.25rem] w-[2.25rem] flex justify-center items-center  rounded-full border-[0.05625rem]  ${activeButton === "prev"
         ? "bg-[#F8F8FF]  border-[#CBCBFF]"
         : " bg-[#ECECEC] border-[#D7D7D7]"
@@ -163,7 +162,7 @@ function CarouselSlider() {
     }`}>
       <i className={`fa-solid fa-chevron-right ${activeButton==="next" ? "text-[#5801B7]" : "text-[#525252]"}`}></i>
   </button>
-  </div> */}
+  </div>
 </div>
     </section>
   )
