@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,45 +8,67 @@ import "swiper/css";
 import { Navigation } from "swiper/modules";
 import "swiper/css/navigation";
 import { resolveAssetUrl } from "@/lib/imageUrl";
-const listData=[
-    {
-        title:"Restaurant Stores",
-        description:"Shopaver helps restaurants streamline orders, manage tables, track inventory, and handle billing effortlessly.",
-        image:''
-    },
-    {
-        title:"Footwear",
-        description:"Shopaver empowers footwear stores to manage inventory by size, style, and brand with real-time stock tracking.",
-        image:''
-    },
-      {
-        title:"Cosmetic Store",
-        description:"Shopaver helps cosmetic stores manage product variants, expiry dates, and fast-moving SKUs with precision.",
-        image:''
-    },
-      {
-        title:"Accessories Store",
-        description:"Shopaver enables accessories stores to efficiently manage diverse SKUs, track fast-moving items, and simplify billing.",
-        image:''
-    },
-      {
-        title:"Cart and Kiosk",
-        description:"Shopaver helps carts and kiosks manage quick billing, track daily sales, and monitor inventory with ease.",
-        image:''
-    },
-      {
-        title:"Spas & Salon",
-        description:"Shopaver helps spas and salons manage appointments, track service-wise revenue, and maintain client records effortlessly.",
-        image:''
-    },
+// const listData=[
+//     {
+//         title:"Restaurant Stores",
+//         description:"Shopaver helps restaurants streamline orders, manage tables, track inventory, and handle billing effortlessly.",
+//         image:''
+//     },
+//     {
+//         title:"Footwear",
+//         description:"Shopaver empowers footwear stores to manage inventory by size, style, and brand with real-time stock tracking.",
+//         image:''
+//     },
+//       {
+//         title:"Cosmetic Store",
+//         description:"Shopaver helps cosmetic stores manage product variants, expiry dates, and fast-moving SKUs with precision.",
+//         image:''
+//     },
+//       {
+//         title:"Accessories Store",
+//         description:"Shopaver enables accessories stores to efficiently manage diverse SKUs, track fast-moving items, and simplify billing.",
+//         image:''
+//     },
+//       {
+//         title:"Cart and Kiosk",
+//         description:"Shopaver helps carts and kiosks manage quick billing, track daily sales, and monitor inventory with ease.",
+//         image:''
+//     },
+//       {
+//         title:"Spas & Salon",
+//         description:"Shopaver helps spas and salons manage appointments, track service-wise revenue, and maintain client records effortlessly.",
+//         image:''
+//     },
       
-]
+// ]
 function LandingPageList() {
   const [visibleCount, setVisibleCount] = useState(2);
+const [slugList, setSlugList] = useState([]);
+const [loading, setLoading] = useState(true);
 
 
- 
-   
+useEffect(() => {
+  fetch("https://shopaverleadapi.shopaver.com/api/SupportMarketingDashBoard/GetSlugList", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      search: "",
+      page: "1",
+      pageSize: "100",
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      setSlugList(data.data || []);
+      setLoading(false);
+    })
+    .catch((err) => {
+      console.error(err);
+      setLoading(false);
+    });
+}, []);
   return (
     <section className="bg-[#E3E3FF] mt-[7.5rem] py-[3rem] md:py-[2.9rem] lg:py-[3.75rem] xl:py-[4.6rem] xl2:py-[5.65rem]">
       <div className="max-w-[90rem] mx-auto px-[20px] md:px-[32px] lg:px-[47px] xl2:px-[150px] xl3:px-[42px]">
@@ -56,17 +78,22 @@ function LandingPageList() {
         </h2>
 
         {/* ================= MOBILE ================= */}
-        <div
-          className="flex items-center flex-col  gap-[20px] md:hidden mt-10">
-          {listData.slice(0, visibleCount).map((item, index) => (
-            <div key={index} className="h-[200px] max-w-[400px]">
-              <Card item={item} />
-            </div>
-          ))}
-        </div>
+       
 
-        
-        {visibleCount < listData.length && (
+        <div className="flex items-center flex-col gap-[20px] md:hidden mt-10">
+  {loading ? (
+    <div className="flex justify-center items-center h-[300px] w-full">
+      <span className="loader"></span>
+    </div>
+  ) : (
+    slugList.slice(0, visibleCount).map((item, index) => (
+      <div key={index} className="h-[200px] w-full max-w-[400px]">
+        <Card item={item} />
+      </div>
+    ))
+  )}
+</div>
+        {visibleCount < slugList.length && (
           <div className="flex justify-center mt-6 md:hidden">
             <div
               onClick={() => setVisibleCount((prev) => prev + 2)}
@@ -78,7 +105,12 @@ function LandingPageList() {
         )}
          
         <div className="hidden md:block md:mt-[1.69rem] lg:mt-[36px] xl:mt-[43.55px] xl2:mt-[3.25rem]">
-          
+          {loading ? (
+    <div className="flex justify-center items-center h-[400px]">
+      <span className="loader"></span>
+    </div>
+  ) : (
+    <>
           <Swiper
   modules={[Navigation]}
   spaceBetween={20}
@@ -90,15 +122,15 @@ function LandingPageList() {
     prevEl: ".custom-prev",
   }}
 >
-  {/* ✅ Har 2 items ka ek group banao */}
-  {Array.from({ length: Math.ceil(listData.length / 4) }).map((_, groupIndex) => (
+  {/* ✅ Har 4 items ka ek group banao */}
+  {Array.from({ length: Math.ceil(slugList.length / 4) }).map((_, groupIndex) => (
     <SwiperSlide key={groupIndex}>
       <div className={` ${
-            listData.length === 1 ? "flex justify-center" : "grid grid-cols-2 md:gap-[0.94rem] lg:gap-[1.25rem] xl:gap-[1.5rem] xl2:gap-[1.875rem]"
+            slugList.length === 1 ? "flex justify-center" : "grid grid-cols-2 md:gap-[0.94rem] lg:gap-[1.25rem] xl:gap-[1.5rem] xl2:gap-[1.875rem]"
           }`}>
-        {listData.slice(groupIndex * 4, groupIndex * 4 + 4).map((item, index) => (
+        {slugList.slice(groupIndex * 4, groupIndex * 4 + 4).map((item, index) => (
           <div key={index} className={`md:h-[193.3px] lg:h-[257.75px] xl3:h-[300px]  ${
-            listData.length === 1 ? "md:max-w-[350px] lg:max-w-[450px] xl2:max-w-[550px]  xl3:max-w-[600px]" : ""
+            slugList.length === 1 ? "md:max-w-[350px] lg:max-w-[450px] xl2:max-w-[550px]  xl3:max-w-[600px]" : ""
           }`}>
             <Card item={item} />
           </div>
@@ -117,6 +149,8 @@ function LandingPageList() {
               <i className="fa-solid fa-angle-right"></i>
             </div>
           </div>
+            </>
+  )}
         </div>
       </div>
     </section>
@@ -125,16 +159,16 @@ function LandingPageList() {
 
 /* ================= CARD ================= */
 function Card({ item }) {
-  
+    const details = item?.slugListData?.[0];
   return (
     <div className="flex items-stretch gap-[0.90625rem] lg:gap-[2.1875rem] bg-white rounded-[1.591875rem] border border-[#EBD9FF]  py-[10.24px] pl-[15.3px] pr-[10px] md:p-[11.83px] lg:p-[15.78px] xl:p-[19.1px] xl2:p-[1.46rem] h-full">
       {/* LEFT CONTENT */}
       <div className="flex flex-col w-[50%] justify-center">
      
-          <p className="text-[#3C3939] text-[18.4px] md:text-[14.96px] lg:text-[19.94px] xl2:text-[24.15px] xl3:text-[1.83rem] font-medium break-words line-clamp-2 leading-none font-bricolage">
-            {item.title}
+          <p className="text-[#3C3939] text-[18.4px] md:text-[14.96px] lg:text-[19.94px] xl2:text-[24.15px] xl3:text-[1.83rem] font-medium  line-clamp-2 leading-none font-bricolage">
+            {item.slug}
           </p>
-         <p className="pt-[4px] lg:pt-[5.25px]  xl:pt-[6px] xl2:pt-[0.48rem] text-[#666] text-[12.6px] xm1:text-[14.3px] md:text-[11.96px] lg:text-[15.95px] xl2:text-[19.3px]  font-normal leading-none md:leading-[16px] lg:leading-[21px] xl2:leading-[25px] font-dm-sans line-clamp-5">{item.description}</p>
+         <p className="pt-[4px] lg:pt-[5.25px]  xl:pt-[6px] xl2:pt-[0.48rem] text-[#666] text-[12.6px] xm1:text-[14.3px] md:text-[11.96px] lg:text-[15.95px] xl2:text-[19.3px]  font-normal leading-none md:leading-[16px] lg:leading-[21px] xl2:leading-[25px] font-dm-sans line-clamp-3 xl3:line-clamp-4">{details?.description}</p>
 
 
         <button
@@ -153,10 +187,11 @@ function Card({ item }) {
       {/* RIGHT IMAGE */}
       <div className="w-[50%] flex justify-end items-center">
         <Image
-          src={resolveAssetUrl(
-            item.image,
-            "/landingPage/BusinessSolutionSliderImg6.webp",
-          )}
+          // src={resolveAssetUrl(
+          //   item.image,
+          //   "/landingPage/BusinessSolutionSliderImg6.webp",
+          // )}
+          src={resolveAssetUrl(details?.image)}
           alt={item.keyword}
           width={218}
           height={227}
