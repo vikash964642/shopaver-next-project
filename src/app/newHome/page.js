@@ -20,7 +20,7 @@ function page() {
           <HomeSlider />
          <CardSlider />
           <SmartFeaturesSection />
-         <LandingPageList />
+    <LandingPageList heading="Built to Scale Across Every Industry" />
         <Counter />
         <CarouselSlider />
         <FAQ />

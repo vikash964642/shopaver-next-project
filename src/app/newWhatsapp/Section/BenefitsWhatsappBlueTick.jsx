@@ -11,25 +11,25 @@ function BenefitsWhatsappBlueTick() {
     {
       title: "Build Customer Trust",
       description:
-        "Only legally registered businesses are eligible; individuals cannot apply.",
+        "The blue tick badge assures customers that your business is genuine and trustworthy.",
       Image: "/newImage/BenefitsWhatsappBlueTickImg1.webp",
     },
     {
       title: "Boost Sales Conversions",
       description:
-        "Higher message open and reply rates help convert more WhatsApp chats into actual paying customers.",
+        "A blue tick makes your messages stand out, encouraging more shoppers to open and reply.",
     Image: "/newImage/BenefitsWhatsappBlueTickImg2.webp",
     },
     {
       title: "Prevent Fraud Risks",
       description:
-        "Your WhatsApp Display Name must be approved by Meta before verification.",
+        "Blue tick verification protects customers from impersonation and payment scams.",
      Image: "/newImage/BenefitsWhatsappBlueTickImg3.webp",
     },
     {
       title: "Compete With Giants",
       description:
-        "Your business must be well-known, credible, and trusted in your industry.",
+        "The blue tick puts local shopkeepers on the same level as big retail brands.",
  Image: "/newImage/BenefitsWhatsappBlueTickImg4.webp",
     },
   ];

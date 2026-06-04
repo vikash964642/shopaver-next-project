@@ -41,7 +41,7 @@ import { resolveAssetUrl } from "@/lib/imageUrl";
 //     },
       
 // ]
-function LandingPageList() {
+function LandingPageList({heading}) {
   const [visibleCount, setVisibleCount] = useState(2);
 const [slugList, setSlugList] = useState([]);
 const [loading, setLoading] = useState(true);
@@ -74,7 +74,7 @@ useEffect(() => {
       <div className="max-w-[90rem] mx-auto px-[20px] md:px-[32px] lg:px-[47px] xl2:px-[150px] xl3:px-[42px]">
         {/* TITLE */}
         <h2 className="max-w-[325px] md:max-w-full mx-auto text-[#5801B7] text-center text-[27px] xm1:text-[1.875rem]  xl:text-[3rem] xl2:text-[3.65rem] font-bold lg:font-medium font-bricolage leading-[37px] md:leading-none">
-         Built to Scale Across Every Industry
+         {heading}
         </h2>
 
         {/* ================= MOBILE ================= */}
@@ -171,7 +171,7 @@ function Card({ item }) {
          <p className="pt-[4px] lg:pt-[5.25px]  xl:pt-[6px] xl2:pt-[0.48rem] text-[#666] text-[12.6px] xm1:text-[14.3px] md:text-[11.96px] lg:text-[15.95px] xl2:text-[19.3px]  font-normal leading-none md:leading-[16px] lg:leading-[21px] xl2:leading-[25px] font-dm-sans line-clamp-3 xl3:line-clamp-4">{details?.description}</p>
 
 
-        <button
+        <Link href={`https://shopaver.com/service/${item.slug}`} target="_blank"
 
           className="mt-[1rem] md:mt-[17.95px] lg:mt-[23.94px] xl:mt-[29px] xl2:mt-[35px] rounded-[1.875rem] bg-[#E6D2FF] w-[6.0625rem] h-[1.875rem] md:w-[74px] md:h-[25px] lg:w-[6.0625rem] lg:h-[1.875rem] xl2:w-[143px] xl2:h-[48.9px] flex justify-center items-center gap-[0.28125rem]"
         >
@@ -181,7 +181,7 @@ function Card({ item }) {
   <path d="M10.3536 4.03519C10.5488 3.83993 10.5488 3.52335 10.3536 3.32809L7.17157 0.146107C6.97631 -0.0491549 6.65973 -0.0491549 6.46447 0.146107C6.2692 0.341369 6.2692 0.657952 6.46447 0.853214L9.29289 3.68164L6.46447 6.51007C6.2692 6.70533 6.2692 7.02191 6.46447 7.21718C6.65973 7.41244 6.97631 7.41244 7.17157 7.21718L10.3536 4.03519ZM0 3.68164L-4.37114e-08 4.18164L10 4.18164L10 3.68164L10 3.18164L4.37114e-08 3.18164L0 3.68164Z" fill="#5801B7"/>
 </svg>
           </div>
-        </button>
+        </Link>
       </div>
 
       {/* RIGHT IMAGE */}

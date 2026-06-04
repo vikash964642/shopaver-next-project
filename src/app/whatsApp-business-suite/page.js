@@ -12,7 +12,7 @@ function page() {
       <HomeSlider />
       <FlowBuilderAnimation />
       <BenefitsSection />
-      <LandingPageList />
+      <LandingPageList heading="Who Can Use WhatsApp Business ?"/>
       <FAQ />
       <BusinessHeroSection />
 
