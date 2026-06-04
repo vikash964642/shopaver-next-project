@@ -158,7 +158,7 @@ function FlowBuilderAnimation() {
               duration: 0.5,
               ease: "easeOut",
             }}
-            className={`max-w-[400px] md:max-w-full rounded-[32px] border border-[#CBCBFF] bg-[#F8F8FF] p-5 sm:p-6 lg:p-[32px] xl3:p-[42px] ${
+            className={`max-w-[400px] md:max-w-full md:w-full rounded-[32px] border border-[#CBCBFF] bg-[#F8F8FF] p-5 sm:p-6 lg:p-[32px] xl3:p-[42px] ${
               item.reverse ? "lg:[&_.content]:order-2" : ""
             }`}
           >
