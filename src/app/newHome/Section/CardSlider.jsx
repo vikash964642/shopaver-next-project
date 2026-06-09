@@ -2,50 +2,12 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+import { useRouter } from "next/navigation";
 function CardSlider() {
 
   const refs = useRef([])
   const [activeIndex, setActiveIndex] = useState(0)
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     refs.current.forEach((el, index) => {
-  //       if (!el) return
-
-  //       const rect = el.getBoundingClientRect()
-
-  //       // ✅ same working trigger
-  //       if (rect.top < window.innerHeight * 0.3) {
-  //         setActiveIndex(index)
-  //       }
-  //     })
-  //   }
-
-  //   window.addEventListener("scroll", handleScroll)
-  //   return () => window.removeEventListener("scroll", handleScroll)
-  // }, [])
-
-  // const getStyle = (index) => {
-  //   const isPast = index < activeIndex
-  //   const isPrev = index === activeIndex - 1
-
-  //   return {
-  //     top: "8rem",
-  //     zIndex: index >= activeIndex ? 10 + index : index,
-
-  //     // ✅ smooth zoom-out (not aggressive)
-  //     transform: isPrev
-  //       ? "scale(0.75) translateY(-10px)"
-  //       : "scale(1)",
-
-  //     // ✅ fade (smooth now)
-  //     opacity: isPast ? 0 : 1,
-
-  //     // ✅ KEY FIX (smooth transition)
-  //     transition: "transform 0.6s ease, opacity 0.6s ease",
-  //   }
-  // }
-
+const router = useRouter();
   useEffect(() => {
   const handleScroll = () => {
     let current = 0
@@ -90,6 +52,7 @@ const getStyle = (index) => {
       "transform 0.6s ease, opacity 0.6s ease",
   }
 }
+
   return (
     <section className="bg-[#F4FFF7] mt-[70px]">
  <div className='max-w-[90rem] mx-auto md:px-[32px] lg:px-[47px] xl2:px-[150px] xl3:px-[42px] py-[4.3rem] md:py-[60px] lg:py-[80px] xl2:py-[95px] xl3:py-[110px]'>
@@ -110,7 +73,10 @@ const getStyle = (index) => {
             <h1 className='text-[#FFF] text-[1.125rem] md:text-[0.91rem] lg:text-[1.21rem] xl2:text-[23.4px] xl3:text-[28.3px] font-semibold leading-normal font-bricolage'>AI Flow Builder</h1>
             <h2 className='text-[#FFF] pt-[0.3125rem] md:w-[14.28rem] lg:w-[75%] text-[1.75rem] md:text-[1.67rem] lg:text-[2.22rem] xl2:text-[43px] xl3:text-[51px] font-medium lg:font-semibold leading-none md:leading-[2rem] lg:leading-[2.663rem] xl2:leading-[3.23rem] xl3:leading-[61px] font-bricolage'>Design a no-code chats in minutes</h2>
             <p className='pt-[0.625rem] md:w-[15rem] lg:w-[75%] xl2:w-[468px] text-[#FFF] text-[0.875rem] lg:text-[0.97rem] xl2:text-[18.75px] xl3:text-[22.6px] font-normal leading-[19px] md:leading-[15px] lg:leading-[20px] xl2:leading-[24px] xl3:leading-[29px] font-dm-sans'>Create flows with drag and drop, or simply describe your flow and let AI build it for you.</p>
-            <button className='bg-[#FFF] mt-[1.25rem] lg:mt-[1.875rem] xl2:mt-[42px]  rounded-[0.5625rem] lg:rounded-[0.6875rem] h-[2.8125rem] w-[7.75rem] lg:h-[3.27rem] xl3:h-[76px] lg:w-[9.3125rem] xl3:w-[210px]  text-[0.833rem] lg:text-[1rem] xl2:text-[18.75px] xl3:text-[22.6px] text-[#525252] font-medium font-dm-sans'>Know More</button>
+            <button onClick={() => {
+  localStorage.setItem("targetCard", "flow-builder");
+  router.push("/whatsApp-business-suite");
+}} className='bg-[#FFF] mt-[1.25rem] lg:mt-[1.875rem] xl2:mt-[42px]  rounded-[0.5625rem] lg:rounded-[0.6875rem] h-[2.8125rem] w-[7.75rem] lg:h-[3.27rem] xl3:h-[76px] lg:w-[9.3125rem] xl3:w-[210px]  text-[0.833rem] lg:text-[1rem] xl2:text-[18.75px] xl3:text-[22.6px] text-[#525252] font-medium font-dm-sans'>Know More</button>
           </div>
           <div className="w-full md:w-[50%] md:h-full flex justify-center items-center ">
             <Image src={"/newImage/CardSliderImg1.webp"} alt="AI Flow Builder" height={400} width={400} className="w-full h-[14.5rem] md:h-[13.6rem] lg:h-[18.16rem] xl2:h-[22rem]" />
@@ -130,7 +96,10 @@ const getStyle = (index) => {
             <h1 className='text-[#FFF] text-[1.125rem] md:text-[0.91rem] lg:text-[1.21rem] xl:text-[23.4px] xl2:text-[28.3px] font-semibold leading-normal font-bricolage'>AI WhatsApp Inbox</h1>
             <h2 className='text-[#FFF] pt-[0.3125rem] md:w-[17.75rem] lg:w-full text-[1.75rem] md:text-[1.67rem] lg:text-[2.22rem] xl2:text-[43px] xl3:text-[51px] font-medium lg:font-semibold leading-none md:leading-[2rem] lg:leading-[2.663rem] xl2:leading-[3.23rem] xl3:leading-[61px] font-bricolage'>Turn Every Chat Into a Sales on WhatsApp</h2>
             <p className='pt-[0.625rem] lg:w-[22.3rem] xl2:w-[520px] text-[#FFF] text-[0.875rem] lg:text-[0.97rem] xl2:text-[18.75px] xl3:text-[22.6px] leading-[19px] md:leading-[15px] lg:leading-[20px] xl2:leading-[24px] xl3:leading-[29px] font-normal font-dm-sans'>Automate conversations, track customer behavior & close more deals—without missing a single message.</p>
-            <button className='mt-[1.25rem] lg:mt-[1.875rem] xl2:mt-[42px] bg-[#FFF] rounded-[0.5625rem] lg:rounded-[0.6875rem] h-[2.8125rem] w-[7.75rem] lg:h-[3.27rem] xl3:h-[76px] lg:w-[9.3125rem] xl3:w-[210px]  text-[0.833rem] lg:text-[1rem] xl2:text-[18.75px] xl3:text-[22.6px] text-[#525252]  font-medium font-dm-sans'>Know More</button>
+            <button onClick={() => {
+  localStorage.setItem("targetCard", "ai-inbox");
+  router.push("/whatsApp-business-suite");
+}} className='mt-[1.25rem] lg:mt-[1.875rem] xl2:mt-[42px] bg-[#FFF] rounded-[0.5625rem] lg:rounded-[0.6875rem] h-[2.8125rem] w-[7.75rem] lg:h-[3.27rem] xl3:h-[76px] lg:w-[9.3125rem] xl3:w-[210px]  text-[0.833rem] lg:text-[1rem] xl2:text-[18.75px] xl3:text-[22.6px] text-[#525252]  font-medium font-dm-sans'>Know More</button>
           </div>
         </div>
 
@@ -144,7 +113,10 @@ const getStyle = (index) => {
             <h1 className='text-[#525252] text-[1.125rem] md:text-[0.91rem] lg:text-[1.21rem] xl:text-[23.4px] xl2:text-[28.3px] font-semibold leading-normal font-bricolage'>WhatsApp Marketing</h1>
             <h2 className='text-[#075E54] pt-[0.3125rem] md:w-[17.75rem] lg:w-[23.75rem] xl2:w-[514px] text-[1.75rem] md:text-[1.67rem] lg:text-[2.22rem] xl2:text-[43px] xl3:text-[51px] font-medium lg:font-semibold leading-none md:leading-[2rem] lg:leading-[2.663rem] xl2:leading-[3.23rem] xl3:leading-[61px] font-bricolage'>Increase Sales with Targeted Campaigns</h2>
             <p className=' text-[#525252] pt-[0.625rem] lg:w-[21.75rem] xl2:w-[506px] text-[0.875rem] lg:text-[0.97rem] xl2:text-[18.75px] xl3:text-[22.6px] font-normal leading-[19px] md:leading-[15px] lg:leading-[20px] xl2:leading-[24px] xl3:leading-[29px] font-dm-sans'>Send bulk broadcasts, personalized campaigns, and promotional offers in one click.</p>
-            <button className='mt-[1.25rem] lg:mt-[1.875rem] xl2:mt-[42px] bg-[#075E54] rounded-[0.5625rem] lg:rounded-[0.6875rem] h-[2.8125rem] w-[7.75rem] lg:h-[3.27rem] xl3:h-[76px] lg:w-[9.3125rem] xl3:w-[210px]  text-[0.833rem] lg:text-[1rem] xl2:text-[18.75px] xl3:text-[22.6px] text-[#FFF] font-medium font-dm-sans'>Know More</button>
+            <button onClick={() => {
+  localStorage.setItem("targetCard", "whatsApp-marketing");
+  router.push("/whatsApp-business-suite");
+}} className='mt-[1.25rem] lg:mt-[1.875rem] xl2:mt-[42px] bg-[#075E54] rounded-[0.5625rem] lg:rounded-[0.6875rem] h-[2.8125rem] w-[7.75rem] lg:h-[3.27rem] xl3:h-[76px] lg:w-[9.3125rem] xl3:w-[210px]  text-[0.833rem] lg:text-[1rem] xl2:text-[18.75px] xl3:text-[22.6px] text-[#FFF] font-medium font-dm-sans'>Know More</button>
           </div>
           <div className="w-full md:w-[50%] md:h-full flex justify-center items-center ">
             <Image src={"/newImage/CardSliderImg3.webp"} alt="WhatsApp Marketing" height={400} width={400} className="w-full h-[14.5rem] md:h-[13.6rem] lg:h-[18.16rem] xl2:h-[22rem]" />
@@ -164,7 +136,10 @@ const getStyle = (index) => {
             <h1 className='text-[#525252] text-[1.125rem] md:text-[0.91rem] lg:text-[1.21rem] xl:text-[23.4px] xl2:text-[28.3px] font-semibold leading-normal font-bricolage'>WhatsApp Payments</h1>
             <h2 className=' text-[#075E54] pt-[0.3125rem] md:w-[17.75rem] lg:w-[23.75rem] xl2:w-[515px] text-[1.75rem] md:text-[1.67rem] lg:text-[2.22rem] xl2:text-[43px] xl3:text-[51px] font-medium lg:font-semibold leading-none md:leading-[2rem] lg:leading-[2.663rem] xl2:leading-[3.23rem] xl3:leading-[61px] font-bricolage'>Sales and Payments All in One Place</h2>
             <p className='text-[#525252] pt-[0.625rem] md:w-[17.5rem] lg:w-[20.75rem] xl2:w-[481px] text-[0.875rem] lg:text-[0.97rem] xl2:text-[18.75px] xl3:text-[22.6px] font-normal leading-[19px] md:leading-[15px] lg:leading-[20px] xl2:leading-[24px] xl3:leading-[29px] font-dm-sans'>Collect payments seamlessly inside WhatsApp via UPI, cards, and net banking.</p>
-            <button className='mt-[1.25rem] lg:mt-[1.875rem] xl2:mt-[42px] bg-[#075E54] rounded-[0.5625rem] lg:rounded-[0.6875rem] h-[2.8125rem] w-[7.75rem] lg:h-[3.27rem] xl3:h-[76px] lg:w-[9.3125rem] xl3:w-[210px]  text-[0.833rem] lg:text-[1rem] xl2:text-[18.75px] xl3:text-[22.6px] text-[#FFF] font-medium font-dm-sans'>Know More</button>
+            <button onClick={() => {
+  localStorage.setItem("targetCard", "whatsApp-payments");
+  router.push("/whatsApp-business-suite");
+}} className='mt-[1.25rem] lg:mt-[1.875rem] xl2:mt-[42px] bg-[#075E54] rounded-[0.5625rem] lg:rounded-[0.6875rem] h-[2.8125rem] w-[7.75rem] lg:h-[3.27rem] xl3:h-[76px] lg:w-[9.3125rem] xl3:w-[210px]  text-[0.833rem] lg:text-[1rem] xl2:text-[18.75px] xl3:text-[22.6px] text-[#FFF] font-medium font-dm-sans'>Know More</button>
           </div>
         </div>
 
@@ -181,7 +156,10 @@ const getStyle = (index) => {
             <h1 className='text-[#525252] text-[1.125rem] md:text-[0.91rem] lg:text-[1.21rem] xl:text-[23.4px] xl2:text-[28.3px] font-semibold leading-normal font-bricolage'>QR Code</h1>
             <h2 className=' text-[#2E9F49] pt-[0.3125rem] md:w-[21rem] lg:w-[28rem] xl2:w-full xl3:w-[648px] text-[1.75rem] md:text-[1.67rem] lg:text-[2.22rem] xl2:text-[43px] xl3:text-[51px] font-medium lg:font-semibold leading-none md:leading-[2rem] lg:leading-[2.663rem] xl2:leading-[3.23rem] xl3:leading-[61px] font-bricolage'>Get a QR Code to Connect your customers instantly</h2>
             <p className='text-[#525252] pt-[0.625rem] md:w-[17.5rem] lg:w-[20.75rem] xl2:w-[550px] text-[0.875rem] lg:text-[0.97rem] xl2:text-[18.75px] xl3:text-[22.6px] font-normal leading-[19px] md:leading-[15px] lg:leading-[20px] xl2:leading-[24px] xl3:leading-[29px] font-dm-sans'>Automate conversations, track customer behavior & close more deals—without missing a single message.</p>
-            <button className='mt-[1.25rem] lg:mt-[1.875rem] xl2:mt-[42px] bg-[#2E9F49] rounded-[0.5625rem] lg:rounded-[0.6875rem] h-[2.8125rem] w-[7.75rem] lg:h-[3.27rem] xl3:h-[76px] lg:w-[9.3125rem] xl3:w-[210px]  text-[0.833rem] lg:text-[1rem] xl2:text-[18.75px] xl3:text-[22.6px] text-[#FFF] font-medium font-dm-sans'>Know More</button>
+            <button onClick={() => {
+  localStorage.setItem("targetCard", "qr-code");
+  router.push("/whatsApp-business-suite");
+}} className='mt-[1.25rem] lg:mt-[1.875rem] xl2:mt-[42px] bg-[#2E9F49] rounded-[0.5625rem] lg:rounded-[0.6875rem] h-[2.8125rem] w-[7.75rem] lg:h-[3.27rem] xl3:h-[76px] lg:w-[9.3125rem] xl3:w-[210px]  text-[0.833rem] lg:text-[1rem] xl2:text-[18.75px] xl3:text-[22.6px] text-[#FFF] font-medium font-dm-sans'>Know More</button>
           </div>
         </div>
 

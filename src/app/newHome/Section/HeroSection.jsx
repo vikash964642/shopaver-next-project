@@ -42,7 +42,7 @@ function HeroSection() {
     font-bricolage
   "
 >
-  The All-in-One 
+Run Your Entire Business 
 </h2>
 <h2
   className="
@@ -56,7 +56,7 @@ function HeroSection() {
     font-bricolage
   "
 >
-  Business Solution for MSMEs
+from One Smart Platform
 </h2>
    </div>
    <div className="flex justify-center md:hidden">
@@ -64,8 +64,8 @@ function HeroSection() {
     text-[#5801B7]
     text-[1.875rem] font-bold
     leading-none
-    font-bricolage">The All-in-One 
-Business Solution for MSMEs</h2>
+    font-bricolage">Run Your Entire Business 
+from One Smart Platform</h2>
    </div>
      <div className="flex justify-center pt-[20px] md:pt-[15px] lg:pt-[19px] xl2:pt-[23px] xl3:pt-[28px]">
        <p className=" w-[19.5625rem] md:w-[27rem] lg:w-[35.9375rem] xl2:w-[53rem] text-[#666] text-center text-[0.875rem] md:text-[0.85rem] lg:text-[1.125rem] xl2:text-[21.5px] xl3:text-[1.65rem] font-normal leading-[18px] lg:leading-[23px] xl2:leading-[28px] xl3:leading-[34px] font-dm-sans">Manage everything your business needs from a single platform, including WhatsApp Business Suite, online store setup, smart billing, real-time inventory, Khata, detailed reports, and more.</p>
@@ -77,7 +77,7 @@ Business Solution for MSMEs</h2>
         Start Free Trial
       </button>
       </Link>
-      <Link href="https://app.shopaver.com/Sign-up">
+      <Link href="/contact-us">
       <button className="bg-[#ECECEC] rounded-[0.6875rem] border border-[#D7D7D7] h-[2.8125rem] w-[9.1875rem] lg:h-[3.375rem] lg:w-[11rem] text-[#525252] text-[0.833rem] lg:text-[1rem] font-medium font-dm-sans">
         Schedule a Demo
       </button>

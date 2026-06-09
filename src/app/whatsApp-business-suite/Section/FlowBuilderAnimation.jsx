@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { CircleCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -19,6 +19,7 @@ const features = [
       "Add quotes, sell catalog and more in flows",
       "Create intelligent, interactive WhatsApp journeys for any business",
     ],
+    id:"flow-builder",
     reverse: false,
   },
   {
@@ -33,6 +34,7 @@ const features = [
       "Auto assign tags, manage teams & streamline conversations",
       "Turn inquiries into paying customers with smart automation",
     ],
+       id:"ai-inbox",
     reverse: true,
   },
   {
@@ -48,6 +50,7 @@ const features = [
       "Track delivery and read rates",
       "Personalize messages with customer names",
     ],
+       id:"whatsApp-marketing",
     reverse: false,
   },
   {
@@ -63,6 +66,7 @@ const features = [
       "Recover abandoned carts with automated reminders",
       "Accept orders and payments directly inside WhatsApp",
     ],
+      id:"",
     reverse: true,
   },
   {
@@ -78,6 +82,7 @@ const features = [
       "Increase completion rates with conversational forms",
       "Sync data instantly with your system",
     ],
+      id:"",
     reverse: false,
   },
   {
@@ -93,6 +98,7 @@ const features = [
       "Recover revenue from abandoned payments",
       "Track all transactions from one dashboard",
     ],
+       id:"whatsApp-payments",
     reverse: true,
   },
   {
@@ -107,6 +113,7 @@ const features = [
       "Customer can book appointments anywhere anytime inside WhatsApp",
       "Sync appointments with your calendar automatically",
     ],
+      id:"",
     reverse: false,
   },
    {
@@ -122,6 +129,7 @@ const features = [
       "Protect your brand from impersonation",
       "Boost customer confidence across all campaigns",
     ],
+      id:"",
     reverse: true,
   },
    {
@@ -136,16 +144,36 @@ const features = [
       "Drive more walk-in customers to WhatsApp easily",
       "Turn offline customers into WhatsApp contacts instantly",
     ],
+    id:"qr-code",
     reverse: false,
   },
 ];
 
 function FlowBuilderAnimation() {
+useEffect(() => {
+  const targetId = localStorage.getItem("targetCard");
+
+  if (!targetId) return;
+
+  setTimeout(() => {
+    const el = document.getElementById(targetId);
+
+    if (el) {
+      el.scrollIntoView({
+        behavior: "smooth",
+        block: "center", // ya start
+      });
+    }
+
+    localStorage.removeItem("targetCard");
+  }, 500);
+}, []);
   return (
     <section className="mt-[45px] md:mt-[65px] lg:mt-[80px] xl2:mt-[100px] xl3:mt-[120px] xl2:max-w-[1220px] xl3:max-w-[90rem] mx-auto  px-[15px] md:px-[65px] lg:px-[93px] xl2:px-[60px]  xl3:px-[72px]">
       <div className=" flex items-center flex-col gap-7 md:gap-11 lg:gap-[60px] xl2:gap-[75px] xl3:gap-[90px]">
         {features.map((item, index) => (
           <motion.div
+           id={item.id}
             key={index}
             /* INITIAL STATE */
             initial={{ opacity: 0, y: 120 }}
@@ -158,7 +186,7 @@ function FlowBuilderAnimation() {
               duration: 0.5,
               ease: "easeOut",
             }}
-            className={`max-w-[400px] md:max-w-full md:w-full rounded-[32px] border border-[#CBCBFF] bg-[#F8F8FF] p-5 sm:p-6 lg:p-[32px] xl3:p-[42px] ${
+            className={`scroll-mt-[240px] max-w-[400px] md:max-w-full md:w-full rounded-[32px] border border-[#CBCBFF] bg-[#F8F8FF] p-5 sm:p-6 lg:p-[32px] xl3:p-[42px] ${
               item.reverse ? "lg:[&_.content]:order-2" : ""
             }`}
           >
@@ -198,7 +226,7 @@ function FlowBuilderAnimation() {
 
               {/* IMAGE BOX */}
               <div className="mx-auto p-[20px] w-full max-w-[500px] rounded-[25px] bg-[#fff] h-[330px] md:h-[300px] lg:h-[390px] xl2:h-[500px] xl3:h-[550px] flex justify-center items-center">
-               <Image src={item.Image} height={400} width={420} className="w-full md:w-[260px] lg:w-[325px] xl2:w-[425px]"></Image>
+               <Image src={item.Image} height={400} width={420} className="w-full h-full md:w-[260px] lg:w-[325px] xl2:w-[425px]"></Image>
               </div>
             </div>
           </motion.div>

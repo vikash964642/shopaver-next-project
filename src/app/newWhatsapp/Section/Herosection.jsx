@@ -42,7 +42,7 @@ useGSAP(
         Start Free Trial
       </button>
       </Link>
-      <Link href="https://app.shopaver.com/Sign-up">
+      <Link href="/contact-us">
       <button className="bg-[#ECECEC] rounded-[11px] border border-[#D7D7D7] h-[45px] w-[147px] lg:h-[54px] lg:w-[176px] text-[#525252] text-[13.33px] lg:text-[16px] font-medium font-dm-sans">
         Schedule a Demo
       </button>

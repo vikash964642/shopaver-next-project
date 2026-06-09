@@ -1,5 +1,5 @@
 
-
+import Link from "next/link";
 export default function HeroSection() {
   return (
     <section className="mt-[90px] lg:mt-[110px] xl2:mt-[130px] xl3:mt-[170px]">
@@ -23,13 +23,13 @@ export default function HeroSection() {
 
           {/* BUTTONS */}
           <div className="mt-[2rem] flex  gap-2 lg:gap-3 xl2:gap-4 items-center">
-            <button className=" bg-[#5801B7] w-[139px] h-[42px]  lg:w-[148px] lg:h-[45px] xl2:w-[195px] xl2:h-[60px] xl3:w-[230px] xl3:h-[70px] rounded-[8.6px] md:rounded-[7px] lg:rounded-[9.3px] xl2:rounded-[12px] xl3:rounded-[14px] text-[12px] lg:text-[14px] xl2:text-[17.7px] xl3:text-[20.5px] font-medium text-white shadow-md transition-all duration-300 hover:scale-105 ">
+            <Link href="https://app.shopaver.com/Sign-up" className=" bg-[#5801B7] w-[139px] h-[42px]  lg:w-[148px] lg:h-[45px] xl2:w-[195px] xl2:h-[60px] xl3:w-[230px] xl3:h-[70px] flex justify-center items-center rounded-[8.6px] md:rounded-[7px] lg:rounded-[9.3px] xl2:rounded-[12px] xl3:rounded-[14px] text-[12px] lg:text-[14px] xl2:text-[17.7px] xl3:text-[20.5px] font-medium text-white shadow-md transition-all duration-300 hover:scale-105 ">
               Start Free Trial
-            </button>
+            </Link>
 
-            <button className=" border-[0.85px] border-[#D7D7D7] bg-[#ECECEC] w-[139px] h-[42px] lg:w-[148px] lg:h-[45px] xl2:w-[195px] xl2:h-[60px] xl3:w-[230px] xl3:h-[70px] rounded-[8.6px] md:rounded-[7px] lg:rounded-[9.3px] xl2:rounded-[12px] xl3:rounded-[14px] text-[12px] lg:text-[14px] xl2:text-[17.7px] xl3:text-[20.5px] font-medium text-[#525252] transition-all duration-300 hover:scale-105">
+            <Link href="/contact-us" className=" border-[0.85px] border-[#D7D7D7] bg-[#ECECEC] w-[139px] h-[42px] lg:w-[148px] lg:h-[45px] xl2:w-[195px] xl2:h-[60px] xl3:w-[230px] xl3:h-[70px] flex justify-center items-center rounded-[8.6px] md:rounded-[7px] lg:rounded-[9.3px] xl2:rounded-[12px] xl3:rounded-[14px] text-[12px] lg:text-[14px] xl2:text-[17.7px] xl3:text-[20.5px] font-medium text-[#525252] transition-all duration-300 hover:scale-105">
               Schedule a Demo
-            </button>
+            </Link>
           </div>
         </div>
 

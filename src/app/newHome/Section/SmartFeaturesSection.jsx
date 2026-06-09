@@ -3,7 +3,7 @@
 
 import { useState, useRef } from "react";
 import Image from "next/image";
-
+import Link from "next/link";
 const features = [
   {
     title: "Online Store",
@@ -11,6 +11,7 @@ const features = [
     image: "/newImage/online_inventory_grid.webp",
     description:
       "Launch your own digital store and sell 24/7 without technical complexity or high costs.",
+      link:"/online-store"
   },
   {
     title: "POS Billing",
@@ -18,6 +19,7 @@ const features = [
     image: "/newImage/pos_billing_grid.webp",
     description:
       "Our POS Billing lets businesses bill faster, manage sales, and handle transactions in one place.",
+      link:"/pos-billing-software"
   },
   {
     title: "Quick Billing",
@@ -25,6 +27,7 @@ const features = [
     image: "/newImage/quick_billing_grid.webp",
     description:
       "Built for small retailers and service providers who value speed and simplicity.",
+      link:"/quick-billing-software"
   },
   {
     title: "Inventory",
@@ -32,6 +35,7 @@ const features = [
     image: "/newImage/inventory_management_grid.webp",
     description:
       "Avoid stock issues and manual errors with smart inventory management.",
+      link:"/inventory-management-software"
   },
   {
     title: "Udhar Khata",
@@ -39,6 +43,7 @@ const features = [
     image: "/newImage/bahi_khata_grid.webp",
     description:
       "Go digital with your udhar records. Track transactions, monitor balances, and manage complete credit and debit history with ease.",
+      link:"/bahi-khata-software"
   },
 ];
 function FeatureCard({ item }) {
@@ -69,12 +74,12 @@ function FeatureCard({ item }) {
       {/* Bottom Hover Panel */}
       <div className="absolute bottom-0 left-0 w-full z-20 translate-y-full group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out">
         <div className="bg-white px-5 py-4 flex items-center justify-center gap-3 flex-wrap shadow-[0_-10px_30px_rgba(0,0,0,0.08)]">
-          <button className="whitespace-nowrap rounded-full bg-[#5801B7] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#47009A]">
+          <Link href={item.link} className="whitespace-nowrap rounded-full bg-[#5801B7] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#47009A]">
             Know More
-          </button>
-          <button className="whitespace-nowrap rounded-full border border-[#D1D5DB] bg-[#F5F5F5] px-5 py-2.5 text-sm font-medium text-[#3C3939] transition hover:bg-[#EAEAEA]">
+          </Link>
+          <Link href="https://app.shopaver.com/Sign-up" className="whitespace-nowrap rounded-full border border-[#D1D5DB] bg-[#F5F5F5] px-5 py-2.5 text-sm font-medium text-[#3C3939] transition hover:bg-[#EAEAEA]">
             Schedule a Demo
-          </button>
+          </Link>
         </div>
       </div>
     </div>
@@ -139,12 +144,12 @@ function FullWidthCard({ item }) {
         
       </div>
        <div className=" flex flex-wrap gap-3 opacity-0 translate-y-5 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 ease-out absolute bottom-[35px]">
-            <button className="rounded-full bg-[#5801B7] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#47009A]">
+            <Link href={item.link} className="rounded-full bg-[#5801B7] px-5 py-2.5 text-sm font-medium text-white transition hover:bg-[#47009A]">
               Know More
-            </button>
-            <button className="rounded-full border border-[#D1D5DB] bg-white px-5 py-2.5 text-sm font-medium text-[#3C3939] transition hover:bg-[#F5F5F5]">
+            </Link>
+            <Link href="https://app.shopaver.com/Sign-up" className="rounded-full border border-[#D1D5DB] bg-white px-5 py-2.5 text-sm font-medium text-[#3C3939] transition hover:bg-[#F5F5F5]">
               Schedule a Demo
-            </button>
+            </Link>
           </div>
     </div>
   );

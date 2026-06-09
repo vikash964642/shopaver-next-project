@@ -1,7 +1,7 @@
 "use client";
  
 import Image from "next/image";
- 
+ import Link from "next/link";
 export default function BusinessHeroSection() {
   return (
     <section className="max-w-[90rem] flex justify-center px-[12.5px]  md:px-[46.5px] lg:px-[60px] xl2:px-[175px] mx-auto my-[90px] lg:my-[120px] xl:my-[135px] xl2:my-[150px]">
@@ -27,10 +27,11 @@ export default function BusinessHeroSection() {
           {/* BUTTONS */}
 <div className="mt-8 xl:mt-[28px] xl2:mt-[42px] flex flex-row flex-wrap gap-4">
  
-  <button
+  <Link href="https://app.shopaver.com/Sign-up"
     className="
       h-[2.5rem] lg:h-[3.33rem] xl2:h-[65px] xl3:h-[78.5px]
       w-[8.2rem]  lg:w-[11rem] xl2:w-[200px] xl3:w-[255px]
+      flex justify-center items-center
       rounded-[8.2px] lg:rounded-xl
       bg-[#5B14D1]
       
@@ -44,12 +45,13 @@ export default function BusinessHeroSection() {
     "
   >
     Start Free Trial
-  </button>
+  </Link>
  
-  <button
+  <Link href="/contact-us"
     className="
        h-[2.5rem] lg:h-[3.33rem] xl2:h-[65px] xl3:h-[78.5px]
       w-[8.2rem]  lg:w-[11rem] xl2:w-[200px] xl3:w-[255px]
+      flex justify-center items-center
       rounded-[8.2px] lg:rounded-xl
       border border-gray-300
       bg-white
@@ -64,7 +66,7 @@ export default function BusinessHeroSection() {
     "
   >
     Schedule a Demo
-  </button>
+  </Link>
  
 </div>
         </div>

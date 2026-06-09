@@ -163,17 +163,19 @@ function Card({ item }) {
   return (
     <div className="flex items-stretch gap-[0.90625rem] lg:gap-[2.1875rem] bg-white rounded-[1.591875rem] border border-[#EBD9FF]  py-[10.24px] pl-[15.3px] pr-[10px] md:p-[11.83px] lg:p-[15.78px] xl:p-[19.1px] xl2:p-[1.46rem] h-full">
       {/* LEFT CONTENT */}
-      <div className="flex flex-col w-[50%] justify-center">
+      <div className="flex flex-col w-[50%] justify-between">
      
-          <p className="text-[#3C3939] text-[18.4px] md:text-[14.96px] lg:text-[19.94px] xl2:text-[24.15px] xl3:text-[1.83rem] font-medium  line-clamp-2 leading-none font-bricolage">
+         <div>
+           <p className="text-[#3C3939] text-[18.4px] md:text-[14.96px] lg:text-[19.94px] xl2:text-[24.15px] xl3:text-[1.83rem] font-medium  line-clamp-2 leading-none font-bricolage">
             {item.slug}
           </p>
          <p className="pt-[4px] lg:pt-[5.25px]  xl:pt-[6px] xl2:pt-[0.48rem] text-[#666] text-[12.6px] xm1:text-[14.3px] md:text-[11.96px] lg:text-[15.95px] xl2:text-[19.3px]  font-normal leading-none md:leading-[16px] lg:leading-[21px] xl2:leading-[25px] font-dm-sans line-clamp-3 xl3:line-clamp-4">{details?.description}</p>
+         </div>
 
 
         <Link href={`https://shopaver.com/service/${item.slug}`} target="_blank"
 
-          className="mt-[1rem] md:mt-[17.95px] lg:mt-[23.94px] xl:mt-[29px] xl2:mt-[35px] rounded-[1.875rem] bg-[#E6D2FF] w-[6.0625rem] h-[1.875rem] md:w-[74px] md:h-[25px] lg:w-[6.0625rem] lg:h-[1.875rem] xl2:w-[143px] xl2:h-[48.9px] flex justify-center items-center gap-[0.28125rem]"
+          className="mb-3 rounded-[1.875rem] bg-[#E6D2FF] w-[6.0625rem] h-[1.875rem] md:w-[74px] md:h-[25px] lg:w-[6.0625rem] lg:h-[1.875rem] xl2:w-[143px] xl2:h-[42px] xl3:h-[46px] flex justify-center items-center gap-[0.28125rem]"
         >
           <p className="text-[#5801B7] font-normal lg:font-medium text-[0.656rem] md:text-[9px] lg:text-[0.75rem] xl2:text-[17.4px]">Read More</p>
           <div className="h-[1.125rem] w-[1.125rem] lg:w-[25.6px] lg:h-[25.6px] xl:w-[21.2px] xl:h-[21.2px] xl2:w-[25.6px] xl2:h-[25.6px] rounded-full bg-[#FFF] flex justify-center items-center ">
