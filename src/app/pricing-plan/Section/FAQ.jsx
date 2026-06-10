@@ -1,10 +1,12 @@
-// import React from 'react'
+
+
+
+
 "use client";
 import { useState } from "react";
 
-function FaqSection() {
-  const [showAllQuestions, setShowAllQuestions] = useState(false);
-  const faq = [
+function FAQ() {
+   const faq = [
     {
       ques: "Does POS software support multi-counter billing? ",
       ans: "Yes, POS software supports multi-counter billing in online mode, allowing you to manage multiple locations easily. ",
@@ -53,108 +55,58 @@ function FaqSection() {
       ans: "Yes, our Enterprise plan can be customized to fit your specific needs. Contact our sales team for tailored pricing and additional features.",
     },
   ];
-
+  const [openIndex, setOpenIndex] = useState(null);
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+ 
   return (
-    <section className="mb-[50px]">
-      <div className=" container max-w-screen-xl mx-auto px-5 bg-white min-h-sceen">
-        <div className="flex flex-col items-center pb-11 md:pb-25">
-          <h4 className="font-bold mt-5 tracking-tight text-2xl md:text-3xl">
-            Frequently Asked Questions
-          </h4>
-          <p className="md:text-[20px] text-lg font-semibold pt-2">
-            Have any questions? We are here to assist you.{" "}
-          </p>
-        </div>
-        <div className="grid divide-y divide-neutral-200 w-auto md:px-10 mx-auto ">
-          {showAllQuestions ? (
-            <>
-              {faq.map((faq, i) => (
-                <div key={i} className="py-5">
-                  <details className="group">
-                    <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                      <span className="md:text-[20px] text-lg font-semibold">
-                       
-                        {faq.ques}{" "}
-                      </span>
-                      <span className="transition group-open:rotate-180">
-                        <svg
-                          fill="none"
-                          height="24"
-                          shapeRendering={"geometricPrecision"}
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="1.5"
-                          viewBox="0 0 24 24"
-                          width="24"
-                        >
-                          <path d="M6 9l6 6 6-6"></path>
-                        </svg>
-                      </span>
-                    </summary>
-                    <p className="text-neutral-600 mt-3 group-open:animate-fadeIn text-[18px]">
-                      {faq.ans}
+    <section className="bg-[#5801B7] py-[55px] lg:py-[80px] mt-[90px] lg:mt-[130px]">
+      <div className="max-w-[90rem] mx-auto px-[27px] xl2:px-[170px]">
+        <div className="flex items-center lg:items-start lg:justify-between lg:gap-[50px] xl2:gap-[80px] lg:flex-row flex-col ">
+          <div className="w-[250px] lg:w-[360px]">
+            <h2 className="text-[#FFF] text-[30px] lg:text-[36px] xl2:text-[44px] font-semibold leading-[35px] lg:leading-[45px] xl2:leading-[51px] text-center lg:text-left font-bricolage">
+              Frequently Asked Questions
+            </h2>
+            <p className="pt-3 lg:pt-[22px] text-[#FFF] text-[14px] lg:text-[20px] leading-[18px] lg:leading-[26px] text-center lg:text-left font-dm-sans">
+              Have any questions? We are here to assist you.
+            </p>
+          </div>
+          <div className="mt-[22px] lg:mt-0 flex-1">
+            {faq &&
+              faq.map((data, index) => (
+                <div
+                  key={index}
+                  onClick={() => toggleFAQ(index)}
+                  className="rounded-[7.27px] lg:rounded-[15px] border border-white/50 
+bg-gradient-to-r from-[#FFF]/30 to-[#5801B7]/60 
+shadow-[0_0_4px_rgba(0,0,0,0.25)] 
+backdrop-blur-[15px]  py-[7.5px] px-[9.5px]  lg:lg:py-[15px] lg:px-[19px] mt-[10px] lg:mt-[20px] flex justify-center flex-col cursor-pointer"
+                >
+                  <div className="flex justify-between items-center w-full">
+                    <h2 className="text-[#FFF] text-[16px] lg:text-[18px] font-medium leading-[20px] lg:leading-[23px] w-[85%]">
+                      {data.ques}
+                    </h2>
+                    <p className="text-[#FFF] text-[14px] lg:text-[18px] font-medium ">
+                      {openIndex === index ? "-" : "+"}
                     </p>
-                  </details>
+                  </div>
+                  <div
+                    className={`overflow-hidden transition-all duration-400 ${
+                      openIndex === index
+                        ? "max-h-[700px] opacity-100 mt-[10px]"
+                        : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <p className="pt-[10.5px] text-[#FFF] text-[13px] lg:text-[15px] font-normal leading-normal w-[90%]">{data.ans}</p>
+                  </div>
                 </div>
               ))}
-
-              <div className="py-5 text-center">
-                <button
-                  onClick={() => setShowAllQuestions(false)}
-                  className="text-primary hover:text-neutral-900 font-medium text-center cursor-pointer"
-                >
-                  View Less
-                </button>
-              </div>
-            </>
-          ) : (
-            <>
-              {faq.slice(0, 5).map((faq, i) => (
-                <div key={i} className="py-5">
-                  <details className="group">
-                    <summary className="flex justify-between items-center font-medium cursor-pointer list-none">
-                      <span className="md:text-[20px] text-lg font-semibold">
-                       
-                        {faq.ques}{" "}
-                      </span>
-                      <span className="transition group-open:rotate-180">
-                        <svg
-                          fill="none"
-                          height="24"
-                          shapeRendering={"geometricPrecision"}
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="1.5"
-                          viewBox="0 0 24 24"
-                          width="24"
-                        >
-                          <path d="M6 9l6 6 6-6"></path>
-                        </svg>
-                      </span>
-                    </summary>
-                    <p className="text-neutral-600 mt-3 group-open:animate-fadeIn text-[18px]">
-                      {faq.ans}
-                    </p>
-                  </details>
-                </div>
-              ))}
-
-              <div className="pt-[70px] text-center">
-                <button
-                  onClick={() => setShowAllQuestions(true)}
-                  className="text-primary hover:text-neutral-900 font-bold text-center cursor-pointer"
-                >
-                  View All Questions
-                </button>
-              </div>
-            </>
-          )}
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-export default FaqSection;
+export default FAQ;

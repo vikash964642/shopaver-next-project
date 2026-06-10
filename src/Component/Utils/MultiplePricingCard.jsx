@@ -18,7 +18,7 @@ const MultiplePricingCard = (props) => {
   return (
     <div className="relative">
       <div
-        className={`mx-2 rounded-[10px] border p-6 text-center shadow-sm lg:max-h-full
+        className={`rounded-[10px] border p-6 text-center shadow-sm lg:max-h-full
       transition-all duration-700 ease-in-out
       relative
       hover:scale-105
