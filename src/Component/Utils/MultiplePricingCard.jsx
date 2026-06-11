@@ -6,23 +6,41 @@ import PropsType from "prop-types";
 import { useState } from "react";
 
 const MultiplePricingCard = (props) => {
-  const { loading, proPlan, isYearly, planTier, allFeatures } = props;
+  const { loading, proPlan, isYearly, planTier, allFeatures,isWhatsapp } = props;
     const [isExpanded, setIsExpanded] = useState(false);
 
   const handleToggleExpand = () => {
     setIsExpanded(!isExpanded);
   };
+const orderedFeatures = [...(allFeatures || [])].sort((a, b) => {
+  const aHas = proPlan?.features?.some(
+    (f) =>
+      (f.featureName || "").toLowerCase().trim() ===
+      a.featureName.toLowerCase().trim()
+  );
+
+  const bHas = proPlan?.features?.some(
+    (f) =>
+      (f.featureName || "").toLowerCase().trim() ===
+      b.featureName.toLowerCase().trim()
+  );
+
+  return Number(bHas) - Number(aHas);
+});
   const mobileFeatures = isExpanded
-  ? allFeatures || []
-  : allFeatures?.slice(0, 4) || [];
+  ? orderedFeatures || []
+  : orderedFeatures?.slice(0, 4) || [];
+
   return (
     <div className="relative">
       <div
-        className={`mx-2 rounded-[10px] border p-6 text-center shadow-sm lg:max-h-full
+        className={`rounded-[10px] border p-6 text-center shadow-sm lg:max-h-full ${  isWhatsapp && isYearly
+          ? "w-full"
+          : "lg:w-[291px]"} 
       transition-all duration-700 ease-in-out
       relative
       hover:scale-105
-      lg:h-full
+      md:h-full
       h-auto
             ${
               planTier === "premium"
@@ -115,7 +133,7 @@ const MultiplePricingCard = (props) => {
       return (
         <li key={idx} className="flex items-start gap-2">
           <span className={hasFeature ? "text-green-500" : "text-gray-300"}>
-            {hasFeature ? "✓" : "✕"}
+            {hasFeature ? "✓" : "✗"}
           </span>
           <span className={hasFeature ? "" : "line-through text-gray-400"}>
             {feature.featureName}
@@ -129,7 +147,7 @@ const MultiplePricingCard = (props) => {
   {loading ? (
     <li>Loading features...</li>
   ) : (
-    allFeatures?.map((feature, idx) => {
+    orderedFeatures?.map((feature, idx) => {
       const hasFeature = proPlan?.features?.some((f) =>
         (f.featureName || "")
           .toLowerCase()
@@ -139,7 +157,7 @@ const MultiplePricingCard = (props) => {
       return (
         <li key={idx} className="flex items-start gap-2">
           <span className={hasFeature ? "text-green-500" : "text-gray-300"}>
-            {hasFeature ? "✓" : "✕"}
+            {hasFeature ? "✓" : "✗"}
           </span>
           <span className={hasFeature ? "" : "line-through text-gray-400"}>
             {feature.featureName}

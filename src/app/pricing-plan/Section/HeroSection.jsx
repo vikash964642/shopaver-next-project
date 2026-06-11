@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import PricingCard from "../../../Component/Utils/PricingCard";
 import MultiplePricingCard from "../../../Component/Utils/MultiplePricingCard";
+import Link from "next/link";
 
 
 const HeroSection = () => {
@@ -60,6 +61,7 @@ const HeroSection = () => {
 
   const [whatsappMonthPlan, setWhatsappMonthPlan] = useState([]);
 const [whatsappYearPlan, setWhatsappYearPlan] = useState([]);
+const [openIndex, setOpenIndex] = useState(null);
 const [addOns, setAddOns] = useState({
   monthly: [],
   yearly: [],
@@ -209,8 +211,8 @@ const restPlansMonthly = allPlans.filter((plan) => {
   const isWhatsapp =
     plan.planType === "module" &&
     WHATSAPP_PLANS.includes(plan.plan_name);
-
-  return !(isNormal || isWhatsapp) && plan.frequency === "Monthly";
+const isStarter = plan.plan_name === "Starter";
+  return !(isNormal || isWhatsapp || isStarter) && plan.frequency === "Monthly";
 });
 
 const restPlansYearly = allPlans.filter((plan) => {
@@ -221,8 +223,8 @@ const restPlansYearly = allPlans.filter((plan) => {
   const isWhatsapp =
     plan.planType === "module" &&
     WHATSAPP_PLANS.includes(plan.plan_name);
-
-  return !(isNormal || isWhatsapp) && plan.frequency === "Yearly";
+const isStarter = plan.plan_name === "Starter";
+  return !(isNormal || isWhatsapp || isStarter) && plan.frequency === "Yearly";
 });
         // ✅ IMPORTANT (you missed this earlier)
         setallMonthPlan(updatedMonthlyPlans);
@@ -265,7 +267,7 @@ const hasFeature = (plan, featureId) => {
 const masterWhatsappFeatures = whatsappEnterprise?.features || [];
 const masterFeatures = enterprisePlan?.features || [];
   return (
-    <section className="max-w-screen-lg mx-auto">
+    <section className="max-w-[90rem] px-[30px] lg:px-[60px] xl2:px-[110px] mx-auto">
       <div className="py-12">
         <h1 className="text-[32px] lg:text-[40px] font-bold lg:font-semibold px-[40px] leading-[38px] text-center text-purple-800">
           Shopaver Pricing Plans
@@ -312,6 +314,9 @@ const masterFeatures = enterprisePlan?.features || [];
           <>
             {isYearly ? (
               <div>
+                         <h2 className="mt-10 text-2xl lg:text-[35px] font-semibold text-center mb-8">
+         Billing Plan
+        </h2>
                 {yearlyPlanCount === 1 ? (
                   <div className="tyu">
                     {allYearPlan &&
@@ -320,7 +325,7 @@ const masterFeatures = enterprisePlan?.features || [];
                       ))}
                   </div>
                 ) : (
-                  <div className={`grid grid-cols-1 md:grid-cols-${yearlyPlanCount} gap-8 mt-10`}>
+                  <div className={`grid grid-cols-1 md:grid-cols-3 lg:flex justify-center gap-[18px] mt-10`}>
                     {allYearPlan &&
                       allYearPlan.slice(0, 3).map((plan, idx) => (
                         <MultiplePricingCard key={idx} proPlan={plan} isYearly={true} amount={plan.amount}  planTier={plan.planTier} allFeatures={masterFeatures} />
@@ -329,16 +334,17 @@ const masterFeatures = enterprisePlan?.features || [];
                 )}
                   {isYearly && whatsappYearPlan.length > 0 && (
       <div className="mt-16">
-        <h2 className="text-2xl font-semibold text-center mb-8">
-         WhatsApp Business
+        <h2 className="text-2xl lg:text-[35px] font-semibold text-center mb-8">
+         WhatsApp Business Plan
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className={`grid grid-cols-1 md:grid-cols-3  gap-[18px] ${isYearly && whatsappYearPlan ? "lg:grid-cols-4" : "lg:flex justify-center"}`}>
           {whatsappYearPlan.map((plan) => (
             <MultiplePricingCard
               key={plan.planId}
               proPlan={plan}
               isYearly={true}
+              isWhatsapp={true}
               planTier={plan.planTier}
               allFeatures={masterWhatsappFeatures} 
             />
@@ -348,31 +354,54 @@ const masterFeatures = enterprisePlan?.features || [];
       
     )}
 {isYearly && addOns.yearly.length > 0 && (
-  <div className="mt-16">
-    <h2 className="text-2xl font-semibold text-center mb-8">
+  <div className="mt-16 xl2:mx-[60px]">
+    <h2 className="text-[28.5px] lg:text-[40px] font-semibold text-center text-[#5801B7] mb-8">
       Other Add-ons
     </h2>
 
-    <div className="flex flex-col gap-6 mx-3">
+    <div className="flex flex-col items-center gap-6">
       {addOns.yearly.map((item,id) => (
-         <div key={id} className="px-[15px] md:px-[24px] py-[20px] rounded-[10px] bg-[#fff] border border-[#e5e7eb]">
-          <div className="flex justify-between items-start flex-col md:flex-row">
-            <div className="flex items-center gap-[10px] ">
-              <h2 className="text-[18px] font-semibold text-[#1f2937]">{item.plan_name}</h2>
-              <p className="text-[11px] font-bold px-[8px] py-[3px] rounded-[12px] text-[#854d0e] bg-[#fde047]">Add-On</p>
-              <p className="text-[10px] font-semibold px-[8px] py-[2px] rounded-[10px] text-[#5b21b6] bg-[#ede9fe]">Requires WhatsApp Business</p>
-              </div>
-              <div className="mt-[15px] md:mt-0">
-                <button className="bg-[#e5e7eb] text-[#6b7280] border-none py-[5px] px-[10px] md:py-[10px] md:px-[18px]  rounded-[6px] text-[11px] md:text-[13px] font-semibold cursor-not-allowed">Requires WA Business</button>
-                <div className="mt-2">
-                  <span className="text-[#10b981] text-[16px] font-bold">₹ {item.amount}/year </span>
-                  <span className="text-[11px] text-[#6b7280]">( Tax Excl. )</span>
+         <div key={id} className="max-w-[375px] md:max-w-full w-full py-[21px] px-[22px] md:pl-[22px] md:pr-[40px] rounded-[10px] border border-[#5801b7] bg-white overflow-hidden
+    transition-all duration-500 ease-in-out">
+      
+          <div className="flex justify-between items-center">
+             <div>
+                  <p className="inline-block rounded-full bg-[#EDE9FE] px-[9px] py-[2.2px] text-[11px] text-[#5B21B6]">
+          Popular
+        </p>
+                <h2 className="text-[22px] font-medium text-[#1f2937] font-bricolage">{item.plan_name}</h2>
+              <div className="mt-1 md:mt-2">
+                  <span className="text-[#5801B7] text-[20px] font-semibold">₹ {item.amount}/year </span>
+                  <span className="hidden md:inline-block text-[13px] text-[#2E2E2E]"> ( Tax Excl. ) Pro-rated · 12 month(s) to plan expiry</span>
+                   <span className="inline-block md:hidden text-[13px] text-[#2E2E2E]"> ( Tax Excl. ) </span>
+                   <p className="block md:hidden text-[13px] text-[#2E2E2E]">Pro-rated · 12 month(s) to plan expiry</p>
                 </div>
-                <p className="text-[#059669] text-[10px] mt-[2px]">Pro-rated · 12 month(s) to plan expiry </p>
-                </div>
+             </div>
+                <Link href="https://app.shopaver.com/Sign-up" className="h-[46px] w-[140px] hidden md:flex justify-center items-center rounded-xl border border-[#5801b7] text-[18px] font-semibold text-[#5801b7] hover:bg-[#5801b7] hover:text-[#fff] hover:border-none">
+       Get Started
+        </Link>
           </div>
-          <div>
-             <ul className="mt-4 flex flex-col gap-2">
+                 <button className="mt-4 text-[13px] md:text-[15px] font-medium text-[#5801b7]" onClick={() =>
+    setOpenIndex(openIndex === id ? null : id)
+  }>
+          View Details  <i
+    className={`fa-solid fa-angle-down transition-transform duration-300 ${
+      openIndex === id ? "rotate-180" : ""
+    }`}
+  />
+        </button>
+              
+  {openIndex === id && (
+          <div className={`
+    overflow-hidden
+    transition-all duration-500 ease-in-out
+    ${
+      openIndex === id
+        ? " opacity-100 mt-7"
+        : " opacity-0"
+    }
+  `}>
+             <ul className=" flex flex-col gap-2">
         {getAddOnPoints(item).map((point, idx) => (
           <li key={idx} className="flex items-start gap-2 text-[13px] text-gray-700">
             <span className="text-green-500 font-bold">✓</span>
@@ -381,6 +410,10 @@ const masterFeatures = enterprisePlan?.features || [];
         ))}
       </ul>
           </div>
+          )}
+                <Link href="https://app.shopaver.com/Sign-up" target="_blank" className="mt-[15px] h-[46px] w-full flex justify-center items-center md:hidden  rounded-xl border border-[#5801b7] text-[18px] font-semibold text-[#5801b7] hover:bg-[#5801b7] hover:text-[#fff] hover:border-none">
+       Get Started
+        </Link>
           </div>
       ))}
     </div>
@@ -389,6 +422,9 @@ const masterFeatures = enterprisePlan?.features || [];
               </div>
             ) : (
               <div>
+                 <h2 className="mt-10 text-2xl lg:text-[35px] font-semibold text-center mb-8">
+         Billing Plan
+        </h2>
                 {monthlyPlanCount === 1 ? (
                   <div className="">
                     {allMonthPlan &&
@@ -401,12 +437,12 @@ const masterFeatures = enterprisePlan?.features || [];
                     className={`grid ${
                       monthlyPlanCount === 2
                         ? "grid-cols-1 md:grid-cols-2"
-                        : "grid-cols-1 md:grid-cols-3"
-                    } gap-8 mt-10`}
+                        : "grid-cols-1 md:grid-cols-3 lg:flex justify-center"
+                    } gap-[18px] mt-10`}
                   >
                     {allMonthPlan &&
                       allMonthPlan.map((plan, idx) => (
-                        <MultiplePricingCard
+                        <MultiplePricingCard 
     key={plan.planId}
     proPlan={plan}
     loading={loading}
@@ -424,11 +460,11 @@ const masterFeatures = enterprisePlan?.features || [];
             )}
              {!isYearly && whatsappMonthPlan.length > 0 && (
           <div className="mt-16">
-            <h2 className="text-2xl font-semibold text-center mb-8">
-              WhatsApp Business
+            <h2 className="text-2xl lg:text-[35px] font-semibold text-center mb-8">
+              WhatsApp Business Plan
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className={`grid grid-cols-1 md:grid-cols-3 gap-[18px] lg:flex justify-center`}>
               {whatsappMonthPlan.map((plan) => (
                 <MultiplePricingCard
                   key={plan.planId}
@@ -445,31 +481,52 @@ const masterFeatures = enterprisePlan?.features || [];
 
 
 {!isYearly && addOns.monthly.length > 0 && (
-  <div className="mt-16">
-    <h2 className="text-2xl font-semibold text-center mb-8">
+  <div className="mt-16 xl2:mx-[60px]">
+    <h2 className="text-[28.5px] lg:text-[40px] font-semibold text-center text-[#5801B7] mb-8">
       Other Add-ons
     </h2>
-
-    <div className="flex flex-col gap-6 mx-3">
+      <div className="flex flex-col gap-6">
       {addOns.monthly.map((item,id) => (
-         <div key={id} className="px-[15px] md:px-[24px] py-[20px] rounded-[10px] bg-[#fff] border border-[#e5e7eb]">
-          <div className="flex justify-between items-start flex-col md:flex-row">
-            <div className="flex items-center gap-[10px]">
-              <h2 className="text-[18px] font-semibold text-[#1f2937]">{item.plan_name}</h2>
-              <p className="text-[11px] font-bold px-[8px] py-[3px] rounded-[12px] text-[#854d0e] bg-[#fde047]">Add-On</p>
-              <p className="text-[10px] font-semibold px-[8px] py-[2px] rounded-[10px] text-[#5b21b6] bg-[#ede9fe]">Requires WhatsApp Business</p>
-              </div>
-              <div className="mt-[15px] md:mt-0">
-                <button className="bg-[#e5e7eb] text-[#6b7280] border-none py-[10px] px-[18px] rounded-[6px] text-[13px] font-semibold cursor-not-allowed">Requires WA Business</button>
-                <div className="mt-2">
-                  <span className="text-[#10b981] text-[16px] font-bold">₹ {item.amount}/month </span>
-                  <span className="text-[11px] text-[#6b7280]">( Tax Excl. )</span>
+         <div key={id} className="max-w-[375px] md:max-w-full w-full py-[21px] px-[22px] md:pl-[22px] md:pr-[40px] rounded-[10px] border border-[#5801b7] bg-white overflow-hidden
+    transition-all duration-500 ease-in-out">
+          <div className="flex justify-between items-center">
+             <div>
+                  <p className="inline-block rounded-full bg-[#EDE9FE] px-[9px] py-[2.2px] text-[11px] text-[#5B21B6]">
+          Popular
+        </p>
+                <h2 className="text-[22px] font-medium text-[#1f2937] font-bricolage">{item.plan_name}</h2>
+          <div className="mt-1 md:mt-2">
+                  <span className="text-[#5801B7] text-[20px] font-semibold">₹ {item.amount}/year </span>
+                  <span className="hidden md:inline-block text-[13px] text-[#2E2E2E]"> ( Tax Excl. ) Pro-rated · 12 month(s) to plan expiry</span>
+                   <span className="inline-block md:hidden text-[13px] text-[#2E2E2E]"> ( Tax Excl. ) </span>
+                   <p className="block md:hidden text-[13px] text-[#2E2E2E]">Pro-rated · 12 month(s) to plan expiry</p>
                 </div>
-                <p className="text-[#059669] text-[10px] mt-[2px]">Pro-rated · 12 month(s) to plan expiry </p>
-                </div>
+             </div>
+                <Link href="https://app.shopaver.com/Sign-up" className="h-[46px] w-[140px] hidden md:flex justify-center items-center rounded-xl border border-[#5801b7] text-[18px] font-semibold text-[#5801b7] hover:bg-[#5801b7] hover:text-[#fff] hover:border-none">
+       Get Started
+        </Link>
           </div>
-          <div>
-             <ul className="mt-4 flex flex-col gap-2">
+                 <button className="mt-4 text-[13px] md:text-[15px] font-medium text-[#5801b7]" onClick={() =>
+    setOpenIndex(openIndex === id ? null : id)
+  }>
+          View Details  <i
+    className={`fa-solid fa-angle-down transition-transform duration-300 ${
+      openIndex === id ? "rotate-180" : ""
+    }`}
+  />
+        </button>
+              
+  {openIndex === id && (
+          <div className={`
+    overflow-hidden
+    transition-all duration-500 ease-in-out
+    ${
+      openIndex === id
+        ? " opacity-100 mt-7"
+        : " opacity-0"
+    }
+  `}>
+             <ul className=" flex flex-col gap-2">
         {getAddOnPoints(item).map((point, idx) => (
           <li key={idx} className="flex items-start gap-2 text-[13px] text-gray-700">
             <span className="text-green-500 font-bold">✓</span>
@@ -478,6 +535,10 @@ const masterFeatures = enterprisePlan?.features || [];
         ))}
       </ul>
           </div>
+          )}
+              <Link href="https://app.shopaver.com/Sign-up" target="_blank" className="mt-[15px] h-[46px] w-full flex justify-center items-center md:hidden  rounded-xl border border-[#5801b7] text-[18px] font-semibold text-[#5801b7] hover:bg-[#5801b7] hover:text-[#fff] hover:border-none">
+       Get Started
+        </Link>
           </div>
       ))}
     </div>
