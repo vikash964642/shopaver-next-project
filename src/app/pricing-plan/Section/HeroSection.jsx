@@ -314,6 +314,9 @@ const masterFeatures = enterprisePlan?.features || [];
           <>
             {isYearly ? (
               <div>
+                         <h2 className="mt-10 text-2xl lg:text-[35px] font-semibold text-center mb-8">
+         Billing Plan
+        </h2>
                 {yearlyPlanCount === 1 ? (
                   <div className="tyu">
                     {allYearPlan &&
@@ -322,7 +325,7 @@ const masterFeatures = enterprisePlan?.features || [];
                       ))}
                   </div>
                 ) : (
-                  <div className={`grid grid-cols-1 md:grid-cols-3 xl2:grid-cols-4 gap-[18px] mt-10`}>
+                  <div className={`grid grid-cols-1 md:grid-cols-3 lg:flex justify-center gap-[18px] mt-10`}>
                     {allYearPlan &&
                       allYearPlan.slice(0, 3).map((plan, idx) => (
                         <MultiplePricingCard key={idx} proPlan={plan} isYearly={true} amount={plan.amount}  planTier={plan.planTier} allFeatures={masterFeatures} />
@@ -331,16 +334,17 @@ const masterFeatures = enterprisePlan?.features || [];
                 )}
                   {isYearly && whatsappYearPlan.length > 0 && (
       <div className="mt-16">
-        <h2 className="text-2xl font-semibold text-center mb-8">
-         WhatsApp Business
+        <h2 className="text-2xl lg:text-[35px] font-semibold text-center mb-8">
+         WhatsApp Business Plan
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 xl2:grid-cols-4 gap-[18px]">
+        <div className={`grid grid-cols-1 md:grid-cols-3  gap-[18px] ${isYearly && whatsappYearPlan ? "lg:grid-cols-4" : "lg:flex justify-center"}`}>
           {whatsappYearPlan.map((plan) => (
             <MultiplePricingCard
               key={plan.planId}
               proPlan={plan}
               isYearly={true}
+              isWhatsapp={true}
               planTier={plan.planTier}
               allFeatures={masterWhatsappFeatures} 
             />
@@ -418,6 +422,9 @@ const masterFeatures = enterprisePlan?.features || [];
               </div>
             ) : (
               <div>
+                 <h2 className="mt-10 text-2xl lg:text-[35px] font-semibold text-center mb-8">
+         Billing Plan
+        </h2>
                 {monthlyPlanCount === 1 ? (
                   <div className="">
                     {allMonthPlan &&
@@ -430,12 +437,12 @@ const masterFeatures = enterprisePlan?.features || [];
                     className={`grid ${
                       monthlyPlanCount === 2
                         ? "grid-cols-1 md:grid-cols-2"
-                        : "grid-cols-1 md:grid-cols-3 xl2:grid-cols-4"
+                        : "grid-cols-1 md:grid-cols-3 lg:flex justify-center"
                     } gap-[18px] mt-10`}
                   >
                     {allMonthPlan &&
                       allMonthPlan.map((plan, idx) => (
-                        <MultiplePricingCard
+                        <MultiplePricingCard 
     key={plan.planId}
     proPlan={plan}
     loading={loading}
@@ -453,11 +460,11 @@ const masterFeatures = enterprisePlan?.features || [];
             )}
              {!isYearly && whatsappMonthPlan.length > 0 && (
           <div className="mt-16">
-            <h2 className="text-2xl font-semibold text-center mb-8">
-              WhatsApp Business
+            <h2 className="text-2xl lg:text-[35px] font-semibold text-center mb-8">
+              WhatsApp Business Plan
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 xl2:grid-cols-4 gap-[18px]">
+            <div className={`grid grid-cols-1 md:grid-cols-3 gap-[18px] lg:flex justify-center`}>
               {whatsappMonthPlan.map((plan) => (
                 <MultiplePricingCard
                   key={plan.planId}

@@ -21,7 +21,7 @@ function PricingPlan() {
        <HeroSection/>
        {/* <ControllBusiness/> */}
        <UpgradeBusiness/>
-       <StratFreeTrial />
+       {/* <StratFreeTrial /> */}
          <Faq />
         <ImportantNotes/>
       <Form from={"PricingPage"}/>
